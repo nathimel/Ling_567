@@ -1,0 +1,17 @@
+# XX: Clausal coordination
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo o kip pe oi a kip.
+1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
+'I lie CONJ you lie.'
+
+# XX: Subject coordination
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo pe oi yoru kip.
+1sg CONJ 2sg 1dl.incl lie.
+'I and you lie.'
