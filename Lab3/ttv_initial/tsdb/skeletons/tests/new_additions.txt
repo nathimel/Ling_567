@@ -1,0 +1,10 @@
+
+# 55: Coordination example
+Source: author
+Vetted: f
+Judgment: 
+Phenomena: {coordination}
+I
+G
+T
+

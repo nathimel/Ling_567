@@ -1,0 +1,494 @@
+Language: Titan
+Language code: ttv
+Lines: orth gloss translat
+Author: DN
+Date: January 15, 2021
+Source a: default
+Source b: default
+
+# 1: Agreement between 'oi' and 'a'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Oi a kip.
+2sg 2sg.nfut lie
+'You are lying.'
+
+# 2: Failed agreement between 'oi' and 'u'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi u kip.
+2sg 1sg.nfut lie
+'You be.1sg lying.'
+
+# 3: Failed agreement between 'oi' and 'i'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi i kip.
+2sg 3sg.nfut lie
+'You be.3sg lying.'
+
+# 4: Failed agreement between 'oi' and 'yoru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi yoru kip.
+2sg 1dl.incl.nfut lie
+'You be.1sg lying.'
+
+# 5: Failed agreement between 'oi' and 'taru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi taru kip.
+2sg 1dl.excl.nfut lie
+'You be.1dl lying.'
+
+# 6: Failed agreement between 'oi' and 'woru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi woru kip.
+2sg 2dl.nfut lie
+'You be.2dl lying.'
+
+# 7: Failed agreement between 'oi' and 'aru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi aru kip.
+2sg 3dl.nfut lie
+'You be.3dl lying.'
+
+# 8: Failed agreement between 'oi' and 'yoito'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi yoito kip.
+2sg 1pc.incl.nfut lie
+'You be.1pc lying.'
+
+# 9: Failed agreement between 'oi' and 'yoto'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi yoto kip.
+2sg 1pc.excl.nfut lie
+'You be.1pc lying.'
+
+# 10: Failed agreement between 'oi' and 'to'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi to kip.
+2sg 1pc.excl.nfut lie
+'You be.1pc lying.'
+
+# 11: Failed agreement between 'oi' and 'woto'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi woto kip.
+2sg 2pc.nfut lie
+'You be.2pc lying.'
+
+# 12: Failed agreement between 'oi' and 'ato'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi ato kip.
+2sg 3pc.nfut lie
+'You be.3pc lying.'
+
+# 13: Failed agreement between 'oi' and 'yoya'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi yoya kip.
+2sg 1pl.incl.nfut lie
+'You be.1pl lying.'
+
+# 14: Failed agreement between 'oi' and 'yota'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi yota kip.
+2sg 1pl.excl.nfut lie
+'You be.1pl lying.'
+
+# 15: Failed agreement between 'oi' and 'ta'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi ta kip.
+2sg 1pl.excl.nfut lie
+'You be.1pl lying.'
+
+# 16: Failed agreement between 'oi' and 'awa'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi awa kip.
+2sg 2pl.excl.nfut lie
+'You be.2pl lying.'
+
+# 17: Failed agreement between 'oi' and 'ala'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi ala kip.
+2sg 3pl.excl.nfut lie
+'You be.3pl lying.'
+
+# 18: Agreement between 'yo' and 'a'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo a kip.
+1sg 2sg.nfut lie
+'I are lying.'
+
+# 19: Failed agreement between 'yo' and 'u'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yo u kip.
+1sg 1sg.nfut lie
+'I am lying.'
+
+# 20: Failed agreement between 'yo' and 'i'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yo i kip.
+1sg 3sg.nfut lie
+'I be.3sg lying.'
+
+# 21: Failed agreement between 'yo' and 'yoru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo yoru kip.
+1sg 1dl.incl.nfut lie
+'I be.1sg lying.'
+
+# 22: Failed agreement between yoi' and 'taru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo taru kip.
+1sg 1dl.excl.nfut lie
+'I be.1dl lying.'
+
+# 23: Failed agreement between 'yo' and 'woru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo woru kip.
+1sg 2dl.nfut lie
+'I be.2dl lying.'
+
+# 24: Failed agreement between 'yo' and 'aru'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo aru kip.
+1sg 3dl.nfut lie
+'I be.3dl lying.'
+
+# 25: Failed agreement between 'yo' and 'yoito'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo yoito kip.
+1sg 1pc.incl.nfut lie
+'I be.1pc lying.'
+
+# 26: Failed agreement between 'yo' and 'yoto'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo yoto kip.
+1sg 1pc.excl.nfut lie
+'I be.1pc lying.'
+
+# 27: Failed agreement between 'yo' and 'to'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo to kip.
+1sg 1pc.excl.nfut lie
+'I be.1pc lying.'
+
+# 28: Failed agreement between 'yo' and 'woto'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo woto kip.
+1sg 2pc.nfut lie
+'1 be.2pc lying.'
+
+# 29: Failed agreement between 'yo' and 'ato'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo ato kip.
+1sg 3pc.nfut lie
+'I be.3pc lying.'
+
+# 30: Failed agreement between 'yo' and 'yoya'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo yoya kip.
+1sg 1pl.incl.nfut lie
+'I be.1pl lying.'
+
+# 31: Failed agreement between 'yo' and 'yota'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo yota kip.
+1sg 1pl.excl.nfut lie
+'I be.1pl lying.'
+
+# 32: Failed agreement between 'yo' and 'ta'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo ta kip.
+1sg 1pl.excl.nfut lie
+'I be.1pl lying.'
+
+# 33: Failed agreement between 'yo' and 'awa'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo awa kip.
+1sg 2pl.nfut lie
+'I be.2pl lying.'
+
+# 34: Failed agreement between 'yo' and 'ala'
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Yo ala kip.
+1sg 3pl.nfut lie
+'I be.3pl lying.'
+
+#35: Agreement between 'manuai' and 'i'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Manuai i kip.
+eagle 3sg.nfut lie
+'Eagle is lying.'
+
+#36: Agreement between 'manuai' and 'aru'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Manuai aru kip.
+eagle 3dl.nfut lie
+'Two eagles are lying.'
+
+#37: Agreement between 'manuai' and 'ato'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Manuai ato kip.
+eagle 3pc.nfut lie
+'Some eagles are lying.'
+
+#38: Agreement between 'manuai' and 'ala'
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Manuai ala kip.
+eagle 3pl.nfut lie
+'Eagles are lying.'
+
+# 39: cross-ref clitic/particle pronoun for 1dl.incl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yoru kip.
+1dl.incl  lie
+'We (two incl) are lying.'
+
+#40 : cross-ref clitic/particle for 1dl.excl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Taru kip.
+2dl lie
+'Us two (excl) are lying.'
+
+#41 : cross-ref clitic/particle for 2dl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Woru kip.
+2dl lie
+'You two are lying.'
+
+#42 : cross-ref clitic/particle for 2dl, alt speling
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Waru kip.
+2dl lie
+'You two are lying.'
+
+#43 : cross-ref clitic/particle for 3dl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Aru kip.
+3dl lie
+'Those two are lying.'
+
+#44 : cross-ref clitic/particle for 1pc.incl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yoito kip.
+1pc.incl lie
+'We are lying.'
+
+#45 : cross-ref clitic/particle for 1pc.excl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yoto kip.
+1pc.excl lie
+'We are lying.'
+
+#46 : cross-ref clitic/particle for 1pc.excl, alternate spelling
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+To kip.
+1pc.excl lie
+'We are lying.'
+
+#47 : cross-ref clitic/particle for 2pc
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Woto kip.
+2pcl lie
+'You are lying.'
+
+#48 : cross-ref clitic/particle for 3pc
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Ato kip.
+3pc lie
+'They are lying.'
+
+#49 : cross-ref clitic/particle for 1pl.incl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yoya kip.
+1pl.incl lie
+'We all are lying.'
+
+#50 : cross-ref clitic/particle for 1pl.excl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Yota kip.
+1pl.excl lie
+'We all are lying.'
+
+#51 : cross-ref clitic/particle for 1pl.excl, alternate spelling
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Ta kip.
+1pl.excl lie
+'We all are lying.'
+
+#52 : cross-ref clitic/particle for 2pl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Awa kip.
+2pl lie
+'You all are lying.'
+
+#53 : cross-ref clitic/particle for 3pl
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {agreement}
+Ala kip.
+3pl lie
+'They all are lying.'
+
+# 54: Wrong auxiliary order
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {agreement}
+Oi kip a.
+2sg lie 2sg.nfut
+'You lying are.'
+

@@ -1,0 +1,1135 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Grammar of ttv
+;;; created at:
+;;;     Sat Jan 16 06:31:34 UTC 2021
+;;; based on Matrix customization system version of:
+;;;     Tue Jan 12 18:25:51 UTC 2021
+;;;
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+basic-head-comp-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc,
+    SYNSEM [ LIGHT -,
+             LOCAL.CAT [ MC #mc,
+                         VC #vc ] ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VC #vc ].
+
+; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
+
+non-mod-lex-item := lex-item &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < > ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Matrix Type Addenda
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+head :+ [ PRON bool,
+    FORM form,
+    AUX bool ].
+
+noun :+ [ CASE case ].
+
+png :+ [ PER person,
+    NUM number,
+    GEND gender ].
+
+basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+; Introducing VC keeps track whether main-verb is present in cluster
+
+cat :+ [ VC luk ].
+
+lex-rule :+ [ SYNSEM.LOCAL.CAT.VC #vc,
+    DTR.SYNSEM.LOCAL.CAT.VC #vc ].
+
+;;;;;;;;;;;;;;
+;;; Features
+;;;;;;;;;;;;;;
+
+;;; Case
+
+case := *top*.
+nom := case.  ; nom
+acc := case.  ; acc
+
+;;; Person
+
+person := *top*.
+1st := person.
+2nd := person.
+3rd := person.
+
+;;; Number
+
+number := *top*.
+pl := number.
+du := number.
+sg := number.
+pc := number.
+
+;;; Gender
+
+gender := *top*.
+m := gender.
+
+;;; Form
+
+form := *top*.
+nonfinite := form.
+finite := form.
+
+;;; Tense
+
+nfut := tense.
+fut := tense.
+pres := tense.
+
+;;; Aspect
+
+incep := aspect.
+cont := aspect.
+ipfv+pot := aspect.
+ipfv := ipfv+pot & pfv+ipfv.
+pot := ipfv+pot.
+hab+prog := aspect.
+hab := hab+prog.
+prog := hab+prog.
+pfv+ipfv := aspect.
+pfv := pfv+ipfv.
+
+;;; Mood
+
+imp := mood.
+irr := mood.
+cond+oblig := mood.
+cond := cond+oblig.
+oblig := cond+oblig.
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Types
+;;;;;;;;;;;;;;;;;;;
+
+;;; Nouns
+
+noun-lex := basic-noun-lex & basic-non-wh-word-lex & non-local-none-lex-item & no-hcons-lex-item & non-mod-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL [ SPR < #spr &
+                                 [ LOCAL.CAT.HEAD det ] >,
+                           COMPS < >,
+                           SUBJ < >,
+                           SPEC < > ],
+    ARG-ST < #spr > ].
+
+noun1-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun17-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun19-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun38-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun39-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM pl ] ] ].
+
+noun40-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                         NUM pl ] ] ].
+
+noun41-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun42-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun43-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun44-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun45-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun46-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.NUM du ] ].
+
+noun47-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM pl ] ] ].
+
+noun48-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM sg ] ] ].
+
+noun49-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun50-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun51-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun52-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun53-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun54-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun55-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun56-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun57-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun58-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun59-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun60-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun61-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.GEND m ] ].
+
+noun62-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                         NUM sg ] ] ].
+
+noun63-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun64-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun65-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun66-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun67-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun68-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun69-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun70-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun71-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun72-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun73-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun74-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun75-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun76-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun77-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun78-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun79-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun80-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun81-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+noun82-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM sg ] ] ].
+
+noun83-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM pl ] ] ].
+
+noun84-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM sg ] ] ].
+
+noun85-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM sg ] ] ].
+
+noun86-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM pl ] ] ].
+
+;;; Verbs
+
+verb-lex := non-mod-lex-item &
+  [ SYNSEM [ L-QUE -,
+             LOCAL.CAT [ HEAD verb,
+                         HC-LIGHT - ] ] ].
+
+main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
+  [ SYNSEM [ L-QUE -,
+             LOCAL [ CAT [ HEAD.AUX -,
+                           VC +,
+                           VAL [ SPEC < >,
+                                 SUBJ < #subj > ] ],
+                     CONT.HOOK.XARG #xarg ] ],
+    ARG-ST.FIRST #subj &
+                 [ LOCAL [ CAT cat-sat &
+                               [ VAL [ SPR < >,
+                                       COMPS < > ] ],
+                           CONT.HOOK.INDEX #xarg ] ] ].
+
+aux-lex := verb-lex & basic-icons-lex-item &
+  [ SYNSEM [ L-QUE -,
+             LOCAL.CAT [ HEAD.AUX +,
+                         VC - ] ] ].
+
+intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    ARG-ST.FIRST.LOCAL.CAT.HEAD noun ].
+
+transitive-verb-lex := main-verb-lex & transitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun ],
+             #comps &
+             [ LOCAL.CAT cat-sat &
+                         [ VAL [ SPR < >,
+                                 COMPS < > ],
+                           HEAD noun ] ] > ].
+
+nom-intransitive-verb-lex := intransitive-verb-lex &
+  [ ARG-ST.FIRST.LOCAL.CAT.HEAD noun &
+                                [ CASE nom ] ].
+
+nom-acc-transitive-verb-lex := transitive-verb-lex &
+  [ ARG-ST < [ LOCAL.CAT.HEAD noun &
+                              [ CASE nom ] ],
+             [ LOCAL.CAT.HEAD noun &
+                              [ CASE acc ] ] > ].
+
+verb1-verb-lex := transitive-verb-lex.
+
+verb2-verb-lex := transitive-verb-lex.
+
+verb3-verb-lex := intransitive-verb-lex.
+
+;;; Auxiliaries
+
+arg-comp-aux := aux-lex & non-local-none-lex-item &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+                             COMPS < #comps . #vcomps >,
+                             SUBJ < #subj > ],
+                   CONT.HOOK.XARG #xarg ],
+    ARG-ST < #subj &
+             [ LOCAL [ CAT [ HEAD noun &
+                                  [ CASE #case ],
+                             VAL [ SUBJ < >,
+                                   SPR < >,
+                                   SPEC < >,
+                                   COMPS < > ] ],
+                       CONT.HOOK.INDEX #xarg ] ],
+             #comps &
+             [ LIGHT +,
+               LOCAL [ CAT [ VAL [ SUBJ < [ LOCAL.CAT.HEAD.CASE #case ] >,
+                                   COMPS #vcomps ],
+                             HEAD verb ],
+                       CONT.HOOK.XARG #xarg ] ] > ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+arg-comp-aux-with-pred := arg-comp-aux & hcons-lex-item &
+  [ SYNSEM [ LOCAL.CONT.HCONS.LIST < qeq &
+                                     [ HARG #harg,
+                                       LARG #larg ] >,
+             LKEYS.KEYREL event-relation &
+                          [ ARG1 #harg ] ],
+    ARG-ST < [ ],
+             [ LOCAL.CONT.HOOK.LTOP #larg ] > ].
+
+aux1-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE fut,
+                                       ASPECT ipfv+pot,
+                                       MOOD imp ],
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux2-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE pres,
+                                       ASPECT ipfv ],
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux3-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux4-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux5-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux6-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT cont,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+arg-comp-aux-no-pred := arg-comp-aux & raise-sem-lex-item &
+  [ ARG-ST < [ ],
+             [ LOCAL.CAT.HEAD.AUX - ] > ].
+
+aux7-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux8-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT hab+prog,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux9-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux10-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT incep,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+neg11-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+neg12-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux13-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE fut,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux14-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE fut,
+                                       ASPECT pot,
+                                       MOOD cond+oblig ],
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux15-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE nfut,
+                                       ASPECT pfv+ipfv,
+                                       MOOD imp ],
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+neg16-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux17-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE nfut,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux18-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux19-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pot,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux20-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux21-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux22-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pot,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux23-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pot,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux24-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux25-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE fut,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux26-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux27-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE fut,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Note that raise-sem-lex-item assumes the first complement is
+; where the HOOK comes from.  It's not clear to me how you'd
+; tell that you had an argument composition auxiliary if it
+; wasn't appearing adjacent to the verb.
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux28-aux-lex := arg-comp-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE pres,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux29-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux30-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux31-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux32-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux33-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux34-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux36-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux37-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
+; that the non-local features were previously amalgamated from subj, the
+; lexical verb complement, but not the other complements, if any.
+
+; Not inheriting from basic-verb-lex, so need to put in
+; event-relation by hand here.
+
+aux38-aux-lex := arg-comp-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+;;; Complementizers
+
+;;; Others
+
+;;; Determiners
+;;; SPEC is non-empty, and already specified by basic-determiner-lex.
+
+determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg & non-mod-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+                           COMPS < >,
+                           SUBJ < > ] ].
+
+det1-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det2-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det3-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det4-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det5-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det6-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det7-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det8-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM [ L-QUE -,
+             LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                  NUM sg ] ] ].
+
+det9-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det10-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det11-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det12-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+;;; Adverbs
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Rules
+;;;;;;;;;;;;;;;;;;;
+
+;;; Lexical rule types
+
+;;;;;;;;;;;;;;;;;;;
+;;; Phrasal Types
+;;;;;;;;;;;;;;;;;;;
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VC +,
+    SYNSEM.LOCAL.CAT.HEAD.AUX - ].
+
+subj-head-phrase := decl-head-subj-phrase & head-final &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+; Rules for building NPs.  Note that the Matrix uses SPR for
+; the specifier of nouns and SUBJ for the subject (specifier) of verbs.
+
+head-spec-phrase := basic-head-spec-phrase & head-final.
+
+; Bare NP phrase.  Consider modifying the PRED value of the quantifier relation
+; introduced to match the semantic effect of bare NPs in your language.
+
+bare-np-phrase := basic-bare-np-phrase &
+  [ C-CONT.RELS.LIST < [ PRED "exist_q_rel" ] > ].
+
+comp-aux-phrase := basic-marker-comp-phrase & marker-final-phrase &
+  [ SYNSEM.LOCAL.CAT [ HEAD.FORM #vform,
+                       VC #vc ],
+    MARKER-DTR.SYNSEM.LOCAL.CAT.HEAD verb &
+                                     [ AUX +,
+                                       FORM #vform ],
+    NON-MARKER-DTR.SYNSEM.LOCAL.CAT [ HEAD verb,
+                                      VC #vc ] ].
+
+basic-filler-phrase :+ [ SYNSEM.NON-LOCAL.SLASH.LIST < >,
+    ARGS < [ SYNSEM [ LOCAL #slash,
+                      NON-LOCAL.SLASH.LIST < > ] ],
+           [ SYNSEM.NON-LOCAL.SLASH.LIST < #slash > ] > ].
+
+extracted-subj-phrase := basic-extracted-subj-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD verb ].
+
+;;; Wh-question-related phrasal types
+
+;;;;;;;;;;;;;;;;;;
+;;; Coordination
+;;;;;;;;;;;;;;;;;;
+
+;;; Coordination Strategy 1
+
+vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+vp1-bottom-coord-rule := unary-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL [ COORD-STRAT "1",
+                   COORD-REL.PRED "_and_coord_rel" ] ].
+
+;;; Coordination Strategy 2
+
+vp2-top-coord-rule := basic-vp-top-coord-rule & monopoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+vp2-mid-coord-rule := basic-vp-mid-coord-rule & monopoly-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+vp2-bottom-coord-rule := conj-last-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+;;; Coordination Strategy 3
+
+vp3-top-coord-rule := basic-vp-top-coord-rule & omni-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+
+vp3-mid-coord-rule := basic-vp-mid-coord-rule & omni-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+
+vp3-bottom-coord-rule := omni-conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+
+vp3-left-coord-rule := omni-conj-first-left-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+
+;;; Coordination Strategy 4
+
+vp4-top-coord-rule := basic-vp-top-coord-rule & omni-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+vp4-mid-coord-rule := basic-vp-mid-coord-rule & omni-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+vp4-bottom-coord-rule := omni-conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+vp4-left-coord-rule := omni-conj-first-left-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+;;; Coordination Strategy 5
+
+vp5-top-coord-rule := basic-vp-top-coord-rule & monopoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "5" ].
+
+vp5-mid-coord-rule := basic-vp-mid-coord-rule & monopoly-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "5" ].
+
+vp5-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "5" ].
+
+;;; Coordination Strategy 6
+
+np6-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "6" ].
+
+np6-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "6" ].
+
+np6-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "6" ].
+
+;;; Coordination Strategy 7
+
+np7-top-coord-rule := basic-np-top-coord-rule & omni-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "7" ].
+
+np7-mid-coord-rule := basic-np-mid-coord-rule & omni-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "7" ].
+
+np7-bottom-coord-rule := omni-conj-last-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "7" ].
+
+np7-left-coord-rule := omni-conj-last-left-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "7" ].
+
+;;; Coordination Strategy 8
+
+np8-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "8" ].
+
+np8-bottom-coord-rule := unary-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL [ COORD-STRAT "8",
+                   COORD-REL.PRED "_and_coord_rel" ] ].
+
+clause :+ [ SYNSEM.NON-LOCAL.QUE.LIST < > ].
