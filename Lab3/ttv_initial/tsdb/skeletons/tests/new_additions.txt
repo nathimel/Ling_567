@@ -1,10 +1,54 @@
 
-# 55: Coordination example
+# 55: Agreement between yo and ku
 Source: author
 Vetted: f
-Judgment: 
-Phenomena: {coordination}
-I
-G
-T
+Judgment: g
+Phenomena: {tense}
+Yo ku kip
+1sg 1sg.fut lie
+'I will lie.'
 
+# 56: Agreement between oi and ko
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense}
+Oi ko kip
+2sg 2sg.fut lie
+'You will lie.'
+
+# 57: Agreement between 3sg subj and ki
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense}
+Manuai ki kip.
+Eagle 3sg.fut lie
+'Eagle will lie.'
+
+#58: Agreement between 1dl.incl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense}
+Taru ka kip.
+1dl.incl N.sg.fut lie
+'We will lie.'
+
+#59: Agreement between 1dl.excl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense}
+Yoru ka kip
+1dl.excl N.sg.fut lie
+'We will lie.'
+
+#60: Agreement between 3pl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense}
+Ala ka kip
+3pl N.sg.fut lie
+'They all will lie.'
