@@ -12,7 +12,7 @@ word-order=svo
 has-dets=yes
 noun-det-order=det-noun
 has-aux=yes
-aux-comp-order=after
+aux-comp-order=before
 aux-comp=v
 multiple-aux=yes
 
@@ -116,8 +116,6 @@ section=coordination
   cs7_mark=word
   cs7_orth=pe
   cs7_order=after
-  cs8_np=on
-  cs8_pat=a
 
 section=matrix-yes-no
 

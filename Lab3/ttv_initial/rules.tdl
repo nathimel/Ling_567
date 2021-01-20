@@ -11,8 +11,6 @@ head-spec := head-spec-phrase.
 
 bare-np := bare-np-phrase.
 
-comp-aux := comp-aux-phrase.
-
 vp1-top-coord := vp1-top-coord-rule.
 
 vp1-bottom-coord := vp1-bottom-coord-rule.
@@ -58,7 +56,3 @@ np7-mid-coord := np7-mid-coord-rule.
 np7-bottom-coord := np7-bottom-coord-rule.
 
 np7-left-coord := np7-left-coord-rule.
-
-np8-top-coord := np8-top-coord-rule.
-
-np8-bottom-coord := np8-bottom-coord-rule.

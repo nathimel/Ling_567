@@ -2,18 +2,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of ttv
 ;;; created at:
-;;;     Sat Jan 16 06:31:34 UTC 2021
+;;;     Sat Jan 16 07:36:39 UTC 2021
 ;;; based on Matrix customization system version of:
 ;;;     Tue Jan 12 18:25:51 UTC 2021
 ;;;
 ;;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-basic-head-comp-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc,
-    SYNSEM [ LIGHT -,
-             LOCAL.CAT [ MC #mc,
-                         VC #vc ] ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VC #vc ].
+basic-head-comp-phrase :+ [ SYNSEM [ LIGHT -,
+             LOCAL.CAT.MC #mc ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
 ; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
 
@@ -25,8 +23,8 @@ non-mod-lex-item := lex-item &
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 head :+ [ PRON bool,
-    FORM form,
-    AUX bool ].
+    AUX bool,
+    FORM form ].
 
 noun :+ [ CASE case ].
 
@@ -35,13 +33,6 @@ png :+ [ PER person,
     GEND gender ].
 
 basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
-
-; Introducing VC keeps track whether main-verb is present in cluster
-
-cat :+ [ VC luk ].
-
-lex-rule :+ [ SYNSEM.LOCAL.CAT.VC #vc,
-    DTR.SYNSEM.LOCAL.CAT.VC #vc ].
 
 ;;;;;;;;;;;;;;
 ;;; Features
@@ -90,21 +81,21 @@ pres := tense.
 incep := aspect.
 cont := aspect.
 ipfv+pot := aspect.
-ipfv := ipfv+pot & pfv+ipfv.
+ipfv := ipfv+pot & ipfv+pfv.
 pot := ipfv+pot.
-hab+prog := aspect.
-hab := hab+prog.
-prog := hab+prog.
-pfv+ipfv := aspect.
-pfv := pfv+ipfv.
+prog+hab := aspect.
+prog := prog+hab.
+hab := prog+hab.
+ipfv+pfv := aspect.
+pfv := ipfv+pfv.
 
 ;;; Mood
 
 imp := mood.
 irr := mood.
-cond+oblig := mood.
-cond := cond+oblig.
-oblig := cond+oblig.
+oblig+cond := mood.
+oblig := oblig+cond.
+cond := oblig+cond.
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Types
@@ -323,7 +314,6 @@ verb-lex := non-mod-lex-item &
 main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
   [ SYNSEM [ L-QUE -,
              LOCAL [ CAT [ HEAD.AUX -,
-                           VC +,
                            VAL [ SPEC < >,
                                  SUBJ < #subj > ] ],
                      CONT.HOOK.XARG #xarg ] ],
@@ -334,9 +324,8 @@ main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
                            CONT.HOOK.INDEX #xarg ] ] ].
 
 aux-lex := verb-lex & basic-icons-lex-item &
-  [ SYNSEM [ L-QUE -,
-             LOCAL.CAT [ HEAD.AUX +,
-                         VC - ] ] ].
+  [ SYNSEM [ LOCAL.CAT.HEAD.AUX +,
+             L-QUE - ] ].
 
 intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
@@ -494,7 +483,7 @@ aux7-aux-lex := arg-comp-aux-no-pred &
 ; event-relation by hand here.
 
 aux8-aux-lex := arg-comp-aux-with-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT hab+prog,
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT prog+hab,
                    CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
 
 ; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
@@ -584,7 +573,7 @@ aux13-aux-lex := arg-comp-aux-no-pred &
 aux14-aux-lex := arg-comp-aux-no-pred &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE fut,
                                        ASPECT pot,
-                                       MOOD cond+oblig ],
+                                       MOOD oblig+cond ],
                    CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
 
 ; Somewhat surprisingly, this used to inherit from basic-two-arg (when we had lexical threading), so
@@ -604,7 +593,7 @@ aux14-aux-lex := arg-comp-aux-no-pred &
 
 aux15-aux-lex := arg-comp-aux-no-pred &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE nfut,
-                                       ASPECT pfv+ipfv,
+                                       ASPECT ipfv+pfv,
                                        MOOD imp ],
                    CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
 
@@ -998,9 +987,7 @@ det12-determiner-lex := determiner-lex & no-icons-lex-item &
 ;Constraint on MC used to be part of matrix.tdl
 ;;it applies to all wo implementations, except for v2
 
-head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VC +,
-    SYNSEM.LOCAL.CAT.HEAD.AUX - ].
+head-comp-phrase := basic-head-1st-comp-phrase & head-initial.
 
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
@@ -1015,15 +1002,6 @@ head-spec-phrase := basic-head-spec-phrase & head-final.
 
 bare-np-phrase := basic-bare-np-phrase &
   [ C-CONT.RELS.LIST < [ PRED "exist_q_rel" ] > ].
-
-comp-aux-phrase := basic-marker-comp-phrase & marker-final-phrase &
-  [ SYNSEM.LOCAL.CAT [ HEAD.FORM #vform,
-                       VC #vc ],
-    MARKER-DTR.SYNSEM.LOCAL.CAT.HEAD verb &
-                                     [ AUX +,
-                                       FORM #vform ],
-    NON-MARKER-DTR.SYNSEM.LOCAL.CAT [ HEAD verb,
-                                      VC #vc ] ].
 
 basic-filler-phrase :+ [ SYNSEM.NON-LOCAL.SLASH.LIST < >,
     ARGS < [ SYNSEM [ LOCAL #slash,
@@ -1122,14 +1100,5 @@ np7-bottom-coord-rule := omni-conj-last-bottom-coord-rule & np-bottom-coord-phra
 
 np7-left-coord-rule := omni-conj-last-left-coord-rule & np-bottom-coord-phrase &
   [ SYNSEM.LOCAL.COORD-STRAT "7" ].
-
-;;; Coordination Strategy 8
-
-np8-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "8" ].
-
-np8-bottom-coord-rule := unary-bottom-coord-rule & np-bottom-coord-phrase &
-  [ SYNSEM.LOCAL [ COORD-STRAT "8",
-                   COORD-REL.PRED "_and_coord_rel" ] ].
 
 clause :+ [ SYNSEM.NON-LOCAL.QUE.LIST < > ].
