@@ -1,10 +1,30 @@
-David Krug and Nathaniel Imel
+Lab 3 Write up
+by David Krug and Nathaniel Imel
+
+===================================================================================================
 
 1. Your answers to the questions about the initial and final [incr tsdb()] runs, for both test corpus and test suite
 	1.1 How many items parsed?
 	1.2 What is the average number of parses per parsed item?
 	1.3 How many parses did the most ambiguous item receive?
 	1.4 What sources of ambiguity can you identify?
+
+
+===================================================================================================
+
+
 2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics? (Emily will demo in class on Tuesday.)
-3. Documentation of the phenomena you have added to your testsuite, illustrated with examples from the testsuite.
+
+===================================================================================================
+
+
+3. Documentation of the phenomena you have added to your testsuite
+
+
+===================================================================================================
+
+
 4. Documentation of the improvements you made the morphotactic choices. What did you change and why? Please include IGT that illustrate the effects of the changes so I can test them out
+
+
+===================================================================================================
