@@ -5,6 +5,28 @@ David Krug and Nathaniel Imel
 	1.2 What is the average number of parses per parsed item?
 	1.3 How many parses did the most ambiguous item receive?
 	1.4 What sources of ambiguity can you identify?
+
+
+	1.1.initial, corpus
+		54 out of 54 parsed
+		30 out of 32 negative items parsed (i.e. huge overgeneration)
+	We believe this is caused by the fact we didn't really handle agreement yet. All we did
+	was specify in the choices file the kinds of agreement categories  and added things like
+	_1dl.incl_v_rel to the predications on the new lexical items (i.e. verb clitics as aux types).
+	I verified this by checking in the feature structures for our parses, which didn't show the
+	necessary PERNUM values. 
+
+	1.2 average number of parses per parsed item: 1.73
+	1.3 Most ambiguous example received: 7
+	1.4 Ambiguity:
+
+	    A major source is the fact that the clitics are being parsed as pronouns,
+	    and the pronouns are being parsed as clitics. We didn't actually think
+	    through our additions very carefully when specifying them in the customization
+	    which means also that things which should be _pron_rels are _n_rels.
+
 2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics? (Emily will demo in class on Tuesday.)
+
+
 3. Documentation of the phenomena you have added to your testsuite, illustrated with examples from the testsuite.
 4. Documentation of the improvements you made the morphotactic choices. What did you change and why? Please include IGT that illustrate the effects of the changes so I can test them out
