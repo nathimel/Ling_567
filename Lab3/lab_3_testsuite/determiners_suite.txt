@@ -1,4 +1,4 @@
-# XX: Optional demonstrative
+# XX: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -7,7 +7,7 @@ Ita manuai kip.
 this eagle lie
 This eagle lies.
 
-# XX: Optional demonstrative
+# XX: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -16,7 +16,7 @@ Itan manuai kip.
 this.emph eagle lie
 This eagle lies.
 
-# XX: Optional demonstrative
+# XX: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -25,7 +25,7 @@ Ito manuai kip.
 that eagle lie
 That eagle lies.
 
-# XX: Optional demonstrative
+# XX: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g

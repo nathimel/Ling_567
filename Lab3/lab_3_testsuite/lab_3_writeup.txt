@@ -3,33 +3,7 @@ by David Krug and Nathaniel Imel
 
 ===================================================================================================
 
-1. Your answers to the questions about the initial and final [incr tsdb()] runs, for both test corpus and test suite
-	1.1 How many items parsed?
-	1.2 What is the average number of parses per parsed item?
-	1.3 How many parses did the most ambiguous item receive?
-	1.4 What sources of ambiguity can you identify?
-
-
-<<<<<<< HEAD
-===================================================================================================
-
-
-2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics? (Emily will demo in class on Tuesday.)
-
-===================================================================================================
-
-
-3. Documentation of the phenomena you have added to your testsuite
-
-
-===================================================================================================
-
-
-4. Documentation of the improvements you made the morphotactic choices. What did you change and why? Please include IGT that illustrate the effects of the changes so I can test them out
-
-
-===================================================================================================
-=======
+1. Initial and final [incr tsdb()] runs results for test corpus and test suite
 	1.1.initial, corpus
 		54 out of 54 parsed
 		30 out of 32 negative items parsed (i.e. huge overgeneration)
@@ -48,9 +22,70 @@ by David Krug and Nathaniel Imel
 	    through our additions very carefully when specifying them in the customization
 	    which means also that things which should be _pron_rels are _n_rels.
 
+
+===================================================================================================
+
 2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics? (Emily will demo in class on Tuesday.)
+	2.1 Initial 10 (copied from lab 2)
+	2.2 Final 10
 
+===================================================================================================
 
-3. Documentation of the phenomena you have added to your testsuite, illustrated with examples from the testsuite.
+3. Documentation of the phenomena you have added to your testsuite
+We added:
+- the rest of the NP (determiners)
+- conjunctions
+- tense
+
+	3.1 Determiners.
+		Titan has two main types of demonstratives, the first (tita, titan,	tito, ilatu) can be
+	either the prenominal determiner to an NP or the independent head of an NP. The second (ita,
+	itan, ito, latu) can only be the postnominal modifer of an NP.
+	
+	Here are some examples:
+	
+	# Prenominal determiner
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Tita manuai kip.
+	this eagle lie
+	This eagle lies.
+	
+	# Independent head
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Tita kip.
+	this lie
+	This lies.
+	
+	# Postnominal modifier
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Manuai ita kip.
+	eagle this lie
+	This eagle lies.
+	
+	
+	3.2 Coordination
+		Titan has polysyndetic coordination with two possible conjunctions, 'pe' (and) and 'ne' (or) that occur between each coordinated element. Coordination elements can be VPs or two NP subjects.
+	
+	Here are some examples.
+	
+	# Coordination of VPs
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {coordination}
+	Yo o kip pe oi a kip.
+	1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
+	'I lie and you lie.'
+
+===================================================================================================
+
 4. Documentation of the improvements you made the morphotactic choices. What did you change and why? Please include IGT that illustrate the effects of the changes so I can test them out
->>>>>>> writeup-editing
