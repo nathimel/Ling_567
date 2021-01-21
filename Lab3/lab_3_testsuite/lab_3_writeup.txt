@@ -16,21 +16,22 @@ by David Krug and Nathaniel Imel
 	1.1.2 average number of parses per parsed item: 1.73
 	1.1.3 Most ambiguous example received: 7
 	1.1.4 Ambiguity:
-
-	    A major source is the fact that the clitics are being parsed as pronouns,
-	    and the pronouns are being parsed as clitics. We didn't actually think
-	    through our additions very carefully when specifying them in the customization
-	    which means also that things which should be _pron_rels are _n_rels.
+		A major source is the fact that the clitics are being parsed as pronouns, and the pronouns
+	are being parsed as clitics. We didn't actually think through our additions very carefully when
+	specifying them in the customization which means also that things which should be _pron_rels are _n_rels.
+		
 	1.2 initial, testsuite
-		1.2.1 How many items parsed?
-		1.2.2 What is the average number of parses per parsed item?
-		1.2.3 How many parses did the most ambiguous item receive?
-		1.2.4 What sources of ambiguity can you identify?
+		1.2.1 How many items parsed? 221 out of 221 (100%)
+		1.2.2 What is the average number of parses per parsed item? 5.84
+		1.2.3 How many parses did the most ambiguous item receive? 34 (ato va i kine me)
+		1.2.4 What sources of ambiguity can you identify? coordination?
+	
 	1.3 final, corpus
 		1.3.1 How many items parsed?
 		1.3.2 What is the average number of parses per parsed item?
 		1.3.3 How many parses did the most ambiguous item receive?
 		1.3.4 What sources of ambiguity can you identify?
+	
 	1.4 final, testsuite
 		1.4.1 How many items parsed?
 		1.4.2 What is the average number of parses per parsed item?
@@ -41,7 +42,7 @@ by David Krug and Nathaniel Imel
 ===================================================================================================
 
 2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in
-the semantics? (Emily will demo in class on Tuesday.)
+the semantics?
 
 ===================================================================================================
 
