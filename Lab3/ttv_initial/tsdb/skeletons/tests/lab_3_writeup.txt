@@ -20,6 +20,14 @@ by David Krug and Nathaniel Imel
 
 
 3. Documentation of the phenomena you have added to your testsuite
+We added:
+- the rest of the NP (determiners)
+- conjunctions
+- tense
+
+Titan has two main types of demonstratives, the first (ita, itan, ito, latu) can only be ither the prenominal determiner to an NP or the independent head of an NP. The second (tita, titan, tito, ilatu) can be the postnominal modifer of an NP.
+
+<examples> 
 
 
 ===================================================================================================
