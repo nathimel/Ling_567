@@ -1,0 +1,211 @@
+
+# 55: Agreement between yo and ku
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yo ku kip
+1sg 1sg.fut lie
+'I will lie.'
+
+# 56: Agreement between oi and ko
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Oi ko kip
+2sg 2sg.fut lie
+'You will lie.'
+
+# 57: Agreement between 3sg subj and ki
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Manuai ki kip.
+Eagle 3sg.fut lie
+'Eagle will lie.'
+
+#58: Agreement between 1dl.incl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Taru ka kip.
+1dl.incl n.sg.fut lie
+'We will lie.'
+
+#59: Agreement between 1dl.excl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yoru ka kip
+1dl.excl n.sg.fut lie
+'We will lie.'
+
+#60: Agr between 1pc.incl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yoto ka kip
+1pc.incl n.sg.fut lie
+'We will lie.'
+
+#61: Agr between 1pc.excl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yoito ka kip
+1pc.excl n.sg.fut lie
+'We will lie.'
+
+#62: Agr between 1pl.incl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yota ka kip
+1pl.incl n.sg.fut lie
+'We will lie.'
+
+#63: Agr between 1pl.excl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Yoya ka kip
+1pl.excl n.sg.fut lie
+'We will lie.'
+
+#64: Agr between 2dl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Waru ka kip
+2dl n.sg.fut lie
+'You two will lie.'
+
+#65: Agr between 2pc and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Woto ka kip
+2pc n.sg.fut lie
+'You will lie.'
+
+#66: Agr between 2pl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Awa ka kip
+2pl n.sg.fut lie
+'You will lie.'
+
+#67: Agr between 3dl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Aru ka kip
+3dl n.sg.fut lie
+'They both will die.'
+
+#68: Agr between 3pc and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Ato ka kip
+3pc n.sg.fut lie
+'They will die.'
+
+
+#69: Agreement between 3pl and ka
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {tense, agreement}
+Ala ka kip
+3pl n.sg.fut lie
+'They all will lie.'
+
+#70: Agr between 1sg and ka
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {tense, agreement}
+Yo ka kip
+1sg n.sg.fut lie
+'I will lie.'
+
+#71: Agr between 2sg and ka
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {tense, agreement}
+Oi ka kip
+1sg.excl n.sg.fut lie
+'I will lie.'
+
+#72: Agr btween 3sg and ka
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {tense, agreement}
+i ka kip
+3sg n.sg.fut lie
+'She will lie.'
+
+#73: Agr between 1dl and ku
+Source: author
+Judgment: u
+Phenomena: {tense, agreement}
+Taru ku kip.
+1dl.incl 1sg.fut lie
+'We will lie.'
+
+#74: Agr between 3sg and ku
+Source: author
+Judgment: u
+Phenomena: {tense, agreement}
+i ku kip
+3sg 1sg.fut lie
+'She will lie.'
+
+#75: Agr between 3sg and ko
+Source: author
+Judgement: u
+Phenomena: {tense, agreement}
+i ko kip
+3sg 1sg.fut lie
+'She will lie.'
+
+#76: Agr between 3pl and ki
+Source: author
+Judgment: u
+Phenomena: {tense, agreement}
+ala ki kip
+3pl 3sg.fut lie
+'They will lie.'
+
+#77: Agr between 1dl.excl and ki
+Source: author
+Judgment: u
+Phenomena: {tense, agreement}
+Yoru ki kip
+1dl.excl 3sg.fut lie
+'We will lie.'
+
+#78: Agr between 1sg and ki
+Source: author
+Judgment: u
+Phenomena: {tense, agreement}
+yo ki kip
+1sg 3sg.fut lie
+'I will lie.'

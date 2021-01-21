@@ -1,0 +1,62 @@
+# XX: Clausal coordination: and
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo o kip pe oi a kip.
+1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
+'I lie and you lie.'
+
+# XX: Clausal coordination: or
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo o kip ne oi a kip.
+1sg 1sg.nfut lie or 2sg 2sg.nfut lie.
+'I lie or you lie.'
+
+# XX: Subject coordination: and
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo pe oi yoru kip.
+1sg and 2sg 1dl.incl lie.
+'I and you lie.'
+
+# XX: Subject coordination: or
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {coordination}
+Yo ne oi yoru kip.
+1sg or 2sg 1dl.incl lie.
+'I or you lie.'
+
+# XX: Subject coordination w/ bad agreement
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {coordination}
+Yo pe oi a kip.
+1sg CONJ 2sg 2sg lie.
+'I and you lie.'
+
+# XX: Subject coordination w/ bad agreement
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {coordination}
+Yo pe oi i kip.
+1sg CONJ 3sg 2sg lie.
+'I and you lie.'
+
+# XX: Subject coordination w/ bad agreement
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {coordination}
+Yo pe oi taru kip.
+1sg CONJ 2dl.excl 2sg lie.
+'I and you lie.'
