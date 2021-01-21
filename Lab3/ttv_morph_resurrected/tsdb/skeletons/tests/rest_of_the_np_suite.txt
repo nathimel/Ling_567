@@ -1,0 +1,107 @@
+# XX: Optional demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Ita manuai kip.
+this eagle lie
+This eagle lies.
+
+# XX: Optional demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Itan manuai kip.
+this.emph eagle lie
+This eagle lies.
+
+# XX: Optional demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Ito manuai kip.
+that eagle lie
+That eagle lies.
+
+# XX: Optional demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Latu manuai kip.
+that eagle lie
+That eagle lies.
+
+# XX: NP with only demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Tita kip.
+this lie
+This lies.
+
+# XX: NP with only demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Titan kip.
+this.emph lie
+This lies.
+
+# XX: NP with only demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Tito kip.
+that lie.
+That lies.
+
+# XX: NP with only demonstrative
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {determiners}
+Ilatu kip.
+that lie.
+That lies.
+
+# XX: Wrong determiner
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {determiners}
+Tita manuai kip.
+this eagle lie
+This eagle lies.
+
+# XX: Wrong determiner
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {determiners}
+Titan manuai kip.
+this.emph eagle lie
+This eagle lies.
+
+# XX: Wrong determiner
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {determiners}
+Tito manuai kip.
+that eagle lie.
+That eagle lies.
+
+# XX: Wrong determiner
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {determiners}
+Ilatu manuai kip.
+that eagle lie.
+That eagle lies.
