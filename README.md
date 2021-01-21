@@ -6,3 +6,5 @@ what the clitics will be, and even added predications like "3sg". But
 we did not make any constraints on their co-occurrence restrictions --
 that is to say, beyond their being verby, we contributed nothing to the
 syntactic phenomenon of agreement.
+	- Emily says that this may be resolved in later labs by editing
+	tdl files directly.
