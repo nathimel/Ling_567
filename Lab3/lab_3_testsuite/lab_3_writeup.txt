@@ -76,25 +76,80 @@ the semantics?
 
     1. Initial test suite run:
 
-       1. 
+       1. Sentence: 'Oi a kip'
+       	  Parses: 1
+	  Semantics: Reasonable; there is nothing in the MRS that shows the predication of the
+	  vacuous 'a' verbal clitic, which I think is the right analysis.
 
-       2.
+       2. Sentence: 'Oi yoru kip.'
+       	  Parses: 1
+	  Semantics: This shouldn't parse, but because we haven't added the agr. features yet for most
+	  of our agreement clitics, including 'yoru', this parse isn't blocked. Also, there is a
+	  predication "_1dl.incl_v_rel" for 'yoru' which should not be showing up. The predication
+	  on 'yoru' should be empty.
 
-       3.
+       3. Sentence: 'Yo u kip.'
+       	  Parses: 1
+	  Semantics: Reasonable, no spurious predications
 
-       4.
+       4. Sentence: 'Yo ala kip.'
+       	  Parses: 1
+	  Semantics: Should not parse, same underlying issue as in 2
 
-       5.
+       5. Sentence: 'Manuai i kip.'
+       	  Parses: 1
+	  Semantics: Reasonable, but not parsing due to agreement. Same underlying issue as in  2
 
-       6.
+       6. Sentence: 'Yoru kip.'
+       	  Parses: 2
+	  Semantics: 'Yoru' is parsed as a verb and a noun. For the noun tree, 'yoru' should have
+	  a pron_rel, not a _1dl.excl_n_rel. The verb parse suffers from the same problem as in 5.
 
-       7.
+	  There is some uncertainty about which parse is correct:
 
-       8.
+	  	     In our descriptive resources, we have on page 80:
 
-       9.
+		     	" In the realis, in the first and second person singular the cross-reference
+			 clitics always appear together with a full independent pronoun. In the other
+			 persons and numbers, agreement is marked alone and there is no accompanying
+			 pronoun (which would be formally identical)."
 
-       10.
+		      In the Realis Cross-Reference Agreement Clitics (p.82), there is just 'woru'
+		      for 2dl. In the table of independent personal pronons (p.43), there is both
+		     'woru'/'waru' for 2dl.
+
+			 And the IGT (p.82) seems to show that it's actually the pronoun that's being used,
+			 unless 'waru' really is also an agreement marker.
+
+			 	I    va: "Waru panawe teyo aminyao.     Se i    va    anganun?"
+				3sg say   2dl  steal  to-1sg yesterday  who 3sg say   reason
+				'He said, "You (two) stole mine yesterday. Who gave the reason?"'
+
+
+		We're inclined to keep 'waru' as an agreement clitic  verb that can show up without a pronoun
+		preceding it.
+		
+       7. Sentence: 'Awa kip.'
+       	  Parses: 2
+	  Semantics: Verb parse has the same recurring issue as 5., etc. The noun parse -- except that we think
+	  it shouldn't be happening -- has all reasonable semantics.
+
+       8. Sentence: 'To kip.'
+: "Warn panawe teyo am 3sg say 2dl steal to-lsg yesterday
+       	  Parses: 1
+	  Semantics: Just the verb parse (with the same issue)
+
+       9. Sentence: 'Ala kip.'
+       	  Parses: 3
+	  Semantics: One verb parse, same issue. The two noun parses correspond to the 'ala' pronoun
+	  that was already included in the grammar which I didn't see when adding our own. That addition
+	  corresponds to the other tree, which incorrectly has a predication (and lacks agr features).
+
+       10. Sentence: 'Waru kip.'
+       	   Parses: 1
+	   Semantics: This is a noun parse; we didn't add 'waru' as a verbal agreement clitic. We
+	   maybe should. We note that there is one parse for 'Woru kip' and besides the issue described
+	   in 5, it is correct.
 
     2. Final run diff:
 
