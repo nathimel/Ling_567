@@ -1,0 +1,62 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Inflecting Lexical Rule Instances
+
+noun-pc1_lrt1-suffix :=
+%suffix (* -n)
+noun-pc1_lrt1-lex-rule.
+
+noun-pc2_lrt1-suffix :=
+%suffix (* -m)
+noun-pc2_lrt1-lex-rule.
+
+noun-pc3_lrt1-suffix :=
+%suffix (* -yotaru)
+noun-pc3_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix1 :=
+%suffix (* -ani)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix2 :=
+%suffix (* -ai)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix3 :=
+%suffix (* -e)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix4 :=
+%suffix (* -ue)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix5 :=
+%suffix (* -u)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix6 :=
+%suffix (* -le)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix7 :=
+%suffix (* -i)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix8 :=
+%suffix (* -at)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix9 :=
+%suffix (* -n)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix10 :=
+%suffix (* -isi)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix11 :=
+%suffix (* -iti)
+verb-pc1_lrt1-lex-rule.
+
+verb-pc1_lrt1-suffix12 :=
+%suffix (* -uti)
+verb-pc1_lrt1-lex-rule.
