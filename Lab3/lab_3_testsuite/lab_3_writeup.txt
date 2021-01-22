@@ -302,5 +302,18 @@ Please include IGT that illustrate the effects of the changes so I can test them
 	change,	the verb underwent verb_pc10 lexical rule, and the semantics did not change. Similar
 	changes occurred for the other examples as well.
 	
-		The second change we made to the morphotactic choices was to add 
+		The second change we made to the morphotactic choices was to add possessive morphology.
 
+		Here's an example of possessive morhpology from the stories of the DR:
+
+		Kosi i va: "Ki la teyo alan, yota ka los e
+		polenket, cagtyota kt mat, moluayota ki me e kor
+		kila coancagiyota.
+		 
+		K 3sg say c.fact become to. 1 sg if lpl.inc c.fact fall from
+		tree-top body-1 pl.inc c.fact die soul-1 pl.inc c.fact come to village
+		as body-substitute-1 pl.inc
+		 
+		Kosi said, "If I'd had it my way, then we would fall from the treetop,
+		our body would have died, and our soul would come to the village in
+		place of our bod
