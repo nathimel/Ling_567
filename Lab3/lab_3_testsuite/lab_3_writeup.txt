@@ -171,31 +171,42 @@ We added:
 	1sg 1sg.fut lie
 	'I will lie.'
 	
+	#Future tense clitic with wrong agreement
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {tense, agreement}
+	Yo ka kip
+	1sg n.sg.fut lie
+	'I will lie.'
+	
 
 ===================================================================================================
 
 4. Documentation of the improvements you made the morphotactic choices. What did you change and why?
 Please include IGT that illustrate the effects of the changes so I can test them out
 
-The first change we made to the morphotactic choices was to merge verb_pc7 and verbpc_9, verb_pc8 and
-verb_pc10, and  verb_pc10 and verb_pc12. In all pairs, the only difference between the two was the
-inputs.
+		The first change we made to the morphotactic choices was to merge verb_pc7 and verbpc_9,
+	verb_pc8 and verb_pc11, and  verb_pc10 and verb_pc12. In all pairs, the only difference between
+	the two were the inputs.
 
-Here are some parse that were effected by this change.
+	Here are some parses that were effected by this change.
 
-Yo  u        kip.
-1sg 1sg.nfut lie
-I lie.
+	Yo  u        kip.
+	1sg 1sg.nfut lie
+	I lie.
 
-Manuai i        kip
-eagle  3sg.nfut lie
-Eagle lies.
+	Manuai i        kip
+	eagle  3sg.nfut lie
+	Eagle lies.
 
-Ala  la ta    ni
-they go catch fish
-They go fishing.
+	Ala  la ta    ni
+	they go catch fish
+	They go fishing.
 
-Prior to our morphotactic change, the verb 'u' underwent verb_pc12 lexical rule. After the change,
-the verb underwent verb_pc10 lexical rule, and the semantics did not change. Similar changes
-occurred for the other examples as well.
+		Prior to our morphotactic change, the verb 'u' underwent verb_pc12 lexical rule. After the
+	change,	the verb underwent verb_pc10 lexical rule, and the semantics did not change. Similar
+	changes occurred for the other examples as well.
+	
+		The second change we made to the morphotactic choices was to add 
 
