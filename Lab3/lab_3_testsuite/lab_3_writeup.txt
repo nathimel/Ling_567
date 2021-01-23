@@ -151,6 +151,54 @@ the semantics?
 
     2. Final run diff:
 
+       1. Sentence: 'Yo ku kip.'
+       	  Parses: 1
+	  Semantics: Reasonable semantics, no spurious predication on the verb 'ku' (no issue as
+	  mentioned with the realis clitics)
+
+       2. Sentence: 'Oi ko kip.'
+       	  Parses: 1
+	  Semantics: Issue of spurious predication on 'ku' verb.
+
+       3. Sentence: 'Manuai ki kip.'
+       	  Parses: 1
+	  Semantics: No issues.
+
+       4. Sentence: 'Yoru ki kip.'
+       	  Parses: 2
+	  Semantics: This shouldn't have parses -- the sentence should be 'Yoru ka kip,' since 'ka'
+	  is used for all non-sing agreement, and yoru is 1dl. Each of the parses corresponds to
+	  the pronoun 'yoru' and the verbal agr clitic 'yoru.'
+
+       5. Sentence: 'yo pe oi yoru kip'
+       	  Parses: 1
+	  Semantics: The conjunction analysis looks correct, though we didn't add any coordinators --
+	  this was present in the original grammar. The 'yoru' verb has the spurious predication
+	  and no agreement features, which is pretty crucial for conjunction examples like these.
+
+       6. Sentence: 'Tita manuai kip'
+       	  Parses: 1
+	  Semantics: Everything looks correct here. We didn't add any demonstrative determiners, so
+	  this analysis is thanks to our original grammar.
+
+       7. Sentence: 'yaye-yo i ani lei'
+       	  Parse: 1
+	  Semantics: There is something that looks dubious here: ARG1 of the poss_rel is the mother,
+	  and ARG2 is the pronoun. We think it should be the other way around. And then there is
+	  the spurious predication on the agreement clitic.
+
+       8. Sentence: 'yaye-yoru i ani lei'
+       	  Parse: 1
+	  Semantics: Same as above.
+
+       9. Sentence: 'Ala kip'
+          Parse: 3
+	  Semantics: No change from prior test_suite, as expected.
+
+       10.Sentence: 'Waru kip'
+          Parse: 1
+	  Semantics: No change.
+
 ===================================================================================================
 
 3. Documentation of the phenomena you have added to your testsuite
@@ -162,7 +210,9 @@ We added:
 	3.1 Determiners.
 		Titan has two main types of demonstratives, the first (tita, titan,	tito, ilatu) can be
 	either the prenominal determiner to an NP or the independent head of an NP. The second (ita,
-	itan, ito, latu) can only be the postnominal modifer of an NP.
+	itan, ito, latu) can only be the postnominal modifer of an NP. There is no evidence in the descriptive
+	resources that there should be a verbal agreement clitic after the NP, in contrast to sentences where
+	there is no demonstrative determiner.
 	
 	Here are some examples:
 	
@@ -201,7 +251,17 @@ We added:
 	Ita manuai kip.
 	this eagle lie
 	This eagle lies.
-	
+
+	Examples of lack of verb agr clitic from descriptive resources:
+
+	Kanian ito        kulicon-kei
+	feast  that(near) bark
+	"That feast [of ours] [will be] tree-bark."
+
+	Tita nga         eyo    poen, tita rop    eyo poen
+        that lime.vessel lsg.ps not   that basket lsg.ps not
+        "That lime pot isn't mine, and that basket isn't mine!"
+
 	
 	3.2 Coordination
 		Titan has polysyndetic coordination with two possible conjunctions, 'pe' (and) and 'ne'
@@ -319,6 +379,8 @@ We added:
 	Yaye-ala i ani lei.
 	mother-3sg 3sg eat ginger bulb
 	Their mother ate a ginger bulb.
+
+	We inferred the following:
 	
 	# Failed possession of a verb.
 	Source: author
