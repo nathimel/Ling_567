@@ -275,8 +275,7 @@ We added:
 
 ===================================================================================================
 
-4. Documentation of the improvements you made the morphotactic choices. What did you change and why?
-Please include IGT that illustrate the effects of the changes so I can test them out
+4. Morphological Changes
 
 	4.1 Morphology Cleanup
 		The first change we made to the morphological choices was to merge verb_pc7 and verbpc_9,
@@ -338,3 +337,21 @@ Please include IGT that illustrate the effects of the changes so I can test them
 	Yo-ala i ani lei.
 	1sg-3sg 3sg eat ginger bulb
 	Their I ate a ginger bulb.
+	
+	# Failed with two possessors on a noun.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yaya-ala-ala i ani lei.
+	1sg-3sg-3sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.
+	
+	# Failed with possessive prefix.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yaya-ala i ani lei.
+	3sg-1sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.
