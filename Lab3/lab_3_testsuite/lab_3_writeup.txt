@@ -280,7 +280,8 @@ We added:
 4. Documentation of the improvements you made the morphotactic choices. What did you change and why?
 Please include IGT that illustrate the effects of the changes so I can test them out
 
-		The first change we made to the morphotactic choices was to merge verb_pc7 and verbpc_9,
+	4.1 Morphology Cleanup
+		The first change we made to the morphological choices was to merge verb_pc7 and verbpc_9,
 	verb_pc8 and verb_pc11, and  verb_pc10 and verb_pc12. In all pairs, the only difference between
 	the two were the inputs.
 
@@ -298,22 +299,44 @@ Please include IGT that illustrate the effects of the changes so I can test them
 	they go catch fish
 	They go fishing.
 
-		Prior to our morphotactic change, the verb 'u' underwent verb_pc12 lexical rule. After the
+		Prior to our morphological change, the verb 'u' underwent verb_pc12 lexical rule. After the
 	change,	the verb underwent verb_pc10 lexical rule, and the semantics did not change. Similar
 	changes occurred for the other examples as well.
 	
-		The second change we made to the morphotactic choices was to add possessive morphology.
+		Unfortunately, this morphological cleanup did not reduce any ambiguity in our grammar.
+	Because the two elements in three pairs had non-overlapping inputs, there was no point of
+	decision in the grammar that we removed.
+	
+	4.2 Morphological Possessives
+		The second change we made to the morphotactic choices was to add possessive morphology. In
+	Titan, all pronouns (except i, yoto, yoya) have a possessive suffix counterpart that can attach
+	to all nouns and only nouns.
 
-		Here's an example of possessive morhpology from the stories of the DR:
+	Here are some examples of possessive morphology from the corpus:
 
-		Kosi i va: "Ki la teyo alan, yota ka los e
-		polenket, cagtyota kt mat, moluayota ki me e kor
-		kila coancagiyota.
-		 
-		K 3sg say c.fact become to. 1 sg if lpl.inc c.fact fall from
-		tree-top body-1 pl.inc c.fact die soul-1 pl.inc c.fact come to village
-		as body-substitute-1 pl.inc
-		 
-		Kosi said, "If I'd had it my way, then we would fall from the treetop,
-		our body would have died, and our soul would come to the village in
-		place of our bod
+	# Possession
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {possession}
+	Yaye-ala i ani lei.
+	mother-3sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.
+	
+	# Failed possession of a verb.
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {possession}
+	Kip-ala i ani lei.
+	lie-3sg 3sg eat ginger bulb
+	Their lie ate a ginger bulb.
+	
+	# Failed possession of a pronoun.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yo-ala i ani lei.
+	1sg-3sg 3sg eat ginger bulb
+	Their I ate a ginger bulb.
