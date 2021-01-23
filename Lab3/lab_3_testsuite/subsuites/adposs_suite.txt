@@ -1,0 +1,189 @@
+# XX: Adnominal possession: -yo
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-yo i ani lei
+mother-1sg 3sg eat ginger-bulb
+'My mother ate a ginger bulb'
+
+# XX: Adnominal possession: -oi
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-oi i ani lei
+mother-2sg 3sg eat ginger-bulb
+'Your mother ate a ginger bulb'
+
+# XX: Adnominal possession: -yotaru
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-yotaru i ani lei
+mother-1dl.incl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb'
+
+# XX: Adnominal possession: -yoru
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-yoru i ani lei
+mother-1dl.excl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb'
+
+# XX: Adnominal possession: waru
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-waru i ani lei
+mother-2dl 3sg eat ginger-bulb
+'Your mother ate a ginger bulb'
+
+# XX: Adnominal possession: -aru
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-aru i ani lei
+mother-3dl 3sg eat ginger-bulb
+'Their mother ate a ginger bulb'
+
+# XX: Adnominal possession: -yoito
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-yoito i ani lei
+mother-1pc.excl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb'
+
+# XX: Adnominal possession: -wato
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-wato i ani lei
+mother-2pc 3sg eat ginger-bulb
+'Your mother ate a ginger bulb'
+
+# XX: Adnominal possession: -ato
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-ato i ani lei
+mother-3pc 3sg eat ginger-bulb
+'Their mother ate a ginger bulb'
+
+# XX: Adnominal possession: yota
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-yota i ani lei
+mother-1pl.incl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb'
+
+# XX: Adnominal possession: awa
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-awa i ani lei
+mother-2pl 3sg eat ginger-bulb
+'Your mother ate a ginger bulb'
+
+# XX: Adnominal possession: ala
+Source: corpus
+Vetted: f
+Judgment: g
+Phenomena: {possession}
+yaye-ala i ani lei
+mother-3pl 3sg eat ginger-bulb
+'Their mother ate a ginger bulb'
+
+# XX: Adnominal possession: ala on a verb
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+Manuai i kip-ala
+Eagle 3sg lie-3pl
+'Eagle lies-their'
+
+# XX: Adnominal possession: ala on a verb in NP position
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+kip-ala i kip
+lies-3pl 3sg lie
+'Lies-their lie'
+
+# XX: Adnominal possession: 2 poss on same noun
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+yaye-ala-ala i ani lei
+mother-3pl-3pl 3sg eat ginger-bulb
+'Their mother ate a ginger bulb.'
+
+# XX: Adnominal possession: 2 poss on same noun
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+yaye-yo-yotaru i ani lei
+mother-1sg.excl.-1dl.incl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb.'
+
+# XX: Adnominal possession: poss as a prefix
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+ala-yaye i ani lei
+3pl-mother 3sg eat ginger-bulb
+'Their mother ate a ginger bulb.'
+
+# XX: Adnominal possession: poss as a prefix
+Source: autho
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+oi-yaye i ani lei
+2sg-mother 3sg eat ginger-bulb
+'Your mother ate a ginger bulb.'
+
+# XX: Adnominal possession: -i not a suffix
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+yaye-i i ani lei
+mother-3sg 3sg eat ginger-bulb
+'Its mother ate a ginger bulb.'
+
+# XX: Adnominal possession: -yoto not a suffix
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+yaye-yoto i ani lei
+mother-1pc.incl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb.'
+
+# XX: Adnominal possession: -yoya not a suffix
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {possession}
+yaye-yoya i ani lei
+mother-1pl.excl 3sg eat ginger-bulb
+'Our mother ate a ginger bulb.'
+
