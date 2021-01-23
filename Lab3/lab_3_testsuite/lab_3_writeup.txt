@@ -57,8 +57,8 @@ by David Krug and Nathaniel Imel
 		      discharged at different places?'
 	
 	1.3 final, corpus
-	
-		No differences :/
+		Our	final grammar had the same coverage, overgeneration, and most ambiguous as our initial
+		grammar had on the corpus.
 	
 	1.4 final, testsuite
 		1.4.1 How many items parsed?
@@ -133,7 +133,6 @@ the semantics?
 	  it shouldn't be happening -- has all reasonable semantics.
 
        8. Sentence: 'To kip.'
-: "Warn panawe teyo am 3sg say 2dl steal to-lsg yesterday
        	  Parses: 1
 	  Semantics: Just the verb parse (with the same issue)
 
@@ -264,11 +263,15 @@ We added:
 
 	
 	3.2 Coordination
-		Titan has polysyndetic coordination with two possible conjunctions, 'pe' (and) and 'ne'
-	(or) that occur between each coordinated element. 'Pe' can conjoin two VPs or two NPs, but
-	'ne' can only conjoin two NPs. If two singular NPs are coordinated, the resulting NP is dual.
-	The entire paradigm from coordinand person and number to coordination person and number is
-	not given in the descriptive resource. 
+		All examples of coordination in the corpus involve one of two possible conjunctions: 'pe'
+	(and) and 'ne'. Titan therefore has no asyndetic coordination. We have not yeild ruled out
+	omnisyndetic coordination from our choices file, but we expect that Titan has only polysyndetic
+	which we may change in future labs.
+		If Titan has only polysyndetic coordination, then coordination occurs with a conjunction
+	between each coordinated element. 'Pe' can conjoin two VPs or two NPs, but 'ne' can only
+	conjoin two NPs. If two singular NPs are coordinated, the resulting NP is dual.	The entire
+	paradigm from coordinand person and number to coordination person and number is	not given in
+	the descriptive resource. 
 	
 	Here are some examples.
 	
