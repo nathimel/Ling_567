@@ -1,0 +1,132 @@
+
+# XX: ca in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Oi a ani ca
+2sg 2sg eat what
+'What are you eating?'
+
+# XX: ca not in-situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+Ca oi a ani
+what 2sg 2sg eat
+'What are you eating?
+
+# XX: sa in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+
+# XX: sa not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+
+# XX: se in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+oi se
+2sg who
+'Who are you?'
+
+# XX: se not in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Se i nyamiri oi
+who 3sg love 2sg
+'Who loves you?'
+
+# XX: tavai in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+
+# XX: tavai not in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+
+# XX: ite in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Oi pin ite
+2sg woman where
+'You're a woman from where?'
+
+# XX: ite not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+ite oi pin
+where 2sg woman
+'You're a woman from where?'
+
+# XX: tite in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Oi pin tite
+2sg woman where
+'You're a woman from where?'
+
+# XX: tite not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+Tite oi pin
+where 2sg woman
+'You're a woman from where?'
+
+# XX: rehe in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Manuai rehe
+eagle where
+'Where is the eagle?'
+
+# XX: rehe in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Manuai i la rehe
+eagle 3sg go where
+'Where did the eagle go?'
+
+# XX: rehe not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+rehe manuai i la
+where eagle 3sg go
+'Where did the eagle go?'
+
+# XX: etepe in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+Oi etepe
+2sg how.is.it
+'How are you?'

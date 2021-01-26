@@ -1,0 +1,41 @@
+# XX: va embedding a declarative
+Source: corpus
+Vetted: f
+Judgment: g
+ato va yoito pein
+3pc say 1pc.excl woman-pandanus
+'They said, 'we're pandanus-women.''
+
+# XX: va embedding nothing
+Source: author
+Vetted: f
+Judgment: u
+ato va
+3pc say
+'They said.'
+
+# XX: va embedding only an NP
+Source: author
+Vetted: f
+Judgment: u
+ato va yoito
+3pc said 1pc.excl
+'They said, 'we.''
+
+# XX: va embedding only an NP
+Source: author
+Vetted: f
+Judgement: u
+ato va pein
+3pc say woman-pandanus
+'They said, 'pandanus-women.''
+
+# XX: va embedding a question
+Source: corpus
+Vetted: f
+Judgment: g
+
+# XX: va as desire (irrealis) embedding a VP
+Source:
+Vetted:
+Judgment: g
