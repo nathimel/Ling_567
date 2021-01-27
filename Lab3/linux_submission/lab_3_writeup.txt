@@ -1,0 +1,440 @@
+Lab 3 Write up
+by David Krug and Nathaniel Imel
+
+===================================================================================================
+From the lab 2 grammar to the intial grammar, we changed:
+ - coordination (removed asyndetic clausal coordination)
+ 
+From the initial grammar to the final grammar, we changed:
+ - cleaned up morphology classes
+ - added adnominal possession
+===================================================================================================
+
+1. Initial and final [incr tsdb()] runs results for test corpus and test suite
+	1.1.initial, testsuite
+		43 out of 54 parsed
+		21 out of 22 positive items (95.5% coverage)
+		22 out of 32 negative items parsed (i.e. huge overgeneration)
+	We believe this is caused by the fact we didn't really handle agreement yet. All we did
+	was specify in the choices file the kinds of agreement categories  and added things like
+	_1dl.incl_v_rel to the predications on the new lexical items (i.e. verb clitics as aux types).
+	I verified this by checking in the feature structures for our parses, which didn't show the
+	necessary PERNUM values. 
+
+	1.1.2 average number of parses per parsed item: 1.57
+	1.1.3 Most ambiguous example received: 2
+	1.1.4 Ambiguity:
+		A major source is the fact that the clitics are being parsed as pronouns, and the pronouns
+	are being parsed as clitics. We also think that things which should be _pron_rels are _n_rels.
+		
+	1.2 initial, corpus (using i-length < 8
+		1.2.1 How many items parsed? 24 out of 563 (4.3%)
+		1.2.2 What is the average number of parses per parsed item? 1.50
+		1.2.3 How many parses did the most ambiguous item receive?
+		      There were two sentences that received 3 trees:
+		      
+		      'Ala iri i.' and 'Ara vavuen.'
+		      
+		1.2.4 What sources of ambiguity can you identify?
+
+		      Since the IGT for this sentence is:
+
+		      Ala iri i
+		      3pl bury 3sg
+		      'They buried him.'
+
+		      Aru vavuen.
+		      3dl refuse
+		      'They refused.'
+
+		      For the first sentence, there is the pronoun/clitic confusion.
+		      There is also a lexical entry for ala_1 and ala_2. Ala_2 is
+		      a noun I added last lab that I need to delete (I didn't see
+		      ala_1 which fills the role of _pron_rel that I need).
+
+		      For the second, there are two parses where 'aru' is a verb
+		      clitic, which it shouldn't be. The nominal parse is a result
+		      of the previous lab, but it is implemented incorrectly --
+		      I need to specify that it is a _pron_rel, instead of
+		      a _3dl_n_rel. Also, since 'vavuen' has a subtree that is
+		      VP -> V -> vavuen , with BASIC-HEAD-OPT-COMP appling
+		      and another that is
+		      V -> vavuen , with that rule not in the tree
+		      Maybe the verb's complement requirement is getting
+		      discharged at different places?'
+	
+	1.3 final, corpus
+		Our	final grammar had the same coverage as our initial grammar, the same average number of
+	parses, the same number of parses for the most ambiguous item, and the same sources of ambiguity.
+	
+	1.4 final, testsuite
+			Out of the 61 positive items, 41 parsed (67.2% coverage)
+			Out of the 57 negative items, 21 parsed (47.4% overgeneration)
+		1.4.2 What is the average number of parses per parsed item?
+			1.28 analysis/item
+		1.4.3 How many parses did the most ambiguous item receive?
+			Same as initial run, the most ambiguous sentence was "Ala kip" which got three parses.
+			From the new test suite sentences, the most ambiguous sentence was "Yoru ki kip" which
+			got two parses. This was ambiguous because "yoru" was getting parsed as a pronoun and a verbal clitic.
+		1.4.4 What sources of ambiguity can you identify?
+			Same as initial run, verbal clitics and and pronouns get confused.
+
+===================================================================================================
+
+2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in
+the semantics?
+
+    1. Initial test suite run:
+
+       1. Sentence: 'Oi a kip'
+       	  Parses: 1
+	  Semantics: Reasonable; there is nothing in the MRS that shows the predication of the
+	  vacuous 'a' verbal clitic, which I think is the right analysis.
+
+       2. Sentence: 'Oi yoru kip.'
+       	  Parses: 1
+	  Semantics: This shouldn't parse, but because we haven't added the agr. features yet for most
+	  of our agreement clitics, including 'yoru', this parse isn't blocked. Also, there is a
+	  predication "_1dl.incl_v_rel" for 'yoru' which should not be showing up. The predication
+	  on 'yoru' should be empty.
+
+       3. Sentence: 'Yo u kip.'
+       	  Parses: 1
+	  Semantics: Reasonable, no spurious predications
+
+       4. Sentence: 'Yo ala kip.'
+       	  Parses: 1
+	  Semantics: Should not parse, same underlying issue as in 2
+
+       5. Sentence: 'Manuai i kip.'
+       	  Parses: 1
+	  Semantics: Reasonable, but not parsing due to agreement. Same underlying issue as in  2
+
+       6. Sentence: 'Yoru kip.'
+       	  Parses: 2
+	  Semantics: 'Yoru' is parsed as a verb and a noun. For the noun tree, 'yoru' should have
+	  a pron_rel, not a _1dl.excl_n_rel. The verb parse suffers from the same problem as in 5.
+
+	  There is some uncertainty about which parse is correct:
+
+	  	     In our descriptive resources, we have on page 80:
+
+		     	" In the realis, in the first and second person singular the cross-reference
+			 clitics always appear together with a full independent pronoun. In the other
+			 persons and numbers, agreement is marked alone and there is no accompanying
+			 pronoun (which would be formally identical)."
+
+		      In the Realis Cross-Reference Agreement Clitics (p.82), there is just 'woru'
+		      for 2dl. In the table of independent personal pronons (p.43), there is both
+		     'woru'/'waru' for 2dl.
+
+			 And the IGT (p.82) seems to show that it's actually the pronoun that's being used,
+			 unless 'waru' really is also an agreement marker.
+
+			 	I    va: "Waru panawe teyo aminyao.     Se i    va    anganun?"
+				3sg say   2dl  steal  to-1sg yesterday  who 3sg say   reason
+				'He said, "You (two) stole mine yesterday. Who gave the reason?"'
+
+
+		We're inclined to keep 'waru' as an agreement clitic  verb that can show up without a pronoun
+		preceding it.
+		
+       7. Sentence: 'Awa kip.'
+       	  Parses: 2
+	  Semantics: Verb parse has the same recurring issue as 5., etc. The noun parse -- except that we think
+	  it shouldn't be happening -- has all reasonable semantics.
+
+       8. Sentence: 'To kip.'
+       	  Parses: 1
+	  Semantics: Just the verb parse (with the same issue)
+
+       9. Sentence: 'Ala kip.'
+       	  Parses: 3
+	  Semantics: One verb parse, same issue. The two noun parses correspond to the 'ala' pronoun
+	  that was already included in the grammar which I didn't see when adding our own. That addition
+	  corresponds to the other tree, which incorrectly has a predication (and lacks agr features).
+
+       10. Sentence: 'Waru kip.'
+       	   Parses: 1
+	   Semantics: This is a noun parse; we didn't add 'waru' as a verbal agreement clitic. We
+	   maybe should. We note that there is one parse for 'Woru kip' and besides the issue described
+	   in 5, it is correct.
+
+    2. Final run diff:
+
+       1. Sentence: 'Yo ku kip.'
+       	  Parses: 1
+	  Semantics: Reasonable semantics, no spurious predication on the verb 'ku' (no issue as
+	  mentioned with the realis clitics)
+
+       2. Sentence: 'Oi ko kip.'
+       	  Parses: 1
+	  Semantics: Issue of spurious predication on 'ku' verb.
+
+       3. Sentence: 'Manuai ki kip.'
+       	  Parses: 1
+	  Semantics: No issues.
+
+       4. Sentence: 'Yoru ki kip.'
+       	  Parses: 2
+	  Semantics: This shouldn't have parses -- the sentence should be 'Yoru ka kip,' since 'ka'
+	  is used for all non-sing agreement, and yoru is 1dl. Each of the parses corresponds to
+	  the pronoun 'yoru' and the verbal agr clitic 'yoru.'
+
+       5. Sentence: 'yo pe oi yoru kip'
+       	  Parses: 1
+	  Semantics: The conjunction analysis looks correct, though we didn't add any coordinators --
+	  this was present in the original grammar. The 'yoru' verb has the spurious predication
+	  and no agreement features, which is pretty crucial for conjunction examples like these.
+
+       6. Sentence: 'Tita manuai kip'
+       	  Parses: 1
+	  Semantics: Everything looks correct here. We didn't add any demonstrative determiners, so
+	  this analysis is thanks to our original grammar.
+
+       7. Sentence: 'yaye-yo i ani lei'
+       	  Parse: 1
+	  Semantics: There is something that looks dubious here: ARG1 of the poss_rel is the mother,
+	  and ARG2 is the pronoun. We think it should be the other way around. And then there is
+	  the spurious predication on the agreement clitic.
+
+       8. Sentence: 'yaye-yoru i ani lei'
+       	  Parse: 1
+	  Semantics: Same as above.
+
+       9. Sentence: 'Ala kip'
+          Parse: 3
+	  Semantics: No change from prior test_suite, as expected.
+
+       10.Sentence: 'Waru kip'
+          Parse: 1
+	  Semantics: No change.
+
+===================================================================================================
+
+3. Documentation of the phenomena you have added to your testsuite
+We added:
+- the rest of the NP (determiners)
+- coordination
+- tense
+
+	3.1 Determiners.
+		Titan has two main types of demonstratives, the first (tita, titan,	tito, ilatu) can be
+	either the prenominal determiner to an NP or the independent head of an NP. The second (ita,
+	itan, ito, latu) can only be the postnominal modifer of an NP. There is no evidence in the descriptive
+	resources that there should be a verbal agreement clitic after the NP, in contrast to sentences where
+	there is no demonstrative determiner.
+	
+	Here are some examples:
+	
+	# Prenominal determiner
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Tita manuai kip.
+	this eagle lie
+	This eagle lies.
+	
+	# Independent head
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Tita kip.
+	this lie
+	This lies.
+	
+	# Postnominal modifier
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {determiners}
+	Manuai ita kip.
+	eagle this lie
+	This eagle lies.
+	
+	# Wrong determiner in prenominal position	
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {determiners}
+	Ita manuai kip.
+	this eagle lie
+	This eagle lies.
+
+	Examples of lack of verb agr clitic from descriptive resources:
+
+	Kanian ito        kulicon-kei
+	feast  that(near) bark
+	"That feast [of ours] [will be] tree-bark."
+
+	Tita nga         eyo    poen, tita rop    eyo poen
+        that lime.vessel lsg.ps not   that basket lsg.ps not
+        "That lime pot isn't mine, and that basket isn't mine!"
+
+	
+	3.2 Coordination
+		All examples of coordination in the corpus involve one of two possible conjunctions: 'pe'
+	(and) and 'ne'. Titan therefore has no asyndetic coordination. We have not yeild ruled out
+	omnisyndetic coordination from our choices file, but we expect that Titan has only polysyndetic
+	which we may change in future labs.
+		If Titan has only polysyndetic coordination, then coordination occurs with a conjunction
+	between each coordinated element. 'Pe' can conjoin two VPs or two NPs, but 'ne' can only
+	conjoin two NPs. If two singular NPs are coordinated, the resulting NP is dual.	The entire
+	paradigm from coordinand person and number to coordination person and number is	not given in
+	the descriptive resource. 
+	
+	Here are some examples.
+	
+	# Coordination of VPs
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {coordination}
+	Yo o kip pe oi a kip.
+	1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
+	'I lie and you lie.'
+	
+	# Coordination of subject NPs
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {coordination}
+	Yo pe oi yoru kip.
+	1sg and 2sg 1dl.incl lie.
+	'I and you lie.'
+	
+	# Failed VP coordination using 'ne'
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {coordination}
+	Yo o kip ne oi a kip.
+	1sg 1sg.nfut lie or 2sg 2sg.nfut lie.
+	'I lie or you lie.'
+	'I lie and you lie.'
+	
+	# Wrong verbal clitic agreement
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {coordination}
+	Yo pe oi yoya kip.
+	1sg and 2sg 1pl lie.
+	'I and you lie.'
+	
+	3.3 Tense
+		Titan has two tenses: future and non-future. Future tense is marked by use of the
+	irrealis verbal clitic, and non-future is marked with the realis clitic. The subject must agree with the 
+	verbal clitic in person and number, however the irrealis has a smaller agreement paradigm.
+	
+	Irrealis clitics:
+	ku   ko   ki   ka
+	1sg  2sg  3sg  everything else
+	
+	Here are some examples:
+	
+	# Future tense clitic agreement
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {tense, agreement}
+	Yo ku kip
+	1sg 1sg.fut lie
+	'I will lie.'
+	
+	#Future tense clitic with wrong agreement
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {tense, agreement}
+	Yo ka kip
+	1sg n.sg.fut lie
+	'I will lie.'
+	
+
+===================================================================================================
+
+4. Morphological Changes
+
+	4.1 Morphology Cleanup
+		The first change we made to the morphological choices was to merge verb_pc7 and verbpc_9,
+	verb_pc8 and verb_pc11, and  verb_pc10 and verb_pc12. In all pairs, the only difference between
+	the two were the inputs.
+
+	Here are some parses that were effected by this change.
+
+	Yo  u        kip.
+	1sg 1sg.nfut lie
+	I lie.
+
+	Manuai i        kip
+	eagle  3sg.nfut lie
+	Eagle lies.
+
+	Ala  la ta    ni
+	they go catch fish
+	They go fishing.
+
+		Prior to our morphological change, the verb 'u' underwent verb_pc12 lexical rule. After the
+	change,	the verb underwent verb_pc10 lexical rule, and the semantics did not change. Similar
+	changes occurred for the other examples as well.
+	
+		Unfortunately, this morphological cleanup did not reduce any ambiguity in our grammar.
+	Because the two elements in three pairs had non-overlapping inputs, there was no point of
+	decision in the grammar that we removed.
+	
+	4.2 Morphological Possessives
+		The second change we made to the morphotactic choices was to add possessive morphology. In
+	Titan, all pronouns (except i, yoto, yoya) have a possessive suffix counterpart that can attach
+	to all nouns and only nouns.
+
+	Here are some examples of possessive morphology from the corpus:
+
+	# Possession
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {possession}
+	Yaye-ala i ani lei.
+	mother-3sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.
+
+	We inferred the following:
+	
+	# Failed possession of a verb.
+	Source: author
+	Vetted: f
+	Judgment: g
+	Phenomena: {possession}
+	Kip-ala i ani lei.
+	lie-3sg 3sg eat ginger bulb
+	Their lie ate a ginger bulb.
+	
+	# Failed possession of a pronoun.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yo-ala i ani lei.
+	1sg-3sg 3sg eat ginger bulb
+	Their I ate a ginger bulb.
+	
+	# Failed with two possessors on a noun.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yaya-ala-ala i ani lei.
+	1sg-3sg-3sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.
+	
+	# Failed with possessive prefix.
+	Source: author
+	Vetted: f
+	Judgment: u
+	Phenomena: {possession}
+	Yaya-ala i ani lei.
+	3sg-1sg 3sg eat ginger bulb
+	Their mother ate a ginger bulb.

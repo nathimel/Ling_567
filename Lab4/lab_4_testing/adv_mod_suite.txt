@@ -1,0 +1,31 @@
+# XX: alan in realis as because
+Source: author
+Vetted: f
+Judgment: g
+Yo ulumui das alan, das i camar
+1sg drink sea because sea 3sg dry.up
+'Because I drank the sea, the sea water has dried up.'
+
+# XX: alan in irrealis marks conditional
+Source: author
+Vetted: f
+Judgment: g
+Oi ko kip alan yo ku kip
+2sg 2sg.fut lie if 1sg 1sg.fut lie
+'If you will lie, I will lie.'
+
+# XX: alan clause initial
+Source: author
+Vetted: f
+Judgment: u
+alan oi ko kip yo ku kip
+if 2sg 2sg.fut lie 1sg 1sg.fut lie
+'If you will lie, I will lie.'
+
+# XX: alan final in sub clause
+Source: author
+Vetted: f
+Judgment: u
+oi ko kip yo ku kip alan
+2sg 2sg.fut lie 1sg 1sg.fut lie if
+'You will lie if I will lie.'
