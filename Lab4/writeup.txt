@@ -1,0 +1,62 @@
+Lab 4 Write-Up
+by Nathaniel Imel and David Krug
+
+===================================================================================================
+From the lab 3 grammar to this intial lab 4 grammar, we changed:
+ -  
+From the initial grammar to the final grammar, we changed:
+ - 
+===================================================================================================
+
+1. Initial and final [incr tsdb()] runs results for test corpus and test suite
+	1.1.initial, testsuite
+		 
+
+	1.1.2 average number of parses per parsed item: 1.57
+	1.1.3 Most ambiguous example received: 2
+	1.1.4 Ambiguity:
+		
+	1.2 initial, corpus (using i-length < 8
+		1.2.1 How many items parsed? 24 out of 563 (4.3%)
+		1.2.2 What is the average number of parses per parsed item? 1.50
+		1.2.3 How many parses did the most ambiguous item receive?
+		      
+		1.2.4 What sources of ambiguity can you identify?
+	
+	1.3 final, corpus
+	
+	1.4 final, testsuite
+
+		1.4.2 What is the average number of parses per parsed item?
+
+		1.4.3 How many parses did the most ambiguous item receive?
+
+		1.4.4 What sources of ambiguity can you identify?
+
+===================================================================================================
+
+2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in
+the semantics?
+
+    1. Initial test suite run: 
+
+    2. Final run diff:
+
+
+===================================================================================================
+
+3. Documentation of the phenomena you have added to your testsuite
+We added:
+-	
+
+===================================================================================================
+
+4. Descriptions of any properties of your language illustrated in your test suite but not covered
+by your starter grammar and/or the customization system. (This can be brief if you like: e.g.
+"We added wh questions to the test suite, but didn't work on implementing them this week.")
+
+===================================================================================================
+
+5. If you have identified ways (other than those you already reported) in which the automatically
+created choices file is particularly off-base, please report them here. If you can include IGT from
+the testsuite or your descriptive materials illustrating the problem, that is even better.
