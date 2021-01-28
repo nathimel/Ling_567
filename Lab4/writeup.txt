@@ -131,7 +131,28 @@ We added:
 
 - adverbial clausal modifiers
 
-  We added the adverbial modifier 'alan.' Claire Bowern says that 
+  We added the adverbial modifier 'alan.' It appears at the end of the matrix clause, just before
+  the subordinate clause. We are unclear on whether this means the modifier is a constituent of the
+  embedded subordinate clause or not.
+
+  	   # XX: alan in irrealis marks conditional
+	   Source: author
+	   Vetted: f
+ 	   Judgment: g
+           Oi ko kip alan yo ku kip
+           2sg 2sg.fut lie if 1sg 1sg.fut lie
+           'If you will lie, I will lie.'
+
+  Bowern says that 'alan' is almost always found with the subordinate marked for irrealis; there
+  is one occurrence that she found where the subordinate is realis, and there it means 'because.'
+
+     	   # XX: alan in realis as because
+	   Source: author
+	   Vetted: f
+	   Judgment: g
+	   Yo ulumui das alan, das i camar
+	   1sg drink sea because sea 3sg dry.up
+	   'Because I drank the sea, the sea water has dried up.'
 
 ===================================================================================================
 
