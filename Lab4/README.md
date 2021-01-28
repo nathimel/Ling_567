@@ -24,3 +24,5 @@ TODO:
 	- the word 'alan' is relatively regular, but only shows up in irrealis.
 	Not clear how to implement constraints on a verb to only show up with
 	irrealis mood in the subordinate clause -- maybe ask Emily?
+
+when we have full noun phrase subjects (nonpronominal) are the agreement clitics obligatory?
