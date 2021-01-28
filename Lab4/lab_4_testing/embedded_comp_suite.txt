@@ -6,6 +6,12 @@ ato va yoito pein
 3pc say 1pc.excl woman-pandanus
 'They said, 'we're pandanus-women.''
 
+# XX: va embedding an interrogative
+Source: author
+Vetted: f
+Judgment: g
+
+
 # XX: va embedding nothing
 Source: author
 Vetted: f

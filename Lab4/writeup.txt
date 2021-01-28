@@ -47,7 +47,91 @@ the semantics?
 
 3. Documentation of the phenomena you have added to your testsuite
 We added:
--	
+- wh- questions
+
+  
+
+- embedded complement clauses
+
+  We added two verbs, 'pa ~ poa' and 'va.'
+
+  'Va' usually means say:
+
+       (a) Ato va  Oi  a        kip
+           3pc say 2sg 2sg.nfut lie
+	   'They said, "You're lying!"'
+
+       (b) Colai i  va   Dangan ne kip
+       	   C    3sg say  truth  or lie
+	   'Colai said, "Is this the truth or a lie?"'
+
+  It embeds questions. I have searched the corpora for questions (constructed with wh- words and with
+  the form 'X or Y?') and noticed that if 'va' embeds an irrealis-marked clause, it's usually following
+  a previous clause that isn't marked for irrealis. That is, I haven't seen examples of the form:
+  'X asked "where will we go' straight out, only things like the following example. I'm not sure
+  how much exactly is being embedded in the following examples.
+
+       Ala lemetani i ala va Pamei Yota ka mat, yota ka le ee?
+       3pl ask-trans 3sg 3pl say P  1pl.inc nsg.fut go.to where
+       'They asked her, "Pamei! When we die, where will we go?" (p. 403)
+
+       I   yuyuu i  va  Yaye   pe  dasi    yo  ku      au     e   tite  kua   varina  waru
+       3sg call 3sg say mother and brother 1sg 1sg.fut leave from where there to      2dl
+       'He called and said, "My mother and brother! How will I get up to you?"'
+
+  And interestingly, when its embedded clause marked irrealis, 'ka' can mean 'want':
+
+  	 Alu i va Kalomat yo va ku le Moanus
+	 alu 3sg say K       1sg want 1sg.fut go.to M
+	 'Alu said, "Kalomat! I want to go to Manus."'
+
+  But the converse does not hold:
+
+     	 Kalomat i   va ku  sui        palenkei"
+	 K       3sg say imp scrape.off  sago-leaf.ribs
+	 'Kalomat said, "Scrape off sago-leaf ribs!"'
+
+  We are still searching the corpora provided, but we wonder whether an individual might
+  say something with future or other irrealis marking, but doesn't want the clause to be true,
+  like the following contrived example:
+
+      	 Manuai va  yo  ku      mat
+	 Eagle  say 1sg 1sg.fut die
+	 'Eagle said, "I will die."'
+
+  Maybe we could write two lexical entries for 'va,' and then get ambiguity if we ever see it taking
+  a clause with irrealis marking. But perhaps that's too strong a claim that there is genuine
+  ambiguity in such sentences?
+
+  And then there is the verb 'pa ~ poa' which only means 'want' -- Claire Bowern calls it a
+  desiderative marker. It is
+  
+  	       "preceded by an optional subject agreement clitic, and the main
+  	       lexical verb denoting the action desired is preceded by the irrealis clitic, which agrees
+ 	        with the subject of the whole clause. (p. 152) And there are no examples of the desiderative
+		where the subject of wanting and the subject of the lexical verb are different; i.e., none
+		of the form 'X wants Y to do something.' (p.456).
+
+  Bowern uses the following two examples to illustrate apparent optionality of the subject agreement
+  marker.
+
+	(a) Yo  pa   ku  le  Yap.
+	    1sg want 1sg.fut go.to Yap
+	    'I want to go to Yap.'
+
+	(b) Hi Moi i   pa   ki       nyak   ile polenpongopong.
+	    H.M.  3sg  want 3sg.fut  climb  into peak-pandanus-palm
+	    'Hi Moi wanted to climb to the top of a pandanus palm.'
+
+		In (a), the desiderative is preceded only by the first free person singular pronoun 'yo';
+ 		there is no agreement marker 'u' present. In (b), however, an agreement marker 'i' is present.
+		There is no discernable conditioning factor in the data, although it is always absent with
+		first and second person singular subjects. (ibid)
+
+
+- adverbial clausal modifiers
+
+  We added the adverbial modifier 'alan.' Claire Bowern says that 
 
 ===================================================================================================
 
