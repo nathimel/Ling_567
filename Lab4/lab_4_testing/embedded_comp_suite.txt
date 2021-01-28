@@ -30,12 +30,66 @@ ato va pein
 3pc say woman-pandanus
 'They said, 'pandanus-women.''
 
-# XX: va embedding a question
-Source: corpus
+# XX: Pa w/ non-second person, w/ clitic
+Source: author
 Vetted: f
-Judgment: g
+Judgement: g
+Yo u pa ku kip.
+1sg 1sg.nfut want 1.sg.fut lie
+I want to lie.
 
-# XX: va as desire (irrealis) embedding a VP
-Source:
-Vetted:
-Judgment: g
+# XX: Pa w/ non-second person, w/o clitic
+Source: author
+Vetted: f
+Judgement: g
+Yo pa ku kip.
+1sg want 1.sg.fut lie
+I want to lie.
+
+# XX: Poa w/ second person
+Source: author
+Vetted: f
+Judgement: g
+Oi a poa ku kip.
+2sg 2sg.nfut want 1.sg.fut lie
+You want to lie.
+
+# XX: Poa w/ second person, w/o clitic
+Source: author
+Vetted: f
+Judgement: g
+Oi poa ku kip.
+2sg want 1.sg.fut lie
+You want to lie.
+
+# XX: Poa w/ non-second person, w/ clitic
+Source: author
+Vetted: f
+Judgement: u
+Yo u poa ku kip.
+1sg 1sg.nfut want 1.sg.fut lie
+I want to lie.
+
+# XX: Poa w/ non-second person, w/o clitic
+Source: author
+Vetted: f
+Judgement: u
+Yo poa ku kip.
+1sg want 1.sg.fut lie
+I want to lie.
+
+# XX: Pa w/ second person
+Source: author
+Vetted: f
+Judgement: u
+Oi a pa ku kip.
+2sg 2sg.nfut want 1.sg.fut lie
+You want to lie.
+
+# XX: Pa w/ second person, w/o clitic
+Source: author
+Vetted: f
+Judgement: u
+Oi pa ku kip.
+2sg want 1.sg.fut lie
+You want to lie.
