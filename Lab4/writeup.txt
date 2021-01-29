@@ -2,10 +2,9 @@ Lab 4 Write-Up
 by Nathaniel Imel and David Krug
 
 ===================================================================================================
-From the lab 3 grammar to this intial lab 4 grammar, we changed:
- -  
-From the initial grammar to the final grammar, we changed:
- - 
+From the final lab 3 grammar to this intial lab 4 grammar, we changed nothing.
+From the initial grammar to the final grammar, we changed nothing because the customization system
+was down.
 ===================================================================================================
 
 1. Initial and final [incr tsdb()] runs results for test corpus and test suite
@@ -20,10 +19,10 @@ From the initial grammar to the final grammar, we changed:
 		1.2.3 How many parses did the most ambiguous item receive?
 		1.2.4 What sources of ambiguity can you identify?
 	
-	1.3 final, corpus
+	1.3 final, corpus (no difference)
 	
 	1.4 final, testsuite
-
+	
 		1.4.2 What is the average number of parses per parsed item?
 
 		1.4.3 How many parses did the most ambiguous item receive?
@@ -35,7 +34,7 @@ From the initial grammar to the final grammar, we changed:
 2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in
 the semantics?
 
-    1. Initial test suite run: 
+    1. Initial test suite run: see lab3
     2. Final run diff:
 
 ===================================================================================================
@@ -201,7 +200,10 @@ We added:
     'The person said, "And what's this, a pulpul, a pulpul?"'
 
 
-  From the corpora, have the following two examples of 'keis' = when:
+  From the corpora, have the following two examples of 'keis' = when, and noticed that 'akeis'
+  is a form. Does this have to do with the fact 'keis' may be an argument to the transitive
+  verb 'me' and 'akeis' seems not to be an argument to the main verb? Or should we just treat
+  them as variations on the same lexical item?
 
      Ala ka      me   keis
      3pl nsg.fut come when
