@@ -169,15 +169,17 @@ We added:
        'How are you?'
 
   There were no examples of (ta)ce. We found two examples of 'tapeta' but they were much too
-  complicated to use for reverse-engineering test cases.
+  complicated to use, even for reverse engineering test cases.
 
-  There was only one example of 'tavai' = who, but it was too complicated(ellipsis?) to use:
+  There was only one example of 'tavai' = who, but it was too complicated to use:
 
   	papu-n      i  va  ane     tavai amo  pein  yo  pasan      poen
 	father-3sg 3sg say perhaps who   some woman 1sg know_about not
 	'Father said, "Perhaps who? Some woman? I don't know anything about it."'
 
-  From the corpora, we have examples of 'e ca', of which the following was the simplest:
+  Since we don't have a lexical entry for the preposition 'e', we won't write
+  test cases for 'e ca' in this lab. We hope to implement the preposition and its
+  possessive version in a future lab.
 
      Moe ramat  i   va  e    ca   ito  a pulpul, a pulpul
      def person 3sg say pred what this a pulpul a pulpul
@@ -234,9 +236,8 @@ We added:
 
   It embeds questions. I have searched the corpora for questions (constructed with wh- words and with
   the form 'X or Y?') and noticed that if 'va' embeds an irrealis-marked clause, it's usually following
-  a previous clause that isn't marked for irrealis. That is, I haven't seen examples of the form:
-  'X asked "where will we go' straight out, only things like the following example. I'm not sure
-  how much exactly is being embedded in the following examples.
+  a previous vocative. That is, I haven't seen examples of the form: 'X asked "where will we go'
+  straight out, only things like the following examples.
 
        Ala lemetani  i   ala va  Pamei Yota    ka      mat, yota    ka      le    ee?
        3pl ask-trans 3sg 3pl say P     1pl.inc nsg.fut die  1pl.inc nsg.fut go.to where
@@ -246,29 +247,28 @@ We added:
        3sg call 3sg say mother and brother 1sg 1sg.fut leave from where there to      2dl
        'He called and said, "My mother and brother! How will I get up to you?"'
 
-  And interestingly, when its embedded clause marked irrealis, 'ka' can mean 'want':
+  And interestingly, when va's embedded clause is marked irrealis, it can mean 'want':
 
   	 Alu i va Kalomat yo va ku le Moanus
 	 alu 3sg say K       1sg want 1sg.fut go.to M
-	 'Alu said, "Kalomat! I want to go to Manus."'
+	 'Alu said, "Kalomat! I want to go to Manus."' (from corpus)
 
   But the converse does not hold:
 
-     	 Kalomat i   va ku  sui        palenkei"
+     	 Kalomat i   va  ku  sui        palenkei"
 	 K       3sg say imp scrape.off  sago-leaf.ribs
-	 'Kalomat said, "Scrape off sago-leaf ribs!"'
+	 'Kalomat said, "Scrape off sago-leaf ribs!"' (corpus)
 
-  We are still searching the corpora provided, but we wonder whether an individual might
-  say something with future or other irrealis marking, but doesn't want the clause to be true,
-  like the following contrived example:
+  We wonder whether an individual might say something with future or other irrealis marking,
+  but doesn't want the clause to be true, maybe like the following contrived example:
 
       	 Manuai va  yo  ku      mat
 	 Eagle  say 1sg 1sg.fut die
-	 'Eagle said, "I will die."'
+	 'Eagle said, "I will die."' (made-up)
 
-  Maybe we could write two lexical entries for 'va,' and then get ambiguity if we ever see it taking
-  a clause with irrealis marking. But perhaps that's too strong a claim that there is genuine
-  ambiguity in such sentences?
+  So we are considering writing two lexical entries for 'va,' but we'd get ambiguity if we ever see it taking
+  a clause with irrealis marking. Are we dealing with a genuine ambiguity here, and would it not be worth
+  adding a separate lexical entry?
 
   And then there is the verb 'pa ~ poa' which only means 'want' -- Claire Bowern calls it a
   desiderative marker. It is

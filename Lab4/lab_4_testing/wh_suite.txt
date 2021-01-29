@@ -152,12 +152,6 @@ akeis oi ani yo
 when 2sg eat 1sg
 'When do you eat me?'
 
-# XX: e ca in situ
-Source: author
-Vetted: f
-Judgment: g
-Phenomena: {wh-questions}
-
 # XX: tapeta in situ
 Source: author
 Vetted: f
