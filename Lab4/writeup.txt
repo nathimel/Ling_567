@@ -66,6 +66,7 @@ We added:
 
   Test cases for 'ca':
 
+       #
        Source: author
        Vetted: f
        Judgment: g
@@ -74,7 +75,7 @@ We added:
        2sg 2sg eat what
        'What are you eating?'
 
-       # XX: ca not in-situ
+       # ca not in-situ
        Source: author
        Vetted: f
        Judgment: u
@@ -83,7 +84,7 @@ We added:
        what 2sg 2sg eat
        'What are you eating?
 
-       # XX: se in situ
+       # se in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -92,7 +93,7 @@ We added:
        2sg who
        'Who are you?'
 
-       # XX: se not in situ
+       # se not in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -103,7 +104,7 @@ We added:
 
  Test cases for 'ite' and 'tite' were the same:
 
-       # XX: ite in situ
+       # ite in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -112,7 +113,7 @@ We added:
        2sg woman where
        'You're a woman from where?'
 
-       # XX: ite not in situ
+       # ite not in situ
        Source: author
        Vetted: f
        Judgment: u
@@ -123,7 +124,7 @@ We added:
 
   We only found 'rehe' and not 'kerehe'
 
-       # XX: rehe in situ
+       # rehe in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -132,7 +133,7 @@ We added:
        eagle where
        'Where is the eagle?'
 
-       # XX: rehe in situ
+       # rehe in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -141,7 +142,7 @@ We added:
        eagle 3sg go where
        'Where did the eagle go?'
 
-       # XX: rehe not in situ
+       # rehe not in situ
        Source: author
        Vetted: f
        Judgment: u
@@ -150,7 +151,7 @@ We added:
        where eagle 3sg go
        'Where did the eagle go?'
 
-       # XX: etepe in situ
+       # etepe in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -159,7 +160,7 @@ We added:
        2sg how.is.it
        'How are you?'
 
-       # XX: etepe not in situ
+       # etepe not in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -298,7 +299,7 @@ We added:
 --------------------------------------------------------------------------------------------------------------
 - adverbial clausal modifiers
 
-  We added the adverbial modifier 'alan.' It appears at the end of the matrix clause, just before
+  We added the adverbial modifier 'alan', which means 'if'. It appears at the end of the matrix clause, just before
   the subordinate clause. We are unclear on whether this means the modifier is a constituent of the
   embedded subordinate clause or not.
 
