@@ -15,15 +15,11 @@ ku_3_gr := arg0e_gtr &
 
 ki_3_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE fut,
-                                   ASPECT pot,
-                                   MOOD oblig,
-                                   cond  ] ] >,
+                                   ASPECT pot ] ] >,
     FLAGS.TRIGGER "ki_3" ].
 
 a_2_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE nfut,
-                                   ASPECT ipfv,
-                                   pfv ,
                                    MOOD imp ] ] >,
     FLAGS.TRIGGER "a_2" ].
 
