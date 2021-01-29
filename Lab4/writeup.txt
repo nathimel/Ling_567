@@ -45,9 +45,23 @@ We added:
 - wh- questions
 
   Wh-questions were illuminating because they showed that sentences
-  don't need a verb. Sometimes the wh- pronouns followed a verb, but
-  other times they could just follow a nominal or an adverb,
-  such as '2sg who?' or 'perhaps who'?
+  don't need a verb. In fact, Claire Bowern says on p. 139 of the
+  descriptive resources that
+
+  	'not all clauses have verbs, and there
+	appears to be no copula in Titan, and that a predicate can be a
+	noun, as in the equative sentences "he's a snake".'
+
+  So we plan to write test cases for sentences of the form:
+
+      "Oi cinal"
+      2sg devil
+      'You're a devil.'
+
+  in the next lab and implement this phenomena as soon as possible. Therefore,
+  we want to keep our test cases for wh-questions of the form
+
+     (PRO)NOUN WH-PRONOUN
   
   Titan has the following interrogative pronouns:
 
