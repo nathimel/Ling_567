@@ -17,18 +17,6 @@ Ca oi a ani
 what 2sg 2sg eat
 'What are you eating?
 
-# XX: sa in situ
-Source: author
-Vetted: f
-Judgment: u
-Phenomena: {wh-questions}
-
-# XX: sa not in situ
-Source: author
-Vetted: f
-Judgment: u
-Phenomena: {wh-questions}
-
 # XX: se in situ
 Source: author
 Vetted: f
@@ -46,18 +34,6 @@ Phenomena: {wh-questions}
 Se i nyamiri oi
 who 3sg love 2sg
 'Who loves you?'
-
-# XX: tavai in situ
-Source: author
-Vetted: f
-Judgment: g
-Phenomena: {wh-questions}
-
-# XX: tavai not in situ
-Source: author
-Vetted: f
-Judgment: g
-Phenomena: {wh-questions}
 
 # XX: ite in situ
 Source: author
@@ -130,3 +106,62 @@ Phenomena: {wh-questions}
 Oi etepe
 2sg how.is.it
 'How are you?'
+
+# XX: etepe not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+etepe oi
+how.is.it 2sg
+'How are you?'
+
+# XX: wee in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+ato la wee
+3pc be where
+'Where are they?'
+
+# XX: wee not in situ
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {wh-questions}
+wee ato la
+where 3pc be
+'Where are they?'
+
+# XX: (a)keis in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+oi ani yo akeis
+2sg eat 1sg when
+'When do you eat me?'
+
+# XX: (a)keis not in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+akeis oi ani yo
+when 2sg eat 1sg
+'When do you eat me?'
+
+# XX: e ca in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
+
+# XX: tapeta in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenoomena: {wh-questions}
+
+

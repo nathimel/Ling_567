@@ -17,6 +17,9 @@ TODO:
 	- I already know how to implement these, so I'll do as many as I can.
 	NB: I had a hard time constructing simple enough test cases.
 
+		-NB: Emily said to not include test cases where there are no
+		verbs.
+
 	CLAUSAL COMPLEMENTS
 	- the verb 'va' (='say') is a great one to implement.
 

@@ -10,8 +10,6 @@ From the initial grammar to the final grammar, we changed:
 
 1. Initial and final [incr tsdb()] runs results for test corpus and test suite
 	1.1.initial, testsuite
-		 
-
 	1.1.2 average number of parses per parsed item: 1.57
 	1.1.3 Most ambiguous example received: 2
 	1.1.4 Ambiguity:
@@ -20,7 +18,6 @@ From the initial grammar to the final grammar, we changed:
 		1.2.1 How many items parsed? 24 out of 563 (4.3%)
 		1.2.2 What is the average number of parses per parsed item? 1.50
 		1.2.3 How many parses did the most ambiguous item receive?
-		      
 		1.2.4 What sources of ambiguity can you identify?
 	
 	1.3 final, corpus
@@ -39,9 +36,7 @@ From the initial grammar to the final grammar, we changed:
 the semantics?
 
     1. Initial test suite run: 
-
     2. Final run diff:
-
 
 ===================================================================================================
 
@@ -49,10 +44,182 @@ the semantics?
 We added:
 - wh- questions
 
+  Wh-questions were illuminating because they showed that sentences
+  don't need a verb. Sometimes the wh- pronouns followed a verb, but
+  other times they could just follow a nominal or an adverb,
+  such as '2sg who?' or 'perhaps who'?
   
+  Titan has the following interrogative pronouns:
+
+     	  Titan	     English gloss
+     	  ca   	     what
+	  se	     what
+	  tavai	     who
+	  (t)ite     where
+	  (ke)rehe   to where
+	  wei, wee   to where
+	  (a)keis    when(fut only)
+	  e ca	     how (with what)
+	  (y)etepe   for what [purpose]
+	  (ta)ce     how many
+	  tapeta     how much
+
+  Test cases for 'ca':
+
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi a ani ca
+       2sg 2sg eat what
+       'What are you eating?'
+
+       # XX: ca not in-situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       Ca oi a ani
+       what 2sg 2sg eat
+       'What are you eating?
+
+       # XX: se in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       oi se
+       2sg who
+       'Who are you?'
+
+       # XX: se not in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Se i nyamiri oi
+       who 3sg love 2sg
+       'Who loves you?'
+
+ Test cases for 'ite' and 'tite' were the same:
+
+       # XX: ite in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi pin ite
+       2sg woman where
+       'You're a woman from where?'
+
+       # XX: ite not in situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       ite oi pin
+       where 2sg woman
+       'You're a woman from where?'
+
+  We only found 'rehe' and not 'kerehe'
+
+       # XX: rehe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Manuai rehe
+       eagle where
+       'Where is the eagle?'
+
+       # XX: rehe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Manuai i la rehe
+       eagle 3sg go where
+       'Where did the eagle go?'
+
+       # XX: rehe not in situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       rehe manuai i la
+       where eagle 3sg go
+       'Where did the eagle go?'
+
+       # XX: etepe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi etepe
+       2sg how.is.it
+       'How are you?'
+
+       # XX: etepe not in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       etepe oi
+       how.is.it 2sg
+       'How are you?'
+
+  There were no examples of (ta)ce. We found two examples of 'tapeta' but they were much too
+  complicated to use for reverse-engineering test cases.
+
+  There was only one example of 'tavai' = who, but it was too complicated(ellipsis?) to use:
+
+  	papu-n      i  va  ane     tavai amo  pein  yo  pasan      poen
+	father-3sg 3sg say perhaps who   some woman 1sg know_about not
+	'Father said, "Perhaps who? Some woman? I don't know anything about it."'
+
+  From the corpora, we have examples of 'e ca', of which the following was the simplest:
+
+     Moe ramat  i   va  e    ca   ito  a pulpul, a pulpul
+     def person 3sg say pred what this a pulpul a pulpul
+    'The person said, "And what's this, a pulpul, a pulpul?"'
+
+
+  From the corpora, have the following two examples of 'keis' = when:
+
+     Ala ka      me   keis
+     3pl nsg.fut come when
+     'When will they come back?'
+
+     oi ani yo akeis
+     2sg eat 1sg when
+     'When do you eat me?'
+
+  We found no examples of 'wei' as an interrogative pronoun, but 'wee' is one. It
+  seems to require a verb such as 'la' to precede it, though we don't have that
+  high-frequency verb in our lexicon yet. All examples of 'wee' in the corpora
+  were of the form:
+
+     Moen Hus i  va  ato la wee
+     def  H  3sg say 3pc be where
+    'The man from Hus said, "where are they?"'
+
+     Pati eoi    i   la wee
+     wife 2sg.ps 3sg be where
+     'Where are your wives?'
+
+     Ni    eoi, [relative clause] i   la wee
+     fish 2sg.ps	  	  3sg go where
+     'Your fish  ...          where did they go?'
+  
+  We don't have test cases for 'sa' = what, because the only example has it occuring
+  in a phrase where there are a number of unexplained words:
+
+    i   va Dayebui i  su   kut pe ya  kara sa
+    3sg say D     3sg flow ?? and def ??   what
+    'He said, "Menstrual blood is flowing, and what is it?"'
 
 - embedded complement clauses
-
+----------------------------------------------------------------------------------------------
   We added two verbs, 'pa ~ poa' and 'va.'
 
   'Va' usually means say:
@@ -71,8 +238,8 @@ We added:
   'X asked "where will we go' straight out, only things like the following example. I'm not sure
   how much exactly is being embedded in the following examples.
 
-       Ala lemetani i ala va Pamei Yota ka mat, yota ka le ee?
-       3pl ask-trans 3sg 3pl say P  1pl.inc nsg.fut go.to where
+       Ala lemetani  i   ala va  Pamei Yota    ka      mat, yota    ka      le    ee?
+       3pl ask-trans 3sg 3pl say P     1pl.inc nsg.fut die  1pl.inc nsg.fut go.to where
        'They asked her, "Pamei! When we die, where will we go?" (p. 403)
 
        I   yuyuu i  va  Yaye   pe  dasi    yo  ku      au     e   tite  kua   varina  waru
@@ -128,7 +295,7 @@ We added:
 		There is no discernable conditioning factor in the data, although it is always absent with
 		first and second person singular subjects. (ibid)
 
-
+--------------------------------------------------------------------------------------------------------------
 - adverbial clausal modifiers
 
   We added the adverbial modifier 'alan.' It appears at the end of the matrix clause, just before
@@ -165,3 +332,7 @@ by your starter grammar and/or the customization system. (This can be brief if y
 5. If you have identified ways (other than those you already reported) in which the automatically
 created choices file is particularly off-base, please report them here. If you can include IGT from
 the testsuite or your descriptive materials illustrating the problem, that is even better.
+
+6. Corrections to the trigger.mtr file made to get ace running:
+   On line 21, ...
+   On line 26, ...
