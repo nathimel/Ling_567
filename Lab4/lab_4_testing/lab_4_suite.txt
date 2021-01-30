@@ -775,6 +775,7 @@ Phenomena: {coordination}
 Yo pe oi taru kip.
 1sg CONJ 2dl.excl 2sg lie.
 'I and you lie.'
+
 # 85: Optional prenominal demonstrative
 Source: author
 Vetted: f
@@ -1076,7 +1077,7 @@ mother-1pl.excl 3sg eat ginger-bulb
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Oi a ani ca
 2sg 2sg eat what
 'What are you eating?'
@@ -1085,7 +1086,7 @@ Oi a ani ca
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Ca oi a ani
 what 2sg 2sg eat
 'What are you eating?
@@ -1094,7 +1095,7 @@ what 2sg 2sg eat
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 oi se
 2sg who
 'Who are you?'
@@ -1103,7 +1104,7 @@ oi se
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Se i nyamiri oi
 who 3sg love 2sg
 'Who loves you?'
@@ -1112,7 +1113,7 @@ who 3sg love 2sg
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Oi pin ite
 2sg woman where
 'You're a woman from where?'
@@ -1121,7 +1122,7 @@ Oi pin ite
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 ite oi pin
 where 2sg woman
 'You're a woman from where?'
@@ -1130,7 +1131,7 @@ where 2sg woman
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Oi pin tite
 2sg woman where
 'You're a woman from where?'
@@ -1139,7 +1140,7 @@ Oi pin tite
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Tite oi pin
 where 2sg woman
 'You're a woman from where?'
@@ -1148,7 +1149,7 @@ where 2sg woman
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Manuai rehe
 eagle where
 'Where is the eagle?'
@@ -1157,7 +1158,7 @@ eagle where
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Manuai i la rehe
 eagle 3sg go where
 'Where did the eagle go?'
@@ -1166,7 +1167,7 @@ eagle 3sg go where
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 rehe manuai i la
 where eagle 3sg go
 'Where did the eagle go?'
@@ -1175,7 +1176,7 @@ where eagle 3sg go
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 Oi etepe
 2sg how.is.it
 'How are you?'
@@ -1184,7 +1185,7 @@ Oi etepe
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 etepe oi
 how.is.it 2sg
 'How are you?'
@@ -1193,7 +1194,7 @@ how.is.it 2sg
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 ato la wee
 3pc be where
 'Where are they?'
@@ -1202,7 +1203,7 @@ ato la wee
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh-questions}
+Phenomena: {wh}
 wee ato la
 where 3pc be
 'Where are they?'
@@ -1211,7 +1212,7 @@ where 3pc be
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 oi ani yo akeis
 2sg eat 1sg when
 'When do you eat me?'
@@ -1220,7 +1221,7 @@ oi ani yo akeis
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh-questions}
+Phenomena: {wh}
 akeis oi ani yo
 when 2sg eat 1sg
 'When do you eat me?'
@@ -1229,6 +1230,7 @@ when 2sg eat 1sg
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {cl-mod}
 Yo ulumui das alan, das i camar
 1sg drink sea because sea 3sg dry.up
 'Because I drank the sea, the sea water has dried up.'
@@ -1237,6 +1239,7 @@ Yo ulumui das alan, das i camar
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {cl-mod}
 Oi ko kip alan yo ku kip
 2sg 2sg.fut lie if 1sg 1sg.fut lie
 'If you will lie, I will lie.'
@@ -1245,6 +1248,7 @@ Oi ko kip alan yo ku kip
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {cl-mod}
 alan oi ko kip yo ku kip
 if 2sg 2sg.fut lie 1sg 1sg.fut lie
 'If you will lie, I will lie.'
@@ -1253,6 +1257,7 @@ if 2sg 2sg.fut lie 1sg 1sg.fut lie
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {cl-mod}
 oi ko kip yo ku kip alan
 2sg 2sg.fut lie 1sg 1sg.fut lie if
 'You will lie if I will lie.'
@@ -1261,6 +1266,7 @@ oi ko kip yo ku kip alan
 Source: corpus
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 ato va yoito pein
 3pc say 1pc.excl woman-pandanus
 'They said, 'we're pandanus-women.''
@@ -1269,6 +1275,7 @@ ato va yoito pein
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 Manuai i va ko kip
 Eagle 3sg say imp lie
 'Eagle said, "Lie!"'
@@ -1277,6 +1284,7 @@ Eagle 3sg say imp lie
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 Manuai i va  yo  ku      mat
 Eagle  say 1sg 1sg.fut die
 'Eagle said, "I will die."
@@ -1285,6 +1293,7 @@ Eagle  say 1sg 1sg.fut die
 Source: corpus
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 i va ki puti yo
 3sg want 3sg.fut marry 1sg
 'He wants to marry me'
@@ -1293,6 +1302,7 @@ i va ki puti yo
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {emb-d}
 ato va
 3pc say
 'They said.'
@@ -1301,6 +1311,7 @@ ato va
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {emb-d}
 ato va yoito
 3pc said 1pc.excl
 'They said, 'we.''
@@ -1309,6 +1320,7 @@ ato va yoito
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 ato va pein
 3pc say woman-pandanus
 'They said, 'pandanus-women.''
@@ -1317,6 +1329,7 @@ ato va pein
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Yo u pa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
@@ -1325,6 +1338,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Yo pa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
@@ -1333,6 +1347,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Oi a poa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
@@ -1341,6 +1356,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Oi poa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.
@@ -1349,6 +1365,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Yo u poa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
@@ -1357,6 +1374,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Yo poa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
@@ -1365,6 +1383,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Oi a pa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
@@ -1373,6 +1392,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Oi pa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.

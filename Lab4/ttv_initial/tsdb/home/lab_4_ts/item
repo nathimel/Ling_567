@@ -95,3 +95,60 @@
 95@author@@@1@det@Titan manuai kip.@@@@0@3@this.emph eagle lieThis eagle lies.@dn@january 15, 2021
 96@author@@@1@det@Tito manuai kip.@@@@0@3@that eagle lie.That eagle lies.@dn@january 15, 2021
 97@author@@@1@det@Ilatu manuai kip.@@@@0@3@that eagle lie.That eagle lies.@dn@january 15, 2021
+98@author@@@1@possession@yaye-yo i ani lei@@@@1@4@mother-1sg 3sg eat ginger-bulb'My mother ate a ginger bulb'@dn@january 15, 2021
+99@author@@@1@possession@yaye-oi i ani lei@@@@1@4@mother-2sg 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+100@author@@@1@possession@yaye-yotaru i ani lei@@@@1@4@mother-1dl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+101@author@@@1@possession@yaye-yoru i ani lei@@@@1@4@mother-1dl.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+102@author@@@1@possession@yaye-waru i ani lei@@@@1@4@mother-2dl 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+103@author@@@1@possession@yaye-aru i ani lei@@@@1@4@mother-3dl 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+104@author@@@1@possession@yaye-yoito i ani lei@@@@1@4@mother-1pc.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+105@author@@@1@possession@yaye-wato i ani lei@@@@1@4@mother-2pc 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+106@author@@@1@possession@yaye-ato i ani lei@@@@1@4@mother-3pc 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+107@author@@@1@possession@yaye-yota i ani lei@@@@1@4@mother-1pl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+108@author@@@1@possession@yaye-awa i ani lei@@@@1@4@mother-2pl 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+109@corpus@@@1@possession@yaye-ala i ani lei@@@@1@4@mother-3pl 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+110@author@@@1@possession@Manuai i kip-ala@@@@0@3@Eagle 3sg lie-3pl'Eagle lies-their'@dn@january 15, 2021
+111@author@@@1@possession@kip-ala i kip@@@@0@3@lies-3pl 3sg lie'Lies-their lie'@dn@january 15, 2021
+112@author@@@1@possession@yaye-ala-ala i ani lei@@@@0@4@mother-3pl-3pl 3sg eat ginger-bulb'Their mother ate a ginger bulb.'@dn@january 15, 2021
+113@author@@@1@possession@yaye-yo-yotaru i ani lei@@@@0@4@mother-1sg.excl.-1dl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+114@author@@@1@possession@ala-yaye i ani lei@@@@0@4@3pl-mother 3sg eat ginger-bulb'Their mother ate a ginger bulb.'@dn@january 15, 2021
+115@autho@@@1@possession@oi-yaye i ani lei@@@@0@4@2sg-mother 3sg eat ginger-bulb'Your mother ate a ginger bulb.'@dn@january 15, 2021
+116@author@@@1@possession@yaye-i i ani lei@@@@0@4@mother-3sg 3sg eat ginger-bulb'Its mother ate a ginger bulb.'@dn@january 15, 2021
+117@author@@@1@possession@yaye-yoto i ani lei@@@@0@4@mother-1pc.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+118@author@@@1@possession@yaye-yoya i ani lei@@@@0@4@mother-1pl.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+119@author@@@1@wh@Oi a ani ca@@@@1@4@2sg 2sg eat what'What are you eating?'@dn@january 15, 2021
+120@author@@@1@wh@Ca oi a ani@@@@0@4@what 2sg 2sg eat'What are you eating?@dn@january 15, 2021
+121@author@@@1@wh@oi se@@@@1@2@2sg who'Who are you?'@dn@january 15, 2021
+122@author@@@1@wh@Se i nyamiri oi@@@@1@4@who 3sg love 2sg'Who loves you?'@dn@january 15, 2021
+123@author@@@1@wh@Oi pin ite@@@@1@3@2sg woman where'You're a woman from where?'@dn@january 15, 2021
+124@author@@@1@wh@ite oi pin@@@@0@3@where 2sg woman'You're a woman from where?'@dn@january 15, 2021
+125@author@@@1@wh@Oi pin tite@@@@1@3@2sg woman where'You're a woman from where?'@dn@january 15, 2021
+126@author@@@1@wh@Tite oi pin@@@@0@3@where 2sg woman'You're a woman from where?'@dn@january 15, 2021
+127@author@@@1@wh@Manuai rehe@@@@1@2@eagle where'Where is the eagle?'@dn@january 15, 2021
+128@author@@@1@wh@Manuai i la rehe@@@@1@4@eagle 3sg go where'Where did the eagle go?'@dn@january 15, 2021
+129@author@@@1@wh@rehe manuai i la@@@@0@4@where eagle 3sg go'Where did the eagle go?'@dn@january 15, 2021
+130@author@@@1@wh@Oi etepe@@@@1@2@2sg how.is.it'How are you?'@dn@january 15, 2021
+131@author@@@1@wh@etepe oi@@@@0@2@how.is.it 2sg'How are you?'@dn@january 15, 2021
+132@author@@@1@wh@ato la wee@@@@1@3@3pc be where'Where are they?'@dn@january 15, 2021
+133@author@@@1@wh@wee ato la@@@@0@3@where 3pc be'Where are they?'@dn@january 15, 2021
+134@author@@@1@wh@oi ani yo akeis@@@@1@4@2sg eat 1sg when'When do you eat me?'@dn@january 15, 2021
+135@author@@@1@wh@akeis oi ani yo@@@@1@4@when 2sg eat 1sg'When do you eat me?'@dn@january 15, 2021
+136@author@@@1@cl-mod@Yo ulumui das alan, das i camar@@@@1@7@1sg drink sea because sea 3sg dry.up'Because I drank the sea, the sea water has dried up.'@dn@january 15, 2021
+137@author@@@1@cl-mod@Oi ko kip alan yo ku kip@@@@1@7@2sg 2sg.fut lie if 1sg 1sg.fut lie'If you will lie, I will lie.'@dn@january 15, 2021
+138@author@@@1@cl-mod@alan oi ko kip yo ku kip@@@@0@7@if 2sg 2sg.fut lie 1sg 1sg.fut lie'If you will lie, I will lie.'@dn@january 15, 2021
+139@author@@@1@cl-mod@oi ko kip yo ku kip alan@@@@0@7@2sg 2sg.fut lie 1sg 1sg.fut lie if'You will lie if I will lie.'@dn@january 15, 2021
+140@corpus@@@1@emb-d@ato va yoito pein@@@@1@4@3pc say 1pc.excl woman-pandanus'They said, 'we're pandanus-women.''@dn@january 15, 2021
+141@author@@@1@emb-d@Manuai i va ko kip@@@@1@5@Eagle 3sg say imp lie'Eagle said, "Lie!"'@dn@january 15, 2021
+142@author@@@1@emb-d@Manuai i va  yo  ku      mat@@@@1@6@Eagle  say 1sg 1sg.fut die'Eagle said, "I will die."@dn@january 15, 2021
+143@corpus@@@1@emb-d@i va ki puti yo@@@@1@5@3sg want 3sg.fut marry 1sg'He wants to marry me'@dn@january 15, 2021
+144@author@@@1@emb-d@ato va@@@@0@2@3pc say'They said.'@dn@january 15, 2021
+145@author@@@1@emb-d@ato va yoito@@@@0@3@3pc said 1pc.excl'They said, 'we.''@dn@january 15, 2021
+146@author@@@1@emb-d@ato va pein@@@@0@3@3pc say woman-pandanus'They said, 'pandanus-women.''@dn@january 15, 2021
+147@author@@@1@emb-d@Yo u pa ku kip.@@@@1@5@1sg 1sg.nfut want 1.sg.fut lieI want to lie.@dn@january 15, 2021
+148@author@@@1@emb-d@Yo pa ku kip.@@@@1@4@1sg want 1.sg.fut lieI want to lie.@dn@january 15, 2021
+149@author@@@1@emb-d@Oi a poa ku kip.@@@@1@5@2sg 2sg.nfut want 1.sg.fut lieYou want to lie.@dn@january 15, 2021
+150@author@@@1@emb-d@Oi poa ku kip.@@@@1@4@2sg want 1.sg.fut lieYou want to lie.@dn@january 15, 2021
+151@author@@@1@emb-d@Yo u poa ku kip.@@@@0@5@1sg 1sg.nfut want 1.sg.fut lieI want to lie.@dn@january 15, 2021
+152@author@@@1@emb-d@Yo poa ku kip.@@@@0@4@1sg want 1.sg.fut lieI want to lie.@dn@january 15, 2021
+153@author@@@1@emb-d@Oi a pa ku kip.@@@@0@5@2sg 2sg.nfut want 1.sg.fut lieYou want to lie.@dn@january 15, 2021
+154@author@@@1@emb-d@Oi pa ku kip.@@@@0@4@2sg want 1.sg.fut lieYou want to lie.@dn@january 15, 2021

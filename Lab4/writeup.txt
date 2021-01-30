@@ -22,12 +22,19 @@ was down.
 	1.3 final, corpus (no difference)
 	
 	1.4 final, testsuite
-	
+
+	    	   There were 5 strings that parsed out of the 36 new test cases we added.
+		   So we have
+		      
+		1.4.1 How many items parsed?
+		      43 out of 82 positive items, so 52.4%
+		      30 out of 72 negative items, so 41.7% overgeneration
+	    	   
 		1.4.2 What is the average number of parses per parsed item?
+		      1.28
 
-		1.4.3 How many parses did the most ambiguous item receive?
-
-		1.4.4 What sources of ambiguity can you identify?
+		1.4.3 How many parses did the most ambiguous item receive? no difference
+		1.4.4 What sources of ambiguity can you identify? no difference
 
 ===================================================================================================
 
@@ -36,6 +43,40 @@ the semantics?
 
     1. Initial test suite run: see lab3
     2. Final run diff:
+
+       Five sentences that parsed from our new test suite:
+
+       1. Oi  a        ani ca
+       	  2sg 2sg.nfut eat what
+	  'What are you eating?'
+
+	  The semantics look reasonable; the pronoun's ARG0 is ARG0 to an existential quantifier, and
+	  the ARG1 to the eat_v_rel. The _what_n_rel's ARG0 is ARG0 to an existential quantifier and
+	  the ARG2 to the eat_v_rel.
+	  
+       2. oi se
+       	  2sg who
+	  'Who are you?'
+
+	  This has an unreasonable semantics. The wh-pronoun is parsed as a verb, _sit_v_rel, and its ARG1 has the
+	  _pron_n_rel and its ARG2 is something in I-CONS. We need to add 'se' as a wh-pronoun.
+
+       3. ato va
+       	  3pc say
+	  'They say'
+
+	 There are 3 parses for this sentence, and we intended for the string to be ungrammatical. Two have 'ato' as a verb,
+	 and one with 'ato' as a noun. It's worth noting that 'va' has the predication say-or-thing-or-want_v_rel, and we
+	 know this has some truth to it.
+
+       4. 'ato va yoito'
+
+       	  Same as above(intended ungrammatical), but only two trees for the ambiguity.
+
+
+       5. 'ato va pein'
+
+       	  Same as above.
 
 ===================================================================================================
 
@@ -351,5 +392,7 @@ created choices file is particularly off-base, please report them here. If you c
 the testsuite or your descriptive materials illustrating the problem, that is even better.
 
 6. Corrections to the trigger.mtr file made to get ace running:
-   On line 21, ...
-   On line 26, ...
+
+   I watched the lecture recording for Thursday, 1/28 where we demoed ace with Titan, and
+   deleted the parts of my trigger.mtr file that were syntax errors. There were two entries
+   where there were attributes without values.
