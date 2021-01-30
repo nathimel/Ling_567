@@ -417,3 +417,9 @@ the testsuite or your descriptive materials illustrating the problem, that is ev
    I watched the lecture recording for Thursday, 1/28 where we demoed ace with Titan, and
    deleted the parts of my trigger.mtr file that were syntax errors. There were two entries
    where there were attributes without values.
+
+7. Guidance for this lab's tsdb/home directory:
+
+   There is one subdirectory, called "lab_4_ts", which is the database root for our completed test
+   suite for this lab. Our skeleton root is called 'tests', and it is where the item file for that
+   test suite is.

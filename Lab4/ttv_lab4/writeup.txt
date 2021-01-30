@@ -1,0 +1,425 @@
+Lab 4 Write-Up
+by Nathaniel Imel and David Krug
+
+===================================================================================================
+From the final lab 3 grammar to this intial lab 4 grammar, we changed nothing.
+From the initial grammar to the final grammar, we changed nothing because the customization system
+was down.
+===================================================================================================
+
+1. Initial and final [incr tsdb()] runs results for test corpus and test suite
+
+
+	1.1.initial, testsuite (copied from final, testsuite of Lab3 writeup)
+	
+   	   Out of the 61 positive items, 41 parsed (67.2% coverage)
+	   
+			Out of the 57 negative items, 21 parsed (47.4% overgeneration)
+			
+	1.1.2 What is the average number of parses per parsed item?
+	
+			1.28 analysis/item
+			
+	1.1.3 How many parses did the most ambiguous item receive?
+	
+			Same as initial run, the most ambiguous sentence was "Ala kip" which got 3 parses.
+			From the new test suite sentences, the most ambiguous sentence was "Yoru ki kip" which
+			got two parses. This was ambiguous because "yoru" was getting parsed as a pronoun and a verbal clitic.
+			
+	1.1.4 What sources of ambiguity can you identify?
+	
+			Same as initial run, verbal clitics and and pronouns get confused.
+		
+	1.2 initial, corpus (n/a)
+	
+	1.3 final, corpus (n/a)
+	
+	1.4 final, testsuite
+
+	    	   There were 5 strings that parsed out of the 36 new test cases we added.
+
+	1.4.1 How many items parsed?
+		      43 out of 82 positive items, so 52.4%
+		      30 out of 72 negative items, so 41.7% overgeneration
+	    	   
+	1.4.2 What is the average number of parses per parsed item?
+		      1.28
+
+	1.4.3 How many parses did the most ambiguous item receive? no difference
+	1.4.4 What sources of ambiguity can you identify? no difference
+
+===================================================================================================
+
+2. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in
+the semantics?
+
+    1. Initial test suite run: see lab3
+    2. Final run diff:
+
+       Five new sentences that parsed from our new test suite:
+
+       1. Oi  a        ani ca
+       	  2sg 2sg.nfut eat what
+	  'What are you eating?'
+
+	  The semantics look reasonable; the pronoun's ARG0 is ARG0 to an existential quantifier, and
+	  the ARG1 to the eat_v_rel. The _what_n_rel's ARG0 is ARG0 to an existential quantifier and
+	  the ARG2 to the eat_v_rel.
+	  
+       2. oi se
+       	  2sg who
+	  'Who are you?'
+
+	  This has an unreasonable semantics. The wh-pronoun is parsed as a verb, _sit_v_rel, and its ARG1 has the
+	  _pron_n_rel and its ARG2 is something in I-CONS. We need to add 'se' as a wh-pronoun.
+
+       3. ato va
+       	  3pc say
+	  'They say'
+
+	 There are 3 parses for this sentence, and we intended for the string to be ungrammatical. Two have 'ato' as a verb,
+	 and one with 'ato' as a noun. It's worth noting that 'va' has the predication say-or-thing-or-want_v_rel, and we
+	 know this has some truth to it.
+
+       4. 'ato va yoito'
+
+       	  Same as above(intended ungrammatical), but only two trees for the ambiguity.
+
+
+       5. 'ato va pein'
+
+       	  Same as above.
+
+===================================================================================================
+
+3. Documentation of the phenomena you have added to your testsuite
+We added:
+
+------------------------------------------------------------------------------------------
+- wh- questions
+
+  Wh-questions were illuminating because they showed that sentences
+  don't need a verb. In fact, Claire Bowern says on p. 139 of the
+  descriptive resources that
+
+  	'not all clauses have verbs, and there
+	appears to be no copula in Titan, and that a predicate can be a
+	noun, as in the equative sentences "he's a snake".'
+
+  So we plan to write test cases for sentences of the form:
+
+      "Oi cinal"
+      2sg devil
+      'You're a devil.'
+
+  in the next lab and implement this phenomena as soon as possible. Therefore,
+  we want to keep our test cases for wh-questions of the form
+
+     (PRO)NOUN WH-PRONOUN
+  
+  Titan has the following interrogative pronouns:
+
+     	  Titan	     English gloss
+     	  ca   	     what
+	  se	     what
+	  tavai	     who
+	  (t)ite     where
+	  (ke)rehe   to where
+	  wei, wee   to where
+	  (a)keis    when(fut only)
+	  e ca	     how (with what)
+	  (y)etepe   for what [purpose]
+	  (ta)ce     how many
+	  tapeta     how much
+
+  Test cases for 'ca':
+
+       # ca in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi a ani ca
+       2sg 2sg eat what
+       'What are you eating?'
+
+       # ca not in-situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       Ca oi a ani
+       what 2sg 2sg eat
+       'What are you eating?
+
+       # se in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       oi se
+       2sg who
+       'Who are you?'
+
+       # se not in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Se i nyamiri oi
+       who 3sg love 2sg
+       'Who loves you?'
+
+ Test cases for 'ite' and 'tite' were the same:
+
+       # ite in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi pin ite
+       2sg woman where
+       'You're a woman from where?'
+
+       # ite not in situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       ite oi pin
+       where 2sg woman
+       'You're a woman from where?'
+
+  We only found 'rehe' and not 'kerehe'
+
+       # rehe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Manuai rehe
+       eagle where
+       'Where is the eagle?'
+
+       # rehe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Manuai i la rehe
+       eagle 3sg go where
+       'Where did the eagle go?'
+
+       # rehe not in situ
+       Source: author
+       Vetted: f
+       Judgment: u
+       Phenomena: {wh-questions}
+       rehe manuai i la
+       where eagle 3sg go
+       'Where did the eagle go?'
+
+       # etepe in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       Oi etepe
+       2sg how.is.it
+       'How are you?'
+
+       # etepe not in situ
+       Source: author
+       Vetted: f
+       Judgment: g
+       Phenomena: {wh-questions}
+       etepe oi
+       how.is.it 2sg
+       'How are you?'
+
+  There were no examples of (ta)ce. We found two examples of 'tapeta' but they were much too
+  complicated to use, even for reverse engineering test cases.
+
+  There was only one example of 'tavai' = who, but it was too complicated to use:
+
+  	papu-n      i  va  ane     tavai amo  pein  yo  pasan      poen
+	father-3sg 3sg say perhaps who   some woman 1sg know_about not
+	'Father said, "Perhaps who? Some woman? I don't know anything about it."'
+
+  Since we don't have a lexical entry for the preposition 'e', we won't write
+  test cases for 'e ca' in this lab. We hope to implement the preposition and its
+  possessive version in a future lab.
+
+     Moe ramat  i   va  e    ca   ito  a pulpul, a pulpul
+     def person 3sg say pred what this a pulpul a pulpul
+    'The person said, "And what's this, a pulpul, a pulpul?"'
+
+
+  From the corpora, have the following two examples of 'keis' = when, and also 'akeis'.
+  Should we just treat them as variations of the same lexical item? In the descriptive
+  resources, 'me' is listed in the Titan-English glossary as an intransitive verb.
+
+     Ala ka      me   keis
+     3pl nsg.fut come when
+     'When will they come back?'
+
+     oi ani yo akeis
+     2sg eat 1sg when
+     'When do you eat me?'
+
+  We found no examples of 'wei' as an interrogative pronoun, but 'wee' is one. It
+  seems to require a verb such as 'la' to precede it, though we don't have that
+  high-frequency verb in our lexicon yet. All examples of 'wee' in the corpora
+  were of the form:
+
+     Moen Hus i  va  ato la wee
+     def  H  3sg say 3pc be where
+    'The man from Hus said, "where are they?"'
+
+     Pati eoi    i   la wee
+     wife 2sg.ps 3sg be where
+     'Where are your wives?'
+
+     Ni    eoi, [relative clause] i   la wee
+     fish 2sg.ps	  	  3sg go where
+     'Your fish  ...          where did they go?'
+  
+  We don't have test cases for 'sa' = what, because the only example has it occuring
+  in a phrase where there are a number of unexplained words:
+
+    i   va Dayebui i  su   kut pe ya  kara sa
+    3sg say D     3sg flow ?? and def ??   what
+    'He said, "Menstrual blood is flowing, and what is it?"'
+
+- embedded complement clauses
+----------------------------------------------------------------------------------------------
+  We added two verbs, 'pa ~ poa' and 'va.'
+
+  'Va' usually means say:
+
+       (a) Ato va  Oi  a        kip
+           3pc say 2sg 2sg.nfut lie
+	   'They said, "You're lying!"'
+
+       (b) Colai i  va   Dangan ne kip
+       	   C    3sg say  truth  or lie
+	   'Colai said, "Is this the truth or a lie?"'
+
+  It embeds questions. I have searched the corpora for questions (constructed with wh- words and with
+  the form 'X or Y?'), and noticed that the vast majority had subordinate interrogative clauses marked
+  for realis. I wondered if 'va' also embedded irrealis-marked interrogative clauses, and then noticed
+  that if 'va' embeds an irrealis-marked interrogative clause, it's usually following a vocative. That is,
+  I haven't seen examples of the form: 'X asked "where will we go' straight out, only things like the
+  following examples:
+
+       Ala lemetani  i   ala va  Pamei Yota    ka      mat, yota    ka      le    ee?
+       3pl ask-trans 3sg 3pl say P     1pl.inc nsg.fut die  1pl.inc nsg.fut go.to where
+       'They asked her, "Pamei! When we die, where will we go?" (p. 403)
+
+       I   yuyuu i  va  Yaye   pe  dasi    yo  ku      au     e   tite  kua   varina  waru
+       3sg call 3sg say mother and brother 1sg 1sg.fut leave from where there to      2dl
+       'He called and said, "My mother and brother! How will I get up to you?"'
+
+  And interestingly, when va's embedded clause is marked irrealis, it can mean 'want':
+
+  	 Alu i va Kalomat yo va ku le Moanus
+	 alu 3sg say K       1sg want 1sg.fut go.to M
+	 'Alu said, "Kalomat! I want to go to Manus."' (from corpus)
+
+  But the converse does not hold:
+
+     	 Kalomat i   va  ku  sui        palenkei"
+	 K       3sg say imp scrape.off  sago-leaf.ribs
+	 'Kalomat said, "Scrape off sago-leaf ribs!"' (corpus)
+
+  We wonder whether an individual might say something with future or other irrealis marking,
+  but doesn't want the clause to be true, maybe like the following contrived example:
+
+      	 Manuai i  va  yo  ku      mat
+	 Eagle 3sg say 1sg 1sg.fut die
+	 'Eagle said, "I will die."' (made-up)
+
+  So we are considering writing two lexical entries for 'va,' but we'd get ambiguity if we ever see it taking
+  a clause with irrealis marking. We notice that the grammar has inferred that 'va' has the predication
+  _say-or-think-or-want_v_rel. Should we side with the grammar here, or encode what seems to be a genuine
+  ambiguity into separate lexical entries?
+
+  And then there is the verb 'pa ~ poa' which only means 'want' -- Claire Bowern calls it a
+  desiderative marker. It is
+  
+  	       "preceded by an optional subject agreement clitic, and the main
+  	       lexical verb denoting the action desired is preceded by the irrealis clitic, which agrees
+ 	        with the subject of the whole clause. (p. 152) And there are no examples of the desiderative
+		where the subject of wanting and the subject of the lexical verb are different; i.e., none
+		of the form 'X wants Y to do something.' (p.456).
+
+  Bowern uses the following two examples to illustrate apparent optionality of the subject agreement
+  marker.
+
+	(a) Yo  pa   ku  le  Yap.
+	    1sg want 1sg.fut go.to Yap
+	    'I want to go to Yap.'
+
+	(b) Hi Moi i   pa   ki       nyak   ile polenpongopong.
+	    H.M.  3sg  want 3sg.fut  climb  into peak-pandanus-palm
+	    'Hi Moi wanted to climb to the top of a pandanus palm.'
+
+		In (a), the desiderative is preceded only by the first free person singular pronoun 'yo';
+ 		there is no agreement marker 'u' present. In (b), however, an agreement marker 'i' is present.
+		There is no discernable conditioning factor in the data, although it is always absent with
+		first and second person singular subjects. (ibid)
+
+--------------------------------------------------------------------------------------------------------------
+- adverbial clausal modifiers
+
+  We added the adverbial modifier 'alan', which means 'if'. It appears at the end of the matrix clause, just before
+  the subordinate clause. We are unclear on whether this means the modifier is a constituent of the
+  embedded subordinate clause or not.
+
+  	   # XX: alan in irrealis marks conditional
+	   Source: author
+	   Vetted: f
+ 	   Judgment: g
+           Oi ko kip alan yo ku kip
+           2sg 2sg.fut lie if 1sg 1sg.fut lie
+           'If you will lie, I will lie.'
+
+  Bowern says that 'alan' is almost always found with the subordinate marked for irrealis; there
+  is one occurrence that she found where the subordinate is realis, and there it means 'because.'
+
+     	   # XX: alan in realis as because
+	   Source: author
+	   Vetted: f
+	   Judgment: g
+	   Yo ulumui das alan, das i camar
+	   1sg drink sea because sea 3sg dry.up
+	   'Because I drank the sea, the sea water has dried up.'
+
+===================================================================================================
+
+4. Descriptions of any properties of your language illustrated in your test suite but not covered
+by your starter grammar and/or the customization system. (This can be brief if you like: e.g.
+"We added wh questions to the test suite, but didn't work on implementing them this week.")
+
+   We ran the test suites and saw that our initial grammar didn't cover any of the phenomena we
+   added, except for 1 wh- question (discussed in the reasonable semantics section).
+
+===================================================================================================
+
+5. If you have identified ways (other than those you already reported) in which the automatically
+created choices file is particularly off-base, please report them here. If you can include IGT from
+the testsuite or your descriptive materials illustrating the problem, that is even better.
+
+===================================================================================================
+
+6. Corrections to the trigger.mtr file made to get ace running:
+
+   I watched the lecture recording for Thursday, 1/28 where we demoed ace with Titan, and
+   deleted the parts of my trigger.mtr file that were syntax errors. There were two entries
+   where there were attributes without values.
+
+7. Guidance for this lab's tsdb/home directory:
+
+   There is one subdirectory, called "lab_4_ts", which is the database root for our completed test
+   suite for this lab. Our skeleton root is called 'tests', and it is where the item file for that
+   test suite is.
