@@ -1,6 +1,6 @@
 # This program will re-number examples entries in a test suite in text
 #   format (before being processed by make_item)
-# All lines that start with "#XX" have the "XX" replaced with the number of "#XX"'s encountered so far. 
+# All lines that start with "# XX" have the "XX" replaced with the number of "# XX"'s encountered so far. 
 
 import sys, copy
 
@@ -30,9 +30,9 @@ line_counter = 0 # number of lines
 
 # for each line
 for line in lines:
-	if line[0:3] == "#XX": # re-number this example
+	if line[0:4] == "# XX": # re-number this example
 		counter += 1
-		lines_copy[line_counter] = "# " + str(example_counter) + line[3:]
+		lines_copy[line_counter] = "# " + str(example_counter) + line[4:]
 	if line[0] == "#": # track the examples seen so far
 		example_counter += 1
 	line_counter += 1 # track the lines so far
