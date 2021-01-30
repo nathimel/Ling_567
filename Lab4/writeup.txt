@@ -279,8 +279,8 @@ We added:
   We wonder whether an individual might say something with future or other irrealis marking,
   but doesn't want the clause to be true, maybe like the following contrived example:
 
-      	 Manuai va  yo  ku      mat
-	 Eagle  say 1sg 1sg.fut die
+      	 Manuai i  va  yo  ku      mat
+	 Eagle 3sg say 1sg 1sg.fut die
 	 'Eagle said, "I will die."' (made-up)
 
   So we are considering writing two lexical entries for 'va,' but we'd get ambiguity if we ever see it taking

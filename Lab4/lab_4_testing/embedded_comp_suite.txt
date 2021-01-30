@@ -6,6 +6,30 @@ ato va yoito pein
 3pc say 1pc.excl woman-pandanus
 'They said, 'we're pandanus-women.''
 
+# XX: va embedding irrealis (imperative)
+Source: author
+Vetted: f
+Judgment: g
+Manuai i va ko kip
+Eagle 3sg say imp lie
+'Eagle said, "Lie!"'
+
+# XX: va embedding irrealis (future)
+Source: author
+Vetted: f
+Judgment: g
+Manuai i va  yo  ku      mat
+Eagle  say 1sg 1sg.fut die
+'Eagle said, "I will die."
+
+# XX: va embedding irrealis (future, va = desire)
+Source: corpus
+Vetted: f
+Judgment: g
+i va ki puti yo
+3sg want 3sg.fut marry 1sg
+'He wants to marry me'
+
 # XX: va embedding nothing
 Source: author
 Vetted: f
