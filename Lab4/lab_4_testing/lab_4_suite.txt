@@ -312,7 +312,7 @@ Yo ala kip.
 1sg 3pl.nfut lie
 'I are lying.'
 
-#35: Agreement between 'manuai' and 'i'
+# 35: Agreement between 'manuai' and 'i'
 Source: author
 Vetted: f
 Judgment: g
@@ -321,7 +321,7 @@ Manuai i kip.
 eagle 3sg.nfut lie
 'Eagle is lying.'
 
-#36: Agreement between 'manuai' and 'aru'
+# 36: Agreement between 'manuai' and 'aru'
 Source: author
 Vetted: f
 Judgment: g
@@ -330,7 +330,7 @@ Manuai aru kip.
 eagle 3dl.nfut lie
 'Two eagles are lying.'
 
-#37: Agreement between 'manuai' and 'ato'
+# 37: Agreement between 'manuai' and 'ato'
 Source: author
 Vetted: f
 Judgment: g
@@ -339,7 +339,7 @@ Manuai ato kip.
 eagle 3pc.nfut lie
 'Some eagles are lying.'
 
-#38: Agreement between 'manuai' and 'ala'
+# 38: Agreement between 'manuai' and 'ala'
 Source: author
 Vetted: f
 Judgment: g
@@ -357,7 +357,7 @@ Yoru kip.
 1dl.incl  lie
 'We are lying.'
 
-#40 : cross-ref clitic/particle for 1dl.excl
+# 40: cross-ref clitic/particle for 1dl.excl
 Source: author
 Vetted: f
 Judgment: g
@@ -366,7 +366,7 @@ Taru kip.
 2dl lie
 'We two are lying.'
 
-#41 : cross-ref clitic/particle for 2dl
+# 41: cross-ref clitic/particle for 2dl
 Source: author
 Vetted: f
 Judgment: g
@@ -376,7 +376,7 @@ Woru kip.
 'You two are lying.'
 
 
-#42 : cross-ref clitic/particle for 2dl, alt speling
+# 42: cross-ref clitic/particle for 2dl, alt speling
 Source: author
 Vetted: f
 Judgment: g
@@ -386,7 +386,7 @@ Waru kip.
 'You two are lying.'
 
 
-#43 : cross-ref clitic/particle for 3dl
+# 43: cross-ref clitic/particle for 3dl
 Source: author
 Vetted: f
 Judgment: g
@@ -396,7 +396,7 @@ Aru kip.
 'Those two are lying.'
 
 
-#44 : cross-ref clitic/particle for 1pc.incl
+# 44: cross-ref clitic/particle for 1pc.incl
 Source: author
 Vetted: f
 Judgment: g
@@ -405,7 +405,7 @@ Yoito kip.
 1pc.incl lie
 'We are lying.'
 
-#45 : cross-ref clitic/particle for 1pc.excl
+# 45: cross-ref clitic/particle for 1pc.excl
 Source: author
 Vetted: f
 Judgment: g
@@ -414,7 +414,7 @@ Yoto kip.
 1pc.excl lie
 'We are lying.'
 
-#46 : cross-ref clitic/particle for 1pc.excl, alternate spelling
+# 46: cross-ref clitic/particle for 1pc.excl, alternate spelling
 Source: author
 Vetted: f
 Judgment: g
@@ -423,7 +423,7 @@ To kip.
 1pc.excl lie
 'We are lying.'
 
-#47 : cross-ref clitic/particle for 2pc
+# 47: cross-ref clitic/particle for 2pc
 Source: author
 Vetted: f
 Judgment: g
@@ -432,7 +432,7 @@ Woto kip.
 2pcl lie
 'You are lying.'
 
-#48 : cross-ref clitic/particle for 3pc
+# 48: cross-ref clitic/particle for 3pc
 Source: author
 Vetted: f
 Judgment: g
@@ -441,7 +441,7 @@ Ato kip.
 3pc lie
 'They are lying.'
 
-#49 : cross-ref clitic/particle for 1pl.incl
+# 49: cross-ref clitic/particle for 1pl.incl
 Source: author
 Vetted: f
 Judgment: g
@@ -450,7 +450,7 @@ Yoya kip.
 1pl.incl lie
 'We all are lying.'
 
-#50 : cross-ref clitic/particle for 1pl.excl
+# 50: cross-ref clitic/particle for 1pl.excl
 Source: author
 Vetted: f
 Judgment: g
@@ -459,7 +459,7 @@ Yota kip.
 1pl.excl lie
 'We all are lying.'
 
-#51 : cross-ref clitic/particle for 1pl.excl, alternate spelling
+# 51: cross-ref clitic/particle for 1pl.excl, alternate spelling
 Source: author
 Vetted: f
 Judgment: g
@@ -468,7 +468,7 @@ Ta kip.
 1pl.excl lie
 'We all are lying.'
 
-#52 : cross-ref clitic/particle for 2pl
+# 52: cross-ref clitic/particle for 2pl
 Source: author
 Vetted: f
 Judgment: g
@@ -477,7 +477,7 @@ Awa kip.
 2pl lie
 'You all are lying.'
 
-#53 : cross-ref clitic/particle for 3pl
+# 53: cross-ref clitic/particle for 3pl
 Source: author
 Vetted: f
 Judgment: g
@@ -486,7 +486,7 @@ Ala kip.
 3pl lie
 'They all are lying.'
 
-#54: Word order
+# 54: Word order
 Source: author
 Vetted: f
 Judgment: u
@@ -496,7 +496,7 @@ Oi kip a.
 'You lying are.'
 
 
-#55: Agreement between yo and ku
+# 55: Agreement between yo and ku
 Source: author
 Vetted: f
 Judgment: g
@@ -505,7 +505,7 @@ Yo ku kip
 1sg 1sg.fut lie
 'I will lie.'
 
-#56: Agreement between oi and ko
+# 56: Agreement between oi and ko
 Source: author
 Vetted: f
 Judgment: g
@@ -514,7 +514,7 @@ Oi ko kip
 2sg 2sg.fut lie
 'You will lie.'
 
-#57: Agreement between 3sg subj and ki
+# 57: Agreement between 3sg subj and ki
 Source: author
 Vetted: f
 Judgment: g
@@ -523,7 +523,7 @@ Manuai ki kip.
 Eagle 3sg.fut lie
 'Eagle will lie.'
 
-#58: Agreement between 1dl.incl and ka
+# 58: Agreement between 1dl.incl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -532,7 +532,7 @@ Taru ka kip.
 1dl.incl n.sg.fut lie
 'We will lie.'
 
-#59: Agreement between 1dl.excl and ka
+# 59: Agreement between 1dl.excl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -541,7 +541,7 @@ Yoru ka kip
 1dl.excl n.sg.fut lie
 'We will lie.'
 
-#60: Agr between 1pc.incl and ka
+# 60: Agr between 1pc.incl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -550,7 +550,7 @@ Yoto ka kip
 1pc.incl n.sg.fut lie
 'We will lie.'
 
-#61: Agr between 1pc.excl and ka
+# 61: Agr between 1pc.excl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -559,7 +559,7 @@ Yoito ka kip
 1pc.excl n.sg.fut lie
 'We will lie.'
 
-#62: Agr between 1pl.incl and ka
+# 62: Agr between 1pl.incl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -568,7 +568,7 @@ Yota ka kip
 1pl.incl n.sg.fut lie
 'We will lie.'
 
-#63: Agr between 1pl.excl and ka
+# 63: Agr between 1pl.excl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -577,7 +577,7 @@ Yoya ka kip
 1pl.excl n.sg.fut lie
 'We will lie.'
 
-#64: Agr between 2dl and ka
+# 64: Agr between 2dl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -586,7 +586,7 @@ Waru ka kip
 2dl n.sg.fut lie
 'You two will lie.'
 
-#65: Agr between 2pc and ka
+# 65: Agr between 2pc and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -595,7 +595,7 @@ Woto ka kip
 2pc n.sg.fut lie
 'You will lie.'
 
-#66: Agr between 2pl and ka
+# 66: Agr between 2pl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -604,7 +604,7 @@ Awa ka kip
 2pl n.sg.fut lie
 'You will lie.'
 
-#67: Agr between 3dl and ka
+# 67: Agr between 3dl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -613,7 +613,7 @@ Aru ka kip
 3dl n.sg.fut lie
 'They both will die.'
 
-#68: Agr between 3pc and ka
+# 68: Agr between 3pc and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -623,7 +623,7 @@ Ato ka kip
 'They will die.'
 
 
-#69: Agreement between 3pl and ka
+# 69: Agreement between 3pl and ka
 Source: author
 Vetted: f
 Judgment: g
@@ -632,7 +632,7 @@ Ala ka kip
 3pl n.sg.fut lie
 'They all will lie.'
 
-#70: Agr between 1sg and ka
+# 70: Agr between 1sg and ka
 Source: author
 Vetted: f
 Judgment: u
@@ -641,7 +641,7 @@ Yo ka kip
 1sg n.sg.fut lie
 'I will lie.'
 
-#71: Agr between 2sg and ka
+# 71: Agr between 2sg and ka
 Source: author
 Vetted: f
 Judgment: u
@@ -650,7 +650,7 @@ Oi ka kip
 1sg.excl n.sg.fut lie
 'I will lie.'
 
-#72: Agr btween 3sg and ka
+# 72: Agr btween 3sg and ka
 Source: author
 Vetted: f
 Judgment: u
@@ -659,7 +659,7 @@ i ka kip
 3sg n.sg.fut lie
 'She will lie.'
 
-#73: Agr between 1dl and ku
+# 73: Agr between 1dl and ku
 Source: author
 Vetted: f
 Judgment: u
@@ -668,7 +668,7 @@ Taru ku kip.
 1dl.incl 1sg.fut lie
 'We will lie.'
 
-#74: Agr between 3sg and ku
+# 74: Agr between 3sg and ku
 Source: author
 Vetted: f
 Judgment: u
@@ -677,7 +677,7 @@ i ku kip
 3sg 1sg.fut lie
 'She will lie.'
 
-#75: Agr between 3sg and ko
+# 75: Agr between 3sg and ko
 Source: author
 Vetted: f
 Judgement: u
@@ -686,7 +686,7 @@ i ko kip
 3sg 1sg.fut lie
 'She will lie.'
 
-#76: Agr between 3pl and ki
+# 76: Agr between 3pl and ki
 Source: author
 Vetted: f
 Judgment: u
@@ -695,7 +695,7 @@ ala ki kip
 3pl 3sg.fut lie
 'They will lie.'
 
-#77: Agr between 1dl.excl and ki
+# 77: Agr between 1dl.excl and ki
 Source: author
 Vetted: f
 Judgment: u
@@ -704,7 +704,7 @@ Yoru ki kip
 1dl.excl 3sg.fut lie
 'We will lie.'
 
-#78: Agr between 1sg and ki
+# 78: Agr between 1sg and ki
 Source: author
 Vetted: f
 Judgment: u
@@ -713,7 +713,7 @@ yo ki kip
 1sg 3sg.fut lie
 'I will lie.'
 
-#79: Clausal coordination: and
+# 79: Clausal coordination: and
 Source: author
 Vetted: f
 Judgment: g
@@ -722,7 +722,7 @@ Yo o kip pe oi a kip.
 1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
 'I lie and you lie.'
 
-#80: Clausal coordination: or
+# 80: Clausal coordination: or
 Source: author
 Vetted: f
 Judgment: g
@@ -731,7 +731,7 @@ Yo o kip ne oi a kip.
 1sg 1sg.nfut lie or 2sg 2sg.nfut lie.
 'I lie or you lie.'
 
-#81: Subject coordination: and
+# 81: Subject coordination: and
 Source: author
 Vetted: f
 Judgment: g
@@ -740,7 +740,7 @@ Yo pe oi yoru kip.
 1sg and 2sg 1dl.incl lie.
 'I and you lie.'
 
-#82: Subject coordination: or
+# 82: Subject coordination: or
 Source: author
 Vetted: f
 Judgment: g
@@ -749,7 +749,7 @@ Yo ne oi yoru kip.
 1sg or 2sg 1dl.incl lie.
 'I or you lie.'
 
-#83: Subject coordination w/ bad agreement
+# 83: Subject coordination w/ bad agreement
 Source: author
 Vetted: f
 Judgment: u
@@ -758,7 +758,7 @@ Yo pe oi a kip.
 1sg CONJ 2sg 2sg lie.
 'I and you lie.'
 
-#84: Subject coordination w/ bad agreement
+# 84: Subject coordination w/ bad agreement
 Source: author
 Vetted: f
 Judgment: u
@@ -767,7 +767,7 @@ Yo pe oi i kip.
 1sg CONJ 3sg 2sg lie.
 'I and you lie.'
 
-#85: Subject coordination w/ bad agreement
+# 85: Subject coordination w/ bad agreement
 Source: author
 Vetted: f
 Judgment: u
@@ -776,7 +776,7 @@ Yo pe oi taru kip.
 1sg CONJ 2dl.excl 2sg lie.
 'I and you lie.'
 
-# 85: Optional prenominal demonstrative
+# 86: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -785,7 +785,7 @@ Ita manuai kip.
 this eagle lie
 This eagle lies.
 
-#86: Optional prenominal demonstrative
+# 87: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -794,7 +794,7 @@ Itan manuai kip.
 this.emph eagle lie
 This eagle lies.
 
-#87: Optional prenominal demonstrative
+# 88: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -803,7 +803,7 @@ Ito manuai kip.
 that eagle lie
 That eagle lies.
 
-#88: Optional prenominal demonstrative
+# 89: Optional prenominal demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -812,7 +812,7 @@ Latu manuai kip.
 that eagle lie
 That eagle lies.
 
-#89: NP with only demonstrative
+# 90: NP with only demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -821,7 +821,7 @@ Tita kip.
 this lie
 This lies.
 
-#90: NP with only demonstrative
+# 91: NP with only demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -830,7 +830,7 @@ Titan kip.
 this.emph lie
 This lies.
 
-#91: NP with only demonstrative
+# 92: NP with only demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -839,7 +839,7 @@ Tito kip.
 that lie.
 That lies.
 
-#92: NP with only demonstrative
+# 93: NP with only demonstrative
 Source: author
 Vetted: f
 Judgment: g
@@ -848,7 +848,7 @@ Ilatu kip.
 that lie.
 That lies.
 
-#93: Wrong determiner
+# 94: Wrong determiner
 Source: author
 Vetted: f
 Judgment: u
@@ -857,7 +857,7 @@ Tita manuai kip.
 this eagle lie
 This eagle lies.
 
-#94: Wrong determiner
+# 95: Wrong determiner
 Source: author
 Vetted: f
 Judgment: u
@@ -866,7 +866,7 @@ Titan manuai kip.
 this.emph eagle lie
 This eagle lies.
 
-#95: Wrong determiner
+# 96: Wrong determiner
 Source: author
 Vetted: f
 Judgment: u
@@ -875,7 +875,7 @@ Tito manuai kip.
 that eagle lie.
 That eagle lies.
 
-#96: Wrong determiner
+# 97: Wrong determiner
 Source: author
 Vetted: f
 Judgment: u
@@ -884,7 +884,7 @@ Ilatu manuai kip.
 that eagle lie.
 That eagle lies.
 
-# 97: Adnominal possession: -yo
+# 98: Adnominal possession: -yo
 Source: author
 Vetted: f
 Judgment: g
@@ -893,7 +893,7 @@ yaye-yo i ani lei
 mother-1sg 3sg eat ginger-bulb
 'My mother ate a ginger bulb'
 
-# 98: Adnominal possession: -oi
+# 99: Adnominal possession: -oi
 Source: author
 Vetted: f
 Judgment: g
@@ -902,7 +902,7 @@ yaye-oi i ani lei
 mother-2sg 3sg eat ginger-bulb
 'Your mother ate a ginger bulb'
 
-# 99: Adnominal possession: -yotaru
+# 100: Adnominal possession: -yotaru
 Source: author
 Vetted: f
 Judgment: g
@@ -911,7 +911,7 @@ yaye-yotaru i ani lei
 mother-1dl.incl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb'
 
-# 100: Adnominal possession: -yoru
+# 101: Adnominal possession: -yoru
 Source: author
 Vetted: f
 Judgment: g
@@ -920,7 +920,7 @@ yaye-yoru i ani lei
 mother-1dl.excl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb'
 
-# 101: Adnominal possession: waru
+# 102: Adnominal possession: waru
 Source: author
 Vetted: f
 Judgment: g
@@ -929,7 +929,7 @@ yaye-waru i ani lei
 mother-2dl 3sg eat ginger-bulb
 'Your mother ate a ginger bulb'
 
-# 102: Adnominal possession: -aru
+# 103: Adnominal possession: -aru
 Source: author
 Vetted: f
 Judgment: g
@@ -938,7 +938,7 @@ yaye-aru i ani lei
 mother-3dl 3sg eat ginger-bulb
 'Their mother ate a ginger bulb'
 
-# 103: Adnominal possession: -yoito
+# 104: Adnominal possession: -yoito
 Source: author
 Vetted: f
 Judgment: g
@@ -947,7 +947,7 @@ yaye-yoito i ani lei
 mother-1pc.excl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb'
 
-# 104: Adnominal possession: -wato
+# 105: Adnominal possession: -wato
 Source: author
 Vetted: f
 Judgment: g
@@ -956,7 +956,7 @@ yaye-wato i ani lei
 mother-2pc 3sg eat ginger-bulb
 'Your mother ate a ginger bulb'
 
-# 105: Adnominal possession: -ato
+# 106: Adnominal possession: -ato
 Source: author
 Vetted: f
 Judgment: g
@@ -965,7 +965,7 @@ yaye-ato i ani lei
 mother-3pc 3sg eat ginger-bulb
 'Their mother ate a ginger bulb'
 
-# 106: Adnominal possession: yota
+# 107: Adnominal possession: yota
 Source: author
 Vetted: f
 Judgment: g
@@ -974,7 +974,7 @@ yaye-yota i ani lei
 mother-1pl.incl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb'
 
-# 107: Adnominal possession: awa
+# 108: Adnominal possession: awa
 Source: author
 Vetted: f
 Judgment: g
@@ -983,7 +983,7 @@ yaye-awa i ani lei
 mother-2pl 3sg eat ginger-bulb
 'Your mother ate a ginger bulb'
 
-# 108: Adnominal possession: ala
+# 109: Adnominal possession: ala
 Source: corpus
 Vetted: f
 Judgment: g
@@ -992,7 +992,7 @@ yaye-ala i ani lei
 mother-3pl 3sg eat ginger-bulb
 'Their mother ate a ginger bulb'
 
-# 109: Adnominal possession: ala on a verb
+# 110: Adnominal possession: ala on a verb
 Source: author
 Vetted: f
 Judgment: u
@@ -1001,7 +1001,7 @@ Manuai i kip-ala
 Eagle 3sg lie-3pl
 'Eagle lies-their'
 
-# 110: Adnominal possession: ala on a verb in NP position
+# 111: Adnominal possession: ala on a verb in NP position
 Source: author
 Vetted: f
 Judgment: u
@@ -1010,7 +1010,7 @@ kip-ala i kip
 lies-3pl 3sg lie
 'Lies-their lie'
 
-# 111: Adnominal possession: 2 poss on same noun
+# 112: Adnominal possession: 2 poss on same noun
 Source: author
 Vetted: f
 Judgment: u
@@ -1019,7 +1019,7 @@ yaye-ala-ala i ani lei
 mother-3pl-3pl 3sg eat ginger-bulb
 'Their mother ate a ginger bulb.'
 
-# 112: Adnominal possession: 2 poss on same noun
+# 113: Adnominal possession: 2 poss on same noun
 Source: author
 Vetted: f
 Judgment: u
@@ -1028,7 +1028,7 @@ yaye-yo-yotaru i ani lei
 mother-1sg.excl.-1dl.incl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb.'
 
-# 113: Adnominal possession: poss as a prefix
+# 114: Adnominal possession: poss as a prefix
 Source: author
 Vetted: f
 Judgment: u
@@ -1037,7 +1037,7 @@ ala-yaye i ani lei
 3pl-mother 3sg eat ginger-bulb
 'Their mother ate a ginger bulb.'
 
-# 114: Adnominal possession: poss as a prefix
+# 115: Adnominal possession: poss as a prefix
 Source: autho
 Vetted: f
 Judgment: u
@@ -1046,7 +1046,7 @@ oi-yaye i ani lei
 2sg-mother 3sg eat ginger-bulb
 'Your mother ate a ginger bulb.'
 
-# 115: Adnominal possession: -i not a suffix
+# 116: Adnominal possession: -i not a suffix
 Source: author
 Vetted: f
 Judgment: u
@@ -1055,7 +1055,7 @@ yaye-i i ani lei
 mother-3sg 3sg eat ginger-bulb
 'Its mother ate a ginger bulb.'
 
-# 116: Adnominal possession: -yoto not a suffix
+# 117: Adnominal possession: -yoto not a suffix
 Source: author
 Vetted: f
 Judgment: u
@@ -1064,7 +1064,7 @@ yaye-yoto i ani lei
 mother-1pc.incl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb.'
 
-# 117: Adnominal possession: -yoya not a suffix
+# 118: Adnominal possession: -yoya not a suffix
 Source: author
 Vetted: f
 Judgment: u
@@ -1073,326 +1073,307 @@ yaye-yoya i ani lei
 mother-1pl.excl 3sg eat ginger-bulb
 'Our mother ate a ginger bulb.'
 
-# 118: ca in situ
+# 119: ca in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Oi a ani ca
 2sg 2sg eat what
 'What are you eating?'
 
-# 119: ca not in-situ
+# 120: ca not in-situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Ca oi a ani
 what 2sg 2sg eat
 'What are you eating?
 
-# 120: se in situ
+# 121: se in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 oi se
 2sg who
 'Who are you?'
 
-# 121: se not in situ
+# 122: se not in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Se i nyamiri oi
 who 3sg love 2sg
 'Who loves you?'
 
-# 122: ite in situ
+# 123: ite in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Oi pin ite
 2sg woman where
 'You're a woman from where?'
 
-# 123: ite not in situ
+# 124: ite not in situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 ite oi pin
 where 2sg woman
 'You're a woman from where?'
 
-# 124: tite in situ
+# 125: tite in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Oi pin tite
 2sg woman where
 'You're a woman from where?'
 
-# 125: tite not in situ
+# 126: tite not in situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Tite oi pin
 where 2sg woman
 'You're a woman from where?'
-
-# 126: rehe in situ
-Source: author
-Vetted: f
-Judgment: g
-Phenomena: {wh}
-Manuai rehe
-eagle where
-'Where is the eagle?'
 
 # 127: rehe in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
+Manuai rehe
+eagle where
+'Where is the eagle?'
+
+# 128: rehe in situ
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {wh-questions}
 Manuai i la rehe
 eagle 3sg go where
 'Where did the eagle go?'
 
-# 128: rehe not in situ
+# 129: rehe not in situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 rehe manuai i la
 where eagle 3sg go
 'Where did the eagle go?'
 
-# 129: etepe in situ
+# 130: etepe in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 Oi etepe
 2sg how.is.it
 'How are you?'
 
-# 130: etepe not in situ
+# 131: etepe not in situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 etepe oi
 how.is.it 2sg
 'How are you?'
 
-# 131: wee in situ
+# 132: wee in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 ato la wee
 3pc be where
 'Where are they?'
 
-# 132: wee not in situ
+# 133: wee not in situ
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {wh}
+Phenomena: {wh-questions}
 wee ato la
 where 3pc be
 'Where are they?'
 
-# 133: (a)keis in situ
+# 134: (a)keis in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 oi ani yo akeis
 2sg eat 1sg when
 'When do you eat me?'
 
-# 134: (a)keis not in situ
+# 135: (a)keis not in situ
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {wh}
+Phenomena: {wh-questions}
 akeis oi ani yo
 when 2sg eat 1sg
 'When do you eat me?'
 
-# 135: alan in realis as because
+# 136: alan in realis as because
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {cl-mod}
 Yo ulumui das alan, das i camar
 1sg drink sea because sea 3sg dry.up
 'Because I drank the sea, the sea water has dried up.'
 
-# 136: alan in irrealis marks conditional
+# 137: alan in irrealis marks conditional
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {cl-mod}
 Oi ko kip alan yo ku kip
 2sg 2sg.fut lie if 1sg 1sg.fut lie
 'If you will lie, I will lie.'
 
-# 137: alan clause initial
+# 138: alan clause initial
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {cl-mod}
 alan oi ko kip yo ku kip
 if 2sg 2sg.fut lie 1sg 1sg.fut lie
 'If you will lie, I will lie.'
 
-# 138: alan final in sub clause
+# 139: alan final in sub clause
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {cl-mod}
 oi ko kip yo ku kip alan
 2sg 2sg.fut lie 1sg 1sg.fut lie if
 'You will lie if I will lie.'
 
-# 139: va embedding a declarative
+# 140: va embedding a declarative
 Source: corpus
 Vetted: f
 Judgment: g
-Phenomena: {emb-d}
 ato va yoito pein
 3pc say 1pc.excl woman-pandanus
 'They said, 'we're pandanus-women.''
 
-# 140: va embedding irrealis (imperative)
+# 141: va embedding irrealis (imperative)
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {emb-d}
 Manuai i va ko kip
 Eagle 3sg say imp lie
 'Eagle said, "Lie!"'
 
-# 141: va embedding irrealis (future)
+# 142: va embedding irrealis (future)
 Source: author
 Vetted: f
 Judgment: g
-Phenomena: {emb-d}
 Manuai i va  yo  ku      mat
 Eagle  say 1sg 1sg.fut die
 'Eagle said, "I will die."
 
-# 142: va embedding irrealis (future, va = desire)
+# 143: va embedding irrealis (future, va = desire)
 Source: corpus
 Vetted: f
 Judgment: g
-Phenomena: {emb-d}
 i va ki puti yo
 3sg want 3sg.fut marry 1sg
 'He wants to marry me'
 
-# 143: va embedding nothing
+# 144: va embedding nothing
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {emb-d}
 ato va
 3pc say
 'They said.'
 
-# 144: va embedding only an NP
+# 145: va embedding only an NP
 Source: author
 Vetted: f
 Judgment: u
-Phenomena: {emb-d}
 ato va yoito
 3pc said 1pc.excl
 'They said, 'we.''
 
-# 145: va embedding only an NP
+# 146: va embedding only an NP
 Source: author
 Vetted: f
 Judgement: u
-Phenomena: {emb-d}
 ato va pein
 3pc say woman-pandanus
 'They said, 'pandanus-women.''
 
-# 146: Pa w/ non-second person, w/ clitic
+# 147: Pa w/ non-second person, w/ clitic
 Source: author
 Vetted: f
 Judgement: g
-Phenomena: {emb-d}
 Yo u pa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
 
-# 147: Pa w/ non-second person, w/o clitic
+# 148: Pa w/ non-second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: g
-Phenomena: {emb-d}
 Yo pa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
 
-# 148: Poa w/ second person
+# 149: Poa w/ second person
 Source: author
 Vetted: f
 Judgement: g
-Phenomena: {emb-d}
 Oi a poa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
 
-# 149: Poa w/ second person, w/o clitic
+# 150: Poa w/ second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: g
-Phenomena: {emb-d}
 Oi poa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.
 
-# 150: Poa w/ non-second person, w/ clitic
+# 151: Poa w/ non-second person, w/ clitic
 Source: author
 Vetted: f
 Judgement: u
-Phenomena: {emb-d}
 Yo u poa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
 
-# 151: Poa w/ non-second person, w/o clitic
+# 152: Poa w/ non-second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: u
-Phenomena: {emb-d}
 Yo poa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
 
-# 152: Pa w/ second person
+# 153: Pa w/ second person
 Source: author
 Vetted: f
 Judgement: u
-Phenomena: {emb-d}
 Oi a pa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
 
-# 153: Pa w/ second person, w/o clitic
+# 154: Pa w/ second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: u
-Phenomena: {emb-d}
 Oi pa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.
