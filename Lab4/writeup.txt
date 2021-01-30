@@ -94,6 +94,8 @@ the semantics?
 
 3. Documentation of the phenomena you have added to your testsuite
 We added:
+
+------------------------------------------------------------------------------------------
 - wh- questions
 
   Wh-questions were illuminating because they showed that sentences
@@ -132,7 +134,7 @@ We added:
 
   Test cases for 'ca':
 
-       #
+       # ca in situ
        Source: author
        Vetted: f
        Judgment: g
@@ -253,10 +255,9 @@ We added:
     'The person said, "And what's this, a pulpul, a pulpul?"'
 
 
-  From the corpora, have the following two examples of 'keis' = when, and noticed that 'akeis'
-  is a form. Does this have to do with the fact 'keis' may be an argument to the transitive
-  verb 'me' and 'akeis' seems not to be an argument to the main verb? Or should we just treat
-  them as variations on the same lexical item?
+  From the corpora, have the following two examples of 'keis' = when, and also 'akeis'.
+  Should we just treat them as variations of the same lexical item? In the descriptive
+  resources, 'me' is listed in the Titan-English glossary as an intransitive verb.
 
      Ala ka      me   keis
      3pl nsg.fut come when
@@ -305,9 +306,11 @@ We added:
 	   'Colai said, "Is this the truth or a lie?"'
 
   It embeds questions. I have searched the corpora for questions (constructed with wh- words and with
-  the form 'X or Y?') and noticed that if 'va' embeds an irrealis-marked clause, it's usually following
-  a previous vocative. That is, I haven't seen examples of the form: 'X asked "where will we go'
-  straight out, only things like the following examples.
+  the form 'X or Y?'), and noticed that the vast majority had subordinate interrogative clauses marked
+  for realis. I wondered if 'va' also embedded irrealis-marked interrogative clauses, and then noticed
+  that if 'va' embeds an irrealis-marked interrogative clause, it's usually following a vocative. That is,
+  I haven't seen examples of the form: 'X asked "where will we go' straight out, only things like the
+  following examples:
 
        Ala lemetani  i   ala va  Pamei Yota    ka      mat, yota    ka      le    ee?
        3pl ask-trans 3sg 3pl say P     1pl.inc nsg.fut die  1pl.inc nsg.fut go.to where
@@ -337,8 +340,9 @@ We added:
 	 'Eagle said, "I will die."' (made-up)
 
   So we are considering writing two lexical entries for 'va,' but we'd get ambiguity if we ever see it taking
-  a clause with irrealis marking. Are we dealing with a genuine ambiguity here, and would it not be worth
-  adding a separate lexical entry?
+  a clause with irrealis marking. We notice that the grammar has inferred that 'va' has the predication
+  _say-or-think-or-want_v_rel. Should we side with the grammar here, or encode what seems to be a genuine
+  ambiguity into separate lexical entries?
 
   And then there is the verb 'pa ~ poa' which only means 'want' -- Claire Bowern calls it a
   desiderative marker. It is
@@ -397,11 +401,16 @@ We added:
 by your starter grammar and/or the customization system. (This can be brief if you like: e.g.
 "We added wh questions to the test suite, but didn't work on implementing them this week.")
 
+   We ran the test suites and saw that our initial grammar didn't cover any of the phenomena we
+   added, except for 1 wh- question (discussed in the reasonable semantics section).
+
 ===================================================================================================
 
 5. If you have identified ways (other than those you already reported) in which the automatically
 created choices file is particularly off-base, please report them here. If you can include IGT from
 the testsuite or your descriptive materials illustrating the problem, that is even better.
+
+===================================================================================================
 
 6. Corrections to the trigger.mtr file made to get ace running:
 
