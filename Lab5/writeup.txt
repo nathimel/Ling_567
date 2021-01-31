@@ -1,0 +1,58 @@
+Lab 5 Writeup
+By David Krug and Nathaniel Imel
+
+===============================================================================
+1. The three phenomena we improved in the choices file were:
+	phenomenon one, phenomenon two, phenomenon three
+	
+	1.1 Phenomenon one
+		prose description of the phenomenon
+		prose description of our analysis
+		IGT
+		what we changed in the choices file
+	
+	1.2 Phenomenon two
+		prose description of the phenomenon
+		prose description of our analysis
+		IGT
+		what we changed in the choices file
+	
+	1.3 Phenomenon three
+		prose description of the phenomenon
+		prose description of our analysis
+		IGT
+		changes made in the choices file (paste in the actual choices)
+
+===============================================================================
+2. Translating the MMT sentences
+	What are the translations?
+	How did we get those translations?
+	Are any sentences impossible to translate?
+
+===============================================================================
+3. Setting up machine translation
+	What happened when we tried the MT set up?
+	What difficulties did we encounter?	How did you resolve them?
+	What output did we get?
+
+===============================================================================
+4. Grammar performance comparison
+	4.1. Initial grammar with testsuite (copied from Lab 4)
+		43/82 possitive items parse (52.4% coverage)
+		30/72 negative itmes parse (41.7% overgeneration)
+		
+		On average, parsed items had 1.28 parses.
+			
+		Most ambiguous run: Same as initial run, the most ambiguous sentence
+			was "Ala kip" which got 3 parses. From the new test suite
+			sentences, the most ambiguous sentence was "Yoru ki kip" which
+			got two parses. This was ambiguous because "yoru" was getting
+			parsed as a pronoun and a verbal clitic.
+			
+		Sources of ambiguity: Same as initial run, verbal clitics and and
+			pronouns get confused.
+		
+	4.2 Initial grammar with corpus
+	4.3 Final grammar with testsuite
+	4.4 Final grammar with corpus (n/a)
+	
