@@ -38,7 +38,7 @@ By David Krug and Nathaniel Imel
 ===============================================================================
 4. Grammar performance comparison
 	4.1. Initial grammar with testsuite (copied from Lab 4)
-		43/82 possitive items parse (52.4% coverage)
+		43/82 positive items parse (52.4% coverage)
 		30/72 negative itmes parse (41.7% overgeneration)
 		
 		On average, parsed items had 1.28 parses.
@@ -52,7 +52,20 @@ By David Krug and Nathaniel Imel
 		Sources of ambiguity: Same as initial run, verbal clitics and and
 			pronouns get confused.
 		
-	4.2 Initial grammar with corpus
+	4.2 Initial grammar with corpus (same as Lab 3)
+	    		1.2.1 How many items parsed?
+			      24 out of 563 positive items (4.3%)
+			      
+		4.2.2 What is the average number of parses per parsed item? 1.50
+		4.2.3 How many parses did the most ambiguous item receive?
+		      There were two sentences that received 3 trees:
+		      
+		      'Ala iri i.' and 'Ara vavuen.'
+		      
+		4.2.4 What sources of ambiguity can you identify?
+		
+		      Mostly the pronoun/clitic confusion.
+	    
 	4.3 Final grammar with testsuite
 	4.4 Final grammar with corpus (n/a)
 	
