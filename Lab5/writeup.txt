@@ -5,10 +5,24 @@ By David Krug and Nathaniel Imel
 1. The three phenomena we improved in the choices file were:
 	phenomenon one, phenomenon two, phenomenon three
 	
-	1.1 Phenomenon one
+	possible phenomena:
+		wh questions
+		adverbial modifiers
+		clausal complements
+		irrealis clitics
+		conjunctions
+
+	questions for emily
+		-transitive-clausal-comps1/2, case unspecefied
+		-question verbs
+		-are sub morphemes a head or adverb
+		
+	1.1 Cordination
 		prose description of the phenomenon
 		prose description of our analysis
+		we removed all coordination except polysyntedton
 		IGT
+		the snake made land, food, and us
 		what we changed in the choices file
 	
 	1.2 Phenomenon two
