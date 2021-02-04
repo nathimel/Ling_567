@@ -1,41 +1,55 @@
 Lab 5 Writeup
 By David Krug and Nathaniel Imel
 
-===============================================================================
-1. The three phenomena we improved in the choices file were:
-	phenomenon one, phenomenon two, phenomenon three
-	
-	possible phenomena:
-		wh questions
-		adverbial modifiers
-		clausal complements
-		irrealis clitics
-		conjunctions
+possible phenomena:
+	wh questions
+	adverbial modifiers
+	clausal complements
+	irrealis clitics
+	conjunctions
 
-	questions for emily
-		-transitive-clausal-comps1/2, case unspecefied
-		-question verbs
-		-are sub morphemes a head or adverb
+questions for emily
+	-transitive-clausal-comps1/2, case unspecefied
+	-question verbs
+	-are sub morphemes a head or adverb
+===============================================================================
+1. We improved the choices file for five phenomena:
+	coordination, irrealis mood, clausal complements, adverbial clausal modifiers, wh question words
+   The last 3 of these we wrote testsuite examples for last week.
 		
 	1.1 Cordination
-		prose description of the phenomenon
-		prose description of our analysis
-		we removed all coordination except polysyntedton
-		IGT
-		the snake made land, food, and us
-		what we changed in the choices file
+		Phenomenon: titan has only polysyntedic coordination
+		
+		Moat  i        tawi   kor, pe  i          tawi   kan  pe  i        tawi yota
+		snake 3sg.nfut create land and 3sg.create create food and 3sg.nfut create1pl.inc
+		The snake created the land, food, us.
+		
+		Analysis: we removed all coordination except polysyntedton
+		what we changed in the choices file: copy-paste
 	
-	1.2 Phenomenon two
-		prose description of the phenomenon
-		prose description of our analysis
+	1.2 Irrealis mood
+		prose description of the phenomenon: ku, ka, ku, __
+		prose description of our analysis: we addeded four auxiliary verb types and gave them restrictions on mood
 		IGT
-		what we changed in the choices file
+		what we changed in the choices file: copy-past
 	
-	1.3 Phenomenon three
-		prose description of the phenomenon
-		prose description of our analysis
+	1.3 Clausal complements
+		prose description of the phenomenon: va, pa~poa
+		prose description of our analysis: we edit the page "clausal complements"
 		IGT
 		changes made in the choices file (paste in the actual choices)
+
+	1.4 Adverbial clausal modifiers
+		prose description of the phenomenon: alan/if
+		prose desctiption of our analysis: ?
+		IGT
+		changes made: copy-paste
+
+	1.5 Wh question words
+		prose description of the phenomenon: ca/that, etc.
+		prose description of our analysis: we added nouns and made them questions
+		IGT
+		changes made: copy-paste
 
 ===============================================================================
 2. Translating the MMT sentences
