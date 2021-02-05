@@ -296,5 +296,33 @@ Todo:
          Mostly the pronoun/clitic confusion.
        
    4.3 Final grammar with testsuite
+       1. How many items parsed?
+       	  106 items parsed.
+	  Out of 84 positive items, 65 parsed
+	  Out of 73 negative items, 41 parsed
+	  
+       2. What is the average number of parses per parsed item?
+       	  1.85 for positive, 1.76 for negative
+       	  
+       3. How many parses did the most ambiguous item receive?
+
+       	  This sentence received 8 distinct analyses;
+
+	      i va ki puti yo
+	      3sg want 3sg.fut marry 1sg
+	      'He wants to marry me'
+
+	      4 are due to analyzing 'i' as a verb instead of a pronoun. Olga has just made it possible for us to fix
+	      this, but we'll leave it to next lab. Of the 4 that analyzed 'i' as a verb, 2 analyzed 'ki' as a noun
+	      with a ridiculously long predication of all of the IGT glosses that were actually the many irrealis
+	      meanings for 'ki.' So we will delete that lexical entry, and only our own 'ki' verb agreement clitic
+	      for irrealis should remain. 
+	      
+       4. What sources of ambiguity can you identify?
+
+       	  
+
+       5. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics?
+   
    4.4 Final grammar with corpus
    
