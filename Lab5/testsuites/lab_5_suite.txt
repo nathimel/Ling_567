@@ -1230,6 +1230,7 @@ when 2sg eat 1sg
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {cl-mod}
 Yo ulumui das alan, das i camar
 1sg drink sea because sea 3sg dry.up
 'Because I drank the sea, the sea water has dried up.'
@@ -1238,6 +1239,7 @@ Yo ulumui das alan, das i camar
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {cl-mod}
 Oi ko kip alan yo ku kip
 2sg 2sg.fut lie if 1sg 1sg.fut lie
 'If you will lie, I will lie.'
@@ -1246,6 +1248,7 @@ Oi ko kip alan yo ku kip
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {cl-mod}
 alan oi ko kip yo ku kip
 if 2sg 2sg.fut lie 1sg 1sg.fut lie
 'If you will lie, I will lie.'
@@ -1254,6 +1257,7 @@ if 2sg 2sg.fut lie 1sg 1sg.fut lie
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {cl-mod}
 oi ko kip yo ku kip alan
 2sg 2sg.fut lie 1sg 1sg.fut lie if
 'You will lie if I will lie.'
@@ -1262,6 +1266,7 @@ oi ko kip yo ku kip alan
 Source: corpus
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 ato va yoito pein
 3pc say 1pc.excl woman-pandanus
 'They said, 'we're pandanus-women.''
@@ -1270,6 +1275,7 @@ ato va yoito pein
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 Manuai i va ko kip
 Eagle 3sg say imp lie
 'Eagle said, "Lie!"'
@@ -1278,6 +1284,7 @@ Eagle 3sg say imp lie
 Source: author
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 Manuai i va  yo  ku      mat
 Eagle  say 1sg 1sg.fut die
 'Eagle said, "I will die."
@@ -1286,6 +1293,7 @@ Eagle  say 1sg 1sg.fut die
 Source: corpus
 Vetted: f
 Judgment: g
+Phenomena: {emb-d}
 i va ki puti yo
 3sg want 3sg.fut marry 1sg
 'He wants to marry me'
@@ -1294,6 +1302,7 @@ i va ki puti yo
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {emb-d}
 ato va
 3pc say
 'They said.'
@@ -1302,6 +1311,7 @@ ato va
 Source: author
 Vetted: f
 Judgment: u
+Phenomena: {emb-d}
 ato va yoito
 3pc said 1pc.excl
 'They said, 'we.''
@@ -1310,6 +1320,7 @@ ato va yoito
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 ato va pein
 3pc say woman-pandanus
 'They said, 'pandanus-women.''
@@ -1318,6 +1329,7 @@ ato va pein
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Yo u pa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
@@ -1326,6 +1338,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Yo pa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
@@ -1334,6 +1347,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Oi a poa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
@@ -1342,6 +1356,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {emb-d}
 Oi poa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.
@@ -1350,6 +1365,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Yo u poa ku kip.
 1sg 1sg.nfut want 1.sg.fut lie
 I want to lie.
@@ -1358,6 +1374,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Yo poa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
@@ -1366,6 +1383,7 @@ I want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Oi a pa ku kip.
 2sg 2sg.nfut want 1.sg.fut lie
 You want to lie.
@@ -1374,6 +1392,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {emb-d}
 Oi pa ku kip.
 2sg want 1.sg.fut lie
 You want to lie.
@@ -1382,6 +1401,7 @@ You want to lie.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {itv}
 Muiny ala matir.
 dog 3pl.nfut sleep
 The dogs sleep.
@@ -1390,6 +1410,7 @@ The dogs sleep.
 Source: author
 Vetted: f
 Judgement: g
+Phenomena: {tv}
 Muiny ala voliliti dilen.
 dog 3pl.nfut follow canoe
 The dogs follow the canoes.
@@ -1398,6 +1419,7 @@ The dogs follow the canoes.
 Source: author
 Vetted: f
 Judgement: u
+Phenomena: {tv}
 Yo u voliliti oi.
 1sg 1sg.nfut follow 2sg.
 I follow you.
