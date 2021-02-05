@@ -11,44 +11,18 @@ head-spec := head-spec-phrase.
 
 bare-np := bare-np-phrase.
 
-vp2-top-coord := vp2-top-coord-rule.
+np1-top-coord := np1-top-coord-rule.
 
-vp2-mid-coord := vp2-mid-coord-rule.
+np1-bottom-coord := np1-bottom-coord-rule.
 
-vp2-bottom-coord := vp2-bottom-coord-rule.
+vp1-top-coord := vp1-top-coord-rule.
 
-vp3-top-coord := vp3-top-coord-rule.
+vp1-bottom-coord := vp1-bottom-coord-rule.
 
-vp3-mid-coord := vp3-mid-coord-rule.
+np2-top-coord := np2-top-coord-rule.
 
-vp3-bottom-coord := vp3-bottom-coord-rule.
+np2-bottom-coord := np2-bottom-coord-rule.
 
-vp3-left-coord := vp3-left-coord-rule.
+adp-comp-head := adp-comp-head-phrase.
 
-vp4-top-coord := vp4-top-coord-rule.
-
-vp4-mid-coord := vp4-mid-coord-rule.
-
-vp4-bottom-coord := vp4-bottom-coord-rule.
-
-vp4-left-coord := vp4-left-coord-rule.
-
-vp5-top-coord := vp5-top-coord-rule.
-
-vp5-mid-coord := vp5-mid-coord-rule.
-
-vp5-bottom-coord := vp5-bottom-coord-rule.
-
-np6-top-coord := np6-top-coord-rule.
-
-np6-mid-coord := np6-mid-coord-rule.
-
-np6-bottom-coord := np6-bottom-coord-rule.
-
-np7-top-coord := np7-top-coord-rule.
-
-np7-mid-coord := np7-mid-coord-rule.
-
-np7-bottom-coord := np7-bottom-coord-rule.
-
-np7-left-coord := np7-left-coord-rule.
+adj-head-scop := adj-head-scop-phrase.

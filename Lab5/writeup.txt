@@ -2,12 +2,10 @@ Lab 5 Writeup
 By David Krug and Nathaniel Imel
 
 Notes/questions:
-   Should we remove things like:
-      noun1_stem169 (orth=ki)
-      noun1_stem47 (orth=ca, pred=_what_n_rel)
-   Are there duplicate auxs?
+   1.6.2
+   There are duplicates ku's, missing ko
       aux39_stem1_orth=ku
-      aux40_stem1_orth=ku (should this be 'ko'?)
+      aux40_stem1_orth=ku (this should be 'ko')
    nfut/fut vs real/irr
    Do we need to be as deltailed in the prose description of phenomena as we
       were last week? 1.3, 1.4, and 1.5 are mostly identical to Lab4.
@@ -32,11 +30,15 @@ Todo:
            or VPs, 'pe' can coordinate only NPs. The coordinators appear before
            the coordinands.
       
-      Moat  i        tawi   kor, pe  i        tawi   kan  pe  i        tawi   yota
+      # Polysyndeton coordination
+      Moat  i        tawi   kor pe  i        tawi   kan  pe  i        tawi   yota
       snake 3sg.nfut create land and 3sg.nfut create food and 3sg.nfut create 1pl.inc
       The snake created the land, food, and us.
       
-      <ungrammatical IGT?>
+      # Titan does not have monosyndeton coordination
+      *Moat  i        tawi   kor  i        tawi   kan  pe  i        tawi   yota
+      snake 3sg.nfut create land 3sg.nfut create food and 3sg.nfut create 1pl.inc
+      The snake created the land, food, and us.
       
       Our analysis: We removed all coordination strategies previously in the
            choices file and added two. The first covers 'pe' and allows NP or
@@ -85,9 +87,11 @@ Todo:
    
    1.3 Clausal complements
       Phenomenon: There are some verbs in Titan that take clauses as a
-           complement. Most of these do not make any specification about the
-           mood of of the complement clause, except 'pa~poa' ('<???>'), which
-           requires that its compelement clause be irrealis.
+         complement. Most of these do not make any specification about the
+         mood of of the complement clause, except 'pa~poa' ('want'), which
+         requires that its compelement clause be irrealis.
+      If a verb takes a clausal complement in either mood, the mood can
+         affect the meaning of the verb.
         
       # 'va' taking a clausal comp with realis mood
       Ato va  Oi  a        kip
@@ -95,13 +99,19 @@ Todo:
       They said, "You're lying!".
       
       # 'va' taking a clausal comp with irrealis mood
+      I va ki puti yo
+      3sg want 2sg.fut marry 2sg
+      He wants to marry me.
       
       # 'pa~poa' requires irrealis
       Yo  pa   ku      le    Yap
       1sg want 1sg.fut go.to Yap
       I want to go to Yap.
      
-      <ungrammatical IGT>
+      # 'va' can not take only an NP
+      Ato va yoito
+      3pc said 1pc.excl.
+      They said, "We".
       
       Our analysis: We edited the page Clausal Complements and added two
          clausal complement stratgies. The first covers most verbs that
@@ -137,12 +147,17 @@ Todo:
       Source: author
       Vetted: f
       Judgement: g
-      <IGT with realis mood>
+      Yo ulumui das alan, das i camar.
+      1sg drink sea because sea 3sg dry.up
+      Because I drank the sea, the sea water has dried up.
       
-      <ungrammatical IGT>
+      # 'alan' can not appear after the matrix clause
+      Oi ko kip yo ku kip alan.
+      2sg 2sg.fut lie 2sg 2sg.fut lie if.
+      You will lie if I will lie.
       
       Our analysis: We added two Clausal Modifier strategies to cover the two
-         different uses of 'alan'. The first strategie __
+         different uses of 'alan'. The first strategy __
       
       Choices file:
       section=clausalmods
@@ -175,7 +190,7 @@ Todo:
       Phemomena: {wh-question}
       Oi a ani ca
       
-      # 'ca' no in situ
+      # 'ca' not in situ
       Source: author
       Vetted: f
       Judgment: u
@@ -189,18 +204,67 @@ Todo:
          morphotactic constraints.
       
       Choices file: <copy-paste choices file, line 1321-1354>
+   
+   1.6 Miscellaneous choices changes
+      There were a few minor cleanup changes that we made to the choices file.
+      
+      1.6.1 Removed Case
+         The initial choices file from the start of Lab 2 included case, which
+            which Titan does not have. We removed case, which made a bunch of
+            errros.
+      
+      1.6.2 Removed old lexical entries.
+         The auto-inference system picked up:
+            noun1_stem169 (orth=ki)
+            noun1_stem47 (orth=ca, pred=_what_n_rel)
 
 ===============================================================================
 2. Translating the MMT sentences
-   What are the translations?
-   How did we get those translations?
-   Are any sentences impossible to translate?
+   Of the 26 sentences in eng.txt, we translated 18 of them. Of the 8 we
+      skipped, 3 of them we determined to be impossiblee to translate.
+   
+   2.1 Example translations
+      Here are the first three sentences we translated:
+      
+      Muiny ala      metir.
+      dog   3pl.nfut sleep
+      Dogs sleep.
+      
+      Muiny ala      voliliti dilen.
+      dog   3pl.nfut follow   canoe
+      Dogs follow canoes.
+      
+      Yo  u        voliliti oi.
+      1sg 1sg.nfut follow   you.
+      I follow you.
+   
+   2.2 Mis-translatated words
+      Three of the English words in eng.txt do not have Titan translations, so
+         we replaced those words with semantically similar words as follows:
+      chase - follow (voliliti)
+      cat   - osprey (manuai)
+      car   - canoe (dilen)
+   
+   2.3 Impossible translations
+      The three sentences we found to be impossible to translate were the three
+         sentences with the word 'ask'. In Titan, the word for ask is 'va',
+         which requires that there be a vocative or adressee of the question.
+   
+      Therefore, "I asked what the dogs chased" is not translatable, but
+         "I asked 'John, what did the dogs chase?'" is translatable.
+   
+   2.4 Other skipped translations
+      Of the five sentences that we skipped but that aren't impossible to
+         translate, three of them have words which we have no translation
+         for: 'think', 'know', and 'after'.
+      The other two that we skipped have phenomena that we haven't yet
+         implemented: prepositions and yes/no questions.
 
 ===============================================================================
 3. Setting up machine translation
    What happened when we tried the MT set up?
-   What difficulties did we encounter?   How did you resolve them?
-   What output did we get?
+   3.1 What difficulties did we encounter? How did you resolve them?
+   3.2 What output did we get?
 
 ===============================================================================
 4. Grammar performance comparison
@@ -232,5 +296,5 @@ Todo:
          Mostly the pronoun/clitic confusion.
        
    4.3 Final grammar with testsuite
-   4.4 Final grammar with corpus (n/a)
+   4.4 Final grammar with corpus
    

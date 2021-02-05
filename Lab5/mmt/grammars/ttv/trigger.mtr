@@ -15,11 +15,15 @@ ku_3_gr := arg0e_gtr &
 
 ki_3_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE fut,
-                                   ASPECT pot ] ] >,
+                                   ASPECT pot,
+                                   MOOD oblig,
+                                   cond  ] ] >,
     FLAGS.TRIGGER "ki_3" ].
 
 a_2_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE nfut,
+                                   ASPECT ipfv,
+                                   pfv ,
                                    MOOD imp ] ] >,
     FLAGS.TRIGGER "a_2" ].
 
@@ -66,3 +70,19 @@ k_27_gr := arg0e_gtr &
 aqani_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.TENSE pres ] >,
     FLAGS.TRIGGER "aqani" ].
+
+ku_4_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ku_4" ].
+
+ku_5_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ku_5" ].
+
+ki_4_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "ki_4" ].
+
+ka_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ka" ].

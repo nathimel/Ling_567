@@ -177,7 +177,7 @@ c := noun1-noun-lex &
   [ STEM < "c" >,
     SYNSEM.LKEYS.KEYREL.PRED "_c_n_rel" ].
 
-ca := noun1-noun-lex &
+ca_1 := noun1-noun-lex &
   [ STEM < "ca" >,
     SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
 
@@ -1249,7 +1249,7 @@ po_1 := noun1-noun-lex &
   [ STEM < "po" >,
     SYNSEM.LKEYS.KEYREL.PRED "_c-or-k-or-m-or-pk-or-pm-or-po-or-pp-or-ps-or-pw-or-s_n_rel" ].
 
-poa := noun1-noun-lex &
+poa_1 := noun1-noun-lex &
   [ STEM < "poa" >,
     SYNSEM.LKEYS.KEYREL.PRED "_call-or-deck-or-mouth-or-snake-mouth_n_rel" ].
 
@@ -1876,6 +1876,38 @@ ku_2 := noun85-noun-lex &
 ala_2 := noun86-noun-lex &
   [ STEM < "ala" >,
     SYNSEM.LKEYS.KEYREL.PRED "_3pl_n_rel" ].
+
+ca_2 := noun87-noun-lex &
+  [ STEM < "ca" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_thing_n_rel" ].
+
+se_1 := noun88-noun-lex &
+  [ STEM < "se" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_person_n_rel" ].
+
+ite := noun89-noun-lex &
+  [ STEM < "ite" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
+
+tite := noun89-noun-lex &
+  [ STEM < "tite" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
+
+rehe := noun90-noun-lex &
+  [ STEM < "rehe" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
+
+wee := noun91-noun-lex &
+  [ STEM < "wee" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
+
+akeis := noun92-noun-lex &
+  [ STEM < "akeis" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
+
+keis := noun92-noun-lex &
+  [ STEM < "keis" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
 ;;; Adjectives
 
@@ -3217,7 +3249,7 @@ owani := verb2-verb-lex &
   [ STEM < "owani" >,
     SYNSEM.LKEYS.KEYREL.PRED "_blow_v_rel" ].
 
-pa := verb2-verb-lex &
+pa_1 := verb2-verb-lex &
   [ STEM < "pa" >,
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
@@ -3309,7 +3341,7 @@ sari := verb2-verb-lex &
   [ STEM < "sari" >,
     SYNSEM.LKEYS.KEYREL.PRED "_seize_v_rel" ].
 
-se := verb2-verb-lex &
+se_2 := verb2-verb-lex &
   [ STEM < "se" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sit_v_rel" ].
 
@@ -3449,7 +3481,7 @@ utue := verb2-verb-lex &
   [ STEM < "utue" >,
     SYNSEM.LKEYS.KEYREL.PRED "_make_v_rel" ].
 
-va := verb2-verb-lex &
+va_1 := verb2-verb-lex &
   [ STEM < "va" >,
     SYNSEM.LKEYS.KEYREL.PRED "_say-or-think-or-want_v_rel" ].
 
@@ -3556,6 +3588,18 @@ tuai := verb3-verb-lex &
 vuacole := verb3-verb-lex &
   [ STEM < "vuacole" >,
     SYNSEM.LKEYS.KEYREL.PRED "_play_v_rel" ].
+
+va_2 := verb4-verb-lex &
+  [ STEM < "va" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_say_v_rel" ].
+
+pa_2 := verb5-verb-lex &
+  [ STEM < "pa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
+
+poa_2 := verb5-verb-lex &
+  [ STEM < "poa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
 ;;; Auxiliaries
 
@@ -3703,6 +3747,18 @@ ala_3 := aux38-aux-lex &
   [ STEM < "ala" >,
     SYNSEM.LKEYS.KEYREL.PRED "_3pl_v_rel" ].
 
+ku_4 := aux39-aux-lex &
+  [ STEM < "ku" > ].
+
+ku_5 := aux40-aux-lex &
+  [ STEM < "ku" > ].
+
+ki_4 := aux41-aux-lex &
+  [ STEM < "ki" > ].
+
+ka := aux42-aux-lex &
+  [ STEM < "ka" > ].
+
 ;;; Determiners
 
 moen := det1-determiner-lex &
@@ -3755,44 +3811,22 @@ tita := det12-determiner-lex &
 
 ;;; Adverbs
 
-pe2 := conj-lex &
+pe1 := conj-lex &
   [ STEM < "pe" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "1" ].
+
+ne2 := conj-lex &
+  [ STEM < "ne" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "2" ].
 
-pe3 := conj-lex &
-  [ STEM < "pe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "3" ].
+alan_1 := irr-clause-final-prehead-s-attach-subord-lex-item &
+  [ STEM < "alan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_if_subord_rel" ].
 
-pe3_nosem := nosem-conj-lex &
-  [ STEM < "pe" >,
-    CFORM "3" ].
+alan_2 := realis-clause-init-prehead-s-attach-subord-lex-item &
+  [ STEM < "alan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_because_subord_rel" ].
 
-Pe4 := conj-lex &
-  [ STEM < "Pe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "4" ].
-
-Pe4_nosem := nosem-conj-lex &
-  [ STEM < "Pe" >,
-    CFORM "4" ].
-
-Pe5 := conj-lex &
-  [ STEM < "Pe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "5" ].
-
-pe6 := conj-lex &
-  [ STEM < "pe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "6" ].
-
-pe7 := conj-lex &
-  [ STEM < "pe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "7" ].
-
-pe7_nosem := nosem-conj-lex &
-  [ STEM < "pe" >,
-    CFORM "7" ].
+;;; Complementizers

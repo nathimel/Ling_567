@@ -21,13 +21,13 @@ ace="/usr/local/bin/ace"
 echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat | $ace -g tm/$TARGET/$TARGET.dat | $ace -g grammars/$TARGET/$TARGET.dat -e --disable-subsumption-test
 
 #Full pipeline; verbose; allow subsumption check
-#echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat | $ace -g tm/$TARGET/$TARGET.dat | $ace -g grammars/$TARGET/$TARGET.dat -e 
+echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat | $ace -g tm/$TARGET/$TARGET.dat | $ace -g grammars/$TARGET/$TARGET.dat -e 
 
 #Look at transfer output
-#echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat 2>/dev/null | $ace -g tm/$TARGET/$TARGET.dat 2>/dev/null | more
+echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat 2>/dev/null | $ace -g tm/$TARGET/$TARGET.dat 2>/dev/null | more
 
 #Look at transfer output & errors
-#echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat 2>/dev/null | $ace -g tm/$TARGET/$TARGET.dat | more
+echo $SENTENCE | $ace -g grammars/$SOURCE/$SOURCE.dat 2>/dev/null | $ace -g tm/$TARGET/$TARGET.dat | more
 
 
 #Look at parser output
