@@ -69,41 +69,8 @@ By David Krug and Nathaniel Imel
       Our analysis: We addeded four auxiliary verb types and gave them
          restrictions on mood. We haven't gotten person and number working yet.
       
-      Choices file: 
-      aux39_name=aux39
-          aux39_sem=no-pred
-      aux39_feat1_name=mood
-         aux39_feat1_value=irr
-         aux39_feat1_head=verb
-       aux39_subj=np
-         aux39_compfeature1_name=form
-         aux39_compfeature1_value=finite
-         aux39_stem1_orth=ku
-       aux40_name=aux40
-       aux40_sem=no-pred
-         aux40_feat1_name=mood
-         aux40_feat1_value=irr
-         aux40_feat1_head=verb
-       aux40_subj=np
-         aux40_compfeature1_name=form
-         aux40_compfeature1_value=finite
-         aux40_stem1_orth=ku
-       aux41_name=aux41
-       aux41_sem=no-pred
-       aux41_subj=np
-         aux41_compfeature1_name=form
-         aux41_compfeature1_value=finite
-         aux41_stem1_orth=ki
-       aux42_name=aux42
-       aux42_sem=no-pred
-         aux42_feat1_name=mood
-         aux42_feat1_value=irr
-         aux42_feat1_head=verb
-       aux42_subj=np
-         aux42_compfeature1_name=form
-         aux42_compfeature1_value=finite
-         aux42_stem1_orth=ka
-
+      Choices file: <copy-paste lines 2571-2603 from choices file>
+   
    1.3 Clausal complements
       Phenomenon: There are some verbs in Titan that take clauses as a
          complement. Most of these do not make any specification about the
@@ -151,7 +118,7 @@ By David Krug and Nathaniel Imel
       Phenomenon: Titan has adverbial modifies, like 'alan' ('if/before'),
          which take the form of a free subordination morpheme that occurs
          before the matrix clause and attaches to/modifies sentences. The
-         meaning of 'alan' depends on the mood of the subordinate
+         meaning of 'alan' depends on the mood of the <subordinate|matrix>
          clause.
         
       # 'alan' irrealis marks conditional
@@ -223,41 +190,41 @@ By David Krug and Nathaniel Imel
          morphotactic constraints.
       
       Choices file:
-      noun87_name=noun87
-       noun87_inter=on
-       noun87_det=opt
-         noun87_stem1_orth=ca
-         noun87_stem1_pred=_thing_n_rel
-       noun88_name=noun88
-       noun88_inter=on
-       noun88_det=opt
-         noun88_stem1_orth=se
-         noun88_stem1_pred=_person_n_rel
-       noun89_name=noun89
-       noun89_inter=on
-       noun89_det=opt
-         noun89_stem1_orth=ite
-         noun89_stem1_pred=_place_n_rel
-         noun89_stem2_orth=tite
-         noun89_stem2_pred=_place_n_rel
-       noun90_name=noun90
-       noun90_inter=on
-       noun90_det=opt
-         noun90_stem1_orth=rehe
-         noun90_stem1_pred=_place_n_rel
-       noun91_name=noun91
-       noun91_inter=on
-       noun91_det=opt
-         noun91_stem1_orth=wee
-         noun91_stem1_pred=_place_n_rel
-       noun92_name=noun92
-       noun92_inter=on
-       noun92_det=opt
-         noun92_stem1_orth=akeis
-         noun92_stem1_pred=_time_n_rel
-         noun92_stem2_orth=keis
-         noun92_stem2_pred=_time_n_rel
 
+  aux39_name=aux39
+  aux39_sem=no-pred
+    aux39_feat1_name=mood
+    aux39_feat1_value=irr
+    aux39_feat1_head=verb
+  aux39_subj=np
+    aux39_compfeature1_name=form
+    aux39_compfeature1_value=finite
+    aux39_stem1_orth=ku
+  aux40_name=aux40
+  aux40_sem=no-pred
+    aux40_feat1_name=mood
+    aux40_feat1_value=irr
+    aux40_feat1_head=verb
+  aux40_subj=np
+    aux40_compfeature1_name=form
+    aux40_compfeature1_value=finite
+    aux40_stem1_orth=ku
+  aux41_name=aux41
+  aux41_sem=no-pred
+  aux41_subj=np
+    aux41_compfeature1_name=form
+    aux41_compfeature1_value=finite
+    aux41_stem1_orth=ki
+  aux42_name=aux42
+  aux42_sem=no-pred
+    aux42_feat1_name=mood
+    aux42_feat1_value=irr
+    aux42_feat1_head=verb
+  aux42_subj=np
+    aux42_compfeature1_name=form
+    aux42_compfeature1_value=finite
+    aux42_stem1_orth=ka
+   
    1.6 Miscellaneous choices changes
       There were a few minor cleanup changes that we made to the choices file.
       

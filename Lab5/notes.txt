@@ -1,0 +1,9 @@
+orth=ki
+orth=ka
+
+
+Should question pronouns have an optional determiner?
+
+   There are duplicates ku's, missing ko
+      aux39_stem1_orth=ku
+      aux40_stem1_orth=ku (this should be 'ko')
