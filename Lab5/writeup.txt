@@ -264,7 +264,32 @@ Todo:
 3. Setting up machine translation
    What happened when we tried the MT set up?
    3.1 What difficulties did we encounter? How did you resolve them?
+       There were syntax errors in our trigger.mtr file, in two places. The
+       following steps resolved the errors and allowed the grammar to compile
+       with ace.
+
+	    In ki_3_gr, I deleted the part of the entry that had:
+	       MOOD oblig, cond
+	    In a_2_gr, I deleted the part of the entry that had:
+	       TENSE ipfv, pfv
+	       
    3.2 What output did we get?
+       We received many duplicate strings. For eng to ttv, we received 64 strings
+       for the first line. For the second sentence, 0 sentences were generated
+       because _car_n_rel and _chase_v_rel were unknown in the semantic index.
+       The third sentence was also not generated because _chase_v_rel and pron_rel
+       were unknown. But we should be able to fix pron_rel soon.
+
+       Furthermore, there was a difference between ttv to ttv and eng to ttv. In
+       fact, ttv to ttv yielded 192 strings while eng to ttv yielded 64. And we
+       know that there are two parse trees for the Titan sentence, though they
+       have the same semantics. We'd be very interested to know whether the
+       eng to ttv translation is using just one of these trees, and the reason
+       for this big difference in general.
+
+       Also, all of the eng to ttv sentences had only the irrealis
+       clitic. Not a single sentence had a realis clitic, which we thought was
+       strange.
 
 ===============================================================================
 4. Grammar performance comparison
@@ -320,9 +345,134 @@ Todo:
 	      
        4. What sources of ambiguity can you identify?
 
-       	  
+       	  In addition to the pronoun/clitic ambiguity and multiple lexical entries for the same item, we have
+	  structural ambiguity in some of the parses. For example, in the VP structure for a phrase like
+	  'ku mat', there are analyses that label 'ku' or 'mat' as higher, or sometimes each as Vs (and not VPs).
 
        5. For 10 items (if you have at least that many parsing), do any of the parses look reasonable in the semantics?
-   
+
+       	  This will be a diff to the previous labs' semantics:
+
+	  1.  i va ki puti yo
+	      3sg want 3sg.fut marry 1sg
+	      'He wants to marry me'
+
+
+	  This was explored above as the most ambiguous item. There were two parses that were mostly reasonable
+	  however -- we just need to get rid of a lexical entry and implement agreement on the pronouns. However,
+	  there is an issue with the linking of ARG0 of the verb 'die' to the ARG2 of the 'say' verb. The same
+	  issue comes up with the verb 'pa' and we talk about it in more detail in 4.
+
+	  2.
+	     Manuai i va  yo  ku      mat
+	     Eagle  say 1sg 1sg.fut die
+	     'Eagle said, "I will die."
+
+	 This sentence has 6 parse trees, but as far as we can tell they all have the same semantics. Also, the
+	 semantics look very reasonable -- we think we implemented the clausal complement-embedding word 'va'
+	 correctly here. It just needs to have the clitic 'i' have its predication be empty, rather than
+	 _3sg.nfut_n_rel.
+
+	 3. ato va
+	    3pc say
+	    *They said
+
+	 This string received 3 parse trees, though it was meant to be a negative example. We think the reason is that
+	 we need to delete the entry for 'va' that's being used, which is the automatically generated from the IGT
+	 version that is transitive and its predication is _3sg_thing-or-say-or-want_v_rel.
+
+	 4.
+	    Yo u pa ku kip.
+	    1sg 1sg.nfut want 1.sg.fut lie
+	    I want to lie.
+
+	 This sentence has 5 trees, and we only want one. Two of the trees parse 'ku' as a noun with a long predication,
+	 which we think was automatically generated from the IGT. In the trees parsing 'ku' as the aux verb, the ARG0
+	 of the 'lie_v_rel' item is an event e11 identified with the the LARG value of ICONS. And the ARG2 of the
+	 'want_v_rel', which we think should be identified with the ARG0 of the lie_v_rel', is instead identified with
+	 the HARG feature's value of the second qeq on the HCONS list.
+
+	 We think this is not quite right, and may have
+	 to do with incorrectly implementing clausal complement semantics. Perhaps there's something in the customization
+	 system we can do to fix this? We actuallly received 5 parses for every 'pa' test case, and they all seem to be
+	 suffering from this issue.
+
+	 5. Muiny ala matir
+	    Dog   3pl sleep
+	   'Dogs sleep.'
+
+	   This is our first MT sentence, and the semantics all look good. All ARGns look appropriate, including ARG0
+	   of the _sleep_rel being linked to LARG of a qeq member on HCONS that has the HARG value that's identified
+	   with the ARG1 of the auxiliary 'ala'. Of course, the actual predication on 'ala' is incorrect (_3pl_v_rel)
+	   but we'll fix that soon. There are two parse trees for this sentence, but they have the same semantics
+	   because they only vary in the VP structure.
+
+	 6. muiny ala voliliti dilen
+	    dog   3pl follow   canoe
+	    'Dogs follow the canoe'
+
+	 Our second MT sentence has just one parse tree, and the semantics look reasonable with the correct
+	 linking of ARGns, including qeq linking.
+
+	 7. Yo u voliliti oi
+	    1sg 1sg follow 2sg
+	    'I follow you.'
+
+	Third MT sentence has one parse tree, and the semantics looks reasonable like the preivous two.
+
+	8. Yo pe   oi  yoru     kip
+	   1sg and 2sg 1dl.incl lie
+	   'I and you lie'
+
+	This is an example of coordination that is working well. All our coordination examples that did parse
+	received just one tree, and the semantics look reasonable, with ARGns being linked correctly. Unfortunately,
+	only our pe (and) cases parsed, and none of our ne (or) cases did.
+
+	9. yaye-yo     i  ani lei
+	   mother-1sg 3sg eat ginger-bulb
+	   'My mother eats a ginger bulb.'
+
+	The ARG1 of the poss_rel is the mother here, and the ARG2 is the pronoun. If ARG1 is supposed to be the
+	possessum and ARG2 is to be the possessor, that sounds right. And the mother is being linked to the ARG0
+	of the eat_v_rel, which is a good sign.
+
+	10. Oi a ani ca
+	    2sg 2sg eat what
+	    'What are you eating?'
+
+	This was the only wh-question test case that parsed (besides 'oi se', which we aren't reporting on because
+	it is a test case exhibiting too much phenomena at once). The semantics shows that the predication for 'ca'
+	is _what_n_rel, suggesting that the sentence parsed using the automatically generated lexical entry for 'ca'
+	from the IGT rather than our own implemented wh-word, which should have the _thing_n_rel predication. Also
+	Olga said that for wh-words, the quantifier should be a 'which' instead of an 'exists,' but we have the latter.
+
    4.4 Final grammar with corpus
-   
+
+      38/563 positive items (6.7% coverage) So we parsed 14 more sentences!
+      	      
+      On average, parsed items had 2.89 parses. So we almost doubled our ambiguity.
+      
+      Most ambiguous item:
+         Much more ambiguity. We have sentences that have 4 and 10 and 15 parses.
+
+	    The sentence with 15 parses is:
+
+	      ala va  yota    ka   mulie
+	      3pl say 1pl.inc hort turn
+	      'They said let s turn around'
+
+
+	    10 parses:
+
+	      i va awa ka la
+	      3sg say 2pl hort go
+	      'He said you go.'
+
+	      ato va i kine me
+	      3pl say 3sg 3sg.perf come
+	      'They said he s come.'
+
+	 These sentences are using the complement embedding verb 'va' and the irrealis verb clitic 'ka.' We know there
+	 are two entries for 'va'. There only seems to be one entry for 'ka', though. My guess is that there's lots
+	 of structural ambiguity in how the VP trees are constructed.
+       

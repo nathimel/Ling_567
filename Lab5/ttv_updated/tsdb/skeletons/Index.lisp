@@ -24,4 +24,5 @@
 ; New test suites here. For example:
 ; ((:path . "new-test-suite") (:content . "New Test Suite: A description of the new test suite located at the subdirectory new-test-suite."))
 ((:path . "test") (:content . "test: our lab4 test suite item"))
+((:path . "corpus") (:content . "IGT provided by the linguist"))
 )
