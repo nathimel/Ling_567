@@ -28,3 +28,36 @@ lets at least delete the automatically inferred 'va' entry thats transitive.
 ===============================================================================
 3. A description of the performance of your final grammar for this week on the
 test suite and test corpus, as compared to your starting grammar (see details above).
+
+
+     3.1.1 Final testsuite with initial grammar for the week
+     3.1.2 Final testsuite with final grammar for the week
+     3.2.1 Test corpus with initial grammar for the week
+     
+      - On average, parsed items had 2.89 parses.
+
+      - Most ambiguous item:
+	The most ambiguous items had 10 and 15 parses.
+
+	  The sentence with 15 parses is:
+
+	     ala va  yota    ka   mulie
+	     3pl say 1pl.inc hort turn
+	     'They said let s turn around'
+
+	  10 parses:
+
+	      i va awa ka la
+	      3sg say 2pl hort go
+      	     'He said you go.'
+
+	      ato va i kine me
+	      3pl say 3sg 3sg.perf come
+	      'They said he s come.'
+
+       These sentences are using the complement embedding verb 'va' and the irrealis verb clitic 'ka.' We know there
+       are two entries for 'va'. There only seems to be one entry for 'ka', though. My guess is that there's lots
+       of structural ambiguity in how the VP trees are constructed.
+
+
+     3.2.2 Test corpus with final grammar for the week
