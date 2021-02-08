@@ -1,0 +1,30 @@
+Lab 5 Writeup
+By David Krug and Nathaniel Imel
+
+===============================================================================
+1. A description of the changes you made to your semi.vpm file, why you made
+those specifc changes, and how that affected generator output.
+===============================================================================
+2. A description of the phenomena you improved in the grammar (including both
+the morphology etc clean up and adnominal possession or clausal complements),
+including:
+
+NB: we've done both already. What should we work on this week?
+
+Something else
+in the MT list of sentences?
+
+How well do adposs and clausal complements work? Can we make them better? I.e.,
+lets at least delete the automatically inferred 'va' entry thats transitive.
+
+   - Prose description of the phenomenon
+    
+   - Prose description of your analysis
+    
+   - The specific changes you made to the tdl (paste in the actual tdl)
+    
+   - Specific IGT I can use to test the analysis / investigate if something isn't
+    working and you need help.
+===============================================================================
+3. A description of the performance of your final grammar for this week on the
+test suite and test corpus, as compared to your starting grammar (see details above).
