@@ -9,13 +9,35 @@ those specifc changes, and how that affected generator output.
 the morphology etc clean up and adnominal possession or clausal complements),
 including:
 
-NB: we've done both already. What should we work on this week?
+"""
+preliminary notes/TODO list on 'va'/'pa'
 
-Something else
-in the MT list of sentences?
+   1.  We'll probably write another lex. entry for 'va' to mean 'think_v_rel'.
+    	  - see canvas; 'pa' often glossed as 'thought to do y'
+   2. Remove the spurious 'va' auto-inferred that has a long predication
+   3. For 'Pa~Poa':
+      - the 'poa' form allows non-second, but it shouldn't
+      - for some reason there are four extra lex entries for 'ku'
+      	    - ku_3 is correct and means 1sg.fut, spec for irrealis
+	    -ku_1 means 3rd (underspec for num) but is spec for irrealis? and is a NOUN
+	    -ku_2 means 1sg but is a PRONOUN, but is spec for irrealis?
+	    -ku_4 and ku_5 are just underspecified for num and per, but is spec for irrealis
 
-How well do adposs and clausal complements work? Can we make them better? I.e.,
-lets at least delete the automatically inferred 'va' entry thats transitive.
+	    EVERYTHING except ku_3 need to be deleted. I think the reason the verb is spec
+	    for irrealis is actually a result of 'pa' requiring an irrealis complement,
+	    not a result of the agreement clitics/ the nominal entries.
+	    	- though I checked 'Yo ku kip', and that had ku_3, ku_5, and ku_4, and the
+		head verb 'kip' was specified for irr for all three.
+		     - note for 'Taru ka kip' the person was 3 and unspecified for number
+		       	    -furthermore while 'ka' has only one entry, the mood is spec
+			    as 'realis', and the per, num are unspecified. Both are wrong.
+		     - note that 'Manuai ki kip' has per=3 num-unspec, and mood=unspec (and tense=unspec)
+		     - note that 'Oi ko kip' has only one tree, but ko_2 and it means "2sg.fut-or-fall_v_rel
+		       	    -i.e. this is an auto-inferred lex entry, should delete it.
+	-UPSHOT for the AGR clitics seems to be:
+		- delete all but the correct entry;
+		- make the entry specify for per, num
+"""
 
    - Prose description of the phenomenon
     
