@@ -4,10 +4,115 @@ By David Krug and Nathaniel Imel
 ===============================================================================
 1. A description of the changes you made to your semi.vpm file, why you made
 those specifc changes, and how that affected generator output.
+
+      We will make the following trivial changes:
+      	 PER, NUM, and GEND all have the PNG. value on the rhs, which Emily says to delete
+	 TENSE, ASPECT, and MOOD all have the E. value on the rhs, which Emily says to delete.
+	 	- we probably want to write "no-aspect" as a default aspect
+
+
 ===============================================================================
 2. A description of the phenomena you improved in the grammar (including both
 the morphology etc clean up and adnominal possession or clausal complements),
 including:
+
+ CLEANUP of CONSTRAINTS
+**************
+
+We'll probably remove morphology that's insufficiently constrained or adding constraints to that morph.
+
+      MORPH we're seeing:
+
+(For ttv to ttv)
+      For "dogs sleep" we got about a page, about half for eng to ttv
+      For "dogs follow canoes", we got about a page of sentences. (unknown sem index)
+      For "I follow you" I had to kill the process. My guess is thousands, and
+      idk if it would have stopped. (unknown sem index)
+      
+
+      ************************************************
+      -n and -m suffixes on the end of 'dog' and 'canoe'
+      - the word ka is empty here
+      	    	 ***NB: there is only one 'ka,' unlike the other clitics.
+		 	** getting a lot of sentences with the other irr clitics,
+			so cleaning up that is a priority.
+			
+      	     e.g., " Muiny-n ala ka voliliti dilen-m"
+
+
+	   **What -n and -m do:**
+	   	  - In our choices file, they're the first two noun_pcs, and their
+		  lexical rule types have no features/values.
+
+		  -n seems to be for adnominal possession, marking on the possessum
+		  the agreement of the possessor. Here's some IGT:
+
+		      Po Ma aru dasi   -n   aru va    ka      le    leq
+		      P.M.  3dl brother-3sg 3dl think nsg.fut go_to shore 
+		      Po Ma and his brother wanted to go to the shore.
+
+
+		   -m seems to be for adnominal possession too, but for 2sg:
+
+		      yo  u       tawi  pel       ile  poa  -m
+		      1sg 1sg.fut place taro_pulp into mouth-2sg.poss
+		      I will put taro pulp in your mouth.
+
+		   -These glosses are consistent with the discussion of inalienable
+		   possession suffixation, which also says that -o means 1sg.poss,
+		   though that doesn't seem to be in our choices file. Also, it only
+		   applies as suffixation when the stem ends in the vowel "a".
+
+		   Our plan is to improve the Adnominal Possession phenomena for
+		   inalienable possession markers -o, -m, -n.
+
+      -List of other SEMANTICALLY EMPTY WORD candidates:
+      
+      	    k' --- one sem. empty aux 27
+	    aqani -- " aux_28
+	    poro --- noun1_stem369 w/ pred, " aux_22
+	    kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
+	    porokiny -- " aux_22
+	    keiny --- noun_50 (pron_n_rel), " aux_19
+	    
+     	    k' seems like an alternation of any irrealis clitic, as the descriptive
+	    resources has it glossed for 3sg.fut and 1pl.fut. But it only
+	    occurs in the test corpus once, as "fut", though it looks like from the
+	    context it should have 1sg agreement.
+
+	    aqani is glossed as "present.with.gifts" or "support". The Titan-English
+	    dictionary in our resources has the following entry:
+
+	    	       NB: what does Lusk mean?
+
+	    	       aijani v.tr 1. present with gifts, present, offer
+		       2. support, look after
+		       Lusk: agani 'feed
+
+
+            poro is glossed as a hole.
+	    porokiny means pot
+	    T-E Dictionary entry:
+
+	    	
+		poro n.ia hole.
+		porokiny n
+		1. pot
+		2. wooden bowl.
+		Lusk: porokin.
+
+
+	    kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
+	    which correspond to their similar irrealis verb clitic markers.
+	    
+	    Keiny is glossed as "pot", and is a synonym with porokiny
+	    in the English-Titan glossary.
+
+	    
+
+With semantically empty words, we'll add more constraints and might refine trigger rules.
+
+
 
 """
 preliminary notes/TODO list on 'va'/'pa'
