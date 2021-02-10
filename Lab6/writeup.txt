@@ -1,15 +1,46 @@
 Lab 5 Writeup
 By David Krug and Nathaniel Imel
 
+
+Qs for Emily:
+
+Differences between MT grammar and our Lab6 directory grammar. Once we have an
+updated grammar, is it fine to just copy that new grammar into the MT directory
+to replace the old one? Because we remember there were like 10 steps to complete
+to go from having a grammar to using it for MT.
+
+Go over comments for last lab, especially:
+   what did you mean by:
+
+  " You'll need to add entries for dog and car (well, dog and canoe) with the
+   PRED values _dog_n_rel and _car_n_rel."
+   	- in the grammar? We already have _dog_n_rel. What about _chase_v_rel?
+
+Is it enough that we are basically improving on our improvements from last lab (adposs, CC)
+
 ===============================================================================
 1. A description of the changes you made to your semi.vpm file, why you made
 those specifc changes, and how that affected generator output.
 
-      We will make the following trivial changes:
+      We made the following changes:
       	 PER, NUM, and GEND all have the PNG. value on the rhs, which Emily says to delete
 	 TENSE, ASPECT, and MOOD all have the E. value on the rhs, which Emily says to delete.
-	 	- we probably want to write "no-aspect" as a default aspect
+	 	- we probably want to write "no-aspect" as a default aspect?
+	 Spelling out the abbreviated left-hand side values on the right hand side
 
+	 We are considering deleting the entire TENSE property, because we've been
+	 implementing the tense marker as just an irrealis marker. All of our examples
+	 of the irrealis markers have in fact been for future sentences, and in our
+	 test cases, we've given glosses like:
+	 
+	    Manuai ki kip
+	    eagle  3sg.fut lie
+	    'The eagle will lie.'
+
+	 But now maybe we should gloss as 3sg.irr
+
+	 But then we'll need
+	 a transfer rule to map future tense to our irrealis mood?
 
 ===============================================================================
 2. A description of the phenomena you improved in the grammar (including both
@@ -19,6 +50,16 @@ including:
  CLEANUP of CONSTRAINTS
 **************
 
+From lab5 comments
+**************
+We will say that auxiliaries take only VP complements instead of V, so as to reduce the ambiguity about
+where the object drops wrt to the aux.
+
+We need to answer the questions on the wh questions page and then specify that your wh pronouns are actually wh pronouns.
+
+We should fix 'matir'=sleep to be intransitive, rather than transitive.
+****************
+
 We'll probably remove morphology that's insufficiently constrained or adding constraints to that morph.
 
       MORPH we're seeing:
@@ -26,8 +67,7 @@ We'll probably remove morphology that's insufficiently constrained or adding con
 (For ttv to ttv)
       For "dogs sleep" we got about a page, about half for eng to ttv
       For "dogs follow canoes", we got about a page of sentences. (unknown sem index)
-      For "I follow you" I had to kill the process. My guess is thousands, and
-      idk if it would have stopped. (unknown sem index)
+      For "I follow you", "
       
 
       ************************************************
@@ -72,6 +112,7 @@ We'll probably remove morphology that's insufficiently constrained or adding con
 	    aqani -- " aux_28
 	    poro --- noun1_stem369 w/ pred, " aux_22
 	    kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
+	    	 **EXPLORE the other perf markers?
 	    porokiny -- " aux_22
 	    keiny --- noun_50 (pron_n_rel), " aux_19
 	    
@@ -156,7 +197,6 @@ preliminary notes/TODO list on 'va'/'pa'
 3. A description of the performance of your final grammar for this week on the
 test suite and test corpus, as compared to your starting grammar (see details above).
 
-
      3.1.1 Final testsuite with initial grammar for the week
      3.1.2 Final testsuite with final grammar for the week
      3.2.1 Test corpus with initial grammar for the week
@@ -185,6 +225,5 @@ test suite and test corpus, as compared to your starting grammar (see details ab
        These sentences are using the complement embedding verb 'va' and the irrealis verb clitic 'ka.' We know there
        are two entries for 'va'. There only seems to be one entry for 'ka', though. My guess is that there's lots
        of structural ambiguity in how the VP trees are constructed.
-
 
      3.2.2 Test corpus with final grammar for the week

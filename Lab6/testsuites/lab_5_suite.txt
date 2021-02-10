@@ -1343,15 +1343,16 @@ Yo pa ku kip.
 1sg want 1.sg.fut lie
 I want to lie.
 
-# XX: Poa w/ second person and w/ clitic
+# 149: Poa w/ second person and w/ clitic
 Source: author
+Vetted: f
 Judgment: g
 Phenomena: {emb-d}
 Oi a poa ko kip.
 2sg 2sg.nfut want 2sg.fut lie
 You want to lie.
 
-# 149: Poa w/ second person and w/ clitic
+# 150: Poa w/ second person and w/ clitic
 Source: author
 Vetted: f
 Judgement: g
@@ -1360,7 +1361,7 @@ Oi a poa ku kip.
 2sg 2sg.nfut want 1sg.fut lie
 You want me to lie.
 
-# 150: Poa w/ second person, w/o clitic
+# 151: Poa w/ second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: g
@@ -1369,7 +1370,7 @@ Oi poa ku kip.
 2sg want 1sg.fut lie
 You want me to lie.
 
-# 151: Poa w/ non-second person, w/ clitic
+# 152: Poa w/ non-second person, w/ clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1378,7 +1379,7 @@ Yo u poa ku kip.
 1sg 1sg.nfut want 1sg.fut lie
 I want to lie.
 
-# 152: Poa w/ non-second person, w/o clitic
+# 153: Poa w/ non-second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1387,7 +1388,7 @@ Yo poa ku kip.
 1sg want 1sg.fut lie
 I want to lie.
 
-# 153: Pa w/ second person
+# 154: Pa w/ second person
 Source: author
 Vetted: f
 Judgement: u
@@ -1396,7 +1397,7 @@ Oi a pa ku kip.
 2sg 2sg.nfut want 1sg.fut lie
 You want to lie.
 
-# 154: Pa w/ second person, w/o clitic
+# 155: Pa w/ second person, w/o clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1405,7 +1406,7 @@ Oi pa ku kip.
 2sg want 1sg.fut lie
 You want to lie.
 
-# 155: MT sentence 1
+# 156: MT sentence 1
 Source: author
 Vetted: f
 Judgement: g
@@ -1414,7 +1415,7 @@ Muiny ala matir.
 dog 3pl.nfut sleep
 The dogs sleep.
 
-# 156: MT sentence 2
+# 157: MT sentence 2
 Source: author
 Vetted: f
 Judgement: g
@@ -1423,7 +1424,7 @@ Muiny ala voliliti dilen.
 dog 3pl.nfut follow canoe
 The dogs follow the canoes.
 
-# 157: MT sentence 3
+# 158: MT sentence 3
 Source: author
 Vetted: f
 Judgement: u
