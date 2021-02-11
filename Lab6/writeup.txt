@@ -18,6 +18,9 @@ Go over comments for last lab, especially:
 
 Is it enough that we are basically improving on our improvements from last lab (adposs, CC)
 
+   Can we do away with TENSE for the moment, and just analyze all of its markers
+   consistently with IRR?
+
 ===============================================================================
 1. A description of the changes you made to your semi.vpm file, why you made
 those specifc changes, and how that affected generator output.
@@ -58,6 +61,341 @@ where the object drops wrt to the aux.
 We need to answer the questions on the wh questions page and then specify that your wh pronouns are actually wh pronouns.
 
 We should fix 'matir'=sleep to be intransitive, rather than transitive.
+
+   	  delted:
+
+	      verb1_stem119_orth=matir~
+   	      verb1_stem119_pred=_lie-or-sleep-or-sleep_with_v_rel
+
+	          verb2_stem56_orth=matir
+   		   verb2_stem56_pred=_sleep_v_rel
+
+	added:
+		
+****************
+
+CLITICS CLEANING
+
+	deleted:
+		    noun1_stem188_orth=ku
+   		     noun1_stem188_pred=_1sg-or-1sg.cfact_n_rel
+
+		     noun85_pron=on
+   		     noun85_feat1_name=person
+		       noun85_feat1_value=1st
+		       noun85_feat2_name=number
+		       noun85_feat2_value=sg
+		     noun85_det=opt
+		       noun85_stem1_orth=ku
+		       noun85_stem1_pred=_pron_n_rel
+
+		    aux13_name=aux13
+		    aux13_sem=no-pred
+		      aux13_feat1_name=tense
+		      aux13_feat1_value=fut
+		      aux13_feat1_head=verb
+		    aux13_subj=np
+		      aux13_compfeature1_name=form
+		      aux13_compfeature1_value=finite
+		      aux13_stem1_orth=ku
+
+	    and also I accidentally spelled aux_40 as 'ku' instead of 'ko,'
+	    so I fixed that orthography.
+
+	            verb1_stem91_orth=ko~
+   		    verb1_stem91_pred=_2sg.fut-or-2sg.pot-or-cfact-or-imp_v_rel
+
+		       There is an intransitive 'ko,' but not the following transitive w/ the
+		       union predication:
+
+			       verb2_stem46_orth=ko
+			       verb2_stem46_pred=_2sg.fut-or-fall_v_rel
+
+		       So we deleted the above and added the correct one.
+
+	    Back to deleting:
+
+	    	   aux1_name=aux1
+		   aux1_sem=add-pred
+		     aux1_feat1_name=tense
+		     aux1_feat1_value=fut
+		     aux1_feat1_head=verb
+		     aux1_feat2_name=aspect
+		     aux1_feat2_value=ipfv, pot
+		     aux1_feat2_head=verb
+		     aux1_feat3_name=mood
+		     aux1_feat3_value=imp
+		     aux1_feat3_head=verb
+		   aux1_subj=np
+		     aux1_compfeature1_name=form
+		     aux1_compfeature1_value=finite
+		     aux1_stem1_orth=ko
+		     aux1_stem1_pred=_2sg.fut-or-fall_v_rel
+
+
+
+		    noun1_stem169_orth=ki
+   	  	    noun1_stem169_pred=_3sg-or-c.fact-or-cond-or-hort-or-oblig-or-pot_n_rel
+
+		   noun84_pron=on
+		     noun84_feat1_name=person
+		     noun84_feat1_value=3rd
+		     noun84_feat2_name=number
+		     noun84_feat2_value=sg
+		   noun84_det=opt
+		     noun84_stem1_orth=ki
+		     noun84_stem1_pred=_pron_n_rel
+
+		   verb1_stem86_orth=ki~
+		   verb1_stem86_pred=_3sg.fut_v_rel
+
+		   aux14_name=aux14
+		   aux14_sem=no-pred
+		     aux14_feat1_name=tense
+		     aux14_feat1_value=fut
+		     aux14_feat1_head=verb
+		     aux14_feat2_name=aspect
+		     aux14_feat2_value=pot
+		     aux14_feat2_head=verb
+		     aux14_feat3_name=mood
+		     aux14_feat3_value=oblig, cond
+		     aux14_feat3_head=verb
+		   aux14_subj=np
+		     aux14_compfeature1_name=form
+		     aux14_compfeature1_value=finite
+		     aux14_stem1_orth=ki
+
+	    The following are all spurious
+	    noun versions of pronouns
+	    
+		   noun1_stem434_orth=yoito
+		   noun1_stem434_pred=_1pc.excl_n_rel
+		   noun1_stem435_orth=yoru
+		   noun1_stem435_pred=_1dl.excl_n_rel
+		   noun1_stem437_orth=yoto
+		   noun1_stem437_pred=_1pc.incl_n_rel
+		   noun1_stem438_orth=yoya
+		   noun1_stem438_pred=_1pl.excl_n_rel
+
+             Here was a spurious determiner entry for "a" that's not
+	     supported by the resources, and it's clearly just treating
+	     the agr clitic "a" as a det.
+
+	    	   det8_name=det8
+		   det8_stem1_orth=a
+		   det8_stem1_pred=_exist_q_rel
+		   det8_feat1_name=person
+		   det8_feat1_value=2nd
+		   det8_feat2_name=number
+		   det8_feat2_value=sg
+
+	    Here come the realis agr clitics.
+	    The following needed to be tweaked, as tense should not be future, mood
+	    should not be imp, etc. To make our analysis simpler and more consistent,
+	    we're removing TENSE as a feature, even though n.fut is consistent with
+	    IGT glosses.
+	    So we are just analyzing agr clitic markers as realis/ irrealis. 
+
+		  aux25_name=aux25
+		  aux25_sem=no-pred
+		    aux25_feat1_name=tense
+		    aux25_feat1_value=fut
+		    aux25_feat1_head=verb
+		  aux25_subj=np
+		    aux25_compfeature1_name=form
+		    aux25_compfeature1_value=finite
+		    aux25_stem1_orth=u
+
+		  aux15_sem=no-pred
+		    aux15_feat1_name=tense
+		    aux15_feat1_value=nfut
+		    aux15_feat1_head=verb
+		    aux15_feat2_name=aspect
+		    aux15_feat2_value=ipfv, pfv
+		    aux15_feat2_head=verb
+		    aux15_feat3_name=mood
+		    aux15_feat3_value=imp
+		    aux15_feat3_head=verb
+		  aux15_subj=np
+		    aux15_compfeature1_name=form
+		    aux15_compfeature1_value=finite
+		    aux15_stem1_orth=a
+
+
+		  aux17_name=aux17
+		  aux17_sem=add-pred
+		    aux17_feat1_name=tense
+		    aux17_feat1_value=nfut
+		    aux17_feat1_head=verb
+		  aux17_subj=np
+		    aux17_compfeature1_name=form
+		    aux17_compfeature1_value=finite
+		    aux17_stem1_orth=i
+		    aux17_stem1_pred=3sg.nfut_v_rel
+
+		  aux29_name=aux29
+		  aux29_sem=add-pred
+		    aux29_feat1_name=mood
+		    aux29_feat1_value=realis
+		    aux29_feat1_head=verb
+		  aux29_subj=np
+		    aux29_compfeature1_name=form
+		    aux29_compfeature1_value=finite
+		    aux29_stem1_orth=yoru
+		    aux29_stem1_pred=_1dl.incl_v_rel
+
+		       We didn't have "taru" which is the 1dl.excl agr
+		       clitic, but we don't even make the incl/excl distinction
+		       yet in person/num yet for our grammar, so we didn't bother
+		       to create the auxiliary.
+
+		  Auxiliaries 30-42 are all the rest of the clitics that we needed
+		  to add agreement features to. We made those changes. A sample
+		  of the resulting entry for an auxiliary is given below under
+		  "added".
+
+        added:
+		  aux42_name=aux42
+		  aux42_sem=no-pred
+		    aux42_feat1_name=mood
+		    aux42_feat1_value=irr
+		    aux42_feat1_head=verb
+		    aux42_feat2_name=person
+		    aux42_feat2_value=1st, 2nd, 3rd
+		    aux42_feat2_head=subj
+		    aux42_feat3_name=number
+		    aux42_feat3_value=pl, du, pc
+		    aux42_feat3_head=subj
+		  aux42_subj=np
+		    aux42_compfeature1_name=form
+		    aux42_compfeature1_value=finite
+		    aux42_stem1_orth=ka
+		
+
+***************
+-n and -m cleanup
+
+   Added them as possessive pronoun lexical rule types, with -n as its own type, and -m as an instance
+   of the 2sg type.
+   Deleted the following noun_pc types:
+
+     noun-pc1_name=noun-pc1
+  noun-pc1_order=suffix
+  noun-pc1_inputs=noun1, noun39, noun40, noun41, noun42, noun43, noun44, noun45, noun46, noun47, noun48, noun49, noun50, noun51, noun52, noun53, noun54, noun55, noun56, noun57, noun58, noun59, noun60, noun61, noun62, noun63, noun64, noun65, noun66, noun67, noun68, noun69, noun70, noun71, noun72, noun73, noun74, noun75, noun76, noun77, noun78, noun79, noun80, noun81, noun82, noun83
+    noun-pc1_lrt1_name=noun-pc1_lrt1
+      noun-pc1_lrt1_lri1_inflecting=yes
+      noun-pc1_lrt1_lri1_orth=-n
+  noun-pc2_name=noun-pc2
+  noun-pc2_order=suffix
+  noun-pc2_inputs=noun1, noun39, noun40, noun41, noun42, noun43, noun44, noun45, noun46, noun47, noun48, noun49, noun50, noun51, noun52, noun53, noun54, noun55, noun56, noun57, noun58, noun59, noun60, noun61, noun62, noun63, noun64, noun65, noun66, noun67, noun68, noun69, noun70, noun71, noun72, noun73, noun74, noun75, noun76, noun77, noun78, noun79, noun80, noun81, noun82, noun83
+    noun-pc2_lrt1_name=noun-pc2_lrt1
+      noun-pc2_lrt1_lri1_inflecting=yes
+      noun-pc2_lrt1_lri1_orth=-m
+
+
+***************
+REMOVING/FIXING SEMANTICALLY EMPTY WORDS
+
+	k' (agremment clitic shortened)
+
+	We deleted
+
+	   aux27_name=aux27
+	   aux27_sem=no-pred
+	     aux27_feat1_name=tense
+	     aux27_feat1_value=fut
+	     aux27_feat1_head=verb
+	   aux27_subj=np
+	     aux27_compfeature1_name=form
+	     aux27_compfeature1_value=finite
+	     aux27_stem1_orth=k'
+
+	aqani ()
+
+	Deleted:
+
+	   aux28_name=aux28
+	   aux28_sem=no-pred
+	     aux28_feat1_name=tense
+	     aux28_feat1_value=pres
+	     aux28_feat1_head=verb
+	   aux28_subj=np
+	     aux28_compfeature1_name=form
+	     aux28_compfeature1_value=finite
+	     aux28_stem1_orth=aqani
+
+	And added:
+
+	    INSERT ENTRY HERE FROM CHOICES
+
+	poro (hole)
+
+	We deleted
+
+	   aux23_sem=no-pred
+	     aux23_feat1_name=aspect
+	     aux23_feat1_value=pot
+	     aux23_feat1_head=verb
+	   aux23_subj=np
+	     aux23_compfeature1_name=form
+	     aux23_compfeature1_value=finite
+	     aux23_stem1_orth=poro
+
+	And changed the following noun entry to just mean 'hole'
+
+	   noun1_stem369_orth=poro
+	   noun1_stem369_pred=_hole-or-pot_n_rel
+
+	kine (pfv marker)
+
+	Since this is a perfective clitic, we deleted the transitive verb entry
+	and implemented the correct 3sg features on the sole other entry, an aux.
+
+	    verb1_stem89_orth=kine~
+	    verb1_stem89_pred=_3sg.perf_v_rel
+
+	porokiny (pot)
+
+	We deleted the following spurious aux entry for what should be a noun:
+
+	    aux22_name=aux22
+	    aux22_sem=no-pred
+	      aux22_feat1_name=aspect
+	      aux22_feat1_value=pot
+	      aux22_feat1_head=verb
+	    aux22_subj=np
+	      aux22_compfeature1_name=form
+	      aux22_compfeature1_value=finite
+	      aux22_stem1_orth=porokiny
+
+	And added the noun entry:
+
+	    INSERT NOUN ENTRY FROM CHOICES
+	    
+	keiny (pot)
+
+	We deleted:
+	
+	     aux19_name=aux19
+	     aux19_sem=no-pred
+	       aux19_feat1_name=aspect
+	       aux19_feat1_value=pot
+	       aux19_feat1_head=verb
+	     aux19_subj=np
+	       aux19_compfeature1_name=form
+	       aux19_compfeature1_value=finite
+	       aux19_stem1_orth=keiny
+
+	     noun50_det=opt
+    	     noun50_stem1_orth=keiny
+	     noun50_stem1_pred=_pron_n_rel
+
+	     We could have just changed the predication, but this was actually situated with a bunch
+	     of nouns that look like spurious pron_n_rel entries from the auto-inference system, and
+	     it might be nice to remove those later on all in one section. So we added:
+
+	     INSERT NOUN ENTRY FROM CHOICES
+
 ****************
 
 We'll probably remove morphology that's insufficiently constrained or adding constraints to that morph.
@@ -126,7 +464,7 @@ We'll probably remove morphology that's insufficiently constrained or adding con
 
 	    	       NB: what does Lusk mean?
 
-	    	       aijani v.tr 1. present with gifts, present, offer
+	    	       aqani v.tr 1. present with gifts, present, offer
 		       2. support, look after
 		       Lusk: agani 'feed
 
@@ -149,40 +487,19 @@ We'll probably remove morphology that's insufficiently constrained or adding con
 	    Keiny is glossed as "pot", and is a synonym with porokiny
 	    in the English-Titan glossary.
 
-	    
 
 With semantically empty words, we'll add more constraints and might refine trigger rules.
-
 
 
 """
 preliminary notes/TODO list on 'va'/'pa'
 
-   1.  We'll probably write another lex. entry for 'va' to mean 'think_v_rel'.
-    	  - see canvas; 'pa' often glossed as 'thought to do y'
+   1.  We'll probably change the 'va' predication to mean "think-or-say" for MT purposes,
+   but then we have to write transfer rules (what are those?)
+   
    2. Remove the spurious 'va' auto-inferred that has a long predication
    3. For 'Pa~Poa':
       - the 'poa' form allows non-second, but it shouldn't
-      - for some reason there are four extra lex entries for 'ku'
-      	    - ku_3 is correct and means 1sg.fut, spec for irrealis
-	    -ku_1 means 3rd (underspec for num) but is spec for irrealis? and is a NOUN
-	    -ku_2 means 1sg but is a PRONOUN, but is spec for irrealis?
-	    -ku_4 and ku_5 are just underspecified for num and per, but is spec for irrealis
-
-	    EVERYTHING except ku_3 need to be deleted. I think the reason the verb is spec
-	    for irrealis is actually a result of 'pa' requiring an irrealis complement,
-	    not a result of the agreement clitics/ the nominal entries.
-	    	- though I checked 'Yo ku kip', and that had ku_3, ku_5, and ku_4, and the
-		head verb 'kip' was specified for irr for all three.
-		     - note for 'Taru ka kip' the person was 3 and unspecified for number
-		       	    -furthermore while 'ka' has only one entry, the mood is spec
-			    as 'realis', and the per, num are unspecified. Both are wrong.
-		     - note that 'Manuai ki kip' has per=3 num-unspec, and mood=unspec (and tense=unspec)
-		     - note that 'Oi ko kip' has only one tree, but ko_2 and it means "2sg.fut-or-fall_v_rel
-		       	    -i.e. this is an auto-inferred lex entry, should delete it.
-	-UPSHOT for the AGR clitics seems to be:
-		- delete all but the correct entry;
-		- make the entry specify for per, num
 """
 
    - Prose description of the phenomenon
@@ -198,6 +515,11 @@ preliminary notes/TODO list on 'va'/'pa'
 test suite and test corpus, as compared to your starting grammar (see details above).
 
      3.1.1 Final testsuite with initial grammar for the week
+
+     	   Final means includes the -n, -m things!
+	   If we change the semantically empty words, do we need to write test cases?
+	      Yea we probably should, at least to just make sure the semantics are right.
+
      3.1.2 Final testsuite with final grammar for the week
      3.2.1 Test corpus with initial grammar for the week
      
