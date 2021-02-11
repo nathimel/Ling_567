@@ -17,6 +17,13 @@ Go over comments for last lab, especially:
    PRED values _dog_n_rel and _car_n_rel."
    	- sic., should be _chase_v_rel and _car_n_rel
 
+===============================================================================
+REMAINING TODO:
+
+Make selecting VPs only for Auxiliaries!
+Delete spurious transitive 'va', possibly add the union predication on CC 'va'
+Delete masculine gender?-->probably just note it and save it for future lab
+Work on VPM, i.e., maybe look in the D.R. for ASPECT?
 
 ===============================================================================
 1. A description of the changes you made to your semi.vpm file, why you made
