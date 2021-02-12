@@ -1,14 +1,12 @@
 Lab 5 Writeup
-By David Krug and Nathaniel Imel
+By Nathaniel Imel and David Krug
 
 
 Qs for Emily:
 
-Differences between MT grammar and our Lab6 directory grammar. Once we have an
-updated grammar, is it fine to just copy that new grammar into the MT directory
-to replace the old one? Because we remember there were like 10 steps to complete
-to go from having a grammar to using it for MT.
-   -this was clarified.
+Why are we gettig 'ka' in Muiny ka matir
+Why are we getting 'Muiny matir', and should we care?
+Explain ASPECT in ttv.tdl
 
 Go over comments for last lab, especially:
    what did you mean by:
@@ -20,9 +18,6 @@ Go over comments for last lab, especially:
 ===============================================================================
 REMAINING TODO:
 
-Make selecting VPs only for Auxiliaries!
-Delete spurious transitive 'va', possibly add the union predication on CC 'va'
-Delete masculine gender?-->probably just note it and save it for future lab
 Work on VPM, i.e., maybe look in the D.R. for ASPECT?
 
 ===============================================================================
@@ -81,6 +76,23 @@ We should fix 'matir'=sleep to be intransitive, rather than transitive.
 CLITICS CLEANING
 
 	deleted:
+
+		   Since this should be semantically empty, we deleted this and added the appropriate counterpart
+		
+	              aux10_name=aux10
+		      aux10_sem=add-pred
+			aux10_feat1_name=aspect
+			aux10_feat1_value=incep
+			aux10_feat1_head=verb
+		      aux10_subj=np
+			aux10_compfeature1_name=form
+			aux10_compfeature1_value=finite
+			aux10_stem1_orth=yota
+			aux10_stem1_pred=_1pl.excl_v_rel
+			aux10_stem2_orth=ta
+			aux10_stem2_pred=_1pl.excl_v_rel
+
+
 		    noun1_stem188_orth=ku
    		     noun1_stem188_pred=_1sg-or-1sg.cfact_n_rel
 
@@ -117,6 +129,56 @@ CLITICS CLEANING
 
 		       So we deleted the above and added the correct one.
 
+		       And aux_1 is spurious, so we deleted it:
+
+		         aux1_name=aux1
+			 aux1_sem=add-pred
+			   aux1_feat1_name=tense
+			   aux1_feat1_value=fut
+			   aux1_feat1_head=verb
+			   aux1_feat2_name=aspect
+			   aux1_feat2_value=ipfv, pot
+			   aux1_feat2_head=verb
+			   aux1_feat3_name=mood
+			   aux1_feat3_value=imp
+			   aux1_feat3_head=verb
+			 aux1_subj=np
+			   aux1_compfeature1_name=form
+			   aux1_compfeature1_value=finite
+			   aux1_stem1_orth=ko
+			   aux1_stem1_pred=_2sg.fut-or-fall_v_rel
+
+		       Deleted from morphology since it has aux1 as an input
+
+		       verb-pc2_name=verb-pc2
+		       verb-pc2_obligatory=on
+		       verb-pc2_order=prefix
+		       verb-pc2_inputs=aux1
+			 verb-pc2_lrt1_name=verb-pc2_lrt1
+			   verb-pc2_lrt1_feat1_name=person
+			   verb-pc2_lrt1_feat1_value=2nd
+			   verb-pc2_lrt1_feat1_head=subj
+			   verb-pc2_lrt1_feat2_name=number
+			   verb-pc2_lrt1_feat2_value=sg
+			   verb-pc2_lrt1_feat2_head=subj
+			   verb-pc2_lrt1_lri1_inflecting=no
+
+			   and
+
+		      verb-pc7_name=verb-pc7
+		      verb-pc7_obligatory=on
+		      verb-pc7_order=prefix
+		      verb-pc7_inputs=aux14, verb-pc2
+			verb-pc7_lrt1_name=verb-pc7_lrt1
+			  verb-pc7_lrt1_feat1_name=person
+			  verb-pc7_lrt1_feat1_value=3rd
+			  verb-pc7_lrt1_feat1_head=subj
+			  verb-pc7_lrt1_feat2_name=number
+			  verb-pc7_lrt1_feat2_value=sg
+			  verb-pc7_lrt1_feat2_head=subj
+			  verb-pc7_lrt1_lri1_inflecting=no
+
+			   
 	    Back to deleting:
 
 	    	   aux1_name=aux1
@@ -518,16 +580,52 @@ preliminary notes/TODO list on 'va'/'pa'
 3. A description of the performance of your final grammar for this week on the
 test suite and test corpus, as compared to your starting grammar (see details above).
 
-     3.1.1 Final testsuite with initial grammar for the week
+     3.1.1 Final testsuite with initial grammar for the week (copied from Lab 5's final testsuite run)
 
-     	   Final means includes the -n, -m things!
-	   If we change the semantically empty words, do we need to write test cases?
-	      Yea we probably should, at least to just make sure the semantics are right.
+     	   106/157 items parsed.
+    	   65/84 positive items parsed (77.4% coverage)
+    	   41/73 negative items parsed (56.2% overgeneration)
+     
+      What is the average number of parses per parsed item?
+            1.85 for positive, 1.76 for negative
+            
+      How many parses did the most ambiguous item receive?
+
+        This sentence received 8 distinct analyses;
+
+         i va ki puti yo
+         3sg want 3sg.fut marry 1sg
+         'He wants to marry me'
+
+	 ....
+	 (more in Lab5, of course)
+
 
      3.1.2 Final testsuite with final grammar for the week
+
+     	   60/157 items parsed.
+     	   53/85 positive items parsed (62.4% coverage)
+	   7/73 negative items parsed (9.6% overgeneration) huge improvement :)
+
+     What is the avg # of parses per parsed item?
+     	     1.11 for coverage, 1.00 for overgeneration ( also improvements :) )
+
+     How many parses did the most ambiguous item receive?
+
+     	  This sentence received 3 distinct analyses:
+
+	  Ala        kip
+	  3pl.realis lie
+	  "They lied."
+
+	  The ambiguity seems to stem from the fact there are 3 different parses for 'ala'.
+	  One as a realis agr clitic verb, one as a noun with _3pl_n_rel, and one as a noun
+	  with _pron_n_rel. Same ambiguity occurs in the corpus.
+
      3.2.1 Test corpus with initial grammar for the week
      
-      - On average, parsed items had 2.89 parses.
+      - 38/563 positive items (6.7% coverage
+      - On average, parsed items had 2.89 distinct analyses.
 
       - Most ambiguous item:
 	The most ambiguous items had 10 and 15 parses.
@@ -553,3 +651,20 @@ test suite and test corpus, as compared to your starting grammar (see details ab
        of structural ambiguity in how the VP trees are constructed.
 
      3.2.2 Test corpus with final grammar for the week
+
+     	   - 29 out of 562 items (5.2%), so our coverage went slightly down
+     	   -On average, parsed items had 1.45 distinct analyses (much less ambiguity,
+	       probably because we limited auxiliaries to taking VP complements only.
+	       
+	   -Most ambiguous item:
+	   	 The most ambiguous item had 3 parses (and it showed up in two different places in the corpus)
+		 The IGT provided was the following:
+
+		 ala va  yota     ka   mulie
+		 3pl say 1pl.incl hort run
+		 They said let  s      turn around
+
+		 The three trees seem to correspond to 3 different parses for 'ala'. One has 'ala' as a verb,
+		 the 3pl realis agr clitic. The other two correspond to nominal parses for 'ala', and one of
+		 them correctly has _pron_n_rel, but another has _3pl_n_rel. I have to say that its pretty
+		 annoying at this point to see that last player, but its an easy fix.
