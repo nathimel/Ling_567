@@ -1,8 +1,38 @@
-Lab 5 Writeup
+Lab 6 Writeup
 By Nathaniel Imel and David Krug
 
+I've started organizing the writeup, but it snowed in Seattle so I have to go
+   for a walk. I'll keep working on it later today. What is section 2.6? Also,
+   what should go in section 2.2?
 
-Qs for Emily:
+Table of Contents:
+   tsdb directory instructions
+   Qs for Emily
+   RREMAINING TODO
+   1 semi.vpm changes
+   2 Grammar improvments
+      2.1 Morphology cleanup
+      2.2 Our one phenomenon: (adnominal posession|clausal complements)
+      2.3 Fixing agreement clitics
+      2.4 Removing/fixing spurious/semantically empty entries
+      2.5 Changes based on feedback from lab 5
+      2.6 ?
+   3 Grammar performance comparisions
+     3.1 Testsuite performance
+     3.2 Test corupus performance
+
+===============================================================================
+tsdb profile instructions:
+
+There are four tsb profile directories"
+
+ttv/tsdb/home/lab_6_initial_ts     - same as final testsuite from lab 5
+ttv/tsdb/home/lab_6_initial_corpus - same as final corpus from lab 5
+ttv/tsdb/home/lab_6_final_ts       - finished testsuite from lab 6
+ttv/tsdb/home/lab_6_final_corpus   - finished corpus from lab 6
+
+=================================================================================
+Qs for Emily
 
 Why are we gettig 'ka' in Muiny ka matir
 Why are we getting 'Muiny matir', and should we care?
@@ -13,321 +43,76 @@ Go over comments for last lab, especially:
 
   " You'll need to add entries for dog and car (well, dog and canoe) with the
    PRED values _dog_n_rel and _car_n_rel."
-   	- sic., should be _chase_v_rel and _car_n_rel
+      - sic., should be _chase_v_rel and _car_n_rel
 
 ===============================================================================
 REMAINING TODO:
 
 Work on VPM, i.e., maybe look in the D.R. for ASPECT?
+Spell out cond, etc in MOOD of semi.vpm.
+<anything in angled brackets>
 
 ===============================================================================
-1. A description of the changes you made to your semi.vpm file, why you made
-those specifc changes, and how that affected generator output.
+1. Changes to semi.vpm file
 
-      We made the following changes:
+   We made the following changes:
+      Deleted E. on the right side of TENSE, ASPECT, and MOOD
+      Deleted PNG. on the right side of PER, NUM, and GEND
+      Spelled out 3rd as third, 2nd as second, 1st as first on the right side
+         of PER
+      Spelled out nfut as non-future, fut as future, and pres as present on the
+         right side of TENSE
 
-      	 Deleted E. on the right side of TENSE, ASPECT, and MOOD
-	 Deleted PNG. on the right side of PER, NUM, and GEND
-	 Spelled out 3rd as third, 2nd as second, 1st as first on the right side of PER
-	 Spelled out nfut as non-future, fut as future, and pres as present on the right side of TENSE
+   why you made those specifc change
+   and how that affected generator output.
 
 ===============================================================================
-2. A description of the phenomena you improved in the grammar (including both
-the morphology etc clean up and adnominal possession or clausal complements),
-including:
+2. Grammar improvements
 
- CLEANUP of CONSTRAINTS
-**************
+TOC:
+   2.1 Morphology cleanup
+   2.2 adnominal possession or clausal complements
+   2.3 Fixing agreement clitics
+   2.4 Deleting/fixing suprious/semantically empty entries
+   2.5 Changes based on feedback from lab 5
+   2.6 ?
 
-From lab5 comments
-**************
-We will say that auxiliaries take only VP complements instead of V, so as to reduce the ambiguity about
-where the object drops wrt to the aux.
+*******************************************************************************
+2.1 Morphology cleanup: -n,-m, and -o
+   -n and -m suffixes on the end of 'dog' and 'canoe'
+   - the word ka is empty here
+              ***NB: there is only one 'ka,' unlike the other clitics.
+    	** getting a lot of sentences with the other irr clitics,
+   	so cleaning up that is a priority.
+   	
+           e.g., " Muiny-n ala ka voliliti dilen-m"
 
-We need to answer the questions on the wh questions page and then specify that your wh pronouns are actually wh pronouns.
+   
+   **What -n and -m do:**
+        - In our choices file, they're the first two noun_pcs, and their
+     lexical rule types have no features/values.
 
-We should fix 'matir'=sleep to be intransitive, rather than transitive.
+     -n seems to be for adnominal possession, marking on the possessum
+     the agreement of the possessor. Here's some IGT:
 
-   	  delted:
-
-	      verb1_stem119_orth=matir~
-   	      verb1_stem119_pred=_lie-or-sleep-or-sleep_with_v_rel
-
-	          verb2_stem56_orth=matir
-   		   verb2_stem56_pred=_sleep_v_rel
-
-	added:
-		
-****************
-
-CLITICS CLEANING
-
-	deleted:
-
-		   Since this should be semantically empty, we deleted this and added the appropriate counterpart
-		
-	              aux10_name=aux10
-		      aux10_sem=add-pred
-			aux10_feat1_name=aspect
-			aux10_feat1_value=incep
-			aux10_feat1_head=verb
-		      aux10_subj=np
-			aux10_compfeature1_name=form
-			aux10_compfeature1_value=finite
-			aux10_stem1_orth=yota
-			aux10_stem1_pred=_1pl.excl_v_rel
-			aux10_stem2_orth=ta
-			aux10_stem2_pred=_1pl.excl_v_rel
+         Po Ma aru dasi   -n   aru va    ka      le    leq
+         P.M.  3dl brother-3sg 3dl think nsg.fut go_to shore 
+         Po Ma and his brother wanted to go to the shore.
 
 
-		    noun1_stem188_orth=ku
-   		     noun1_stem188_pred=_1sg-or-1sg.cfact_n_rel
+      -m seems to be for adnominal possession too, but for 2sg:
 
-		     noun85_pron=on
-   		     noun85_feat1_name=person
-		       noun85_feat1_value=1st
-		       noun85_feat2_name=number
-		       noun85_feat2_value=sg
-		     noun85_det=opt
-		       noun85_stem1_orth=ku
-		       noun85_stem1_pred=_pron_n_rel
+         yo  u       tawi  pel       ile  poa  -m
+         1sg 1sg.fut place taro_pulp into mouth-2sg.poss
+         I will put taro pulp in your mouth.
 
-		    aux13_name=aux13
-		    aux13_sem=no-pred
-		      aux13_feat1_name=tense
-		      aux13_feat1_value=fut
-		      aux13_feat1_head=verb
-		    aux13_subj=np
-		      aux13_compfeature1_name=form
-		      aux13_compfeature1_value=finite
-		      aux13_stem1_orth=ku
+      -These glosses are consistent with the discussion of inalienable
+      possession suffixation, which also says that -o means 1sg.poss,
+      though that doesn't seem to be in our choices file. Also, it only
+      applies as suffixation when the stem ends in the vowel "a".
 
-	    and also I accidentally spelled aux_40 as 'ku' instead of 'ko,'
-	    so I fixed that orthography.
-
-	            verb1_stem91_orth=ko~
-   		    verb1_stem91_pred=_2sg.fut-or-2sg.pot-or-cfact-or-imp_v_rel
-
-		       There is an intransitive 'ko,' but not the following transitive w/ the
-		       union predication:
-
-			       verb2_stem46_orth=ko
-			       verb2_stem46_pred=_2sg.fut-or-fall_v_rel
-
-		       So we deleted the above and added the correct one.
-
-		       And aux_1 is spurious, so we deleted it:
-
-		         aux1_name=aux1
-			 aux1_sem=add-pred
-			   aux1_feat1_name=tense
-			   aux1_feat1_value=fut
-			   aux1_feat1_head=verb
-			   aux1_feat2_name=aspect
-			   aux1_feat2_value=ipfv, pot
-			   aux1_feat2_head=verb
-			   aux1_feat3_name=mood
-			   aux1_feat3_value=imp
-			   aux1_feat3_head=verb
-			 aux1_subj=np
-			   aux1_compfeature1_name=form
-			   aux1_compfeature1_value=finite
-			   aux1_stem1_orth=ko
-			   aux1_stem1_pred=_2sg.fut-or-fall_v_rel
-
-		       Deleted from morphology since it has aux1 as an input
-
-		       verb-pc2_name=verb-pc2
-		       verb-pc2_obligatory=on
-		       verb-pc2_order=prefix
-		       verb-pc2_inputs=aux1
-			 verb-pc2_lrt1_name=verb-pc2_lrt1
-			   verb-pc2_lrt1_feat1_name=person
-			   verb-pc2_lrt1_feat1_value=2nd
-			   verb-pc2_lrt1_feat1_head=subj
-			   verb-pc2_lrt1_feat2_name=number
-			   verb-pc2_lrt1_feat2_value=sg
-			   verb-pc2_lrt1_feat2_head=subj
-			   verb-pc2_lrt1_lri1_inflecting=no
-
-			   and
-
-		      verb-pc7_name=verb-pc7
-		      verb-pc7_obligatory=on
-		      verb-pc7_order=prefix
-		      verb-pc7_inputs=aux14, verb-pc2
-			verb-pc7_lrt1_name=verb-pc7_lrt1
-			  verb-pc7_lrt1_feat1_name=person
-			  verb-pc7_lrt1_feat1_value=3rd
-			  verb-pc7_lrt1_feat1_head=subj
-			  verb-pc7_lrt1_feat2_name=number
-			  verb-pc7_lrt1_feat2_value=sg
-			  verb-pc7_lrt1_feat2_head=subj
-			  verb-pc7_lrt1_lri1_inflecting=no
-
-			   
-	    Back to deleting:
-
-	    	   aux1_name=aux1
-		   aux1_sem=add-pred
-		     aux1_feat1_name=tense
-		     aux1_feat1_value=fut
-		     aux1_feat1_head=verb
-		     aux1_feat2_name=aspect
-		     aux1_feat2_value=ipfv, pot
-		     aux1_feat2_head=verb
-		     aux1_feat3_name=mood
-		     aux1_feat3_value=imp
-		     aux1_feat3_head=verb
-		   aux1_subj=np
-		     aux1_compfeature1_name=form
-		     aux1_compfeature1_value=finite
-		     aux1_stem1_orth=ko
-		     aux1_stem1_pred=_2sg.fut-or-fall_v_rel
-
-
-
-		    noun1_stem169_orth=ki
-   	  	    noun1_stem169_pred=_3sg-or-c.fact-or-cond-or-hort-or-oblig-or-pot_n_rel
-
-		   noun84_pron=on
-		     noun84_feat1_name=person
-		     noun84_feat1_value=3rd
-		     noun84_feat2_name=number
-		     noun84_feat2_value=sg
-		   noun84_det=opt
-		     noun84_stem1_orth=ki
-		     noun84_stem1_pred=_pron_n_rel
-
-		   verb1_stem86_orth=ki~
-		   verb1_stem86_pred=_3sg.fut_v_rel
-
-		   aux14_name=aux14
-		   aux14_sem=no-pred
-		     aux14_feat1_name=tense
-		     aux14_feat1_value=fut
-		     aux14_feat1_head=verb
-		     aux14_feat2_name=aspect
-		     aux14_feat2_value=pot
-		     aux14_feat2_head=verb
-		     aux14_feat3_name=mood
-		     aux14_feat3_value=oblig, cond
-		     aux14_feat3_head=verb
-		   aux14_subj=np
-		     aux14_compfeature1_name=form
-		     aux14_compfeature1_value=finite
-		     aux14_stem1_orth=ki
-
-	    The following are all spurious
-	    noun versions of pronouns
-	    
-		   noun1_stem434_orth=yoito
-		   noun1_stem434_pred=_1pc.excl_n_rel
-		   noun1_stem435_orth=yoru
-		   noun1_stem435_pred=_1dl.excl_n_rel
-		   noun1_stem437_orth=yoto
-		   noun1_stem437_pred=_1pc.incl_n_rel
-		   noun1_stem438_orth=yoya
-		   noun1_stem438_pred=_1pl.excl_n_rel
-
-             Here was a spurious determiner entry for "a" that's not
-	     supported by the resources, and it's clearly just treating
-	     the agr clitic "a" as a det.
-
-	    	   det8_name=det8
-		   det8_stem1_orth=a
-		   det8_stem1_pred=_exist_q_rel
-		   det8_feat1_name=person
-		   det8_feat1_value=2nd
-		   det8_feat2_name=number
-		   det8_feat2_value=sg
-
-	    Here come the realis agr clitics.
-	    The following needed to be tweaked, as tense should not be future, mood
-	    should not be imp, etc. To make our analysis simpler and more consistent,
-	    we're removing TENSE as a feature, even though n.fut is consistent with
-	    IGT glosses.
-	    So we are just analyzing agr clitic markers as realis/ irrealis. 
-
-		  aux25_name=aux25
-		  aux25_sem=no-pred
-		    aux25_feat1_name=tense
-		    aux25_feat1_value=fut
-		    aux25_feat1_head=verb
-		  aux25_subj=np
-		    aux25_compfeature1_name=form
-		    aux25_compfeature1_value=finite
-		    aux25_stem1_orth=u
-
-		  aux15_sem=no-pred
-		    aux15_feat1_name=tense
-		    aux15_feat1_value=nfut
-		    aux15_feat1_head=verb
-		    aux15_feat2_name=aspect
-		    aux15_feat2_value=ipfv, pfv
-		    aux15_feat2_head=verb
-		    aux15_feat3_name=mood
-		    aux15_feat3_value=imp
-		    aux15_feat3_head=verb
-		  aux15_subj=np
-		    aux15_compfeature1_name=form
-		    aux15_compfeature1_value=finite
-		    aux15_stem1_orth=a
-
-
-		  aux17_name=aux17
-		  aux17_sem=add-pred
-		    aux17_feat1_name=tense
-		    aux17_feat1_value=nfut
-		    aux17_feat1_head=verb
-		  aux17_subj=np
-		    aux17_compfeature1_name=form
-		    aux17_compfeature1_value=finite
-		    aux17_stem1_orth=i
-		    aux17_stem1_pred=3sg.nfut_v_rel
-
-		  aux29_name=aux29
-		  aux29_sem=add-pred
-		    aux29_feat1_name=mood
-		    aux29_feat1_value=realis
-		    aux29_feat1_head=verb
-		  aux29_subj=np
-		    aux29_compfeature1_name=form
-		    aux29_compfeature1_value=finite
-		    aux29_stem1_orth=yoru
-		    aux29_stem1_pred=_1dl.incl_v_rel
-
-		       We didn't have "taru" which is the 1dl.excl agr
-		       clitic, but we don't even make the incl/excl distinction
-		       yet in person/num yet for our grammar, so we didn't bother
-		       to create the auxiliary.
-
-		  Auxiliaries 30-42 are all the rest of the clitics that we needed
-		  to add agreement features to. We made those changes. A sample
-		  of the resulting entry for an auxiliary is given below under
-		  "added".
-
-        added:
-		  aux42_name=aux42
-		  aux42_sem=no-pred
-		    aux42_feat1_name=mood
-		    aux42_feat1_value=irr
-		    aux42_feat1_head=verb
-		    aux42_feat2_name=person
-		    aux42_feat2_value=1st, 2nd, 3rd
-		    aux42_feat2_head=subj
-		    aux42_feat3_name=number
-		    aux42_feat3_value=pl, du, pc
-		    aux42_feat3_head=subj
-		  aux42_subj=np
-		    aux42_compfeature1_name=form
-		    aux42_compfeature1_value=finite
-		    aux42_stem1_orth=ka
-		
-
-***************
--n and -m cleanup
-
+      Our plan is to improve the Adnominal Possession phenomena for
+      inalienable possession markers -o, -m, -n.
    Added them as possessive pronoun lexical rule types, with -n as its own type, and -m as an instance
    of the 2sg type.
    Deleted the following noun_pc types:
@@ -346,205 +131,456 @@ CLITICS CLEANING
       noun-pc2_lrt1_lri1_orth=-m
 
 
-***************
-REMOVING/FIXING SEMANTICALLY EMPTY WORDS
+   ****************
 
-	k' (agremment clitic shortened)
-
-	We deleted
-
-	   aux27_name=aux27
-	   aux27_sem=no-pred
-	     aux27_feat1_name=tense
-	     aux27_feat1_value=fut
-	     aux27_feat1_head=verb
-	   aux27_subj=np
-	     aux27_compfeature1_name=form
-	     aux27_compfeature1_value=finite
-	     aux27_stem1_orth=k'
-
-	aqani ()
-
-	Deleted:
-
-	   aux28_name=aux28
-	   aux28_sem=no-pred
-	     aux28_feat1_name=tense
-	     aux28_feat1_value=pres
-	     aux28_feat1_head=verb
-	   aux28_subj=np
-	     aux28_compfeature1_name=form
-	     aux28_compfeature1_value=finite
-	     aux28_stem1_orth=aqani
-
-	And added:
-
-	    INSERT ENTRY HERE FROM CHOICES
-
-	poro (hole)
-
-	We deleted
-
-	   aux23_sem=no-pred
-	     aux23_feat1_name=aspect
-	     aux23_feat1_value=pot
-	     aux23_feat1_head=verb
-	   aux23_subj=np
-	     aux23_compfeature1_name=form
-	     aux23_compfeature1_value=finite
-	     aux23_stem1_orth=poro
-
-	And changed the following noun entry to just mean 'hole'
-
-	   noun1_stem369_orth=poro
-	   noun1_stem369_pred=_hole-or-pot_n_rel
-
-	kine (pfv marker)
-
-	Since this is a perfective clitic, we deleted the transitive verb entry
-	and implemented the correct 3sg features on the sole other entry, an aux.
-
-	    verb1_stem89_orth=kine~
-	    verb1_stem89_pred=_3sg.perf_v_rel
-
-	porokiny (pot)
-
-	We deleted the following spurious aux entry for what should be a noun:
-
-	    aux22_name=aux22
-	    aux22_sem=no-pred
-	      aux22_feat1_name=aspect
-	      aux22_feat1_value=pot
-	      aux22_feat1_head=verb
-	    aux22_subj=np
-	      aux22_compfeature1_name=form
-	      aux22_compfeature1_value=finite
-	      aux22_stem1_orth=porokiny
-
-	And added the noun entry:
-
-	    INSERT NOUN ENTRY FROM CHOICES
-	    
-	keiny (pot)
-
-	We deleted:
-	
-	     aux19_name=aux19
-	     aux19_sem=no-pred
-	       aux19_feat1_name=aspect
-	       aux19_feat1_value=pot
-	       aux19_feat1_head=verb
-	     aux19_subj=np
-	       aux19_compfeature1_name=form
-	       aux19_compfeature1_value=finite
-	       aux19_stem1_orth=keiny
-
-	     noun50_det=opt
-    	     noun50_stem1_orth=keiny
-	     noun50_stem1_pred=_pron_n_rel
-
-	     We could have just changed the predication, but this was actually situated with a bunch
-	     of nouns that look like spurious pron_n_rel entries from the auto-inference system, and
-	     it might be nice to remove those later on all in one section. So we added:
-
-	     INSERT NOUN ENTRY FROM CHOICES
-
-****************
-
-We'll probably remove morphology that's insufficiently constrained or adding constraints to that morph.
+   We'll probably remove morphology that's insufficiently constrained or adding constraints to that morph.
 
       MORPH we're seeing:
 
-(For ttv to ttv)
+   (For ttv to ttv)
       For "dogs sleep" we got about a page, about half for eng to ttv
       For "dogs follow canoes", we got about a page of sentences. (unknown sem index)
       For "I follow you", "
       
 
-      ************************************************
-      -n and -m suffixes on the end of 'dog' and 'canoe'
-      - the word ka is empty here
-      	    	 ***NB: there is only one 'ka,' unlike the other clitics.
-		 	** getting a lot of sentences with the other irr clitics,
-			so cleaning up that is a priority.
-			
-      	     e.g., " Muiny-n ala ka voliliti dilen-m"
-
-
-	   **What -n and -m do:**
-	   	  - In our choices file, they're the first two noun_pcs, and their
-		  lexical rule types have no features/values.
-
-		  -n seems to be for adnominal possession, marking on the possessum
-		  the agreement of the possessor. Here's some IGT:
-
-		      Po Ma aru dasi   -n   aru va    ka      le    leq
-		      P.M.  3dl brother-3sg 3dl think nsg.fut go_to shore 
-		      Po Ma and his brother wanted to go to the shore.
-
-
-		   -m seems to be for adnominal possession too, but for 2sg:
-
-		      yo  u       tawi  pel       ile  poa  -m
-		      1sg 1sg.fut place taro_pulp into mouth-2sg.poss
-		      I will put taro pulp in your mouth.
-
-		   -These glosses are consistent with the discussion of inalienable
-		   possession suffixation, which also says that -o means 1sg.poss,
-		   though that doesn't seem to be in our choices file. Also, it only
-		   applies as suffixation when the stem ends in the vowel "a".
-
-		   Our plan is to improve the Adnominal Possession phenomena for
-		   inalienable possession markers -o, -m, -n.
 
       -List of other SEMANTICALLY EMPTY WORD candidates:
       
-      	    k' --- one sem. empty aux 27
-	    aqani -- " aux_28
-	    poro --- noun1_stem369 w/ pred, " aux_22
-	    kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
-	    	 **EXPLORE the other perf markers?
-	    porokiny -- " aux_22
-	    keiny --- noun_50 (pron_n_rel), " aux_19
-	    
-     	    k' seems like an alternation of any irrealis clitic, as the descriptive
-	    resources has it glossed for 3sg.fut and 1pl.fut. But it only
-	    occurs in the test corpus once, as "fut", though it looks like from the
-	    context it should have 1sg agreement.
+             k' --- one sem. empty aux 27
+       aqani -- " aux_28
+       poro --- noun1_stem369 w/ pred, " aux_22
+       kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
+           **EXPLORE the other perf markers?
+       porokiny -- " aux_22
+       keiny --- noun_50 (pron_n_rel), " aux_19
+       
+            k' seems like an alternation of any irrealis clitic, as the descriptive
+       resources has it glossed for 3sg.fut and 1pl.fut. But it only
+       occurs in the test corpus once, as "fut", though it looks like from the
+       context it should have 1sg agreement.
 
-	    aqani is glossed as "present.with.gifts" or "support". The Titan-English
-	    dictionary in our resources has the following entry:
+       aqani is glossed as "present.with.gifts" or "support". The Titan-English
+       dictionary in our resources has the following entry:
 
-	    	       NB: what does Lusk mean?
+                 NB: what does Lusk mean?
 
-	    	       aqani v.tr 1. present with gifts, present, offer
-		       2. support, look after
-		       Lusk: agani 'feed
+                 aqani v.tr 1. present with gifts, present, offer
+             2. support, look after
+             Lusk: agani 'feed
 
 
             poro is glossed as a hole.
-	    porokiny means pot
-	    T-E Dictionary entry:
+       porokiny means pot
+       T-E Dictionary entry:
 
-	    	
-		poro n.ia hole.
-		porokiny n
-		1. pot
-		2. wooden bowl.
-		Lusk: porokin.
-
-
-	    kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
-	    which correspond to their similar irrealis verb clitic markers.
-	    
-	    Keiny is glossed as "pot", and is a synonym with porokiny
-	    in the English-Titan glossary.
+          
+      poro n.ia hole.
+      porokiny n
+      1. pot
+      2. wooden bowl.
+      Lusk: porokin.
 
 
-With semantically empty words, we'll add more constraints and might refine trigger rules.
+       kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
+       which correspond to their similar irrealis verb clitic markers.
+       
+       Keiny is glossed as "pot", and is a synonym with porokiny
+       in the English-Titan glossary.
 
 
-"""
+   With semantically empty words, we'll add more constraints and might refine trigger rules.
+
+*******************************************************************************
+2.2 Adnominal possesion or clausal complements
+
+*******************************************************************************
+2.3 Fixing agreement clitics
+
+   deleted:
+
+         Since this should be semantically empty, we deleted this and added the appropriate counterpart
+      
+                 aux10_name=aux10
+            aux10_sem=add-pred
+      	aux10_feat1_name=aspect
+      	aux10_feat1_value=incep
+      	aux10_feat1_head=verb
+            aux10_subj=np
+      	aux10_compfeature1_name=form
+      	aux10_compfeature1_value=finite
+      	aux10_stem1_orth=yota
+      	aux10_stem1_pred=_1pl.excl_v_rel
+      	aux10_stem2_orth=ta
+      	aux10_stem2_pred=_1pl.excl_v_rel
+
+
+          noun1_stem188_orth=ku
+              noun1_stem188_pred=_1sg-or-1sg.cfact_n_rel
+
+           noun85_pron=on
+              noun85_feat1_name=person
+             noun85_feat1_value=1st
+             noun85_feat2_name=number
+             noun85_feat2_value=sg
+           noun85_det=opt
+             noun85_stem1_orth=ku
+             noun85_stem1_pred=_pron_n_rel
+
+          aux13_name=aux13
+          aux13_sem=no-pred
+            aux13_feat1_name=tense
+            aux13_feat1_value=fut
+            aux13_feat1_head=verb
+          aux13_subj=np
+            aux13_compfeature1_name=form
+            aux13_compfeature1_value=finite
+            aux13_stem1_orth=ku
+
+       and also I accidentally spelled aux_40 as 'ku' instead of 'ko,'
+       so I fixed that orthography.
+
+               verb1_stem91_orth=ko~
+             verb1_stem91_pred=_2sg.fut-or-2sg.pot-or-cfact-or-imp_v_rel
+
+             There is an intransitive 'ko,' but not the following transitive w/ the
+             union predication:
+
+      	       verb2_stem46_orth=ko
+      	       verb2_stem46_pred=_2sg.fut-or-fall_v_rel
+
+             So we deleted the above and added the correct one.
+
+             And aux_1 is spurious, so we deleted it:
+
+               aux1_name=aux1
+      	 aux1_sem=add-pred
+      	   aux1_feat1_name=tense
+      	   aux1_feat1_value=fut
+      	   aux1_feat1_head=verb
+      	   aux1_feat2_name=aspect
+      	   aux1_feat2_value=ipfv, pot
+      	   aux1_feat2_head=verb
+      	   aux1_feat3_name=mood
+      	   aux1_feat3_value=imp
+      	   aux1_feat3_head=verb
+      	 aux1_subj=np
+      	   aux1_compfeature1_name=form
+      	   aux1_compfeature1_value=finite
+      	   aux1_stem1_orth=ko
+      	   aux1_stem1_pred=_2sg.fut-or-fall_v_rel
+
+             Deleted from morphology since it has aux1 as an input
+
+             verb-pc2_name=verb-pc2
+             verb-pc2_obligatory=on
+             verb-pc2_order=prefix
+             verb-pc2_inputs=aux1
+      	 verb-pc2_lrt1_name=verb-pc2_lrt1
+      	   verb-pc2_lrt1_feat1_name=person
+      	   verb-pc2_lrt1_feat1_value=2nd
+      	   verb-pc2_lrt1_feat1_head=subj
+      	   verb-pc2_lrt1_feat2_name=number
+      	   verb-pc2_lrt1_feat2_value=sg
+      	   verb-pc2_lrt1_feat2_head=subj
+      	   verb-pc2_lrt1_lri1_inflecting=no
+
+      	   and
+
+            verb-pc7_name=verb-pc7
+            verb-pc7_obligatory=on
+            verb-pc7_order=prefix
+            verb-pc7_inputs=aux14, verb-pc2
+      	verb-pc7_lrt1_name=verb-pc7_lrt1
+      	  verb-pc7_lrt1_feat1_name=person
+      	  verb-pc7_lrt1_feat1_value=3rd
+      	  verb-pc7_lrt1_feat1_head=subj
+      	  verb-pc7_lrt1_feat2_name=number
+      	  verb-pc7_lrt1_feat2_value=sg
+      	  verb-pc7_lrt1_feat2_head=subj
+      	  verb-pc7_lrt1_lri1_inflecting=no
+
+      	   
+       Back to deleting:
+
+             aux1_name=aux1
+         aux1_sem=add-pred
+           aux1_feat1_name=tense
+           aux1_feat1_value=fut
+           aux1_feat1_head=verb
+           aux1_feat2_name=aspect
+           aux1_feat2_value=ipfv, pot
+           aux1_feat2_head=verb
+           aux1_feat3_name=mood
+           aux1_feat3_value=imp
+           aux1_feat3_head=verb
+         aux1_subj=np
+           aux1_compfeature1_name=form
+           aux1_compfeature1_value=finite
+           aux1_stem1_orth=ko
+           aux1_stem1_pred=_2sg.fut-or-fall_v_rel
+
+
+
+          noun1_stem169_orth=ki
+               noun1_stem169_pred=_3sg-or-c.fact-or-cond-or-hort-or-oblig-or-pot_n_rel
+
+         noun84_pron=on
+           noun84_feat1_name=person
+           noun84_feat1_value=3rd
+           noun84_feat2_name=number
+           noun84_feat2_value=sg
+         noun84_det=opt
+           noun84_stem1_orth=ki
+           noun84_stem1_pred=_pron_n_rel
+
+         verb1_stem86_orth=ki~
+         verb1_stem86_pred=_3sg.fut_v_rel
+
+         aux14_name=aux14
+         aux14_sem=no-pred
+           aux14_feat1_name=tense
+           aux14_feat1_value=fut
+           aux14_feat1_head=verb
+           aux14_feat2_name=aspect
+           aux14_feat2_value=pot
+           aux14_feat2_head=verb
+           aux14_feat3_name=mood
+           aux14_feat3_value=oblig, cond
+           aux14_feat3_head=verb
+         aux14_subj=np
+           aux14_compfeature1_name=form
+           aux14_compfeature1_value=finite
+           aux14_stem1_orth=ki
+
+       The following are all spurious
+       noun versions of pronouns
+       
+         noun1_stem434_orth=yoito
+         noun1_stem434_pred=_1pc.excl_n_rel
+         noun1_stem435_orth=yoru
+         noun1_stem435_pred=_1dl.excl_n_rel
+         noun1_stem437_orth=yoto
+         noun1_stem437_pred=_1pc.incl_n_rel
+         noun1_stem438_orth=yoya
+         noun1_stem438_pred=_1pl.excl_n_rel
+
+             Here was a spurious determiner entry for "a" that's not
+        supported by the resources, and it's clearly just treating
+        the agr clitic "a" as a det.
+
+             det8_name=det8
+         det8_stem1_orth=a
+         det8_stem1_pred=_exist_q_rel
+         det8_feat1_name=person
+         det8_feat1_value=2nd
+         det8_feat2_name=number
+         det8_feat2_value=sg
+
+       Here come the realis agr clitics.
+       The following needed to be tweaked, as tense should not be future, mood
+       should not be imp, etc. To make our analysis simpler and more consistent,
+       we're removing TENSE as a feature, even though n.fut is consistent with
+       IGT glosses.
+       So we are just analyzing agr clitic markers as realis/ irrealis. 
+
+        aux25_name=aux25
+        aux25_sem=no-pred
+          aux25_feat1_name=tense
+          aux25_feat1_value=fut
+          aux25_feat1_head=verb
+        aux25_subj=np
+          aux25_compfeature1_name=form
+          aux25_compfeature1_value=finite
+          aux25_stem1_orth=u
+
+        aux15_sem=no-pred
+          aux15_feat1_name=tense
+          aux15_feat1_value=nfut
+          aux15_feat1_head=verb
+          aux15_feat2_name=aspect
+          aux15_feat2_value=ipfv, pfv
+          aux15_feat2_head=verb
+          aux15_feat3_name=mood
+          aux15_feat3_value=imp
+          aux15_feat3_head=verb
+        aux15_subj=np
+          aux15_compfeature1_name=form
+          aux15_compfeature1_value=finite
+          aux15_stem1_orth=a
+
+
+        aux17_name=aux17
+        aux17_sem=add-pred
+          aux17_feat1_name=tense
+          aux17_feat1_value=nfut
+          aux17_feat1_head=verb
+        aux17_subj=np
+          aux17_compfeature1_name=form
+          aux17_compfeature1_value=finite
+          aux17_stem1_orth=i
+          aux17_stem1_pred=3sg.nfut_v_rel
+
+        aux29_name=aux29
+        aux29_sem=add-pred
+          aux29_feat1_name=mood
+          aux29_feat1_value=realis
+          aux29_feat1_head=verb
+        aux29_subj=np
+          aux29_compfeature1_name=form
+          aux29_compfeature1_value=finite
+          aux29_stem1_orth=yoru
+          aux29_stem1_pred=_1dl.incl_v_rel
+
+             We didn't have "taru" which is the 1dl.excl agr
+             clitic, but we don't even make the incl/excl distinction
+             yet in person/num yet for our grammar, so we didn't bother
+             to create the auxiliary.
+
+        Auxiliaries 30-42 are all the rest of the clitics that we needed
+        to add agreement features to. We made those changes. A sample
+        of the resulting entry for an auxiliary is given below under
+        "added".
+
+        added:
+        aux42_name=aux42
+        aux42_sem=no-pred
+          aux42_feat1_name=mood
+          aux42_feat1_value=irr
+          aux42_feat1_head=verb
+          aux42_feat2_name=person
+          aux42_feat2_value=1st, 2nd, 3rd
+          aux42_feat2_head=subj
+          aux42_feat3_name=number
+          aux42_feat3_value=pl, du, pc
+          aux42_feat3_head=subj
+        aux42_subj=np
+          aux42_compfeature1_name=form
+          aux42_compfeature1_value=finite
+          aux42_stem1_orth=ka
+
+*******************************************************************************
+2.4 Deleting/fixing spurious/semantically empty entries
+
+   k' (agremment clitic shortened)
+
+   We deleted
+
+      aux27_name=aux27
+      aux27_sem=no-pred
+        aux27_feat1_name=tense
+        aux27_feat1_value=fut
+        aux27_feat1_head=verb
+      aux27_subj=np
+        aux27_compfeature1_name=form
+        aux27_compfeature1_value=finite
+        aux27_stem1_orth=k'
+
+   aqani ()
+
+   Deleted:
+
+      aux28_name=aux28
+      aux28_sem=no-pred
+        aux28_feat1_name=tense
+        aux28_feat1_value=pres
+        aux28_feat1_head=verb
+      aux28_subj=np
+        aux28_compfeature1_name=form
+        aux28_compfeature1_value=finite
+        aux28_stem1_orth=aqani
+
+   And added:
+
+       INSERT ENTRY HERE FROM CHOICES
+
+   poro (hole)
+
+   We deleted
+
+      aux23_sem=no-pred
+        aux23_feat1_name=aspect
+        aux23_feat1_value=pot
+        aux23_feat1_head=verb
+      aux23_subj=np
+        aux23_compfeature1_name=form
+        aux23_compfeature1_value=finite
+        aux23_stem1_orth=poro
+
+   And changed the following noun entry to just mean 'hole' <why?>
+
+      noun1_stem369_orth=poro
+      noun1_stem369_pred=_hole-or-pot_n_rel
+
+   kine (pfv marker)
+
+   Since this is a perfective clitic, we deleted the transitive verb entry
+   and implemented the correct 3sg features on the sole other entry, an aux.
+
+       verb1_stem89_orth=kine~
+       verb1_stem89_pred=_3sg.perf_v_rel
+
+   porokiny (pot)
+
+   We deleted the following spurious aux entry for what should be a noun:
+
+       aux22_name=aux22
+       aux22_sem=no-pred
+         aux22_feat1_name=aspect
+         aux22_feat1_value=pot
+         aux22_feat1_head=verb
+       aux22_subj=np
+         aux22_compfeature1_name=form
+         aux22_compfeature1_value=finite
+         aux22_stem1_orth=porokiny
+
+   And added the noun entry:
+
+       INSERT NOUN ENTRY FROM CHOICES
+       
+   keiny (pot)
+
+   We deleted:
+   
+        aux19_name=aux19
+        aux19_sem=no-pred
+          aux19_feat1_name=aspect
+          aux19_feat1_value=pot
+          aux19_feat1_head=verb
+        aux19_subj=np
+          aux19_compfeature1_name=form
+          aux19_compfeature1_value=finite
+          aux19_stem1_orth=keiny
+
+        noun50_det=opt
+            noun50_stem1_orth=keiny
+        noun50_stem1_pred=_pron_n_rel
+
+        We could have just changed the predication, but this was actually situated with a bunch
+        of nouns that look like spurious pron_n_rel entries from the auto-inference system, and
+        it might be nice to remove those later on all in one section. So we added:
+
+        <INSERT NOUN ENTRY FROM CHOICES>
+
+2.5 Changes based on feedback from lab 5
+   We will say that auxiliaries take only VP complements instead of V, so as to
+      reduce the ambiguity about where the object drops wrt to the aux.
+
+   We need to answer the questions on the wh questions page and then specify
+      that your wh pronouns are actually wh pronouns.
+
+   We should fix 'matir'=sleep to be intransitive, rather than transitive.
+
+   We delted:
+      
+      verb1_stem119_orth=matir~
+        verb1_stem119_pred=_lie-or-sleep-or-sleep_with_v_rel
+
+      verb2_stem56_orth=matir
+        verb2_stem56_pred=_sleep_v_rel
+
+   We added: <>
+
+2.6 <what is this>
 preliminary notes/TODO list on 'va'/'pa'
 
    1.  We'll probably change the 'va' predication to mean "think-or-say" for MT purposes,
@@ -553,105 +589,90 @@ preliminary notes/TODO list on 'va'/'pa'
    2. Remove the spurious 'va' auto-inferred that has a long predication
    3. For 'Pa~Poa':
       - the 'poa' form allows non-second, but it shouldn't
-"""
 
-   - Prose description of the phenomenon
-    
-   - Prose description of your analysis
-    
-   - The specific changes you made to the tdl (paste in the actual tdl)
-    
-   - Specific IGT I can use to test the analysis / investigate if something isn't
-    working and you need help.
 ===============================================================================
-3. A description of the performance of your final grammar for this week on the
-test suite and test corpus, as compared to your starting grammar (see details above).
+3. Grammar performance comparison
+TOC:
+   3.1 Testsuite comparision
+      3.1.1 Intial grammar
+      3.1.2 Final grammar
+   3.2 Test corpus comparision
+      3.2.1 Initial grammar
+      3.2.2 Final grammar
 
-     3.1.1 Final testsuite with initial grammar for the week (copied from Lab 5's final testsuite run)
+   3.1 Initial and final grammar with the testsuite
+   3.1.1 Final testsuite <did we change the testsuite?> with initial grammar for the week (copied from Lab 5's final testsuite run)
 
-     	   106/157 items parsed.
-    	   65/84 positive items parsed (77.4% coverage)
-    	   41/73 negative items parsed (56.2% overgeneration)
+      106/157 items parsed.
+      65/84 positive items parsed (77.4% coverage)
+      41/73 negative items parsed (56.2% overgeneration)
      
-      What is the average number of parses per parsed item?
-            1.85 for positive, 1.76 for negative
+      On average:
+         Positive items that parsed had 1.85 parses
+         Negative items that parsed had 1.76 parses
             
-      How many parses did the most ambiguous item receive?
-
-        This sentence received 8 distinct analyses;
-
-         i va ki puti yo
+      The most ambiguous item had 8 parses:
+         i   va   ki      puti  yo
          3sg want 3sg.fut marry 1sg
          'He wants to marry me'
+      See lab 5 for details about the cause of ambiguity.
+    
+   3.1.2 Final testsuite with final grammar for the week
+      60/157 items parsed.
+      53/85 positive items parsed (62.4% coverage)
+      7/73 negative items parsed (9.6% overgeneration) huge improvement :)
+      
+      On average:
+         Positive items that parsed had 1.11 parses
+         Negative items that parsed had 1.00 parses
+      
+      The most ambiguous item had 3 parses:
+         Ala        kip
+         3pl.realis lie
+         "They lied."
+      The ambiguity seems to stem from the fact there are 3 different parses for 'ala'.
+      One as a realis agr clitic verb, one as a noun with _3pl_n_rel, and one as a noun
+      with _pron_n_rel. Same ambiguity occurs in the corpus.
 
-	 ....
-	 (more in Lab5, of course)
+   3.2 Initial and final grammar with the test corpus
+   3.2.1 Test corpus with initial grammar for the week
+      38/563 positive items parsed (6.7% coverage)     
 
+      On average, parsed items had 2.89 distinct analyses.
 
-     3.1.2 Final testsuite with final grammar for the week
+      The most ambiguous items had 10 and 15 parses.
 
-     	   60/157 items parsed.
-     	   53/85 positive items parsed (62.4% coverage)
-	   7/73 negative items parsed (9.6% overgeneration) huge improvement :)
+      The sentence with 15 parses is:
+         ala va  yota    ka   mulie
+         3pl say 1pl.inc hort turn
+         'They said let s turn around'
 
-     What is the avg # of parses per parsed item?
-     	     1.11 for coverage, 1.00 for overgeneration ( also improvements :) )
+      The sentences with 10 parses are:
+         i   va  awa ka   la
+         3sg say 2pl hort go
+         'He said you go.'
 
-     How many parses did the most ambiguous item receive?
+         ato va  i   kine     me
+         3pl say 3sg 3sg.perf come
+         'They said he s come.'
 
-     	  This sentence received 3 distinct analyses:
+      These sentences are using the complement embedding verb 'va' and the irrealis verb clitic 'ka.' We know there
+      are two entries for 'va'. There only seems to be one entry for 'ka', though. My guess is that there's lots
+      of structural ambiguity in how the VP trees are constructed.
 
-	  Ala        kip
-	  3pl.realis lie
-	  "They lied."
+   3.2.2 Test corpus with final grammar for the week
+      29/562 items (5.2% coverage), so our coverage went slightly down
+      
+      On average, parsed items had 1.45 distinct analyses (much less ambiguity,
+         probably because we limited auxiliaries to taking VP complements only.
+      
+      The most ambiguous item had 3 parses (and it showed up in two different places in the corpus)
+      The IGT provided was the following:
+         ala va  yota     ka   mulie
+         3pl say 1pl.incl hort run
+         They said let  s      turn around
 
-	  The ambiguity seems to stem from the fact there are 3 different parses for 'ala'.
-	  One as a realis agr clitic verb, one as a noun with _3pl_n_rel, and one as a noun
-	  with _pron_n_rel. Same ambiguity occurs in the corpus.
-
-     3.2.1 Test corpus with initial grammar for the week
-     
-      - 38/563 positive items (6.7% coverage
-      - On average, parsed items had 2.89 distinct analyses.
-
-      - Most ambiguous item:
-	The most ambiguous items had 10 and 15 parses.
-
-	  The sentence with 15 parses is:
-
-	     ala va  yota    ka   mulie
-	     3pl say 1pl.inc hort turn
-	     'They said let s turn around'
-
-	  10 parses:
-
-	      i va awa ka la
-	      3sg say 2pl hort go
-      	     'He said you go.'
-
-	      ato va i kine me
-	      3pl say 3sg 3sg.perf come
-	      'They said he s come.'
-
-       These sentences are using the complement embedding verb 'va' and the irrealis verb clitic 'ka.' We know there
-       are two entries for 'va'. There only seems to be one entry for 'ka', though. My guess is that there's lots
-       of structural ambiguity in how the VP trees are constructed.
-
-     3.2.2 Test corpus with final grammar for the week
-
-     	   - 29 out of 562 items (5.2%), so our coverage went slightly down
-     	   -On average, parsed items had 1.45 distinct analyses (much less ambiguity,
-	       probably because we limited auxiliaries to taking VP complements only.
-	       
-	   -Most ambiguous item:
-	   	 The most ambiguous item had 3 parses (and it showed up in two different places in the corpus)
-		 The IGT provided was the following:
-
-		 ala va  yota     ka   mulie
-		 3pl say 1pl.incl hort run
-		 They said let  s      turn around
-
-		 The three trees seem to correspond to 3 different parses for 'ala'. One has 'ala' as a verb,
-		 the 3pl realis agr clitic. The other two correspond to nominal parses for 'ala', and one of
-		 them correctly has _pron_n_rel, but another has _3pl_n_rel. I have to say that its pretty
-		 annoying at this point to see that last player, but its an easy fix.
+      The three trees seem to correspond to 3 different parses for 'ala'. One has 'ala' as a verb,
+      the 3pl realis agr clitic. The other two correspond to nominal parses for 'ala', and one of
+      them correctly has _pron_n_rel, but another has _3pl_n_rel. I have to say that its pretty
+      annoying at this point to see that last player, but its an easy fix.
