@@ -1,14 +1,6 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Inflecting Lexical Rule Instances
 
-noun-pc1_lrt1-suffix :=
-%suffix (* -n)
-noun-pc1_lrt1-lex-rule.
-
-noun-pc2_lrt1-suffix :=
-%suffix (* -m)
-noun-pc2_lrt1-lex-rule.
-
 noun-pc3_lrt1-suffix :=
 %suffix (* -yotaru)
 noun-pc3_lrt1-lex-rule.
@@ -17,8 +9,12 @@ noun-pc3_lrt2-suffix :=
 %suffix (* -yo)
 noun-pc3_lrt2-lex-rule.
 
-noun-pc3_lrt3-suffix :=
+noun-pc3_lrt3-suffix1 :=
 %suffix (* -oi)
+noun-pc3_lrt3-lex-rule.
+
+noun-pc3_lrt3-suffix2 :=
+%suffix (* -m)
 noun-pc3_lrt3-lex-rule.
 
 noun-pc3_lrt4-suffix :=
@@ -56,6 +52,10 @@ noun-pc3_lrt11-lex-rule.
 noun-pc3_lrt12-suffix :=
 %suffix (* -ala)
 noun-pc3_lrt12-lex-rule.
+
+noun-pc3_lrt13-suffix :=
+%suffix (* -n)
+noun-pc3_lrt13-lex-rule.
 
 verb-pc1_lrt1-suffix1 :=
 %suffix (* -ani)

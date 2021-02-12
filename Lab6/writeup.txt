@@ -25,24 +25,11 @@ Work on VPM, i.e., maybe look in the D.R. for ASPECT?
 those specifc changes, and how that affected generator output.
 
       We made the following changes:
-      	 PER, NUM, and GEND all have the PNG. value on the rhs, which Emily says to delete
-	 TENSE, ASPECT, and MOOD all have the E. value on the rhs, which Emily says to delete.
-	 	- we probably want to write "no-aspect" as a default aspect?
-	 Spelling out the abbreviated left-hand side values on the right hand side
 
-	 We are considering deleting the entire TENSE property, because we've been
-	 implementing the tense marker as just an irrealis marker. All of our examples
-	 of the irrealis markers have in fact been for future sentences, and in our
-	 test cases, we've given glosses like:
-	 
-	    Manuai ki kip
-	    eagle  3sg.fut lie
-	    'The eagle will lie.'
-
-	 But now maybe we should gloss as 3sg.irr
-
-	 But then we'll need
-	 a transfer rule to map future tense to our irrealis mood?
+      	 Deleted E. on the right side of TENSE, ASPECT, and MOOD
+	 Deleted PNG. on the right side of PER, NUM, and GEND
+	 Spelled out 3rd as third, 2nd as second, 1st as first on the right side of PER
+	 Spelled out nfut as non-future, fut as future, and pres as present on the right side of TENSE
 
 ===============================================================================
 2. A description of the phenomena you improved in the grammar (including both

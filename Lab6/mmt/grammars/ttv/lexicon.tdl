@@ -49,10 +49,6 @@ arakeu := noun1-noun-lex &
   [ STEM < "arakeu" >,
     SYNSEM.LKEYS.KEYREL.PRED "_outdoors_n_rel" ].
 
-aru_1 := noun1-noun-lex &
-  [ STEM < "aru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3dl_n_rel" ].
-
 asa := noun1-noun-lex &
   [ STEM < "asa" >,
     SYNSEM.LKEYS.KEYREL.PRED "_asa_n_rel" ].
@@ -68,10 +64,6 @@ asi_1 := noun1-noun-lex &
 ate_1 := noun1-noun-lex &
   [ STEM < "ate" >,
     SYNSEM.LKEYS.KEYREL.PRED "_liver_n_rel" ].
-
-ato_1 := noun1-noun-lex &
-  [ STEM < "ato" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3pc_n_rel" ].
 
 auro := noun1-noun-lex &
   [ STEM < "auro" >,
@@ -625,10 +617,6 @@ keyau := noun1-noun-lex &
   [ STEM < "keyau" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bed_n_rel" ].
 
-ki_1 := noun1-noun-lex &
-  [ STEM < "ki" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3sg-or-c.fact-or-cond-or-hort-or-oblig-or-pot_n_rel" ].
-
 kiar := noun1-noun-lex &
   [ STEM < "kiar" >,
     SYNSEM.LKEYS.KEYREL.PRED "_k._fish-or-ko_fish_n_rel" ].
@@ -700,10 +688,6 @@ kot := noun1-noun-lex &
 koti := noun1-noun-lex &
   [ STEM < "koti" >,
     SYNSEM.LKEYS.KEYREL.PRED "_basket_n_rel" ].
-
-ku_1 := noun1-noun-lex &
-  [ STEM < "ku" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1sg-or-1sg.cfact_n_rel" ].
 
 kuer := noun1-noun-lex &
   [ STEM < "kuer" >,
@@ -1321,9 +1305,9 @@ poqopoq := noun1-noun-lex &
   [ STEM < "poqopoq" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fruit_n_rel" ].
 
-poro_1 := noun1-noun-lex &
+poro := noun1-noun-lex &
   [ STEM < "poro" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hole-or-pot_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_hole_n_rel" ].
 
 porolu := noun1-noun-lex &
   [ STEM < "porolu" >,
@@ -1429,10 +1413,6 @@ taroan := noun1-noun-lex &
   [ STEM < "taroan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_light_n_rel" ].
 
-taru := noun1-noun-lex &
-  [ STEM < "taru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1dl_n_rel" ].
-
 tavo := noun1-noun-lex &
   [ STEM < "tavo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_miserable_n_rel" ].
@@ -1509,17 +1489,9 @@ wari := noun1-noun-lex &
   [ STEM < "wari" >,
     SYNSEM.LKEYS.KEYREL.PRED "_song_n_rel" ].
 
-waru := noun1-noun-lex &
-  [ STEM < "waru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2dl_n_rel" ].
-
-wato := noun1-noun-lex &
-  [ STEM < "wato" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2pc_n_rel" ].
-
 wei := noun1-noun-lex &
   [ STEM < "wei" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3sg-or-that-or-there_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_that-or-there_n_rel" ].
 
 wewei := noun1-noun-lex &
   [ STEM < "wewei" >,
@@ -1547,7 +1519,7 @@ yaviani := noun1-noun-lex &
 
 yaye := noun1-noun-lex &
   [ STEM < "yaye" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_-1sg-or-mother-or-mother-3pl-or-mother.1sg_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_mother_n_rel" ].
 
 yeu := noun1-noun-lex &
   [ STEM < "yeu" >,
@@ -1556,22 +1528,6 @@ yeu := noun1-noun-lex &
 yinkekan := noun1-noun-lex &
   [ STEM < "yinkekan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_talons_n_rel" ].
-
-yoito_1 := noun1-noun-lex &
-  [ STEM < "yoito" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pc.excl_n_rel" ].
-
-yoru_1 := noun1-noun-lex &
-  [ STEM < "yoru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1dl.excl_n_rel" ].
-
-yoto_1 := noun1-noun-lex &
-  [ STEM < "yoto" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pc.incl_n_rel" ].
-
-yoya_1 := noun1-noun-lex &
-  [ STEM < "yoya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pl.excl_n_rel" ].
 
 qara := noun1-noun-lex &
   [ STEM < "qara" >,
@@ -1661,9 +1617,13 @@ de := noun1-noun-lex &
   [ STEM < "de" >,
     SYNSEM.LKEYS.KEYREL.PRED "_excrement_n_rel" ].
 
-woto_1 := noun1-noun-lex &
-  [ STEM < "woto" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2pc_n_rel" ].
+porokiny := noun1-noun-lex &
+  [ STEM < "porokiny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pot-or-wooden-bowl_n_rel" ].
+
+keiny := noun1-noun-lex &
+  [ STEM < "keiny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pot_n_rel" ].
 
 kis := noun17-noun-lex &
   [ STEM < "kis" >,
@@ -1723,10 +1683,6 @@ i_1 := noun48-noun-lex &
 
 iyaruu := noun49-noun-lex &
   [ STEM < "iyaruu" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
-
-keiny_1 := noun50-noun-lex &
-  [ STEM < "keiny" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 male := noun51-noun-lex &
@@ -1863,14 +1819,6 @@ yota_1 := noun83-noun-lex &
 
 ta_1 := noun83-noun-lex &
   [ STEM < "ta" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
-
-ki_2 := noun84-noun-lex &
-  [ STEM < "ki" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
-
-ku_2 := noun85-noun-lex &
-  [ STEM < "ku" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 ala_2 := noun86-noun-lex &
@@ -2253,29 +2201,13 @@ kekes_7E := verb1-verb-lex &
   [ STEM < "kekes~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_urge_v_rel" ].
 
-ki_7E := verb1-verb-lex &
-  [ STEM < "ki~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3sg.fut_v_rel" ].
-
-kila_7E := verb1-verb-lex &
-  [ STEM < "kila~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_to_v_1_rel" ].
-
 kile_7E := verb1-verb-lex &
   [ STEM < "kile~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_into_v_rel" ].
 
-kine_7E := verb1-verb-lex &
-  [ STEM < "kine~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3sg.perf_v_rel" ].
-
 kip_7E := verb1-verb-lex &
   [ STEM < "kip~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_lie_v_rel" ].
-
-ko_7E := verb1-verb-lex &
-  [ STEM < "ko~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2sg.fut-or-2sg.pot-or-cfact-or-imp_v_rel" ].
 
 kokol_7E := verb1-verb-lex &
   [ STEM < "kokol~" >,
@@ -2384,10 +2316,6 @@ mat_7E := verb1-verb-lex &
 matabule_7E := verb1-verb-lex &
   [ STEM < "matabule~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shyness_v_rel" ].
-
-matir_7E := verb1-verb-lex &
-  [ STEM < "matir~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_lie-or-sleep-or-sleep_with_v_rel" ].
 
 maturue_7E := verb1-verb-lex &
   [ STEM < "maturue~" >,
@@ -2893,10 +2821,6 @@ utue_7E := verb1-verb-lex &
   [ STEM < "utue~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fetch_v_rel" ].
 
-va_7E := verb1-verb-lex &
-  [ STEM < "va~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_say-or-think-or-want_v_rel" ].
-
 vavuen_7E := verb1-verb-lex &
   [ STEM < "vavuen~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dont_want_to_know-or-refuse_v_rel" ].
@@ -3141,10 +3065,6 @@ kau_2 := verb2-verb-lex &
   [ STEM < "kau" >,
     SYNSEM.LKEYS.KEYREL.PRED "_swim_v_rel" ].
 
-ko_1 := verb2-verb-lex &
-  [ STEM < "ko" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2sg.fut-or-fall_v_rel" ].
-
 koloani := verb2-verb-lex &
   [ STEM < "koloani" >,
     SYNSEM.LKEYS.KEYREL.PRED "_protect_v_rel" ].
@@ -3180,10 +3100,6 @@ masiani := verb2-verb-lex &
 mat_2 := verb2-verb-lex &
   [ STEM < "mat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_die_v_rel" ].
-
-matir := verb2-verb-lex &
-  [ STEM < "matir" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
 
 me := verb2-verb-lex &
   [ STEM < "me" >,
@@ -3481,10 +3397,6 @@ utue := verb2-verb-lex &
   [ STEM < "utue" >,
     SYNSEM.LKEYS.KEYREL.PRED "_make_v_rel" ].
 
-va_1 := verb2-verb-lex &
-  [ STEM < "va" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_say-or-think-or-want_v_rel" ].
-
 vavuen := verb2-verb-lex &
   [ STEM < "vavuen" >,
     SYNSEM.LKEYS.KEYREL.PRED "_refuse_v_rel" ].
@@ -3536,6 +3448,10 @@ yo_2 := verb2-verb-lex &
 yuyuu := verb2-verb-lex &
   [ STEM < "yuyuu" >,
     SYNSEM.LKEYS.KEYREL.PRED "_call_v_rel" ].
+
+aqani := verb2-verb-lex &
+  [ STEM < "aqani" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_present-with-gifts-or-support_v_rel" ].
 
 alisai := verb3-verb-lex &
   [ STEM < "alisai" >,
@@ -3589,7 +3505,15 @@ vuacole := verb3-verb-lex &
   [ STEM < "vuacole" >,
     SYNSEM.LKEYS.KEYREL.PRED "_play_v_rel" ].
 
-va_2 := verb4-verb-lex &
+matir := verb3-verb-lex &
+  [ STEM < "matir" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
+
+ko_1 := verb3-verb-lex &
+  [ STEM < "ko" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fall_v_rel" ].
+
+va := verb4-verb-lex &
   [ STEM < "va" >,
     SYNSEM.LKEYS.KEYREL.PRED "_say_v_rel" ].
 
@@ -3602,10 +3526,6 @@ poa_2 := verb5-verb-lex &
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
 ;;; Auxiliaries
-
-ko_2 := aux1-aux-lex &
-  [ STEM < "ko" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2sg.fut-or-fall_v_rel" ].
 
 la_2 := aux2-aux-lex &
   [ STEM < "la" >,
@@ -3637,14 +3557,6 @@ tu_2 := aux8-aux-lex &
 kine := aux9-aux-lex &
   [ STEM < "kine" > ].
 
-yota_2 := aux10-aux-lex &
-  [ STEM < "yota" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pl.excl_v_rel" ].
-
-ta_3 := aux10-aux-lex &
-  [ STEM < "ta" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pl.excl_v_rel" ].
-
 poen := neg11-aux-lex &
   [ STEM < "poen" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
@@ -3653,13 +3565,7 @@ ne := neg12-aux-lex &
   [ STEM < "ne" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
-ku_3 := aux13-aux-lex &
-  [ STEM < "ku" > ].
-
-ki_3 := aux14-aux-lex &
-  [ STEM < "ki" > ].
-
-a_2 := aux15-aux-lex &
+a := aux15-aux-lex &
   [ STEM < "a" > ].
 
 nabu := neg16-aux-lex &
@@ -3667,26 +3573,16 @@ nabu := neg16-aux-lex &
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 i_2 := aux17-aux-lex &
-  [ STEM < "i" >,
-    SYNSEM.LKEYS.KEYREL.PRED "3sg.nfut_v_rel" ].
+  [ STEM < "i" > ].
 
 kune := aux18-aux-lex &
   [ STEM < "kune" > ].
-
-keiny_2 := aux19-aux-lex &
-  [ STEM < "keiny" > ].
 
 alawen := aux20-aux-lex &
   [ STEM < "alawen" > ].
 
 kone := aux21-aux-lex &
   [ STEM < "kone" > ].
-
-porokiny := aux22-aux-lex &
-  [ STEM < "porokiny" > ].
-
-poro_2 := aux23-aux-lex &
-  [ STEM < "poro" > ].
 
 itiqi := aux24-aux-lex &
   [ STEM < "itiqi" > ].
@@ -3697,117 +3593,53 @@ u := aux25-aux-lex &
 buon := aux26-aux-lex &
   [ STEM < "buon" > ].
 
-k_27 := aux27-aux-lex &
-  [ STEM < "k'" > ].
-
-aqani := aux28-aux-lex &
-  [ STEM < "aqani" > ].
-
-yoru_2 := aux29-aux-lex &
-  [ STEM < "yoru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1dl.incl_v_rel" ].
+yoru := aux29-aux-lex &
+  [ STEM < "yoru" > ].
 
 woru := aux30-aux-lex &
-  [ STEM < "woru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2dl_v_rel" ].
+  [ STEM < "woru" > ].
 
-aru_2 := aux31-aux-lex &
-  [ STEM < "aru" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3dl_v_rel" ].
+aru := aux31-aux-lex &
+  [ STEM < "aru" > ].
 
-yoito_2 := aux32-aux-lex &
-  [ STEM < "yoito" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pc.incl_v_rel" ].
+yoito := aux32-aux-lex &
+  [ STEM < "yoito" > ].
 
-yoto_2 := aux33-aux-lex &
-  [ STEM < "yoto" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pc.excl_v_rel" ].
+yoto := aux33-aux-lex &
+  [ STEM < "yoto" > ].
 
 to := aux33-aux-lex &
-  [ STEM < "to" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pc.excl_v_rel" ].
+  [ STEM < "to" > ].
 
-woto_2 := aux34-aux-lex &
-  [ STEM < "woto" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2pc_v_rel" ].
+woto := aux34-aux-lex &
+  [ STEM < "woto" > ].
 
-ato_2 := aux34-aux-lex &
-  [ STEM < "ato" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3pc_v_rel" ].
+ato := aux35-aux-lex &
+  [ STEM < "ato" > ].
 
-yoya_2 := aux36-aux-lex &
-  [ STEM < "yoya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_1pl.incl_v_rel" ].
+yoya := aux36-aux-lex &
+  [ STEM < "yoya" > ].
 
 awa_2 := aux37-aux-lex &
-  [ STEM < "awa" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_2pl_v_rel" ].
+  [ STEM < "awa" > ].
 
 ala_3 := aux38-aux-lex &
-  [ STEM < "ala" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3pl_v_rel" ].
+  [ STEM < "ala" > ].
 
-ku_4 := aux39-aux-lex &
+ku := aux39-aux-lex &
   [ STEM < "ku" > ].
 
-ku_5 := aux40-aux-lex &
-  [ STEM < "ku" > ].
+ko_2 := aux40-aux-lex &
+  [ STEM < "ko" > ].
 
-ki_4 := aux41-aux-lex &
+ki := aux41-aux-lex &
   [ STEM < "ki" > ].
 
 ka := aux42-aux-lex &
   [ STEM < "ka" > ].
 
-;;; Determiners
-
-moen := det1-determiner-lex &
-  [ STEM < "moen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-ya := det2-determiner-lex &
-  [ STEM < "ya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-Moen := det3-determiner-lex &
-  [ STEM < "Moen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-Moe := det4-determiner-lex &
-  [ STEM < "Moe" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-A := det5-determiner-lex &
-  [ STEM < "A" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-ita := det6-determiner-lex &
-  [ STEM < "ita" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-ito_2C := det7-determiner-lex &
-  [ STEM < "ito," >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-a_1 := det8-determiner-lex &
-  [ STEM < "a" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-ito := det9-determiner-lex &
-  [ STEM < "ito" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-Ya := det10-determiner-lex &
-  [ STEM < "Ya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-itan := det11-determiner-lex &
-  [ STEM < "itan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
-
-tita := det12-determiner-lex &
-  [ STEM < "tita" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+yota_2 := aux43-aux-lex &
+  [ STEM < "yota" > ].
 
 ;;; Adverbs
 

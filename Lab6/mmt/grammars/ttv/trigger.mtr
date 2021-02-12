@@ -9,27 +9,17 @@ kine_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
     FLAGS.TRIGGER "kine" ].
 
-ku_3_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.TENSE fut ] >,
-    FLAGS.TRIGGER "ku_3" ].
+a_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "a" ].
 
-ki_3_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE fut,
-                                   ASPECT pot ] ] >,
-    FLAGS.TRIGGER "ki_3" ].
-
-a_2_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E [ TENSE nfut,
-                                   MOOD imp ] ] >,
-    FLAGS.TRIGGER "a_2" ].
+i_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "i_2" ].
 
 kune_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
     FLAGS.TRIGGER "kune" ].
-
-keiny_2_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pot ] >,
-    FLAGS.TRIGGER "keiny_2" ].
 
 alawen_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
@@ -39,46 +29,78 @@ kone_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
     FLAGS.TRIGGER "kone" ].
 
-porokiny_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pot ] >,
-    FLAGS.TRIGGER "porokiny" ].
-
-poro_2_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pot ] >,
-    FLAGS.TRIGGER "poro_2" ].
-
 itiqi_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
     FLAGS.TRIGGER "itiqi" ].
 
 u_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.TENSE fut ] >,
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
     FLAGS.TRIGGER "u" ].
 
 buon_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
     FLAGS.TRIGGER "buon" ].
 
-k_27_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.TENSE fut ] >,
-    FLAGS.TRIGGER "k_27" ].
+yoru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoru" ].
 
-aqani_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ ARG0.E.TENSE pres ] >,
-    FLAGS.TRIGGER "aqani" ].
+woru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "woru" ].
 
-ku_4_gr := arg0e_gtr &
+aru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "aru" ].
+
+yoito_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoito" ].
+
+yoto_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoto" ].
+
+to_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "to" ].
+
+woto_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "woto" ].
+
+ato_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "ato" ].
+
+yoya_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoya" ].
+
+awa_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "awa_2" ].
+
+ala_3_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "ala_3" ].
+
+ku_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
-    FLAGS.TRIGGER "ku_4" ].
+    FLAGS.TRIGGER "ku" ].
 
-ku_5_gr := arg0e_gtr &
+ko_2_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
-    FLAGS.TRIGGER "ku_5" ].
+    FLAGS.TRIGGER "ko_2" ].
 
-ki_4_gr := arg0e_gtr &
-  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
-    FLAGS.TRIGGER "ki_4" ].
+ki_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ki" ].
 
 ka_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
     FLAGS.TRIGGER "ka" ].
+
+yota_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yota_2" ].
