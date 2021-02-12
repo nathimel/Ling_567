@@ -1,10 +1,3 @@
-# Ling_567
-latest notes:
-note that we didn't actually do anything to improve agreement.
-We just added more verbs, that happen to have the same orthography as
-what the clitics will be, and even added predications like "3sg". But
-we did not make any constraints on their co-occurrence restrictions --
-that is to say, beyond their being verby, we contributed nothing to the
-syntactic phenomenon of agreement.
-	- Emily says that this may be resolved in later labs by editing
-	tdl files directly.
+Notes on potential improvements:
+
+'poa' seems to allow non-second person agreement, but it shouldn't.

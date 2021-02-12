@@ -63,8 +63,13 @@ Spell out cond, etc in MOOD of semi.vpm.
       Spelled out nfut as non-future, fut as future, and pres as present on the
          right side of TENSE
 
-   why you made those specifc change
+   why you made those specific changes
+       These were the instructions for Lab 6.
    and how that affected generator output.
+       The grammar compiled and ./translate-sh ttv ttv 1 gave around 8 strings,
+       some of which had items like 'kine' (perfective marker) in them, and some
+       had incorrect agreement clitics (like 'ki'). After we made the changes
+       described, we got just 3 strings.
 
 ===============================================================================
 2. Grammar improvements
@@ -80,13 +85,11 @@ TOC:
 *******************************************************************************
 2.1 Morphology cleanup: -n,-m, and -o
    -n and -m suffixes on the end of 'dog' and 'canoe'
-   - the word ka is empty here
-              ***NB: there is only one 'ka,' unlike the other clitics.
-    	** getting a lot of sentences with the other irr clitics,
-   	so cleaning up that is a priority.
-   	
-           e.g., " Muiny-n ala ka voliliti dilen-m"
 
+    With our initial grammar, we got 96 strings. Here's a sample
+    illustrating -n and -m and ka which shouldn't be present:
+    
+              " Muiny-n ala ka voliliti dilen-m"
    
    **What -n and -m do:**
         - In our choices file, they're the first two noun_pcs, and their
@@ -113,6 +116,7 @@ TOC:
 
       Our plan is to improve the Adnominal Possession phenomena for
       inalienable possession markers -o, -m, -n.
+      
    Added them as possessive pronoun lexical rule types, with -n as its own type, and -m as an instance
    of the 2sg type.
    Deleted the following noun_pc types:
@@ -162,11 +166,8 @@ TOC:
        aqani is glossed as "present.with.gifts" or "support". The Titan-English
        dictionary in our resources has the following entry:
 
-                 NB: what does Lusk mean?
-
                  aqani v.tr 1. present with gifts, present, offer
              2. support, look after
-             Lusk: agani 'feed
 
 
             poro is glossed as a hole.
@@ -178,7 +179,6 @@ TOC:
       porokiny n
       1. pot
       2. wooden bowl.
-      Lusk: porokin.
 
 
        kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
@@ -186,9 +186,6 @@ TOC:
        
        Keiny is glossed as "pot", and is a synonym with porokiny
        in the English-Titan glossary.
-
-
-   With semantically empty words, we'll add more constraints and might refine trigger rules.
 
 *******************************************************************************
 2.2 Adnominal possesion or clausal complements
@@ -320,7 +317,6 @@ TOC:
            aux1_stem1_pred=_2sg.fut-or-fall_v_rel
 
 
-
           noun1_stem169_orth=ki
                noun1_stem169_pred=_3sg-or-c.fact-or-cond-or-hort-or-oblig-or-pot_n_rel
 
@@ -408,7 +404,6 @@ TOC:
           aux15_compfeature1_value=finite
           aux15_stem1_orth=a
 
-
         aux17_name=aux17
         aux17_sem=add-pred
           aux17_feat1_name=tense
@@ -491,7 +486,8 @@ TOC:
 
    And added:
 
-       INSERT ENTRY HERE FROM CHOICES
+      verb2_stem145_orth=aqani
+      verb2_stem145_pred=_present-with-gifts-or-support_v_rel
 
    poro (hole)
 
@@ -535,7 +531,8 @@ TOC:
 
    And added the noun entry:
 
-       INSERT NOUN ENTRY FROM CHOICES
+    noun1_stem462_orth=porokiny
+    noun1_stem462_pred=_pot-or-wooden-bowl_n_rel
        
    keiny (pot)
 
@@ -559,7 +556,9 @@ TOC:
         of nouns that look like spurious pron_n_rel entries from the auto-inference system, and
         it might be nice to remove those later on all in one section. So we added:
 
-        <INSERT NOUN ENTRY FROM CHOICES>
+    noun1_stem462_pred=_pot-or-wooden-bowl_n_rel
+    noun1_stem463_orth=keiny
+    noun1_stem463_pred=_pot_n_rel
 
 2.5 Changes based on feedback from lab 5
    We will say that auxiliaries take only VP complements instead of V, so as to
@@ -570,7 +569,7 @@ TOC:
 
    We should fix 'matir'=sleep to be intransitive, rather than transitive.
 
-   We delted:
+   We deleted:
       
       verb1_stem119_orth=matir~
         verb1_stem119_pred=_lie-or-sleep-or-sleep_with_v_rel
@@ -578,17 +577,23 @@ TOC:
       verb2_stem56_orth=matir
         verb2_stem56_pred=_sleep_v_rel
 
-   We added: <>
+    verb3_stem14_orth=matir
+    verb3_stem14_pred=_sleep_v_rel
 
-2.6 <what is this>
-preliminary notes/TODO list on 'va'/'pa'
+2.6 Small changes to the verb 'va'
 
-   1.  We'll probably change the 'va' predication to mean "think-or-say" for MT purposes,
-   but then we have to write transfer rules (what are those?)
-   
-   2. Remove the spurious 'va' auto-inferred that has a long predication
-   3. For 'Pa~Poa':
-      - the 'poa' form allows non-second, but it shouldn't
+    Deleted 'va' transtive verb:
+    
+	verb1_stem246_orth=va~
+	verb1_stem246_pred=_say-or-think-or-want_v_rel
+
+	verb2_stem131_orth=va
+	verb2_stem131_pred=_say-or-think-or-want_v_rel
+
+    For next lab, we may change the predication on our Clausal Comps embedding
+    verb 'va' to be say-or-think_v_rel from _say_v_rel, and we note that we'll
+    need to implement a transfer rule eventually to get MT translations.
+
 
 ===============================================================================
 3. Grammar performance comparison
