@@ -12,6 +12,9 @@ TENSE : TENSE
 ASPECT : ASPECT 
   * <> *
 
+MOOD : MOOD
+  * <> *
+
 SF : SF
   * <> *
 
