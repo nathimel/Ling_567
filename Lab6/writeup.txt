@@ -1,10 +1,6 @@
 Lab 6 Writeup
 By Nathaniel Imel and David Krug
 
-I've started organizing the writeup, but it snowed in Seattle so I have to go
-   for a walk. I'll keep working on it later today. What is section 2.6? Also,
-   what should go in section 2.2?
-
 Table of Contents:
    tsdb directory instructions
    Qs for Emily
@@ -16,7 +12,7 @@ Table of Contents:
       2.3 Fixing agreement clitics
       2.4 Removing/fixing spurious/semantically empty entries
       2.5 Changes based on feedback from lab 5
-      2.6 ?
+      2.6 Small changes to the verb 'va'
    3 Grammar performance comparisions
      3.1 Testsuite performance
      3.2 Test corupus performance
@@ -24,7 +20,7 @@ Table of Contents:
 ===============================================================================
 tsdb profile instructions:
 
-There are four tsb profile directories"
+There are four tsb profile directories:
 
 ttv/tsdb/home/lab_6_initial_ts     - same as final testsuite from lab 5
 ttv/tsdb/home/lab_6_initial_corpus - same as final corpus from lab 5
@@ -55,7 +51,7 @@ Spell out cond, etc in MOOD of semi.vpm.
 ===============================================================================
 1. Changes to semi.vpm file
 
-   We made the following changes:
+   We made the following changes to semi.vpm
       Deleted E. on the right side of TENSE, ASPECT, and MOOD
       Deleted PNG. on the right side of PER, NUM, and GEND
       Spelled out 3rd as third, 2nd as second, 1st as first on the right side
@@ -80,45 +76,55 @@ TOC:
    2.3 Fixing agreement clitics
    2.4 Deleting/fixing suprious/semantically empty entries
    2.5 Changes based on feedback from lab 5
-   2.6 ?
+   2.6 Small changes to the verb 'va'
 
 *******************************************************************************
-2.1 Morphology cleanup: -n,-m, and -o
+2.1 Morphology cleanup: -n,-m, and -o ~ -null
    -n and -m suffixes on the end of 'dog' and 'canoe'
 
     With our initial grammar, we got 96 strings. Here's a sample
     illustrating -n and -m and ka which shouldn't be present:
-    
-              " Muiny-n ala ka voliliti dilen-m"
+       " Muiny-n ala ka voliliti dilen-m"
+
+   When translating from Titan, to Titan, the inalienable possesive suffixes
+      (-n, -m, -o ~ -null) overgenerate, probably because they are currently
+      semantically empty.
+
+   For example, when translating sentence, 96 translation were generated:
+      Muiny ala      voliliti dilen.
+      dog   3sg.real follow   canoe
+      The dogs follow canoes.
    
-   **What -n and -m do:**
-        - In our choices file, they're the first two noun_pcs, and their
-     lexical rule types have no features/values.
+   Here is an example translation that shows overgenerated possesives.
+      *Muiny-n ala ka voliliti dilen-m
+      dog-poss 3sg.real 3Nsg-irr follow conoe-poss.
+      The dogs follow canoes.
+      
+   Here is what -n, -m, and -o ~ -null look like in our grammar:
+     In our choices file, they're the first two noun_pcs, and their
+        lexical rule types have no features/values.
 
      -n seems to be for adnominal possession, marking on the possessum
      the agreement of the possessor. Here's some IGT:
-
-         Po Ma aru dasi   -n   aru va    ka      le    leq
-         P.M.  3dl brother-3sg 3dl think nsg.fut go_to shore 
-         Po Ma and his brother wanted to go to the shore.
-
-
+        Po Ma aru dasi   -n   aru va    ka      le    leq
+        P.M.  3dl brother-3sg 3dl think nsg.fut go_to shore 
+        Po Ma and his brother wanted to go to the shore.
+      
       -m seems to be for adnominal possession too, but for 2sg:
-
          yo  u       tawi  pel       ile  poa  -m
          1sg 1sg.fut place taro_pulp into mouth-2sg.poss
          I will put taro pulp in your mouth.
 
-      -These glosses are consistent with the discussion of inalienable
-      possession suffixation, which also says that -o means 1sg.poss,
-      though that doesn't seem to be in our choices file. Also, it only
-      applies as suffixation when the stem ends in the vowel "a".
+      These glosses are consistent with the discussion of inalienable
+         possession suffixation, which also says that -o means 1sg.poss, though
+         that doesn't seem to be in our choices file. Also, it only applies as
+         suffixation when the stem ends in the vowel "a".
 
-      Our plan is to improve the Adnominal Possession phenomena for
-      inalienable possession markers -o, -m, -n.
-      
-   Added them as possessive pronoun lexical rule types, with -n as its own type, and -m as an instance
-   of the 2sg type.
+      Our plan is to improve the Adnominal Possession phenomena for inalienable
+         possession markers -m, -n, and -o ~ -null. To do this, we added them
+         as possessive pronoun lexical rule types, with -n as its own type,
+         and -m as an instance of the 2sg type.
+
    Deleted the following noun_pc types:
 
      noun-pc1_name=noun-pc1
@@ -145,52 +151,10 @@ TOC:
       For "dogs sleep" we got about a page, about half for eng to ttv
       For "dogs follow canoes", we got about a page of sentences. (unknown sem index)
       For "I follow you", "
-      
-
-
-      -List of other SEMANTICALLY EMPTY WORD candidates:
-      
-             k' --- one sem. empty aux 27
-       aqani -- " aux_28
-       poro --- noun1_stem369 w/ pred, " aux_22
-       kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
-           **EXPLORE the other perf markers?
-       porokiny -- " aux_22
-       keiny --- noun_50 (pron_n_rel), " aux_19
-       
-            k' seems like an alternation of any irrealis clitic, as the descriptive
-       resources has it glossed for 3sg.fut and 1pl.fut. But it only
-       occurs in the test corpus once, as "fut", though it looks like from the
-       context it should have 1sg agreement.
-
-       aqani is glossed as "present.with.gifts" or "support". The Titan-English
-       dictionary in our resources has the following entry:
-
-                 aqani v.tr 1. present with gifts, present, offer
-             2. support, look after
-
-
-            poro is glossed as a hole.
-       porokiny means pot
-       T-E Dictionary entry:
-
-          
-      poro n.ia hole.
-      porokiny n
-      1. pot
-      2. wooden bowl.
-
-
-       kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
-       which correspond to their similar irrealis verb clitic markers.
-       
-       Keiny is glossed as "pot", and is a synonym with porokiny
-       in the English-Titan glossary.
 
 *******************************************************************************
-2.2 Adnominal possesion or clausal complements
-
-    -Added '-n' and '-m' as part of adnominal possession
+2.2 Adnominal possession and clausal complements
+    -Added '-n' and '-m' <did we add -o ~ -null?>  as part of adnominal possession
     
     -Removed the spurious auto-inferred entries for 'va',
     a clausal-comps embedding verb.
@@ -567,6 +531,46 @@ TOC:
     noun1_stem462_pred=_pot-or-wooden-bowl_n_rel
     noun1_stem463_orth=keiny
     noun1_stem463_pred=_pot_n_rel
+
+******************** <should we keep this section?>      
+      -List of other SEMANTICALLY EMPTY WORD candidates:
+      
+             k' --- one sem. empty aux 27
+       aqani -- " aux_28
+       poro --- noun1_stem369 w/ pred, " aux_22
+       kine -- verb1_stem89 w/ pred (looks spurious), " aux_9
+           **EXPLORE the other perf markers?
+       porokiny -- " aux_22
+       keiny --- noun_50 (pron_n_rel), " aux_19
+       
+            k' seems like an alternation of any irrealis clitic, as the descriptive
+       resources has it glossed for 3sg.fut and 1pl.fut. But it only
+       occurs in the test corpus once, as "fut", though it looks like from the
+       context it should have 1sg agreement.
+
+       aqani is glossed as "present.with.gifts" or "support". The Titan-English
+       dictionary in our resources has the following entry:
+
+                 aqani v.tr 1. present with gifts, present, offer
+             2. support, look after
+
+
+            poro is glossed as a hole.
+       porokiny means pot
+       T-E Dictionary entry:
+
+          
+      poro n.ia hole.
+      porokiny n
+      1. pot
+      2. wooden bowl.
+
+
+       kine is a 3sg perfective marker, part of the set kune, kone, kine, and kane
+       which correspond to their similar irrealis verb clitic markers.
+       
+       Keiny is glossed as "pot", and is a synonym with porokiny
+       in the English-Titan glossary.i
 
 2.5 Changes based on feedback from lab 5
    We will say that auxiliaries take only VP complements instead of V, so as to
