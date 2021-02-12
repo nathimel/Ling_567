@@ -190,6 +190,14 @@ TOC:
 *******************************************************************************
 2.2 Adnominal possesion or clausal complements
 
+    -Added '-n' and '-m' as part of adnominal possession
+    
+    -Removed the spurious auto-inferred entries for 'va',
+    a clausal-comps embedding verb.
+
+    - Fixed a ton of spurious auto-inferred nonsense related to the agreement
+    clitics (documented below).
+
 *******************************************************************************
 2.3 Fixing agreement clitics
 
