@@ -1427,8 +1427,71 @@ The dogs follow the canoes.
 # 158: MT sentence 3
 Source: author
 Vetted: f
-Judgement: u
+Judgement: g
 Phenomena: {tv}
 Yo u voliliti oi.
 1sg 1sg.nfut follow 2sg.
 I follow you.
+
+# 159: -m applying once to a noun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {possession}
+Manuai-m i kip
+eagle-2sg 3sg.nfut lie
+Your eagle lies
+
+# 160: -m applying once to a verb
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {possession}
+Manuai i kip-m
+eagle 3sg.nfut lie-2sg
+Your eagle lies
+
+# 161: -m applying twice to a nominal
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {possession}
+Manuai-m-m i kip
+eagle-2sg-2sg 3sg.nfut lie
+Your eagle lies
+
+# 162: -n applying once to a noun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {possession}
+Manuai-n i kip
+eagle-3sg 3sg.nfut lie
+His eagle lies
+
+# 163: -n applying once to a verb
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {possession}
+Manuai i kip-n
+eagle 3sg.nfut lie-3sg
+His eagle lies
+
+# 164: -n applying twice to a nominal
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {possession}
+Manuai-n-n i kip
+eagle-3sg-3sg 3sg.nfut lie
+His eagle lies
+
+# 165: -n shouldn't apply to pronouns
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {possession}
+Yo-n i kip
+1sg-3sg 3sg.nfut lie
+? lies
