@@ -3,8 +3,6 @@ By Nathaniel Imel and David Krug
 
 Table of Contents:
    tsdb directory instructions
-   Qs for Emily
-   RREMAINING TODO
    1 semi.vpm changes
    2 Grammar improvments
       2.0 What we see in MT
@@ -27,16 +25,6 @@ ttv/tsdb/home/lab_6_initial_corpus - same as final corpus from lab 5
 ttv/tsdb/home/lab_6_final_ts       - finished testsuite from lab 6
 ttv/tsdb/home/lab_6_final_corpus   - finished corpus from lab 6
 
-=================================================================================
-Qs for Emily
-
-===============================================================================
-REMAINING TODO:
-
-Work on VPM, i.e., maybe look in the D.R. for ASPECT?
-Spell out cond, etc in MOOD of semi.vpm.
-<anything in angled brackets>
-
 ===============================================================================
 1. Changes to semi.vpm file
 
@@ -56,12 +44,27 @@ Spell out cond, etc in MOOD of semi.vpm.
        had incorrect agreement clitics (like 'ki'). After we made the changes
        described, we got just 3 strings.
 
+   We also fixed the files in.vpm and out.vpm in our mmt/tm/ttv/ directory,
+   from not having the MOOD property mapping at all to having:
+
+   	MOOD : MOOD
+	  * <> *
+
+   And this removed the unwanted string "Muiny ka matir" from our MT output,
+   where the input was
+
+   Muiny ala        matir
+   dogs	  3pl.realis sleep
+   Dogs sleep
+   
+   and ka is the irr marker. 
+
 ===============================================================================
 2. Grammar improvements
 
 TOC:
    2.1 Morphology cleanup
-   2.2 adnominal possession or clausal complements
+   2.2 Our phenomena
    2.3 Fixing agreement clitics
    2.4 Deleting/fixing suprious/semantically empty entries
    2.5 Changes based on feedback from lab 5
@@ -515,7 +518,10 @@ TOC:
        k' seems like an alternation of any irrealis clitic, as the descriptive
        resources has it glossed for 3sg.fut and 1pl.fut. But it only
        occurs in the test corpus once, as "fut", though it looks like from the
-       context it should have 1sg agreement.
+       context it should have 1sg agreement. Since this would only cause a lot
+       of ambiguity if we implemented k' as any contracted irrealis clitic, and
+       it only shows up once in the corpus, we decided to just delete it from
+       the grammar.
 
    We deleted
 
@@ -553,7 +559,7 @@ TOC:
       verb2_stem145_orth=aqani
       verb2_stem145_pred=_present-with-gifts-or-support_v_rel
 -------------------------------------------------------------------------------
-   poro and porokiny
+   poro
 
        poro is glossed as "hole"
 
@@ -693,7 +699,7 @@ TOC:
    3.2 Test corpus comparision
       3.2.1 Initial grammar
       3.2.2 Final grammar
-
+*******************************************************************************
    3.1 Initial and final grammar with the testsuite
    3.1.1 Final testsuite
 
@@ -713,7 +719,8 @@ TOC:
          'He wants to marry me'
 
       See lab 5 for details about the cause of ambiguity.
-    
+      
+*******************************************************************************    
    3.1.2 Final testsuite with final grammar for the week
    
       soemthin/165 items parsed.
@@ -730,14 +737,17 @@ TOC:
          3pl.realis lie
          "They lied."
 	 
-      The ambiguity seems to stem from the fact there are 3 different parses for 'ala'.
-      One as a realis agr clitic verb, one as a noun with _3pl_n_rel, and one as a noun
-      with _pron_n_rel. Same ambiguity occurs in the corpus.
+      The ambiguity seems to stem from the fact there are 3 different parses
+      for 'ala'.
+      One as a realis agr clitic verb, one as a noun with _3pl_n_rel, and one
+      as a noun with _pron_n_rel. Same ambiguity occurs in the corpus.
+      
+*******************************************************************************
 
    3.2 Initial and final grammar with the test corpus
    3.2.1 Test corpus with initial grammar for the week
 
-      This is all data from the final grammar from Lab 5.
+      This is all data from the final grammar of Lab 5.
       
       38/563 positive items parsed (6.7% coverage)     
       On average, parsed items had 2.89 distinct analyses.
@@ -757,22 +767,24 @@ TOC:
          3pl say 3sg 3sg.perf come
          'They said he s come.'
 
-      These sentences allowed for a lot of VP ambiguity, which we were able to improve this week
-      by restricting auxiliaries to only take VP complements.
-
+      These sentences allowed for a lot of VP ambiguity, which we were able
+      to improve this week by restricting auxiliaries to only take VP complements.
+      
+*******************************************************************************
    3.2.2 Test corpus with final grammar for the week
       29/562 items (5.2% coverage), so our coverage went slightly down
       
       On average, parsed items had 1.45 distinct analyses (much less ambiguity,
          probably because we limited auxiliaries to taking VP complements only.
       
-      The most ambiguous item had 3 parses (and it showed up in two different places in the corpus)
+      The most ambiguous item had 3 parses (and it showed up in two different
+      places in the corpus)
       The IGT provided was the following:
          ala va  yota     ka   mulie
          3pl say 1pl.incl hort run
          They said lets turn around
 
-      The three trees seem to correspond to 3 different parses for 'ala'. One has 'ala' as a verb,
-      the 3pl realis agr clitic. The other two correspond to nominal parses for 'ala', and one of
-      them correctly has _pron_n_rel, but another has _3pl_n_rel. I have to say that its pretty
-      annoying at this point to see that last player, but its an easy fix.
+      The three trees seem to correspond to 3 different parses for 'ala'. One has
+      'ala' as a verb, the 3pl realis agr clitic. The other two correspond to
+      nominal parses for 'ala', and one of them correctly has _pron_n_rel, but
+      another has _3pl_n_rel. This will be easy to fix.
