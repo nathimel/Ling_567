@@ -1,0 +1,78 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+; A basic VPM for Matrix grammars.
+event          <> e
+ref-ind        <> x
+individual     <> i
+handle         <> h
+non_event      <> p
+*              >> u
+semarg         << u
+
+SPECI : SPECI
+  * <> *
+
+SF : SF
+  prop <> prop
+  ques <> ques
+  prop-or-ques >> prop-or-ques
+  prop << prop-or-ques
+  comm <> comm
+  * <> *
+
+COG-ST : COG-ST
+  type-id <> type-id
+  uniq-id <> uniq-id
+  familiar <> familiar
+  activated <> activated
+  in-foc <> in-foc
+  activ+fam <> activ+fam
+  uniq+fam <> uniq+fam
+  activ-or-more <> activ-or-more
+  uniq-or-less <> uniq-or-less
+  uniq+fam+act <> uniq+fam+act
+  fam-or-more <> fam-or-more
+  fam-or-less <> fam-or-less
+  uniq-or-more <> uniq-or-more
+  activ-or-less <> activ-or-less
+  * <> *
+
+
+PNG.PER : PER
+  3rd <> third
+  2nd <> second
+  1st <> first
+  * <> *
+
+PNG.NUM : NUM
+  pc <> pc
+  sg <> sg
+  du <> du
+  pl <> pl
+  * <> *
+
+PNG.GEND : GEND
+  * <> *
+
+E.TENSE : TENSE
+  nfut <> non-future
+  fut <> future
+  pres <> present
+  * <> *
+
+E.ASPECT : ASPECT
+  pot <> pot
+  incep <> incep
+  prog <> prog
+  pfv <> pfv
+  ipfv <> ipfv
+  cont <> cont
+  hab <> hab
+  * <> *
+
+E.MOOD : MOOD
+  cond <> cond
+  imp <> imp
+  irr <> irr
+  oblig <> oblig
+  realis <> realis
+  * <> *

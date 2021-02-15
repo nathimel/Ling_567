@@ -1,0 +1,127 @@
+Lab 7
+by David Krug and Nathanial Imel
+
+On monday I will study the titan DR for non-verbal predicates and
+   try to come up with testsuite examples.
+
+Lab7/ttv_initial = Lab6/ttv_final
+   But Lab7/ttv_initial/tsdb/home still has the four tsdb profiles from lab 6.
+
+To do:
+   non-verbal predicates
+      learn how they work
+         nouns, adjectives, adpositions
+      make testsuite examples
+      implement them using TDL
+         this requires implementing PPs (if titan has them)
+      test our implementation by parsing the testsuite examples
+   machine translation/other testing
+      translate lines 15-17 in ttv.txt
+      test translation of those lines
+      test wh questions in non-verbal predicate sentences   
+   grammar comparisions
+      run the final grammar with the testsuite/test corpus
+   other small fixes
+      double check that semantical-empty entries and spurious pronouns are ALL gone
+      spell out the rest of semi.vpm
+      change nfut/fut to real/irr in testsuite.txt
+   finish the writeup
+      what if we put the writeup through a spell checker
+
+Questions for Emily:
+   none yet
+
+Table of contents (idk if this structure makes sense; it might change):
+   1 Noun predicates
+      1.1 how they work in Titan (with IGT)
+      1.2 how we implemented them
+   2 Adjective predicates
+      2.1 how they work in Titan (with IGT)
+      2.2 how we implemented them
+   3 PP predicates
+      3.1 how they work in Titan (with IGT)
+      3.2 how we implemented them
+   4 Non-verbal predicate testing
+      4.1 translation for lines 15-17 in ttv.txt and translation testing
+      4.2 testing wh questions in non-verbal predicate sentences
+   5 Small changes
+      any thing else we change in the grammar that is worth writing up
+   6 Grammar comparision
+      6.1 Testsuite
+         6.1.1 Initial grammar
+         6.1.2 Final grammar
+      6.2 Test corpus
+         6.2.1 Initial grammar
+         6.2.2 Final grammar
+
+===============================================================================
+1 Noun predicates
+1.1 How they work
+1.2 How we implemented them
+
+===============================================================================
+2 Adjective predicates
+2.1 How they work
+2.2 How we implemented them
+
+===============================================================================
+3 PP predicates
+3.1 How they work
+3.2 How we implemented them
+
+===============================================================================
+4 Non-verbal predicate testing
+
+===============================================================================
+5 Small changes
+
+===============================================================================
+6 Grammar comparision
+6.1 Testsuite
+   6.1.1 Initial grammar (copied from lab 6)
+      56/88 positive items parsed (63.6% coverage)
+      6/77 negative items parsed (7.8 overgeneration)
+      
+      On average:
+         positive items that parsed had 1.11 parses.
+         negative itmes that parsed had 1.00 parses
+      
+      The most ambiguous item had 3 parses:
+         Ala      kip.
+         3pl.real lie
+         They lied.
+      See lab 6 for an explination of the ambiguity.
+
+   6.1.2 Final grammar
+      #/# items parsed.
+      #/# positive items parsed (#% coverage)
+      #/# negative items parsed (#% overgeneration)
+      
+      On average:
+         Positive items that parsed had # parses.
+         Negative items that parsed had # parses.
+      
+      The most ambiguous items had # parses:
+         <IGT>
+      <explanation of the ambiguity>
+
+6.2 Test corpus
+   6.2.1 Initial grammar (copied from lab 6)
+      29/562 items parsed (5.2% coverage)
+      
+      On average, parsed items had 1.45 prases
+      
+      The most ambiguous item had 3 parses:
+         ala      va  yota     ka  mulie
+         3pl.real say 1pl.incl irr run
+         They said lets turn around
+      See lab 6 for an explanation of the ambiguity.
+
+   6.2.2 Final grammar
+      #/# items parsed (#% coverage)
+      
+      On average, parsed items had # parses.
+      
+      The most ambiguous item had # parses:
+         <IGT>
+      <explanation of the ambiguity>
