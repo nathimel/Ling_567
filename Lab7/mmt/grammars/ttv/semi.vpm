@@ -60,19 +60,19 @@ E.TENSE : TENSE
   * <> *
 
 E.ASPECT : ASPECT
-  pot <> pot
-  incep <> incep
-  prog <> prog
-  pfv <> pfv
-  ipfv <> ipfv
-  cont <> cont
-  hab <> hab
+  pot <> potential
+  incep <> inceptive
+  prog <> progressive
+  pfv <> perfective
+  ipfv <> imperfective
+  cont <> continual
+  hab <> habitual
   * <> *
 
 E.MOOD : MOOD
-  cond <> cond
-  imp <> imp
-  irr <> irr
-  oblig <> oblig
+  cond <> conditional
+  imp <> imperfect
+  irr <> irrealis
+  oblig <> obligatory
   realis <> realis
   * <> *

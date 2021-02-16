@@ -23,16 +23,15 @@ To do:
       run the final grammar with the testsuite/test corpus
    other small fixes
       double check that semantical-empty entries and spurious pronouns are ALL gone
-      spell out the rest of semi.vpm
-      change nfut/fut to real/irr in testsuite.txt
    finish the writeup
       what if we put the writeup through a spell checker
 
-Previously we said Titan doesn't have a determiner to mark for definiteness, but I found:
+Previously we said Titan doesn't have a determiner to mark for definiteness, but
+   I found this on page 31 of the DR:
    I   ta      dongoanpala moen cinal
    3sg measure head.shape  def  devil
    He measured the head-shape of the devil
-On page 31 of the DR. We might need to change our MMT translations.
+We might need to change our MMT translations.
 
 Questions for Emily:
    none yet
@@ -110,9 +109,14 @@ Table of contents (idk if this structure makes sense; it might change):
 4 Non-verbal predicate testing
 
 ===============================================================================
-5 Small changes
+5 Small miscellaneous changes
 
-===============================================================================
+In our testsuite.txt, we changed mood glosses from nfut/fut to real/irr.
+   This is to reflect our analysis that Titan does not have tense, only mood.
+
+We finished spellling out some properites in semi.vpm.
+
+==============================================================================
 6 Grammar comparision
 6.1 Testsuite
    6.1.1 Initial grammar (copied from lab 6)

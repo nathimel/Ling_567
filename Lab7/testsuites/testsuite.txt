@@ -12,7 +12,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Oi a kip.
-2sg 2sg.nfut lie
+2sg 2sg.real lie
 'You are lying.'
 
 # 2: Failed agreement between 'oi' and 'u'
@@ -21,7 +21,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi u kip.
-2sg 1sg.nfut lie
+2sg 1sg.real lie
 'You am lying.'
 
 # 3: Failed agreement between 'oi' and 'i'
@@ -30,7 +30,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi i kip.
-2sg 3sg.nfut lie
+2sg 3sg.real lie
 'You is lying.'
 
 # 4: Failed agreement between 'oi' and 'yoru'
@@ -39,7 +39,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi yoru kip.
-2sg 1dl.incl.nfut lie
+2sg 1dl.incl.real lie
 'You are lying.'
 
 # 5: Failed agreement between 'oi' and 'taru'
@@ -48,7 +48,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi taru kip.
-2sg 1dl.excl.nfut lie
+2sg 1dl.excl.real lie
 'You are lying.'
 
 # 6: Failed agreement between 'oi' and 'woru'
@@ -57,7 +57,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi woru kip.
-2sg 2dl.nfut lie
+2sg 2dl.real lie
 'You are lying.'
 
 # 7: Failed agreement between 'oi' and 'aru'
@@ -66,7 +66,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi aru kip.
-2sg 3dl.nfut lie
+2sg 3dl.real lie
 'You are lying.'
 
 # 8: Failed agreement between 'oi' and 'yoito'
@@ -75,7 +75,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi yoito kip.
-2sg 1pc.incl.nfut lie
+2sg 1pc.incl.real lie
 'You are lying.'
 
 # 9: Failed agreement between 'oi' and 'yoto'
@@ -84,7 +84,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi yoto kip.
-2sg 1pc.excl.nfut lie
+2sg 1pc.excl.real lie
 'You are lying.'
 
 # 10: Failed agreement between 'oi' and 'to'
@@ -93,7 +93,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi to kip.
-2sg 1pc.excl.nfut lie
+2sg 1pc.excl.real lie
 'You are lying.'
 
 # 11: Failed agreement between 'oi' and 'woto'
@@ -102,7 +102,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi woto kip.
-2sg 2pc.nfut lie
+2sg 2pc.real lie
 'You are lying.'
 
 # 12: Failed agreement between 'oi' and 'ato'
@@ -111,7 +111,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi ato kip.
-2sg 3pc.nfut lie
+2sg 3pc.real lie
 'You are lying.'
 
 # 13: Failed agreement between 'oi' and 'yoya'
@@ -120,7 +120,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi yoya kip.
-2sg 1pl.incl.nfut lie
+2sg 1pl.incl.real lie
 'You are lying.'
 
 # 14: Failed agreement between 'oi' and 'yota'
@@ -129,7 +129,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi yota kip.
-2sg 1pl.excl.nfut lie
+2sg 1pl.excl.real lie
 'You are lying.'
 
 # 15: Failed agreement between 'oi' and 'ta'
@@ -138,7 +138,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi ta kip.
-2sg 1pl.excl.nfut lie
+2sg 1pl.excl.real lie
 'You are lying.'
 
 # 16: Failed agreement between 'oi' and 'awa'
@@ -147,7 +147,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi awa kip.
-2sg 2pl.excl.nfut lie
+2sg 2pl.excl.real lie
 'You are lying.'
 
 # 17: Failed agreement between 'oi' and 'ala'
@@ -156,7 +156,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi ala kip.
-2sg 3pl.excl.nfut lie
+2sg 3pl.excl.real lie
 'You are lying.'
 
 # 18: Agreement between 'yo' and 'a'
@@ -165,7 +165,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo a kip.
-1sg 2sg.nfut lie
+1sg 2sg.real lie
 'I are lying.'
 
 # 19: Failed agreement between 'yo' and 'u'
@@ -174,7 +174,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Yo u kip.
-1sg 1sg.nfut lie
+1sg 1sg.real lie
 'I am lying.'
 
 # 20: Failed agreement between 'yo' and 'i'
@@ -183,7 +183,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Yo i kip.
-1sg 3sg.nfut lie
+1sg 3sg.real lie
 'I is lying.'
 
 # 21: Failed agreement between 'yo' and 'yoru'
@@ -192,7 +192,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo yoru kip.
-1sg 1dl.incl.nfut lie
+1sg 1dl.incl.real lie
 'I am lying.'
 
 # 22: Failed agreement between yoi' and 'taru'
@@ -201,7 +201,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo taru kip.
-1sg 1dl.excl.nfut lie
+1sg 1dl.excl.real lie
 'I are lying.'
 
 # 23: Failed agreement between 'yo' and 'woru'
@@ -210,7 +210,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo woru kip.
-1sg 2dl.nfut lie
+1sg 2dl.real lie
 'I are lying.'
 
 # 24: Failed agreement between 'yo' and 'aru'
@@ -219,7 +219,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo aru kip.
-1sg 3dl.nfut lie
+1sg 3dl.real lie
 'I are lying.'
 
 # 25: Failed agreement between 'yo' and 'yoito'
@@ -228,7 +228,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo yoito kip.
-1sg 1pc.incl.nfut lie
+1sg 1pc.incl.real lie
 'I are lying.'
 
 # 26: Failed agreement between 'yo' and 'yoto'
@@ -237,7 +237,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo yoto kip.
-1sg 1pc.excl.nfut lie
+1sg 1pc.excl.real lie
 'I are lying.'
 
 # 27: Failed agreement between 'yo' and 'to'
@@ -246,7 +246,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo to kip.
-1sg 1pc.excl.nfut lie
+1sg 1pc.excl.real lie
 'I are lying.'
 
 # 28: Failed agreement between 'yo' and 'woto'
@@ -255,7 +255,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo woto kip.
-1sg 2pc.nfut lie
+1sg 2pc.real lie
 '1 are lying.'
 
 # 29: Failed agreement between 'yo' and 'ato'
@@ -264,7 +264,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo ato kip.
-1sg 3pc.nfut lie
+1sg 3pc.real lie
 'I are lying.'
 
 # 30: Failed agreement between 'yo' and 'yoya'
@@ -273,7 +273,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo yoya kip.
-1sg 1pl.incl.nfut lie
+1sg 1pl.incl.real lie
 'I are lying.'
 
 # 31: Failed agreement between 'yo' and 'yota'
@@ -282,7 +282,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo yota kip.
-1sg 1pl.excl.nfut lie
+1sg 1pl.excl.real lie
 'I are lying.'
 
 # 32: Failed agreement between 'yo' and 'ta'
@@ -291,7 +291,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo ta kip.
-1sg 1pl.excl.nfut lie
+1sg 1pl.excl.real lie
 'I are lying.'
 
 # 33: Failed agreement between 'yo' and 'awa'
@@ -300,7 +300,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo awa kip.
-1sg 2pl.nfut lie
+1sg 2pl.real lie
 'I are lying.'
 
 # 34: Failed agreement between 'yo' and 'ala'
@@ -309,7 +309,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Yo ala kip.
-1sg 3pl.nfut lie
+1sg 3pl.real lie
 'I are lying.'
 
 # 35: Agreement between 'manuai' and 'i'
@@ -318,7 +318,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Manuai i kip.
-eagle 3sg.nfut lie
+eagle 3sg.real lie
 'Eagle is lying.'
 
 # 36: Agreement between 'manuai' and 'aru'
@@ -327,7 +327,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Manuai aru kip.
-eagle 3dl.nfut lie
+eagle 3dl.real lie
 'Two eagles are lying.'
 
 # 37: Agreement between 'manuai' and 'ato'
@@ -336,7 +336,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Manuai ato kip.
-eagle 3pc.nfut lie
+eagle 3pc.real lie
 'Some eagles are lying.'
 
 # 38: Agreement between 'manuai' and 'ala'
@@ -345,7 +345,7 @@ Vetted: f
 Judgment: g
 Phenomena: {agreement}
 Manuai ala kip.
-eagle 3pl.nfut lie
+eagle 3pl.real lie
 'Eagles are lying.'
 
 # 39: cross-ref clitic/particle pronoun for 1dl.incl
@@ -492,7 +492,7 @@ Vetted: f
 Judgment: u
 Phenomena: {agreement}
 Oi kip a.
-2sg lie 2sg.nfut
+2sg lie 2sg.real
 'You lying are.'
 
 
@@ -502,7 +502,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yo ku kip
-1sg 1sg.fut lie
+1sg 1sg.irr lie
 'I will lie.'
 
 # 56: Agreement between oi and ko
@@ -511,7 +511,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Oi ko kip
-2sg 2sg.fut lie
+2sg 2sg.irr lie
 'You will lie.'
 
 # 57: Agreement between 3sg subj and ki
@@ -520,7 +520,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Manuai ki kip.
-Eagle 3sg.fut lie
+Eagle 3sg.irr lie
 'Eagle will lie.'
 
 # 58: Agreement between 1dl.incl and ka
@@ -529,7 +529,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Taru ka kip.
-1dl.incl n.sg.fut lie
+1dl.incl n.sg.irr lie
 'We will lie.'
 
 # 59: Agreement between 1dl.excl and ka
@@ -538,7 +538,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yoru ka kip
-1dl.excl n.sg.fut lie
+1dl.excl n.sg.irr lie
 'We will lie.'
 
 # 60: Agr between 1pc.incl and ka
@@ -547,7 +547,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yoto ka kip
-1pc.incl n.sg.fut lie
+1pc.incl n.sg.irr lie
 'We will lie.'
 
 # 61: Agr between 1pc.excl and ka
@@ -556,7 +556,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yoito ka kip
-1pc.excl n.sg.fut lie
+1pc.excl n.sg.irr lie
 'We will lie.'
 
 # 62: Agr between 1pl.incl and ka
@@ -565,7 +565,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yota ka kip
-1pl.incl n.sg.fut lie
+1pl.incl n.sg.irr lie
 'We will lie.'
 
 # 63: Agr between 1pl.excl and ka
@@ -574,7 +574,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Yoya ka kip
-1pl.excl n.sg.fut lie
+1pl.excl n.sg.irr lie
 'We will lie.'
 
 # 64: Agr between 2dl and ka
@@ -583,7 +583,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Waru ka kip
-2dl n.sg.fut lie
+2dl n.sg.irr lie
 'You two will lie.'
 
 # 65: Agr between 2pc and ka
@@ -592,7 +592,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Woto ka kip
-2pc n.sg.fut lie
+2pc n.sg.irr lie
 'You will lie.'
 
 # 66: Agr between 2pl and ka
@@ -601,7 +601,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Awa ka kip
-2pl n.sg.fut lie
+2pl n.sg.irr lie
 'You will lie.'
 
 # 67: Agr between 3dl and ka
@@ -610,7 +610,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Aru ka kip
-3dl n.sg.fut lie
+3dl n.sg.irr lie
 'They both will die.'
 
 # 68: Agr between 3pc and ka
@@ -619,7 +619,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Ato ka kip
-3pc n.sg.fut lie
+3pc n.sg.irr lie
 'They will die.'
 
 
@@ -629,7 +629,7 @@ Vetted: f
 Judgment: g
 Phenomena: {tense}
 Ala ka kip
-3pl n.sg.fut lie
+3pl n.sg.irr lie
 'They all will lie.'
 
 # 70: Agr between 1sg and ka
@@ -638,7 +638,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 Yo ka kip
-1sg n.sg.fut lie
+1sg n.sg.irr lie
 'I will lie.'
 
 # 71: Agr between 2sg and ka
@@ -647,7 +647,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 Oi ka kip
-1sg.excl n.sg.fut lie
+1sg.excl n.sg.irr lie
 'I will lie.'
 
 # 72: Agr btween 3sg and ka
@@ -656,7 +656,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 i ka kip
-3sg n.sg.fut lie
+3sg n.sg.irr lie
 'She will lie.'
 
 # 73: Agr between 1dl and ku
@@ -665,7 +665,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 Taru ku kip.
-1dl.incl 1sg.fut lie
+1dl.incl 1sg.irr lie
 'We will lie.'
 
 # 74: Agr between 3sg and ku
@@ -674,7 +674,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 i ku kip
-3sg 1sg.fut lie
+3sg 1sg.irr lie
 'She will lie.'
 
 # 75: Agr between 3sg and ko
@@ -683,7 +683,7 @@ Vetted: f
 Judgement: u
 Phenomena: {tense}
 i ko kip
-3sg 1sg.fut lie
+3sg 1sg.irr lie
 'She will lie.'
 
 # 76: Agr between 3pl and ki
@@ -692,7 +692,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 ala ki kip
-3pl 3sg.fut lie
+3pl 3sg.irr lie
 'They will lie.'
 
 # 77: Agr between 1dl.excl and ki
@@ -701,7 +701,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 Yoru ki kip
-1dl.excl 3sg.fut lie
+1dl.excl 3sg.irr lie
 'We will lie.'
 
 # 78: Agr between 1sg and ki
@@ -710,7 +710,7 @@ Vetted: f
 Judgment: u
 Phenomena: {tense}
 yo ki kip
-1sg 3sg.fut lie
+1sg 3sg.irr lie
 'I will lie.'
 
 # 79: Clausal coordination: and
@@ -719,7 +719,7 @@ Vetted: f
 Judgment: g
 Phenomena: {coordination}
 Yo o kip pe oi a kip.
-1sg 1sg.nfut lie and 2sg 2sg.nfut lie.
+1sg 1sg.real lie and 2sg 2sg.nirr lie.
 'I lie and you lie.'
 
 # 80: Clausal coordination: or
@@ -728,7 +728,7 @@ Vetted: f
 Judgment: g
 Phenomena: {coordination}
 Yo o kip ne oi a kip.
-1sg 1sg.nfut lie or 2sg 2sg.nfut lie.
+1sg 1sg.real lie or 2sg 2sg.nirr lie.
 'I lie or you lie.'
 
 # 81: Subject coordination: and
@@ -1241,7 +1241,7 @@ Vetted: f
 Judgment: g
 Phenomena: {cl-mod}
 Oi ko kip alan yo ku kip
-2sg 2sg.fut lie if 1sg 1sg.fut lie
+2sg 2sg.irr lie if 1sg 1sg.fut lie
 'If you will lie, I will lie.'
 
 # 138: alan clause initial
@@ -1250,7 +1250,7 @@ Vetted: f
 Judgment: u
 Phenomena: {cl-mod}
 alan oi ko kip yo ku kip
-if 2sg 2sg.fut lie 1sg 1sg.fut lie
+if 2sg 2sg.irr lie 1sg 1sg.fut lie
 'If you will lie, I will lie.'
 
 # 139: alan final in matrix clause
@@ -1259,7 +1259,7 @@ Vetted: f
 Judgment: u
 Phenomena: {cl-mod}
 oi ko kip yo ku kip alan
-2sg 2sg.fut lie 1sg 1sg.fut lie if
+2sg 2sg.irr lie 1sg 1sg.fut lie if
 'You will lie if I will lie.'
 
 # 140: va embedding a declarative
@@ -1280,22 +1280,22 @@ Manuai i va ko kip
 Eagle 3sg say imp lie
 'Eagle said, "Lie!"'
 
-# 142: va embedding irrealis (future)
+# 142: va embedding irrealis (irrure)
 Source: author
 Vetted: f
 Judgment: g
 Phenomena: {emb-d}
 Manuai i va  yo  ku      mat
-Eagle  say 1sg 1sg.fut die
+Eagle  say 1sg 1sg.irr die
 'Eagle said, "I will die."
 
-# 143: va embedding irrealis (future, va = desire)
+# 143: va embedding irrealis (irrure, va = desire)
 Source: corpus
 Vetted: f
 Judgment: g
 Phenomena: {emb-d}
 i va ki puti yo
-3sg want 3sg.fut marry 1sg
+3sg want 3sg.irr marry 1sg
 'He wants to marry me'
 
 # 144: va embedding nothing
@@ -1331,7 +1331,7 @@ Vetted: f
 Judgement: g
 Phenomena: {emb-d}
 Yo u pa ku kip.
-1sg 1sg.nfut want 1.sg.fut lie
+1sg 1sg.real want 1.sg.irr lie
 I want to lie.
 
 # 148: Pa w/ first person, w/o clitic
@@ -1340,7 +1340,7 @@ Vetted: f
 Judgement: g
 Phenomena: {emb-d}
 Yo pa ku kip.
-1sg want 1.sg.fut lie
+1sg want 1.sg.irr lie
 I want to lie.
 
 # 149: Poa w/ second person and w/ clitic
@@ -1349,7 +1349,7 @@ Vetted: f
 Judgment: g
 Phenomena: {emb-d}
 Oi a poa ko kip.
-2sg 2sg.nfut want 2sg.fut lie
+2sg 2sg.real want 2sg.irr lie
 You want to lie.
 
 # 150: Poa w/ second person and w/ clitic
@@ -1358,7 +1358,7 @@ Vetted: f
 Judgement: g
 Phenomena: {emb-d}
 Oi a poa ku kip.
-2sg 2sg.nfut want 1sg.fut lie
+2sg 2sg.real want 1sg.irr lie
 You want me to lie.
 
 # 151: Poa w/ second person, w/o clitic
@@ -1367,7 +1367,7 @@ Vetted: f
 Judgement: g
 Phenomena: {emb-d}
 Oi poa ku kip.
-2sg want 1sg.fut lie
+2sg want 1sg.irr lie
 You want me to lie.
 
 # 152: Poa w/ non-second person, w/ clitic
@@ -1376,7 +1376,7 @@ Vetted: f
 Judgement: u
 Phenomena: {emb-d}
 Yo u poa ku kip.
-1sg 1sg.nfut want 1sg.fut lie
+1sg 1sg.real want 1sg.irr lie
 I want to lie.
 
 # 153: Poa w/ non-second person, w/o clitic
@@ -1385,7 +1385,7 @@ Vetted: f
 Judgement: u
 Phenomena: {emb-d}
 Yo poa ku kip.
-1sg want 1sg.fut lie
+1sg want 1sg.irr lie
 I want to lie.
 
 # 154: Pa w/ second person
@@ -1394,7 +1394,7 @@ Vetted: f
 Judgement: u
 Phenomena: {emb-d}
 Oi a pa ku kip.
-2sg 2sg.nfut want 1sg.fut lie
+2sg 2sg.real want 1sg.irr lie
 You want to lie.
 
 # 155: Pa w/ second person, w/o clitic
@@ -1403,7 +1403,7 @@ Vetted: f
 Judgement: u
 Phenomena: {emb-d}
 Oi pa ku kip.
-2sg want 1sg.fut lie
+2sg want 1sg.irr lie
 You want to lie.
 
 # 156: MT sentence 1
@@ -1412,7 +1412,7 @@ Vetted: f
 Judgement: g
 Phenomena: {itv}
 Muiny ala matir.
-dog 3pl.nfut sleep
+dog 3pl.real sleep
 The dogs sleep.
 
 # 157: MT sentence 2
@@ -1421,7 +1421,7 @@ Vetted: f
 Judgement: g
 Phenomena: {tv}
 Muiny ala voliliti dilen.
-dog 3pl.nfut follow canoe
+dog 3pl.real follow canoe
 The dogs follow the canoes.
 
 # 158: MT sentence 3
@@ -1430,7 +1430,7 @@ Vetted: f
 Judgement: g
 Phenomena: {tv}
 Yo u voliliti oi.
-1sg 1sg.nfut follow 2sg.
+1sg 1sg.real follow 2sg.
 I follow you.
 
 # 159: -m applying once to a noun
@@ -1439,7 +1439,7 @@ Vetted: f
 Judgement: g
 Phenomena: {possession}
 Manuai-m i kip
-eagle-2sg 3sg.nfut lie
+eagle-2sg 3sg.real lie
 Your eagle lies
 
 # 160: -m applying once to a verb
@@ -1448,7 +1448,7 @@ Vetted: f
 Judgement: u
 Phenomena: {possession}
 Manuai i kip-m
-eagle 3sg.nfut lie-2sg
+eagle 3sg.real lie-2sg
 Your eagle lies
 
 # 161: -m applying twice to a nominal
@@ -1457,7 +1457,7 @@ Vetted: f
 Judgement: u
 Phenomena: {possession}
 Manuai-m-m i kip
-eagle-2sg-2sg 3sg.nfut lie
+eagle-2sg-2sg 3sg.real lie
 Your eagle lies
 
 # 162: -n applying once to a noun
@@ -1466,7 +1466,7 @@ Vetted: f
 Judgement: g
 Phenomena: {possession}
 Manuai-n i kip
-eagle-3sg 3sg.nfut lie
+eagle-3sg 3sg.real lie
 His eagle lies
 
 # 163: -n applying once to a verb
@@ -1475,7 +1475,7 @@ Vetted: f
 Judgement: u
 Phenomena: {possession}
 Manuai i kip-n
-eagle 3sg.nfut lie-3sg
+eagle 3sg.real lie-3sg
 His eagle lies
 
 # 164: -n applying twice to a nominal
@@ -1484,7 +1484,7 @@ Vetted: f
 Judgement: u
 Phenomena: {possession}
 Manuai-n-n i kip
-eagle-3sg-3sg 3sg.nfut lie
+eagle-3sg-3sg 3sg.real lie
 His eagle lies
 
 # 165: -n shouldn't apply to pronouns
@@ -1493,5 +1493,5 @@ Vetted: f
 Judgement: u
 Phenomena: {possession}
 Yo-n i kip
-1sg-3sg 3sg.nfut lie
+1sg-3sg 3sg.real lie
 ? lies

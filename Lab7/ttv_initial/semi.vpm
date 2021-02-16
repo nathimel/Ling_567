@@ -37,42 +37,42 @@ COG-ST : COG-ST
   * <> *
 
 
-PNG.PER : PNG.PER
-  3rd <> 3rd
-  2nd <> 2nd
-  1st <> 1st
+PNG.PER : PER
+  3rd <> third
+  2nd <> second
+  1st <> first
   * <> *
 
-PNG.NUM : PNG.NUM
+PNG.NUM : NUM
   pc <> pc
   sg <> sg
   du <> du
   pl <> pl
   * <> *
 
-PNG.GEND : PNG.GEND
+PNG.GEND : GEND
   * <> *
 
-E.TENSE : E.TENSE
-  nfut <> nfut
-  fut <> fut
-  pres <> pres
+E.TENSE : TENSE
+  nfut <> non-future
+  fut <> future
+  pres <> present
   * <> *
 
-E.ASPECT : E.ASPECT
-  pot <> pot
-  incep <> incep
-  prog <> prog
-  pfv <> pfv
-  ipfv <> ipfv
-  cont <> cont
-  hab <> hab
+E.ASPECT : ASPECT
+  pot <> potential
+  incep <> inceptive
+  prog <> progressive
+  pfv <> perfective
+  ipfv <> imperfective
+  cont <> continual
+  hab <> habitual
   * <> *
 
-E.MOOD : E.MOOD
-  cond <> cond
-  imp <> imp
-  irr <> irr
-  oblig <> oblig
+E.MOOD : MOOD
+  cond <> conditional
+  imp <> imperfect
+  irr <> irrealis
+  oblig <> obligatory
   realis <> realis
   * <> *
