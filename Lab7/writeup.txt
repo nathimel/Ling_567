@@ -28,6 +28,12 @@ To do:
    finish the writeup
       what if we put the writeup through a spell checker
 
+Previously we said Titan doesn't have a determiner to mark for definiteness, but I found:
+   I   ta      dongoanpala moen cinal
+   3sg measure head.shape  def  devil
+   He measured the head-shape of the devil
+On page 31 of the DR. We might need to change our MMT translations.
+
 Questions for Emily:
    none yet
 
@@ -62,6 +68,37 @@ Table of contents (idk if this structure makes sense; it might change):
 ===============================================================================
 2 Adjective predicates
 2.1 How they work
+   Some adjectives can appear in verbal slots, with the agreement clitic:
+      Lodianum ei i likom.
+      house-inside 2sg.ps 2sg be.pitch-dark
+      The inside of her house was pitch black.
+
+   Some adjectives can appear in nominal slots, modifying "either as modifier
+      of a null head, or a noun (i don't understand this, even after reading
+      footnote 42)
+      
+      i   madean i   vai ila te  i    riin, i   va...
+      3sg big    3sg say to      3sg  small 3sg say
+      The big person said to the small one...
+      
+      Cilim    i   ti      madean
+      Starling 3sg be.near big
+      The starling was near the big [drum].
+   
+   The agreement clitics do not appear with non-third person subjects and adjectives:
+      *oi a        muan
+      2sg 2sg.real bad
+      You are bad
+      
+      Oi  muan
+      3sg bad
+      You are bad
+    
+   Predicative adjectives do not appear in irrealis or perfective clauses:
+      *manuai ki      muan
+      osprey  3sg.irr bad
+      The osprey is bad
+
 2.2 How we implemented them
 
 ===============================================================================
