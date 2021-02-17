@@ -23,6 +23,7 @@ To do:
       run the final grammar with the testsuite/test corpus
    other small fixes
       double check that semantical-empty entries and spurious pronouns are ALL gone
+      _pron_n_rel -> pron_rel
    finish the writeup
       what if we put the writeup through a spell checker
 
