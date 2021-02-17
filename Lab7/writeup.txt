@@ -1,4 +1,4 @@
-Lab 7
+	Lab 7
 by David Krug and Nathanial Imel
 
 On monday I will study the titan DR for non-verbal predicates and
@@ -110,6 +110,20 @@ Table of contents (idk if this structure makes sense; it might change):
 
 ===============================================================================
 5 Small miscellaneous changes
+
+For the spurious pronouns cleanup, deleted noun41 to noun82 EXCEPT
+noun48 and noun82. Here's an example of one of the pronouns deleted:
+
+  noun41_name=noun41
+  noun41_pron=on
+    noun41_feat1_name=number
+    noun41_feat1_value=du
+  noun41_det=opt
+    noun41_stem1_orth=damolou
+    noun41_stem1_pred=_pron_n_rel
+
+Deleted the alternate spelling on 'pa' as 'poa' and instead added a new lex.
+entry for 'poa' that had the appropriate 2sg agreement (w/ subject) features.
 
 In our testsuite.txt, we changed mood glosses from nfut/fut to real/irr.
    This is to reflect our analysis that Titan does not have tense, only mood.
