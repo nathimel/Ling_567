@@ -718,8 +718,8 @@ norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersectiv
   [ ARG-ST < #comp >,
     SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
                           [ PRED #pred,
-                            ARG1 #ind2,
-                            ARG2 #ind ],
+                            ARG0 #ind2,
+                            ARG1 #ind ],
              L-QUE #lque,
              LOCAL [ CONT [ HOOK [ XARG #ind2,
 	     	     	    	  INDEX #ind2 ],
@@ -760,6 +760,36 @@ determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg &
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;
+
+; From Lab 7
+
+n-bar-predicate-rule := unary-phrase & nocoord &
+  [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+                   VAL [ COMPS < >,
+                   SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                             CAT [ HEAD noun,
+                      VAL.SPR < > ] ] ] > ] ],
+             NON-LOCAL #nl ],
+    C-CONT [ HOOK [ LTOP #ltop,
+            INDEX #index,
+            XARG #arg1 ],
+         RELS.LIST < arg12-ev-relation &
+           [ PRED "_be_v_id_rel",
+             LBL #ltop,
+             ARG0 #index,
+             ARG1 #arg1,
+             ARG2 #arg2 ],
+           quant-relation &
+           [ PRED "exist_q_rel",
+             ARG0 #arg2,
+             RSTR #harg ] >,
+         HCONS.LIST < qeq & [ HARG #harg, LARG #larg ] > ],
+    ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                     VAL.SPR cons ],
+                  CONT.HOOK [ INDEX #arg2,
+                                      LTOP #larg ]],
+                  NON-LOCAL #nl ] ] > ].
+
 
 ; Adjective Incorporation
 
