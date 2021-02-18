@@ -1,8 +1,8 @@
 Muiny ala matir.
 Muiny ala voliliti dilen.
-Yo u voliliti.
+Yo u voliliti oi.
 Muini ala ani.
-<The> muiny ala ne voliliti dilen. 
+Muiny ala ne voliliti dilen. 
 SKIPPED
 SKIPPED
 Manuai pe muiny ala voliliti dilen.
@@ -12,15 +12,15 @@ SKIPPED
 SKIPPED
 SKIPPED
 SKIPPED
-Cong i ani <the> muiny.; very odd
-SKIPEED
-<The> muiny ala manuai. 
-<The> dilen e muiny i matir.
-<The> muiny eyo i matir.
+Cong i ani muiny.
+Manuai e poany.
+Muiny ala manuai. 
+Dilen e muiny i matir.
+Muiny Eyo i matir.
 Se i matir.
-<The> muiny ala voliliti ca.
-Oi a <think> <the> muiny ala voliliti ca.
+Muiny ala voliliti ca.
+Oi a <think> muiny ala voliliti ca.
 SKIPPED
 SKIPPED
-<The> muiny i matir alan <the> manuai i matir.
+Muiny i matir alan manuai i matir.
 SKIPPED

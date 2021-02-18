@@ -1243,7 +1243,7 @@ poancoco := noun1-noun-lex &
 
 poany := noun1-noun-lex &
   [ STEM < "poany" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_earth-or-ground_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_park_n_rel" ].
 
 poedilei := noun1-noun-lex &
   [ STEM < "poedilei" >,

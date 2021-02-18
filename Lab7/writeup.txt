@@ -1,4 +1,4 @@
-	Lab 7
+Lab 7
 by David Krug and Nathanial Imel
 
 Lab7/ttv_initial = Lab6/ttv_final
@@ -6,15 +6,12 @@ Lab7/ttv_initial = Lab6/ttv_final
 
 To do:
    non-verbal predicates
-      learn how they work
-         nouns, adjectives, adpositions
       make testsuite examples
       implement them using TDL
          this requires implementing PPs (if titan has them)
       test our implementation by parsing the testsuite examples
    machine translation/other testing
-      translate lines 15-17 in ttv.txt
-      test translation of those lines
+      test translation of lines 15-17
       test wh questions in non-verbal predicate sentences   
    grammar comparisions
       run the final grammar with the testsuite/test corpus
@@ -38,8 +35,9 @@ Table of contents (idk if this structure makes sense; it might change):
       3.1 How they work in Titan
       3.2 How we implemented them
    4 Non-verbal predicate testing
-      4.1 translation for lines 15-17 in ttv.txt and translation testing
-      4.2 testing wh questions in non-verbal predicate sentences
+      4.1 Parsing non-verbal predicates.
+      4.2 translation for lines 15-17 in ttv.txt and translation testing
+      4.3 testing wh questions in non-verbal predicate sentences
    5 Small changes
       any thing else we change in the grammar that is worth writing up
    6 Grammar comparision
@@ -63,6 +61,7 @@ Table of contents (idk if this structure makes sense; it might change):
    You are a devil.
 
 1.2 How we implemented them
+   We tried using the n-bar rule, bit it didn't work.
 
 ===============================================================================
 2 Adjective predicates
@@ -89,7 +88,14 @@ Table of contents (idk if this structure makes sense; it might change):
       osprey  3sg.irr bad
       The osprey is bad
 
+      *manuai kine     muan
+      osprey  3sg.perf bad.
+      The osprey is bad.
+
 2.2 How we implemented them
+   We didn't change anything.
+      Later i might clean up adjectives by fixing the pred values, but it is
+      low priority right now.
 
 ===============================================================================
 3 PP predicates
@@ -100,11 +106,37 @@ Table of contents (idk if this structure makes sense; it might change):
       nat   e  wei  poen
       child in that not
       The child is not in that [basket].
+      
+      ?e   wei  nat.
+      prep that child.
+      In that [thing] is a child.
 
 3.2 How we implemented them
+   We're going to need two lexical entries for 'e':
+      The first is for possessives.
+      The second is for non-possessive use of the prep.
+      What about pressessives predicates? Predicative possession?
 
 ===============================================================================
 4 Non-verbal predicate testing
+4.1 Parsing non-verbal predicates
+
+4.2 Machine translation testing
+   Here are the translations for lines 15-17:
+   
+   Cong   i        ani muiny.
+   hunger 3sg.real eat dog
+   Hunger eats the dogs. (The dogs are hungry.)
+   
+   Manuai e    poany.
+   osprey prep earth
+   The osprey is on the earth (The cat is in the park.)
+   
+   Muiny ala manuai.
+   dog   3pl.real osprey
+   The dogs are the osprey. (The dogs are the cats.)
+   
+4.3 Non-verbal predicates in wh questions
 
 ===============================================================================
 5 Small miscellaneous changes
@@ -132,8 +164,8 @@ We finished spellling out properites in semi.vpm such as cond -> conditional.
 
 We changed the PRED values for some lexical entries used in machine
    translation. 'manuai' changed from _osprey-or-osprey-feather_n_rel to
-   _cat_n_rel, voliliti changed from follow to chase, and dilen from canoe to
-   car.
+   _cat_n_rel, voliliti changed from follow to chase, dilen from canoe to
+   car, and poany from earth-or-ground to park.
 
 ===============================================================================
 6 Grammar comparision

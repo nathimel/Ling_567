@@ -1,0 +1,107 @@
+# : nominal predicates
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Manuai cinal.
+osprey devil
+The osprey is a devil.
+
+# : nominal predicates w/ pron subj
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Oi cinal
+2sg devil
+You are a devil.
+
+# : nominal predicates w/ pron pred
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Cinal oi.
+devil 2sg
+The devil is you.
+
+# : nominal predicates w/ pron subj and pred
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Yo oi.
+1sg 2sg.
+I am you.
+
+# : adjectival predicates
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {adjectival-predicates}
+Manuai muan.
+osprey be.bad
+The osprey is bad.
+
+# : adjectival predicates w/ agreement clitic
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {adjectival-predicates}
+Manuai i muan.
+osprey 3sg.real be.bad
+The osprey is bad.
+
+# : adjectival predicates w/ pron subj
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {adjectival-predicates}
+Oi muan.
+2sg be.bad
+You are bad.
+
+# : adjectival predicates w/ non-3rd pron subj and clitic
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {adjectival-predicates}
+Oi a muan.
+2sg 2sg.real be.bad
+You are bad.
+
+# : adjectival predicates w/ irrealis mood
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {adjectival-predicates}
+Manuai ki muan.
+osprey 3sg.irr be.bad
+The osprey is bad.
+
+# : adjectival predicates w/ prefective aspect
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {adjectival-predicates}
+Manuai kine muan.
+3sg 3sg.perf be.bad
+The osprey is bad.
+
+# : adjectival predicates w/ wrong word order
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {adjectival-predicates}
+Muan manuai.
+bad osprey.
+The osprey is bad.
+
+# : prepositional predicates
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {prepositional-predicates}
+Manuai e wei.
+osprey prep that.
+The osprey is in that [thing].
