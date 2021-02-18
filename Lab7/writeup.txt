@@ -22,7 +22,9 @@ To do:
       what if we put the writeup through a spell checker
 
 Questions for Emily:
-   none right now
+	  For the pron/clitic ambiguity, we want to make it so that
+	  sentences that have a main verb MUST have an agreement clitic.
+	  How would we implement this in the grammar?
 
 Table of contents (idk if this structure makes sense; it might change):
    1 Noun predicates
