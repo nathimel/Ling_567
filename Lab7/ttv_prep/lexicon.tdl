@@ -343,7 +343,7 @@ dilaki := noun1-noun-lex &
 
 dilen := noun1-noun-lex &
   [ STEM < "dilen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_canoe_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_car_n_rel" ].
 
 dilis := noun1-noun-lex &
   [ STEM < "dilis" >,
@@ -899,7 +899,7 @@ manayan := noun1-noun-lex &
 
 manuai := noun1-noun-lex &
   [ STEM < "manuai" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_osprey-or-osprey-feather_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_cat_n_rel" ].
 
 masaren := noun1-noun-lex &
   [ STEM < "masaren" >,
@@ -3263,7 +3263,7 @@ vo := verb2-verb-lex &
 
 voliliti := verb2-verb-lex &
   [ STEM < "voliliti" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_follow_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_chase_v_rel" ].
 
 vomuani := verb2-verb-lex &
   [ STEM < "vomuani" >,
