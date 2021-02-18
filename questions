@@ -1,16 +1,45 @@
 1. Are cross-reference agreement clitics not required following determiner-noun phrases? E.g.
-
 	
 Tita nga         eyo    poen, tita rop    eyo poen
 that lime.vessel lsg.ps not   that basket lsg.ps not
 "That lime pot isn't mine, and that basket isn't mine!"
 
+*******NB: I believe the above question to be answered by the lack of copula. 
+
 2. Is there a different adnominal possessive suffix than "-i" for 3sg? We couldn't find it, or (yo)to(tulumo)
 or yoya in our corpus.
+
+*******NB: Yep, it's "-n"!
 
 We found "Yo ulumui das alan, das i camar", but you also said in first and second
 person the cross reference clitics always appear with an independent pronoun.
 
+*******NB: this doesn't seem well-formed enough.
 
-For the perfective markers, can they show up in realis or irrealis?
-And can the perfective (i.e., kine) marker co-occur with the mood (realis=i, irrealis=ki) marker?
+For the perfective markers, it seems they can appear with and without an independent
+pronoun preceding them. I.e.
+
+	oi kone kip
+	2sg 2sg.perf lie
+	You've lied!
+
+	kone kip
+	2sg.perf lie
+	You've lied!
+
+Would they mean the same thing?
+
+
+We know that
+	oi cinal
+	2sg devil
+	You are the devil
+
+Can one say:
+	cinal oi
+	devil 2sg
+	The devil is you
+
+?
+We are looking for negative examples to equative sentences of the form
+NP NP. 
