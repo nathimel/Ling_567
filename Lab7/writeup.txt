@@ -35,7 +35,9 @@ Previously we said Titan doesn't have a determiner to mark for definiteness, but
 We might need to change our MMT translations.
 
 Questions for Emily:
-   none yet
+   we don't have unary-phrase
+   ask about pg 61 5.1.1
+   adposition-subord-lex-item
 
 Table of contents (idk if this structure makes sense; it might change):
    1 Noun predicates
@@ -63,6 +65,14 @@ Table of contents (idk if this structure makes sense; it might change):
 ===============================================================================
 1 Noun predicates
 1.1 How they work
+oi cinal
+2sg devil
+You are a devil
+
+?oi a cinal
+2sg 2sg.real devil
+You are a devil.
+
 1.2 How we implemented them
 
 ===============================================================================
@@ -104,6 +114,10 @@ Table of contents (idk if this structure makes sense; it might change):
 ===============================================================================
 3 PP predicates
 3.1 How they work
+nat   e  wei  poen
+child in that not
+The child is not in that [basket].
+
 3.2 How we implemented them
 
 ===============================================================================
