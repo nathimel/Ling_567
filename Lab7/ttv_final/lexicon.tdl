@@ -1639,31 +1639,31 @@ sau_2 := noun38-noun-lex &
 
 ala_1 := noun39-noun-lex &
   [ STEM < "ala" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 awa_1 := noun40-noun-lex &
   [ STEM < "awa" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 i_1 := noun48-noun-lex &
   [ STEM < "i" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 oi := noun62-noun-lex &
   [ STEM < "oi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 yo_1 := noun82-noun-lex &
   [ STEM < "yo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 yota_1 := noun83-noun-lex &
   [ STEM < "yota" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 ta_1 := noun83-noun-lex &
   [ STEM < "ta" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 ca_2 := noun87-noun-lex &
   [ STEM < "ca" >,

@@ -7,6 +7,7 @@ Lab7/ttv_initial = Lab6/ttv_final
 To do:
    non-verbal predicates
       make testsuite examples
+      	   for NP NP
       implement them using TDL
          this requires implementing PPs (if titan has them)
       test our implementation by parsing the testsuite examples
@@ -22,7 +23,7 @@ To do:
       what if we put the writeup through a spell checker
 
 Questions for Emily:
-	  For the pron/clitic ambiguity, we want to make it so that
+	  For the pron/clitic ambiguity, we might want to make it so that
 	  sentences that have a main verb MUST have an agreement clitic.
 	  How would we implement this in the grammar?
 
