@@ -180,32 +180,36 @@ np-predicate-rule := unary-phrase & nocoord &
    To get predicative prepositions working, we edited the norm-adposition-lex
       rule to select for a subject and ID its INDEX with the INDEX of the
       adoposition's ARG1. Here is the final tdl for norm-adposition-lex:
-      
-   norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
-     [ ARG-ST < #comp >,
-       SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
-                             [ ARG1 #arg1,
-   			    ARG2 #arg2 ],
-                L-QUE #lque,
-                LOCAL [ CONT [ HOOK [ XARG #arg1 ] ],
-                        CAT [ WH.BOOL -,
-                              VAL [ SPR < >,
-                                    SPEC < >,
-                                    SUBJ < [ LOCAL [ CAT cat-sat &
-                            	      	  	    	    [ VAL [ SPR < >,
-                                    			    COMPS < > ],
-                             				     HEAD noun ],
-   					          CONT.HOOK.INDEX #arg1 ] ] >,
-                                    COMPS < #comp &
-                                            [ L-QUE #lque,
-                                              LOCAL [ CAT [ HEAD noun,
-                                                            VAL.SPR < > ],
-                                                      CONT.HOOK.INDEX #arg2 ] ] > ],
-                              HEAD adp &
-                                   [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
-                                                         WH.BOOL -,
-                                                         HEAD.AUX - ] ] > ] ] ] ] ].
-      
+
+norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
+  [ ARG-ST < #comp >,
+    SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
+                          [ ARG1 #arg1,
+			    ARG2 #arg2 ],
+             L-QUE #lque,
+             LOCAL [ CONT [ HOOK [ XARG #arg1 ] ],
+                     CAT [ WH.BOOL -,
+                           VAL [ SPR < >,
+                                 SPEC < >,
+                                 SUBJ < [ LOCAL [ CAT cat-sat &
+                         	      	  	    	    [ VAL [ SPR < >,
+                                 			    COMPS < > ],
+                          				     HEAD noun ],
+					          CONT.HOOK.INDEX #arg1 ] ] >,
+                                 COMPS < #comp &
+                                         [ L-QUE #lque,
+					   OPT -,
+                                           LOCAL [ CAT [ HEAD noun,
+                                                         VAL.SPR < > ],
+                                                   CONT.HOOK.INDEX #arg2 ] ] > ],
+                           HEAD adp &
+                                [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
+                                                      WH.BOOL -,
+                                                      HEAD.AUX - ] ] > ] ] ] ] ].
+
+normadp1-norm-adposition-lex := norm-adposition-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
+
    We also changed roots.tdl to have HEAD +vp instead of just HEAD verb.
       
    With these changes, "muiny e manuai" had 7 parses. One was the desired
@@ -217,7 +221,8 @@ np-predicate-rule := unary-phrase & nocoord &
    
    Of the other 6 parses, some had the over-firing n-bar-predicate problem that
       we fixed in section 1.2 rule, and some parses had the HEAD-ADJ or the
-      ADJ-HEAD rule applying. 
+      ADJ-HEAD rule applying. We added OPT - to the first item on the COMPS
+      list of the norm-adpos-lex.
 
    This reduced the number of parses of "muiny e manuai" to 3 desired parses:
    	one where [ is [the cat] [on the cat] ] (adpositional predicate)
