@@ -1701,7 +1701,7 @@ keis := noun92-noun-lex &
 
 e := normadp1-norm-adposition-lex &
   [ STEM < "e" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_e_p_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_loc_p_rel" ].
 
 ;;; Verbs
 

@@ -3,13 +3,14 @@ by David Krug and Nathanial Imel
 
 To do:
    why is 'e' under ;;; Adjectives
+       my bad -- confusing them with ADpositions
    what about all the other prepositions pg. 106 - 112
    make negative prepositional predicates examples   
    grammar comparisions: run the final grammar with the testsuite/test corpus
    other small fixes
       double check that semantical-empty entries and spurious pronouns are ALL gone
    finish the writeup
-      <things in brackets>
+      {things in brackets}
       what if we put the writeup through a spell checker
 
 Questions for Emily:
@@ -63,44 +64,41 @@ Table of contents:
       2sg 2sg.real devil
       You are a devil.
 
-   <more should be said here>
+   @more should be said here@
 
 1.2 How we implemented them
    At first we copied the n-bar-predicate-rule from Halkomelem in 2013. This
       resulted in the rule over-firing, and after interactive debugging on
       Thursday we added the MOD <> requirement on the HEAD as well as the
-      SPEC <> requirement. This is the final tdl:
+      SPEC <> and no new quantifier requirement. This is the final tdl:
 
-   n-bar-predicate-rule := unary-phrase & nocoord &
-     [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
-                      VAL [ COMPS < >,
-      		 SPEC < >,
-      		 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
-      				  CAT [ HEAD noun,
-      					VAL.SPR < > ] ] ] > ] ],
-                NON-LOCAL #nl ],
-       C-CONT [ HOOK [ LTOP #ltop,
-               INDEX #index,
-               XARG #arg1 ],
-            RELS.LIST < arg12-ev-relation &
-              [ PRED "_be_v_id_rel",
-                LBL #ltop,
-                ARG0 #index,
-                ARG1 #arg1,
-                ARG2 #arg2 ],
-              quant-relation &
-              [ PRED "exist_q_rel",
-                ARG0 #arg2,
-                RSTR #harg ] >,
-            HCONS.LIST < qeq & [ HARG #harg, LARG #larg ] > ],
-       ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-      			    VAL.SPR cons ],
-      		      CONT.HOOK [ INDEX #arg2,
-                                         LTOP #larg ]],
-      	      NON-LOCAL #nl ] ] > ].
+np-predicate-rule := unary-phrase & nocoord &
+  [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
+                   VAL [ COMPS < >,
+			 SPEC < >,
+			 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+					  CAT [ HEAD noun,
+						VAL.SPR < > ] ] ] > ] ],
+             NON-LOCAL #nl ],
+    C-CONT [ HOOK [ LTOP #ltop,
+		    INDEX #index,
+		    XARG #arg1 ],
+	     RELS.LIST < arg12-ev-relation &
+			 [ PRED "_be_v_id_rel",
+			   LBL #ltop,
+			   ARG0 #index,
+			   ARG1 #arg1,
+			   ARG2 #arg2 ] >,
+	     HCONS.LIST < > ],
+    ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+				    VAL.SPR < > ],
+			      CONT.HOOK [ INDEX #arg2 ]],
+		      NON-LOCAL #nl ] ] > ].
+
+
 
    We added the corresponding rule instatiation in rules.tdl:
-      n-bar-pred := n-bar-predicate-rule.
+      np-pred := np-predicate-rule.
  
 ===============================================================================
 2 Adjectival predicates
@@ -135,7 +133,7 @@ Table of contents:
       land 3sg.perf far
       "The land is far away.
 
-   Therefore, we chose to <do what?>
+   Therefore, we chose to {do what?}
       Personally, I think we should follow what the corpus has and ignore
           Claire. It will make implementation easier (regular verbs already
           work that way) and it could be that Claire didn't catch this/wasn't
@@ -143,8 +141,7 @@ Table of contents:
 
 2.2 How we implemented them
    We don't need to change much, especiialy if we go with the
-      corpus and not Clair.
-   <i will clean up adjectives by fixing the pred values.>
+      maybe we should clean up adjectives by fixing the pred values
 
 ===============================================================================
 3 Prepositional predicates
@@ -164,17 +161,17 @@ Table of contents:
       prep that child.
       In that [thing] is a child.
 
-   <i didn't see a section about predicatve PPs, only regular PPs>
+   {i didn't see a section about predicatve PPs, only regular PPs}
 
 3.2 How we implemented them
-   Initially, Titan had no prepositions <is this true?>. We added
+   Initially, Titan had no prepositions {is this true?}. We added
       one preposition:
 
    e := normadp1-norm-adposition-lex &
      [ STEM < "e" >,
        SYNSEM.LKEYS.KEYREL.PRED "_e_p_rel" ].
 
-   With this change, PPs such as the following were being <half-parsed>:
+   With this change, PPs such as the following were being {half-parsed}:
       muiny e manuai
       dog in osprey
       the dog in the osprey
@@ -219,15 +216,13 @@ Table of contents:
    
    Of the other 6 parses, some had the over-firing n-bar-predicate problem that
       we fixed in section 1.2 rule, and some parses had the HEAD-ADJ or the
-      ADJ-HEAD rule applying. Because we have no adjectives <i don't think this
-      is true!>, we deleted these three rules from rules.tdl:
-      
-      adj-head-scop := adj-head-scop-phrase.
-      head-adj := my-head-adj-phrase.
-      adj-head := my-adj-head-phrase.
+      ADJ-HEAD rule applying. {how did we fix this?}
 
-   This reduced the number of parses of "muiny e manuai" to the one desired
-      parse.
+   This reduced the number of parses of "muiny e manuai" to 3 desired parses:
+   	one where [ is [the cat] [on the cat] ] (adpositional predicate)
+	one where S[is NP[the cat on the cat] ] (intersective modifier of NP)
+	one where PP[on the cat S[is the cat] ] (int.mod. of an S)
+
 ===============================================================================
 4 Non-verbal predicate testing
 4.1 Parsing non-verbal predicates
@@ -249,28 +244,9 @@ Table of contents:
    
 4.3 Non-verbal predicates in wh questions
 
-We got wh-questions to work, and we got them to work as a nominal predicate.
-   To do this, we edited the SPEC requirement on the wh-pronoun-lex to be nonempty,
-   instead of empty. Previously, the immediate node above a wh-pronoun like "ca"
-   was an NP -- now its an N and the BARE-NP rule applies to it to become an NP
-
-So our rule looks like:
-
-wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-                           VAL [ SPR cons,
-                                 SUBJ < >,
-                                 COMPS < >,
-                                 SPEC < > ] ],
-                     CONT [ RELS.LIST < [ LBL #larg,
-                                          ARG0 #arg0 & ref-ind ],
-                                        quant-relation &
-                                        [ PRED "which_q_rel",
-                                          ARG0 #arg0,
-                                          RSTR #harg ] >,
-                            HCONS.LIST < [ HARG #harg,
-                                           LARG #larg ] > ] ],
-             NON-LOCAL.QUE.LIST < #arg0 > ] ].
+We got wh-questions to work, and we also got them to work as nominal predicates.
+To do this, we maded it so that no quantifiers were being added in the np-pred
+rule. 
 ===============================================================================
 5. Small miscellaneous changes
 
@@ -334,8 +310,8 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
          Negative items that parsed had # parses.
       
       The most ambiguous items had # parses:
-         <IGT>
-      <explanation of the ambiguity>
+         {IGT}
+      {explanation of the ambiguity}
 
 6.2 Test corpus
    6.2.1 Initial grammar (copied from lab 6)
@@ -355,5 +331,5 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
       On average, parsed items had # parses.
       
       The most ambiguous item had # parses:
-         <IGT>
-      <explanation of the ambiguity>
+         {IGT}
+      {explanation of the ambiguity}
