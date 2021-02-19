@@ -1,49 +1,42 @@
 Lab 7
 by David Krug and Nathanial Imel
 
-Lab7/ttv_initial = Lab6/ttv_final
-   But Lab7/ttv_initial/tsdb/home still has the four tsdb profiles from lab 6.
-
 To do:
-   non-verbal predicates
-      make testsuite examples
-      	   for NP NP
-      implement them using TDL
-         this requires implementing PPs (if titan has them)
-      test our implementation by parsing the testsuite examples
-   machine translation/other testing
-      test translation of lines 15-17
-      test wh questions in non-verbal predicate sentences   
-   grammar comparisions
-      run the final grammar with the testsuite/test corpus
+   why is 'e' under ;;; Adjectives
+   what about all the other prepositions pg. 106 - 112
+   make negative prepositional predicates examples   
+   grammar comparisions: run the final grammar with the testsuite/test corpus
    other small fixes
       double check that semantical-empty entries and spurious pronouns are ALL gone
-      _pron_n_rel -> pron_rel
    finish the writeup
+      <things in brackets>
       what if we put the writeup through a spell checker
 
 Questions for Emily:
-	  For the pron/clitic ambiguity, we might want to make it so that
-	  sentences that have a main verb MUST have an agreement clitic.
-	  How would we implement this in the grammar?
+   For the pron/clitic ambiguity, we might want to make it so that
+      sentences that have a main verb MUST have an agreement clitic.
+      How would we implement this in the grammar?
+   Questions about the preposition:
+      Should we have 'e' twice in the grammar, once as a possessive
+         strategy and once as a preposition?
+      For the purposes of MMT, what should the PRED value of 'e' be?
+      What about pressessives predicates? Predicative possession?
 
-
-Table of contents (idk if this structure makes sense; it might change):
-   1 Noun predicates
+Table of contents:
+   1 Nominal predicates
       1.1 How they work in Titan
       1.2 How we implemented them
-   2 Adjective predicates
+   2 Adjectival predicates
       2.1 How they work in Titan
       2.2 How we implemented them
-   3 PP predicates
+   3 Prepositional predicates
       3.1 How they work in Titan
       3.2 How we implemented them
    4 Non-verbal predicate testing
       4.1 Parsing non-verbal predicates.
-      4.2 translation for lines 15-17 in ttv.txt and translation testing
-      4.3 testing wh questions in non-verbal predicate sentences
-   5 Small changes
-      any thing else we change in the grammar that is worth writing up
+      4.2 Translation testing
+      4.3 Wh questions and non-verbal predicates
+   5 Small miscellaneous changes
    6 Grammar comparision
       6.1 Testsuite
          6.1.1 Initial grammar
@@ -53,31 +46,73 @@ Table of contents (idk if this structure makes sense; it might change):
          6.2.2 Final grammar
 
 ===============================================================================
-1 Noun predicates
-1.1 How they work
-   There is no copula in Titan. 
-   oi cinal
-   2sg devil
-   You are a devil
+1 Nominal predicates
+1.1 How they work in Titan
+   There is no copula in Titan, and agreement clitics do not occur with nominal
+      predicates:
+      
+      manuai cinal
+      osprey devil
+      The osprey is a devil.
+      
+      oi cinal
+      2sg devil
+      You are a devil
 
-   ?oi a cinal
-   2sg 2sg.real devil
-   You are a devil.
+      *oi a cinal
+      2sg 2sg.real devil
+      You are a devil.
+
+   <more should be said here>
 
 1.2 How we implemented them
-   We tried using the n-bar rule, bit it didn't work.
+   At first we copied the n-bar-predicate-rule from Halkomelem in 2013. This
+      resulted in the rule over-firing, and after interactive debugging on
+      Thursday we added the MOD <> requirement on the HEAD as well as the
+      SPEC <> requirement. This is the final tdl:
 
+   n-bar-predicate-rule := unary-phrase & nocoord &
+     [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
+                      VAL [ COMPS < >,
+      		 SPEC < >,
+      		 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+      				  CAT [ HEAD noun,
+      					VAL.SPR < > ] ] ] > ] ],
+                NON-LOCAL #nl ],
+       C-CONT [ HOOK [ LTOP #ltop,
+               INDEX #index,
+               XARG #arg1 ],
+            RELS.LIST < arg12-ev-relation &
+              [ PRED "_be_v_id_rel",
+                LBL #ltop,
+                ARG0 #index,
+                ARG1 #arg1,
+                ARG2 #arg2 ],
+              quant-relation &
+              [ PRED "exist_q_rel",
+                ARG0 #arg2,
+                RSTR #harg ] >,
+            HCONS.LIST < qeq & [ HARG #harg, LARG #larg ] > ],
+       ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+      			    VAL.SPR cons ],
+      		      CONT.HOOK [ INDEX #arg2,
+                                         LTOP #larg ]],
+      	      NON-LOCAL #nl ] ] > ].
+
+   We added the corresponding rule instatiation in rules.tdl:
+      n-bar-pred := n-bar-predicate-rule.
+ 
 ===============================================================================
-2 Adjective predicates
-2.1 How they work
+2 Adjectival predicates
+2.1 How they work in Titan
    Adjectives mostly act like intransitive verbs and appear in verbal slots:
       Lodianum ei i likom.
       house-inside 2sg.ps 2sg be.pitch-dark
       The inside of her house was pitch black.
-    
-   The difference between regular intransitive verbs and adjectives is that
-      agreement clitics do not appear with non-third person subjects and
-      predicative adjectives:
+   
+   According to the descriptive grammar, the difference between regular
+      intransitive verbs and adjectives is that agreement clitics do not appear
+      with predicative adjectives if the subject is non-third:
       
       *oi a        muan
       2sg 2sg.real be.bad
@@ -86,24 +121,34 @@ Table of contents (idk if this structure makes sense; it might change):
       Oi  muan
       3sg be.bad
       You are bad
+   
+   However, the corpus includes the following:
+      Yo  u        qadi.
+      1sg 1sg.real sick
+      I am sick.
     
-   Predicative adjectives do not appear in irrealis or perfective clauses:
-      *manuai ki      muan
-      osprey  3sg.irr bad
-      The osprey is bad
+   Additionally, the descriptive grammar says that predicative adjectives do
+      not appear in irrealis or perfective clauses. However, the corpus
+      includes:
+      
+      kor kine alau
+      land 3sg.perf far
+      "The land is far away.
 
-      *manuai kine     muan
-      osprey  3sg.perf bad.
-      The osprey is bad.
+   Therefore, we chose to <do what?>
+      Personally, I think we should follow what the corpus has and ignore
+          Claire. It will make implementation easier (regular verbs already
+          work that way) and it could be that Claire didn't catch this/wasn't
+          working with this exact data.
 
 2.2 How we implemented them
-   We didn't change anything.
-      Later i might clean up adjectives by fixing the pred values, but it is
-      low priority right now.
+   We don't need to change much, especiialy if we go with the
+      corpus and not Clair.
+   I will clean up adjectives by fixing the pred values.
 
 ===============================================================================
-3 PP predicates
-3.1 How they work
+3 Prepositional predicates
+3.1 How they work in Titan
    Titan has only one adposition, the preposition 'e' which is glossed variably
       as of, in, on, etc:
 
@@ -111,34 +156,78 @@ Table of contents (idk if this structure makes sense; it might change):
       child in that not
       The child is not in that [basket].
       
-      ?e   wei  nat.
+      muiny e  manuai.
+      dog   in osprey
+      The dog is in the osprey.
+      
+      ?e   wei  nat.96p
       prep that child.
       In that [thing] is a child.
 
+   <i didn't see a section about predicatve PPs, only regular PPs>
+
 3.2 How we implemented them
-   We're going to need two lexical entries for 'e':
-      The first is for possessives.
-      The second is for non-possessive use of the prep.
-      What about pressessives predicates? Predicative possession?
+   Initially, Titan had no prepositions <is this true?>. We added
+      one preposition:
 
-      for "manuai e manuai"
-      	  cat     on cat
-	  "the cat is on the cat"
+   e := normadp1-norm-adposition-lex &
+     [ STEM < "e" >,
+       SYNSEM.LKEYS.KEYREL.PRED "_e_p_rel" ].
 
-      We edited the norm-adpos-lex rule to select for a subject and ID its
-      INDEX with the INDEX of the adoposition's ARG1.
+   With this change, PPs such as the following were being <half-parsed>:
+      muiny e manuai
+      dog in osprey
+      the dog in the osprey
+   
+   To get predicative prepositions working, we edited the norm-adposition-lex
+      rule to select for a subject and ID its INDEX with the INDEX of the
+      adoposition's ARG1. Here is the final tdl for norm-adposition-lex:
       
-      	    <insert norm-adpos-lex>
+   norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
+     [ ARG-ST < #comp >,
+       SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
+                             [ ARG1 #arg1,
+   			    ARG2 #arg2 ],
+                L-QUE #lque,
+                LOCAL [ CONT [ HOOK [ XARG #arg1 ] ],
+                        CAT [ WH.BOOL -,
+                              VAL [ SPR < >,
+                                    SPEC < >,
+                                    SUBJ < [ LOCAL [ CAT cat-sat &
+                            	      	  	    	    [ VAL [ SPR < >,
+                                    			    COMPS < > ],
+                             				     HEAD noun ],
+   					          CONT.HOOK.INDEX #arg1 ] ] >,
+                                    COMPS < #comp &
+                                            [ L-QUE #lque,
+                                              LOCAL [ CAT [ HEAD noun,
+                                                            VAL.SPR < > ],
+                                                      CONT.HOOK.INDEX #arg2 ] ] > ],
+                              HEAD adp &
+                                   [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
+                                                         WH.BOOL -,
+                                                         HEAD.AUX - ] ] > ] ] ] ] ].
+      
+   We also changed roots.tdl to have HEAD +vp instead of just HEAD verb.
+      
+   With these changes, "muiny e manuai" had 7 parses. One was the desired
+      parse:
+      
+      Muiny e  manuai.
+      dog   in osprey.
+      The dog is in the osprey.
+   
+   Of the other 6 parses, some had the over-firing n-bar-predicate problem that
+      we fixed in section 1.2 rule, and some parses had the HEAD-ADJ or the
+      ADJ-HEAD rule applying. Because we have no adjectives <i don't think this
+      is true!>, we deleted these three rules from rules.tdl:
+      
+      adj-head-scop := adj-head-scop-phrase.
+      head-adj := my-head-adj-phrase.
+      adj-head := my-adj-head-phrase.
 
-      This allowed us to
-      parse the string -- however there was still much ambiguity (7 trees).
-      One of those trees was the right analysis, the other 6 all used the
-      n-bar rule and the HEAD-ADJ or the ADJ-HEAD rule. We have no adjectives.
-
-      So we deleted three rules from rules.tdl.
-
-      	 < insert the three rules we deleted from rules.tdl>
-
+   This reduced the number of parses of "muiny e manuai" to the one desired
+      parse.
 ===============================================================================
 4 Non-verbal predicate testing
 4.1 Parsing non-verbal predicates
@@ -160,58 +249,10 @@ Table of contents (idk if this structure makes sense; it might change):
    
 4.3 Non-verbal predicates in wh questions
 
-===============================================================================
-5 Small miscellaneous changes
-
-We continued cleaing up the spurious pronouns cleanup by deleting noun41 to
-   noun82 EXCEPT noun48 and noun82. Here's an example of one of the pronouns
-   we deleted:
-
-   noun41_name=noun41
-   noun41_pron=on
-     noun41_feat1_name=number
-     noun41_feat1_value=du
-   noun41_det=opt
-     noun41_stem1_orth=damolou
-     noun41_stem1_pred=_pron_n_rel
-
-We also deleted the alternate spelling on 'pa' as 'poa' and instead added a new
-   lexical entry for 'poa' that had the appropriate 2sg agreement (w/ subject)
-   features.
-
-In our testsuite.txt, we changed mood glosses from nfut/fut to real/irr.
-   This is to reflect our analysis that Titan does not have tense, only mood.
-
-We finished spellling out properites in semi.vpm such as cond -> conditional.
-
-We changed the PRED values for some lexical entries used in machine
-   translation. 'manuai' changed from _osprey-or-osprey-feather_n_rel to
-   _cat_n_rel, voliliti changed from follow to chase, dilen from canoe to
-   car, and poany from earth-or-ground to park.
-
-
-Deleted the auto-inferred:
-
-ca_1 := noun1-noun-lex &
-  [ STEM < "ca" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
-
-Changed roots.tdl to have HEAD +vp instead of just HEAD verb
-
-Changed rules.tdl to have three less rules, as described in the PP Predicates
-section:
-
-   adj-head-scop := adj-head-scop-phrase.
-
-   head-adj := my-head-adj-phrase.
-
-   adj-head := my-adj-head-phrase.
-
-
 We got wh-questions to work, and we got them to work as a nominal predicate.
-To do this, we edited the SPEC requirement on the wh-pronoun-lex to be nonempty,
-instead of empty. Previously, the immediate node above a wh-pronoun like "ca"
-was an NP -- now its an N and the BARE-NP rule applies to it to become an NP
+   To do this, we edited the SPEC requirement on the wh-pronoun-lex to be nonempty,
+   instead of empty. Previously, the immediate node above a wh-pronoun like "ca"
+   was an NP -- now its an N and the BARE-NP rule applies to it to become an NP
 
 So our rule looks like:
 
@@ -230,6 +271,41 @@ wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-
                             HCONS.LIST < [ HARG #harg,
                                            LARG #larg ] > ] ],
              NON-LOCAL.QUE.LIST < #arg0 > ] ].
+===============================================================================
+5. Small miscellaneous changes
+
+We continued cleaing up the spurious pronouns by deleting noun41 to
+   noun82 EXCEPT noun48 and noun82. Here's an example of one of the
+   pronouns we deleted:
+
+   noun41_name=noun41
+   noun41_pron=on
+     noun41_feat1_name=number
+     noun41_feat1_value=du
+   noun41_det=opt
+     noun41_stem1_orth=damolou
+     noun41_stem1_pred=_pron_n_rel
+
+We deleted the alternate spelling on 'pa' as 'poa' and instead added a new
+   lexical entry for 'poa' that had the appropriate 2sg agreement (w/ subject)
+   features.
+
+In our testsuite.txt, we changed mood glosses from nfut/fut to real/irr.
+   This is to reflect our analysis that Titan does not have tense, only mood.
+
+We finished spellling out properites in semi.vpm such as cond -> conditional.
+
+We changed the PRED values for some lexical entries used in machine
+   translation. 'manuai' changed from _osprey-or-osprey-feather_n_rel to
+   _cat_n_rel, voliliti changed from follow to chase, dilen from canoe to
+   car, and lono from forest to park.
+
+We deleted this unwanted auto-inferred wh word:
+   ca_1 := noun1-noun-lex &
+     [ STEM < "ca" >,
+       SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+
+We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
 
 ===============================================================================
 6 Grammar comparision

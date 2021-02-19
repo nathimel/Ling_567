@@ -31,8 +31,26 @@ Vetted: f
 Judgement: g
 Phenomena: {nominal-predicates}
 Yo oi.
-1sg 2sg.
+1sg 2sg
 I am you.
+
+# : nominal predicates w/ agreement clitic
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {nominal-predicates}
+Manuai a cinal.
+3sg 3sg.real devil
+The osprey is a devil.
+
+# : nominal predicates w/ pron subj and agreement clitic
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {nominal-predicates}
+Oi a cinal.
+2sg 2sg.real devil
+You are a devil.
 
 # : adjectival predicates
 Source: author

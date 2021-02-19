@@ -746,7 +746,6 @@ norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersectiv
                                                       WH.BOOL -,
                                                       HEAD.AUX - ] ] > ] ] ] ] ].
 
-
 normadp1-norm-adposition-lex := norm-adposition-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
 
