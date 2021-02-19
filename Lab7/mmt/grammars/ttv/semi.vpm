@@ -71,7 +71,7 @@ E.ASPECT : ASPECT
 
 E.MOOD : MOOD
   cond <> conditional
-  imp <> imperfect
+  imp <> imperative
   irr <> irrealis
   oblig <> obligatory
   realis <> realis

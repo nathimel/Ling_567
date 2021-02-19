@@ -188,6 +188,48 @@ We changed the PRED values for some lexical entries used in machine
    _cat_n_rel, voliliti changed from follow to chase, dilen from canoe to
    car, and poany from earth-or-ground to park.
 
+
+Deleted the auto-inferred:
+
+ca_1 := noun1-noun-lex &
+  [ STEM < "ca" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+
+Changed roots.tdl to have HEAD +vp instead of just HEAD verb
+
+Changed rules.tdl to have three less rules, as described in the PP Predicates
+section:
+
+   adj-head-scop := adj-head-scop-phrase.
+
+   head-adj := my-head-adj-phrase.
+
+   adj-head := my-adj-head-phrase.
+
+
+We got wh-questions to work, and we got them to work as a nominal predicate.
+To do this, we edited the SPEC requirement on the wh-pronoun-lex to be nonempty,
+instead of empty. Previously, the immediate node above a wh-pronoun like "ca"
+was an NP -- now its an N and the BARE-NP rule applies to it to become an NP
+
+So our rule looks like:
+
+wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                           VAL [ SPR cons,
+                                 SUBJ < >,
+                                 COMPS < >,
+                                 SPEC < > ] ],
+                     CONT [ RELS.LIST < [ LBL #larg,
+                                          ARG0 #arg0 & ref-ind ],
+                                        quant-relation &
+                                        [ PRED "which_q_rel",
+                                          ARG0 #arg0,
+                                          RSTR #harg ] >,
+                            HCONS.LIST < [ HARG #harg,
+                                           LARG #larg ] > ] ],
+             NON-LOCAL.QUE.LIST < #arg0 > ] ].
+
 ===============================================================================
 6 Grammar comparision
 6.1 Testsuite

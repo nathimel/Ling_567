@@ -1,20 +1,40 @@
-1. Are cross-reference agreement clitics not required following determiner-noun phrases? E.g.
-	
-Tita nga         eyo    poen, tita rop    eyo poen
-that lime.vessel lsg.ps not   that basket lsg.ps not
-"That lime pot isn't mine, and that basket isn't mine!"
 
-*******NB: I believe the above question to be answered by the lack of copula. 
-
-2. Is there a different adnominal possessive suffix than "-i" for 3sg? We couldn't find it, or (yo)to(tulumo)
-or yoya in our corpus.
-
-*******NB: Yep, it's "-n"!
 
 We found "Yo ulumui das alan, das i camar", but you also said in first and second
 person the cross reference clitics always appear with an independent pronoun.
 
 *******NB: this doesn't seem well-formed enough.
+
+PRON/CLITIC AMBIGUITY
+
+We're wondering about cases like the following:
+
+         Ala        kip
+         3pl.realis lie
+         "They lied."
+	 
+"Ala" and the other cross-reference subject agreement markers have the same
+form as their pronoun counterparts. So we're wondering: if there's only one
+of the things that might be a pronoun or might be an agreement clitic in the
+sentence, which is it? 
+
+*******NB: didn't Emily say to just pick one analysis and go with it? But how
+would we implement the grammar so that we rule one in and not the other?
+
+      - To make just the clitic/aux grammatical, we could say that agreement
+      clitics are obligatory. But this gets the wrong analysis for equative
+      sentences, which don't have copulas.
+      		 - We could say that any sentence that has a main verb,
+		 must have an agreement clitic preceding that main verb.
+		 That would take care of ruling out pronouns here and ruling
+		 in agreement clitics and not ruling out equative sentences.
+		 - this doesn't take care of adjective-like verbs in our
+		 language, such as "muan"=be_bad
+
+		 	   oi muan
+			   2sg be_bad
+			   "You're bad"
+			   (NP VP)
 
 For the perfective markers, it seems they can appear with and without an independent
 pronoun preceding them. I.e.
@@ -29,17 +49,3 @@ pronoun preceding them. I.e.
 
 Would they mean the same thing?
 
-
-We know that
-	oi cinal
-	2sg devil
-	You are the devil
-
-Can one say:
-	cinal oi
-	devil 2sg
-	The devil is you
-
-?
-We are looking for negative examples to equative sentences of the form
-NP NP. 
