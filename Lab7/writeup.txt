@@ -55,11 +55,11 @@ Table of contents:
       osprey devil
       The osprey is a devil.
       
-      oi cinal
+      oi  cinal
       2sg devil
       You are a devil
 
-      *oi a cinal
+      *oi a        cinal
       2sg 2sg.real devil
       You are a devil.
 
@@ -144,7 +144,7 @@ Table of contents:
 2.2 How we implemented them
    We don't need to change much, especiialy if we go with the
       corpus and not Clair.
-   I will clean up adjectives by fixing the pred values.
+   <i will clean up adjectives by fixing the pred values.>
 
 ===============================================================================
 3 Prepositional predicates
