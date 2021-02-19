@@ -26,6 +26,7 @@ Questions for Emily:
 	  sentences that have a main verb MUST have an agreement clitic.
 	  How would we implement this in the grammar?
 
+
 Table of contents (idk if this structure makes sense; it might change):
    1 Noun predicates
       1.1 How they work in Titan
@@ -118,6 +119,24 @@ Table of contents (idk if this structure makes sense; it might change):
       The first is for possessives.
       The second is for non-possessive use of the prep.
       What about pressessives predicates? Predicative possession?
+
+      for "manuai e manuai"
+      	  cat     on cat
+	  "the cat is on the cat"
+
+      We edited the norm-adpos-lex rule to select for a subject and ID its
+      INDEX with the INDEX of the adoposition's ARG1.
+      
+      	    <insert norm-adpos-lex>
+
+      This allowed us to
+      parse the string -- however there was still much ambiguity (7 trees).
+      One of those trees was the right analysis, the other 6 all used the
+      n-bar rule and the HEAD-ADJ or the ADJ-HEAD rule. We have no adjectives.
+
+      So we deleted three rules from rules.tdl.
+
+      	 < insert the three rules we deleted from rules.tdl>
 
 ===============================================================================
 4 Non-verbal predicate testing
