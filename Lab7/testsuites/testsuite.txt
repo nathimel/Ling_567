@@ -1505,7 +1505,7 @@ Manuai cinal.
 osprey devil
 The osprey is a devil.
 
-# XX: nominal predicates w/ pron subj
+# 166: nominal predicates w/ pron subj
 Source: author
 Vetted: f
 Judgement: g
@@ -1514,7 +1514,7 @@ Oi cinal
 2sg devil
 You are a devil.
 
-# XX: nominal predicates w/ pron pred
+# 167: nominal predicates w/ pron pred
 Source: author
 Vetted: f
 Judgement: g
@@ -1523,7 +1523,7 @@ Cinal oi.
 devil 2sg
 The devil is you.
 
-# XX: nominal predicates w/ pron subj and pred
+# 168: nominal predicates w/ pron subj and pred
 Source: author
 Vetted: f
 Judgement: g
@@ -1532,7 +1532,7 @@ Yo oi.
 1sg 2sg
 I am you.
 
-# XX: nominal predicates w/ agreement clitic
+# 169: nominal predicates w/ agreement clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1541,7 +1541,7 @@ Manuai a cinal.
 3sg 3sg.real devil
 The osprey is a devil.
 
-# XX: nominal predicates w/ pron subj and agreement clitic
+# 170: nominal predicates w/ pron subj and agreement clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1550,7 +1550,7 @@ Oi a cinal.
 2sg 2sg.real devil
 You are a devil.
 
-# XX: adjectival predicates
+# 171: adjectival predicates
 Source: author
 Vetted: f
 Judgement: g
@@ -1559,7 +1559,7 @@ Manuai muan.
 osprey be.bad
 The osprey is bad.
 
-# XX: adjectival predicates w/ agreement clitic
+# 172: adjectival predicates w/ agreement clitic
 Source: author
 Vetted: f
 Judgement: g
@@ -1568,7 +1568,7 @@ Manuai i muan.
 osprey 3sg.real be.bad
 The osprey is bad.
 
-# XX: adjectival predicates w/ pron subj
+# 173: adjectival predicates w/ pron subj
 Source: author
 Vetted: f
 Judgement: g
@@ -1577,7 +1577,7 @@ Oi muan.
 2sg be.bad
 You are bad.
 
-# XX: adjectival predicates w/ non-3rd pron subj and clitic
+# 174: adjectival predicates w/ non-3rd pron subj and clitic
 Source: author
 Vetted: f
 Judgement: u
@@ -1586,7 +1586,7 @@ Oi a muan.
 2sg 2sg.real be.bad
 You are bad.
 
-# XX: adjectival predicates w/ irrealis mood
+# 175: adjectival predicates w/ irrealis mood
 Source: author
 Vetted: f
 Judgement: u
@@ -1595,7 +1595,7 @@ Manuai ki muan.
 osprey 3sg.irr be.bad
 The osprey is bad.
 
-# XX: adjectival predicates w/ prefective aspect
+# 176: adjectival predicates w/ prefective aspect
 Source: author
 Vetted: f
 Judgement: u
@@ -1604,7 +1604,7 @@ Manuai kine muan.
 3sg 3sg.perf be.bad
 The osprey is bad.
 
-# XX: adjectival predicates w/ wrong word order
+# 177: adjectival predicates w/ wrong word order
 Source: author
 Vetted: f
 Judgement: u
@@ -1613,7 +1613,7 @@ Muan manuai.
 bad osprey.
 The osprey is bad.
 
-# XX: prepositional predicates
+# 178: prepositional predicates
 Source: author
 Vetted: f
 Judgement: g
@@ -1622,7 +1622,7 @@ Manuai e lono.
 osprey prep forest.
 The osprey is in the forest.
 
-# XX: prepositional predicates w/ pron subj
+# 179: prepositional predicates w/ pron subj
 Source: author
 Vetted: f
 Judgement: g
@@ -1631,7 +1631,7 @@ Oi e lono.
 osprey prep forest.
 The you are in the forest.
 
-# XX: prepositional predicates w/ wh word
+# 180: prepositional predicates w/ wh word
 Source: author
 Vetted: f
 Judgement: g
@@ -1640,7 +1640,7 @@ Se e lono.
 who prep forest.
 Who is in the forst.
 
-# XX: prepositional predicates w/ verb
+# 181: prepositional predicates w/ verb
 Source: author
 Vetted: f
 Judgement: u
@@ -1649,7 +1649,7 @@ Manuai e kip
 Osprey prep lie.
 The osprey is in lie.
 
-# XX: prepositional predicates w/ wh word
+# 182: prepositional predicates w/ wh word
 Source: author
 Vetted: f
 Judgement: u
@@ -1658,7 +1658,7 @@ Manuai i e muiny.
 osprey 3sg prep dog.
 The osprey is on a dog.
 
-# XX: stand alone noun
+# 183: stand alone noun
 Source: author
 Vetted: f
 Judgement: g
@@ -1667,7 +1667,7 @@ Manuai.
 osprey
 Someone is being an osprey.
 
-# XX: stand alone pronoun
+# 184: stand alone pronoun
 Source: author
 Vetted: f
 Judgement: g
