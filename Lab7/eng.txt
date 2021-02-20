@@ -1,7 +1,7 @@
 Dogs sleep - Muiny ala matir.
 Dogs chase cars - Muiny ala voliliti dilen.
 I chase you - Yo u voliliti oi.
-Dogs eat - Muini ala ani.
+Dogs eat - Muiny ala ani.
 The dogs dont chase cars - Muiny ala ne voliliti dilen. 
 I think that you know that dogs chase cars - SKIPPED; missing 'think' and 'know'
 I ask whether you know that dogs chase cars - SKIPPED; impossible

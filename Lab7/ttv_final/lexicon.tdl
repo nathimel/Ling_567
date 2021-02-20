@@ -1697,7 +1697,7 @@ keis := noun92-noun-lex &
   [ STEM < "keis" >,
     SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
-;;; Adjectives
+;;; Adpositions
 
 e := normadp1-norm-adposition-lex &
   [ STEM < "e" >,
@@ -1880,10 +1880,6 @@ demayani_7E := verb1-verb-lex &
 diayou_7E := verb1-verb-lex &
   [ STEM < "diayou~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_be_pregnant_v_rel" ].
-
-dili_7E := verb1-verb-lex &
-  [ STEM < "dili~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
 
 dul_7E := verb1-verb-lex &
   [ STEM < "dul~" >,
@@ -3356,6 +3352,10 @@ matir := verb3-verb-lex &
 ko_1 := verb3-verb-lex &
   [ STEM < "ko" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fall_v_rel" ].
+
+dili := verb3-verb-lex &
+  [ STEM < "dili" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
 
 va := verb4-verb-lex &
   [ STEM < "va" >,
