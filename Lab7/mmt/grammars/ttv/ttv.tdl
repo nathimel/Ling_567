@@ -152,7 +152,7 @@ realis := mood.
 
 wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-                           VAL [ SPR cons,
+                           VAL [ SPR < >,
                                  SUBJ < >,
                                  COMPS < >,
                                  SPEC < > ] ],
@@ -738,6 +738,7 @@ norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersectiv
 					          CONT.HOOK.INDEX #arg1 ] ] >,
                                  COMPS < #comp &
                                          [ L-QUE #lque,
+					   OPT -,
                                            LOCAL [ CAT [ HEAD noun,
                                                          VAL.SPR < > ],
                                                    CONT.HOOK.INDEX #arg2 ] ] > ],
@@ -745,7 +746,6 @@ norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersectiv
                                 [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
                                                       WH.BOOL -,
                                                       HEAD.AUX - ] ] > ] ] ] ] ].
-
 
 normadp1-norm-adposition-lex := norm-adposition-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
@@ -766,7 +766,7 @@ determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg &
 
 ; From Lab 7
 
-n-bar-predicate-rule := unary-phrase & nocoord &
+np-predicate-rule := unary-phrase & nocoord &
   [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
                    VAL [ COMPS < >,
 			 SPEC < >,
@@ -775,23 +775,18 @@ n-bar-predicate-rule := unary-phrase & nocoord &
 						VAL.SPR < > ] ] ] > ] ],
              NON-LOCAL #nl ],
     C-CONT [ HOOK [ LTOP #ltop,
-            INDEX #index,
-            XARG #arg1 ],
-         RELS.LIST < arg12-ev-relation &
-           [ PRED "_be_v_id_rel",
-             LBL #ltop,
-             ARG0 #index,
-             ARG1 #arg1,
-             ARG2 #arg2 ],
-           quant-relation &
-           [ PRED "exist_q_rel",
-             ARG0 #arg2,
-             RSTR #harg ] >,
-         HCONS.LIST < qeq & [ HARG #harg, LARG #larg ] > ],
+		    INDEX #index,
+		    XARG #arg1 ],
+	     RELS.LIST < arg12-ev-relation &
+			 [ PRED "_be_v_id_rel",
+			   LBL #ltop,
+			   ARG0 #index,
+			   ARG1 #arg1,
+			   ARG2 #arg2 ] >,
+	     HCONS.LIST < > ],
     ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-				    VAL.SPR cons ],
-			      CONT.HOOK [ INDEX #arg2,
-                                      LTOP #larg ]],
+				    VAL.SPR < > ],
+			      CONT.HOOK [ INDEX #arg2 ]],
 		      NON-LOCAL #nl ] ] > ].
 
 ; Adjective Incorporation

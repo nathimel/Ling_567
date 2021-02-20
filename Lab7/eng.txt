@@ -13,7 +13,7 @@ Hungry dogs eat - SKIPPED; no adjectives
 Dogs in the park eat - SKIPPED; no prepositions
 Dogs eat in the park - SKIPEED; no prepositions
 The dogs are hungry - Cong i ani muiny.
-The dogs are in the park - Manuai e poany.
+The dogs are in the park - Manuai e lono.
 The dogs are the cats - Muiny ala manuai. 
 The dog s car sleeps - Dilen e muiny i matir.
 My dogs sleep - muiny Eyo i matir.

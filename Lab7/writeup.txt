@@ -1,11 +1,6 @@
 Lab 7
 by David Krug and Nathanial Imel
 
-To do:
-   grammar comparisions: run the final grammar with the testsuite/test corpus
-   finish the writeup
-      what if we put the writeup through a spell checker
-
 Table of contents:
    1 Nominal predicates
       1.1 How they work in Titan
@@ -29,11 +24,17 @@ Table of contents:
          6.2.1 Initial grammar
          6.2.2 Final grammar
 
+A word from Claire Bowern on predicates in Titan:
+
+   A predicate can be a noun, as in the equative sentences "he's a snake",
+      a prepositional phrase ("part is to me/of mine"), an adjective, or
+      a numeral, as well as a verb.
+
 ===============================================================================
 1 Nominal predicates
 1.1 How they work in Titan
    There is no copula in Titan, and agreement clitics do not occur with nominal
-      predicates:
+      predicates. Here is a nominal predicate:
       
       manuai cinal
       osprey devil
@@ -56,25 +57,25 @@ Table of contents:
    np-predicate-rule := unary-phrase & nocoord &
      [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
                       VAL [ COMPS < >,
-      		 SPEC < >,
-      		 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
-      				  CAT [ HEAD noun,
-      					VAL.SPR < > ] ] ] > ] ],
+         	 SPEC < >,
+         	 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+         			  CAT [ HEAD noun,
+         				VAL.SPR < > ] ] ] > ] ],
                 NON-LOCAL #nl ],
        C-CONT [ HOOK [ LTOP #ltop,
-      	    INDEX #index,
-      	    XARG #arg1 ],
+             INDEX #index,
+             XARG #arg1 ],
            RELS.LIST < arg12-ev-relation &
-      		 [ PRED "_be_v_id_rel",
-      		   LBL #ltop,
-      		   ARG0 #index,
-      		   ARG1 #arg1,
-      		   ARG2 #arg2 ] >,
+         	 [ PRED "_be_v_id_rel",
+         	   LBL #ltop,
+         	   ARG0 #index,
+         	   ARG1 #arg1,
+         	   ARG2 #arg2 ] >,
            HCONS.LIST < > ],
        ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-      			    VAL.SPR < > ],
-      		      CONT.HOOK [ INDEX #arg2 ]],
-      	      NON-LOCAL #nl ] ] > ].
+         		    VAL.SPR < > ],
+         	      CONT.HOOK [ INDEX #arg2 ]],
+               NON-LOCAL #nl ] ] > ].
 
    We added the corresponding rule instatiation in rules.tdl:
       np-pred := np-predicate-rule.
@@ -107,7 +108,7 @@ For this lab, we did not fully implement predicative adjectives. The auto-
       I eat bad food
       
       Kan  muan.
-      food bad
+      food be.bad
       The food is bad.
 
    Predicative adjectives mostly act like intransitive verbs and appear in
@@ -168,8 +169,8 @@ For this lab, we did not fully implement predicative adjectives. The auto-
 ===============================================================================
 3 Prepositional predicates
 3.1 How they work in Titan
-   Titan has only one adposition, the preposition 'e' which is glossed variably
-      as of, in, on, etc:
+   The most common adposition in Titan by far is the preposition 'e' which is
+      glossed variably as of, in, on, etc:
 
       nat   e  wei  poen
       child in that not
@@ -179,7 +180,7 @@ For this lab, we did not fully implement predicative adjectives. The auto-
       dog   in osprey
       The dog is in the osprey.
    
-   Agreement clitics do not appear with prepositional predicates:
+   Agreement clitics do not appear in the corpus with prepositional predicates:
       *Manuai i   e    muiny.
       osprey  3sg prep dog
       The osprey is a dog
@@ -196,12 +197,11 @@ For this lab, we did not fully implement predicative adjectives. The auto-
       e muiny manuai
       prep dog osprey.
       Regarding the dog, it is an osprey.
-   Current all parses of this sentence mean "On the dog, something is being an
+   Current all three parses of this sentence mean "On the dog, something is being an
       osprey".
 
 3.2 How we implemented them
-   Initially, Titan had no prepositions. We added
-      one preposition:
+   Initially, Titan had no prepositions. We added one preposition:
 
    e := normadp1-norm-adposition-lex &
      [ STEM < "e" >,
@@ -218,34 +218,34 @@ For this lab, we did not fully implement predicative adjectives. The auto-
       rule to select for a subject and ID its INDEX with the INDEX of the
       adoposition's ARG1. Here is the final tdl for norm-adposition-lex:
 
-norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
-  [ ARG-ST < #comp >,
-    SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
-                          [ ARG1 #arg1,
-   		    ARG2 #arg2 ],
-             L-QUE #lque,
-             LOCAL [ CONT [ HOOK [ XARG #arg1 ] ],
-                     CAT [ WH.BOOL -,
-                           VAL [ SPR < >,
-                                 SPEC < >,
-                                 SUBJ < [ LOCAL [ CAT cat-sat &
-                                  	  	    	    [ VAL [ SPR < >,
-                                    		    COMPS < > ],
-                             			     HEAD noun ],
-   				          CONT.HOOK.INDEX #arg1 ] ] >,
-                                 COMPS < #comp &
-                                         [ L-QUE #lque,
-   				   OPT -,
-                                           LOCAL [ CAT [ HEAD noun,
-                                                         VAL.SPR < > ],
-                                                   CONT.HOOK.INDEX #arg2 ] ] > ],
-                           HEAD adp &
-                                [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
-                                                      WH.BOOL -,
-                                                      HEAD.AUX - ] ] > ] ] ] ] ].
-
-normadp1-norm-adposition-lex := norm-adposition-lex &
-  [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
+   norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
+     [ ARG-ST < #comp >,
+       SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
+                             [ ARG1 #arg1,
+         	    ARG2 #arg2 ],
+                L-QUE #lque,
+                LOCAL [ CONT [ HOOK [ XARG #arg1 ] ],
+                        CAT [ WH.BOOL -,
+                              VAL [ SPR < >,
+                                    SPEC < >,
+                                    SUBJ < [ LOCAL [ CAT cat-sat &
+                                          	    	    [ VAL [ SPR < >,
+                                          	    COMPS < > ],
+                                   		     HEAD noun ],
+         			          CONT.HOOK.INDEX #arg1 ] ] >,
+                                    COMPS < #comp &
+                                            [ L-QUE #lque,
+         			   OPT -,
+                                              LOCAL [ CAT [ HEAD noun,
+                                                            VAL.SPR < > ],
+                                                      CONT.HOOK.INDEX #arg2 ] ] > ],
+                              HEAD adp &
+                                   [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
+                                                         WH.BOOL -,
+                                                         HEAD.AUX - ] ] > ] ] ] ] ].
+   
+   normadp1-norm-adposition-lex := norm-adposition-lex &
+     [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
 
    We also changed roots.tdl to have HEAD +vp instead of just HEAD verb.
       
@@ -270,28 +270,57 @@ normadp1-norm-adposition-lex := norm-adposition-lex &
 
 ===============================================================================
 4 Non-verbal predicate testing
-4.1 Parsing non-verbal predicates
-
-4.2 Machine translation testing
+4.1 Machine translation testing
    Here are the translations for lines 15-17:
    
    Cong   i        ani muiny.
    hunger 3sg.real eat dog
    Hunger eats the dogs. (The dogs are hungry.)
    
-   Manuai e    poany.
-   osprey prep earth
-   The osprey is on the earth (The cat is in the park.)
+   Manuai e    lono.
+   osprey prep forest
+   The osprey is in the forest (The cat is in the park.)
    
    Muiny ala manuai.
    dog   3pl.real osprey
    The dogs are the osprey. (The dogs are the cats.)
-   
-4.3 Non-verbal predicates in wh questions
 
-We got wh-questions to work, and we also got them to work as nominal predicates.
-To do this, we maded it so that no quantifiers were being added in the np-pred
-rule. 
+   When translating "manuai e lono", three pareses were found and 47
+      translations generated. Here are the three pares:
+
+      E lono manuai
+      Manuai e lono
+      E lono manuai
+
+   Here is an example of one of the 47 translations:
+      Aru e lono manuai
+      1dl prop forest cat.
+      We are the cat in the forest
+
+   We currently are not sure why pronouns like 1dl are showing up as
+      translations for a sentence that has no 1dl prononus.
+  
+4.2 Non-verbal predicates in wh questions
+   Initially wh-questions were not working at all. We got them to work by
+      answering the appropriate questions on the cusomization site. To get
+      wh-questions working as nominal predicates, we made it so that no
+      quantifiers were being added in the np-pred rule. Here is the final tdl:
+    
+   wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
+     [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                              VAL [ SPR < >,
+                                    SUBJ < >,
+                                    COMPS < >,
+                                    SPEC < > ] ],
+                        CONT [ RELS.LIST < [ LBL #larg,
+                                             ARG0 #arg0 & ref-ind ],
+                                           quant-relation &
+                                           [ PRED "which_q_rel",
+                                             ARG0 #arg0,
+                                             RSTR #harg ] >,
+                               HCONS.LIST < [ HARG #harg,
+                                              LARG #larg ] > ] ],
+                NON-LOCAL.QUE.LIST < #arg0 > ] ].
 ===============================================================================
 5. Small miscellaneous changes
 
@@ -356,27 +385,27 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
       
       The most ambiguous items had 4 parses:
 
-      	  *Manuai i   e    muiny
-	  osprey 3sg prep dog
-	  "The eagle is on the dog."
+           *Manuai i   e    muiny
+     osprey 3sg prep dog
+     "The eagle is on the dog."
 
-	  In all four of these parses, "i" is being picked up
-	  as a noun. Then the np-predicate rule and the PPs are
-	  combining in various ways. We think it's possible that
-	  some of these analyses are correct, but the example
-	  was intended as a negative case.
+  In all four of these parses, "i" is being picked up
+     as a noun. Then the np-predicate rule and the PPs are
+     combining in various ways. We think it's possible that
+     some of these analyses are correct, but the example
+     was intended as a negative case.
 
-	  The first tree, for example, has an NP being built out of
-	  an NP and a PP via the SUBJ-HEAD rule. Then the head PP
-	  modifies "manuai" to produce an N by the HEAD-ADJ rule.
-	  We think this might be bogus, since it seems to have the
-	  meaning "something is being an eagle modified(?) by he(?)
-	  is on the dog."
+  The first tree, for example, has an NP being built out of
+     an NP and a PP via the SUBJ-HEAD rule. Then the head PP
+     modifies "manuai" to produce an N by the HEAD-ADJ rule.
+     We think this might be bogus, since it seems to have the
+     meaning "something is being an eagle modified(?) by he(?)
+     is on the dog."
 
-	  We're not sure how to block parses like
-	  these, since they would seem to be also licensing our
-	  earlier parse for "manuai e muiny" where "manuai" was an S.
-	  (from the end of section 3 of this writeup).
+  We're not sure how to block parses like
+     these, since they would seem to be also licensing our
+     earlier parse for "manuai e muiny" where "manuai" was an S.
+     (from the end of section 3 of this writeup).
 
 6.2 Test corpus
    6.2.1 Initial grammar (copied from lab 6 final)
@@ -397,19 +426,19 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
       
       The most ambiguous item had 9 parses:
 
-      	  ala nyak  e  kor  e    ala cinal
-	  3pl climb to home poss 3pl devil
-	  They climbed into the devils lair.
-	 
-      This IGT came from the corpus. We haven't handled "e" as a possessive
+     ala nyak  e  kor  e    ala cinal
+     3pl climb to home poss 3pl devil
+     They climbed into the devils lair.
+    
+   This IGT came from the corpus. We haven't handled "e" as a possessive
       strategy yet. Regarding its ambiguity, we note that "ala" is parsed
       as a verb in two trees. The rest of the ambiguity seems to be coming
       from the many alternate constructions for VPs and the PPs.
 
-      We note that even simple sentences using "e" as an
+   We note that even simple sentences using "e" as an
       adposition have 3 trees ("muiny e manuai"), due to ambiguity between
       having PP as the root node and the two parses where the np-predicate
       rule is firing.
 
-      One nice thing is that we seem to be parsing longer sentences now
+   One nice thing is that we seem to be parsing longer sentences now
       that we've added "e" as an adposition.

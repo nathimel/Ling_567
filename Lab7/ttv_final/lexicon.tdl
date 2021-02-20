@@ -1697,6 +1697,10 @@ keis := noun92-noun-lex &
   [ STEM < "keis" >,
     SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
+cong := noun1-noun-lex &
+  [ STEM < "cong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
+
 ;;; Adpositions
 
 e := normadp1-norm-adposition-lex &

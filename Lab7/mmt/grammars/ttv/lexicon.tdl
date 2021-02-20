@@ -1639,31 +1639,31 @@ sau_2 := noun38-noun-lex &
 
 ala_1 := noun39-noun-lex &
   [ STEM < "ala" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 awa_1 := noun40-noun-lex &
   [ STEM < "awa" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 i_1 := noun48-noun-lex &
   [ STEM < "i" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 oi := noun62-noun-lex &
   [ STEM < "oi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 yo_1 := noun82-noun-lex &
   [ STEM < "yo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 yota_1 := noun83-noun-lex &
   [ STEM < "yota" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 ta_1 := noun83-noun-lex &
   [ STEM < "ta" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
 
 ca_2 := noun87-noun-lex &
   [ STEM < "ca" >,
@@ -1697,11 +1697,15 @@ keis := noun92-noun-lex &
   [ STEM < "keis" >,
     SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
-;;; Adjectives
+cong := noun1-noun-lex &
+  [ STEM < "cong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
+
+;;; Adpositions
 
 e := normadp1-norm-adposition-lex &
   [ STEM < "e" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_e_p_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_loc_p_rel" ].
 
 ;;; Verbs
 
@@ -1880,10 +1884,6 @@ demayani_7E := verb1-verb-lex &
 diayou_7E := verb1-verb-lex &
   [ STEM < "diayou~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_be_pregnant_v_rel" ].
-
-dili_7E := verb1-verb-lex &
-  [ STEM < "dili~" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
 
 dul_7E := verb1-verb-lex &
   [ STEM < "dul~" >,
@@ -3356,6 +3356,10 @@ matir := verb3-verb-lex &
 ko_1 := verb3-verb-lex &
   [ STEM < "ko" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fall_v_rel" ].
+
+dili := verb3-verb-lex &
+  [ STEM < "dili" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
 
 va := verb4-verb-lex &
   [ STEM < "va" >,
