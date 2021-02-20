@@ -1,0 +1,26 @@
+Dogs sleep - Muiny ala matir.
+Dogs chase cars - Muiny ala voliliti dilen.
+I chase you - Yo u voliliti oi.
+Dogs eat - Muiny ala ani.
+The dogs dont chase cars - Muiny ala ne voliliti dilen. 
+I think that you know that dogs chase cars - SKIPPED; missing 'think' and 'know'
+I ask whether you know that dogs chase cars - SKIPPED; impossible
+Cats and dogs chase cars - Manuai pe muiny ala voliliti dilen.
+Dogs chase cars and cats chase dogs - Muiny ala voliliti dilen, manuai ala voliliti muiny.
+Cats chase dogs and sleep - Manuai ala volilit muiny pe ala matir.
+Do cats chase dogs - SKIPPED; no yes/no questions
+Hungry dogs eat - SKIPPED; no adjectives
+Dogs in the park eat - SKIPPED; no prepositions
+Dogs eat in the park - SKIPEED; no prepositions
+The dogs are hungry - Cong i ani muiny.
+The dogs are in the park - Manuai e lono.
+The dogs are the cats - Muiny ala manuai. 
+The dog s car sleeps - Dilen e muiny i matir.
+My dogs sleep - muiny Eyo i matir.
+Who sleeps - Se i matir.
+What do the dogs chase - Muiny ala voliliti ca.
+What do you think the dogs chase - Oi a <think> muiny ala voliliti ca.
+Who asked what the dogs chase - Se <ask> <vocative> muiny ala voliliti ca.; SKIPPED; impossible: missing vocative and think
+I asked what the dogs chased - Yo u <ask> <vocative> muiny ala voliliti ca.; SKIPPED; impossible
+The dog sleeps because the cat sleeps - Muiny i matir alan manuai i matir.
+The dog sleeps after the cat sleeps - ? SKIPPED; missing after

@@ -1,0 +1,73 @@
+Lab 8
+by Nathaniel Imel and David Krug
+
+There should be four tsdb profiles in tsdb/home:
+   lab_8_initial_corpus - Test corpus with initial grammar
+   lab_8_initial_ts     - Testssuite with initial grammar
+   lab_8_final_corpus   - Test corpus with final grammar
+   lab_8_final_ts       - Testsuite with final grammar
+
+Table of contents:
+   1
+   ...
+   X Grammar comparision
+      Testsuite
+         Initial grammar
+         Final grammar
+      Test corpus
+         Initial grammar
+         Final grammar
+
+===============================================================================
+...
+===============================================================================
+N Grammar comparision
+N.1 Testsuite
+   N.1.1 Initial grammar
+      XX/XXX positive items parsed (X% coverage)
+      X/XX negative items parsed (X% overgeneration)
+      
+      On average:
+         positive items that parsed had X parses.
+         negative itmes that parsed had X parses
+      
+	{IGT}
+
+      <explanation of ambiguity>
+
+   N.1.2 Final grammar
+      XX/XXX positive items parsed (X% coverage)
+      X/XX negative items parsed (X% overgeneration)
+      
+      On average:
+         Positive items that parsed had X parses.
+         Negative items that parsed had X parses.
+      
+      The most ambiguous items had X parses:
+
+      	 {IGT}
+
+      <explanation of ambiguity>
+
+N.2 Test corpus
+   N.2.1 Initial grammar (copied from lab N final)
+      XX/XXX items parsed (X% coverage)
+      
+      On average, parsed items had X prases
+      
+      The most ambiguous item had X parses:
+
+      	  {IGT}
+
+      <explanation of ambiguity>
+
+   N.2.2 Final grammar
+      XX/XXX items parsed (X% coverage)
+      
+      On average, parsed items had X parses.
+      
+      The most ambiguous item had X parses:
+
+      	  {IGT}
+
+      <explanation of ambiguity>

@@ -1,0 +1,185 @@
+1@author@@@1@agr@Oi a kip.@@@@1@3@2sg 2sg.real lie'You are lying.'@dn@january 15, 2021
+2@author@@@1@agr@Oi u kip.@@@@0@3@2sg 1sg.real lie'You am lying.'@dn@january 15, 2021
+3@author@@@1@agr@Oi i kip.@@@@0@3@2sg 3sg.real lie'You is lying.'@dn@january 15, 2021
+4@author@@@1@agr@Oi yoru kip.@@@@0@3@2sg 1dl.incl.real lie'You are lying.'@dn@january 15, 2021
+5@author@@@1@agr@Oi taru kip.@@@@0@3@2sg 1dl.excl.real lie'You are lying.'@dn@january 15, 2021
+6@author@@@1@agr@Oi woru kip.@@@@0@3@2sg 2dl.real lie'You are lying.'@dn@january 15, 2021
+7@author@@@1@agr@Oi aru kip.@@@@0@3@2sg 3dl.real lie'You are lying.'@dn@january 15, 2021
+8@author@@@1@agr@Oi yoito kip.@@@@0@3@2sg 1pc.incl.real lie'You are lying.'@dn@january 15, 2021
+9@author@@@1@agr@Oi yoto kip.@@@@0@3@2sg 1pc.excl.real lie'You are lying.'@dn@january 15, 2021
+10@author@@@1@agr@Oi to kip.@@@@0@3@2sg 1pc.excl.real lie'You are lying.'@dn@january 15, 2021
+11@author@@@1@agr@Oi woto kip.@@@@0@3@2sg 2pc.real lie'You are lying.'@dn@january 15, 2021
+12@author@@@1@agr@Oi ato kip.@@@@0@3@2sg 3pc.real lie'You are lying.'@dn@january 15, 2021
+13@author@@@1@agr@Oi yoya kip.@@@@0@3@2sg 1pl.incl.real lie'You are lying.'@dn@january 15, 2021
+14@author@@@1@agr@Oi yota kip.@@@@0@3@2sg 1pl.excl.real lie'You are lying.'@dn@january 15, 2021
+15@author@@@1@agr@Oi ta kip.@@@@0@3@2sg 1pl.excl.real lie'You are lying.'@dn@january 15, 2021
+16@author@@@1@agr@Oi awa kip.@@@@0@3@2sg 2pl.excl.real lie'You are lying.'@dn@january 15, 2021
+17@author@@@1@agr@Oi ala kip.@@@@0@3@2sg 3pl.excl.real lie'You are lying.'@dn@january 15, 2021
+18@author@@@1@agr@Yo a kip.@@@@0@3@1sg 2sg.real lie'I are lying.'@dn@january 15, 2021
+19@author@@@1@agr@Yo u kip.@@@@1@3@1sg 1sg.real lie'I am lying.'@dn@january 15, 2021
+20@author@@@1@agr@Yo i kip.@@@@1@3@1sg 3sg.real lie'I is lying.'@dn@january 15, 2021
+21@author@@@1@agr@Yo yoru kip.@@@@0@3@1sg 1dl.incl.real lie'I am lying.'@dn@january 15, 2021
+22@author@@@1@agr@Yo taru kip.@@@@0@3@1sg 1dl.excl.real lie'I are lying.'@dn@january 15, 2021
+23@author@@@1@agr@Yo woru kip.@@@@0@3@1sg 2dl.real lie'I are lying.'@dn@january 15, 2021
+24@author@@@1@agr@Yo aru kip.@@@@0@3@1sg 3dl.real lie'I are lying.'@dn@january 15, 2021
+25@author@@@1@agr@Yo yoito kip.@@@@0@3@1sg 1pc.incl.real lie'I are lying.'@dn@january 15, 2021
+26@author@@@1@agr@Yo yoto kip.@@@@0@3@1sg 1pc.excl.real lie'I are lying.'@dn@january 15, 2021
+27@author@@@1@agr@Yo to kip.@@@@0@3@1sg 1pc.excl.real lie'I are lying.'@dn@january 15, 2021
+28@author@@@1@agr@Yo woto kip.@@@@0@3@1sg 2pc.real lie'1 are lying.'@dn@january 15, 2021
+29@author@@@1@agr@Yo ato kip.@@@@0@3@1sg 3pc.real lie'I are lying.'@dn@january 15, 2021
+30@author@@@1@agr@Yo yoya kip.@@@@0@3@1sg 1pl.incl.real lie'I are lying.'@dn@january 15, 2021
+31@author@@@1@agr@Yo yota kip.@@@@0@3@1sg 1pl.excl.real lie'I are lying.'@dn@january 15, 2021
+32@author@@@1@agr@Yo ta kip.@@@@0@3@1sg 1pl.excl.real lie'I are lying.'@dn@january 15, 2021
+33@author@@@1@agr@Yo awa kip.@@@@0@3@1sg 2pl.real lie'I are lying.'@dn@january 15, 2021
+34@author@@@1@agr@Yo ala kip.@@@@0@3@1sg 3pl.real lie'I are lying.'@dn@january 15, 2021
+35@author@@@1@agr@Manuai i kip.@@@@1@3@eagle 3sg.real lie'Eagle is lying.'@dn@january 15, 2021
+36@author@@@1@agr@Manuai aru kip.@@@@1@3@eagle 3dl.real lie'Two eagles are lying.'@dn@january 15, 2021
+37@author@@@1@agr@Manuai ato kip.@@@@1@3@eagle 3pc.real lie'Some eagles are lying.'@dn@january 15, 2021
+38@author@@@1@agr@Manuai ala kip.@@@@1@3@eagle 3pl.real lie'Eagles are lying.'@dn@january 15, 2021
+39@author@@@1@agr@Yoru kip.@@@@1@2@1dl.incl  lie'We are lying.'@dn@january 15, 2021
+40@author@@@1@agr@Taru kip.@@@@1@2@2dl lie'We two are lying.'@dn@january 15, 2021
+41@author@@@1@agr@Woru kip.@@@@1@2@2dl lie'You two are lying.'@dn@january 15, 2021
+42@author@@@1@agr@Waru kip.@@@@1@2@2dl lie'You two are lying.'@dn@january 15, 2021
+43@author@@@1@agr@Aru kip.@@@@1@2@3dl lie'Those two are lying.'@dn@january 15, 2021
+44@author@@@1@agr@Yoito kip.@@@@1@2@1pc.incl lie'We are lying.'@dn@january 15, 2021
+45@author@@@1@agr@Yoto kip.@@@@1@2@1pc.excl lie'We are lying.'@dn@january 15, 2021
+46@author@@@1@agr@To kip.@@@@1@2@1pc.excl lie'We are lying.'@dn@january 15, 2021
+47@author@@@1@agr@Woto kip.@@@@1@2@2pcl lie'You are lying.'@dn@january 15, 2021
+48@author@@@1@agr@Ato kip.@@@@1@2@3pc lie'They are lying.'@dn@january 15, 2021
+49@author@@@1@agr@Yoya kip.@@@@1@2@1pl.incl lie'We all are lying.'@dn@january 15, 2021
+50@author@@@1@agr@Yota kip.@@@@1@2@1pl.excl lie'We all are lying.'@dn@january 15, 2021
+51@author@@@1@agr@Ta kip.@@@@1@2@1pl.excl lie'We all are lying.'@dn@january 15, 2021
+52@author@@@1@agr@Awa kip.@@@@1@2@2pl lie'You all are lying.'@dn@january 15, 2021
+53@author@@@1@agr@Ala kip.@@@@1@2@3pl lie'They all are lying.'@dn@january 15, 2021
+54@author@@@1@agr@Oi kip a.@@@@0@3@2sg lie 2sg.real'You lying are.'@dn@january 15, 2021
+55@author@@@1@tense@Yo ku kip@@@@1@3@1sg 1sg.irr lie'I will lie.'@dn@january 15, 2021
+56@author@@@1@tense@Oi ko kip@@@@1@3@2sg 2sg.irr lie'You will lie.'@dn@january 15, 2021
+57@author@@@1@tense@Manuai ki kip.@@@@1@3@Eagle 3sg.irr lie'Eagle will lie.'@dn@january 15, 2021
+58@author@@@1@tense@Taru ka kip.@@@@1@3@1dl.incl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+59@author@@@1@tense@Yoru ka kip@@@@1@3@1dl.excl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+60@author@@@1@tense@Yoto ka kip@@@@1@3@1pc.incl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+61@author@@@1@tense@Yoito ka kip@@@@1@3@1pc.excl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+62@author@@@1@tense@Yota ka kip@@@@1@3@1pl.incl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+63@author@@@1@tense@Yoya ka kip@@@@1@3@1pl.excl n.sg.irr lie'We will lie.'@dn@january 15, 2021
+64@author@@@1@tense@Waru ka kip@@@@1@3@2dl n.sg.irr lie'You two will lie.'@dn@january 15, 2021
+65@author@@@1@tense@Woto ka kip@@@@1@3@2pc n.sg.irr lie'You will lie.'@dn@january 15, 2021
+66@author@@@1@tense@Awa ka kip@@@@1@3@2pl n.sg.irr lie'You will lie.'@dn@january 15, 2021
+67@author@@@1@tense@Aru ka kip@@@@1@3@3dl n.sg.irr lie'They both will die.'@dn@january 15, 2021
+68@author@@@1@tense@Ato ka kip@@@@1@3@3pc n.sg.irr lie'They will die.'@dn@january 15, 2021
+69@author@@@1@tense@Ala ka kip@@@@1@3@3pl n.sg.irr lie'They all will lie.'@dn@january 15, 2021
+70@author@@@1@tense@Yo ka kip@@@@0@3@1sg n.sg.irr lie'I will lie.'@dn@january 15, 2021
+71@author@@@1@tense@Oi ka kip@@@@0@3@1sg.excl n.sg.irr lie'I will lie.'@dn@january 15, 2021
+72@author@@@1@tense@i ka kip@@@@0@3@3sg n.sg.irr lie'She will lie.'@dn@january 15, 2021
+73@author@@@1@tense@Taru ku kip.@@@@0@3@1dl.incl 1sg.irr lie'We will lie.'@dn@january 15, 2021
+74@author@@@1@tense@i ku kip@@@@0@3@3sg 1sg.irr lie'She will lie.'@dn@january 15, 2021
+75@author@@@1@tense@i ko kip@@@@0@3@3sg 1sg.irr lie'She will lie.'@dn@january 15, 2021
+76@author@@@1@tense@ala ki kip@@@@0@3@3pl 3sg.irr lie'They will lie.'@dn@january 15, 2021
+77@author@@@1@tense@Yoru ki kip@@@@0@3@1dl.excl 3sg.irr lie'We will lie.'@dn@january 15, 2021
+78@author@@@1@tense@yo ki kip@@@@0@3@1sg 3sg.irr lie'I will lie.'@dn@january 15, 2021
+79@author@@@1@crd@Yo o kip pe oi a kip.@@@@1@7@1sg 1sg.real lie and 2sg 2sg.nirr lie.'I lie and you lie.'@dn@january 15, 2021
+80@author@@@1@crd@Yo o kip ne oi a kip.@@@@1@7@1sg 1sg.real lie or 2sg 2sg.nirr lie.'I lie or you lie.'@dn@january 15, 2021
+81@author@@@1@crd@Yo pe oi yoru kip.@@@@1@5@1sg and 2sg 1dl.incl lie.'I and you lie.'@dn@january 15, 2021
+82@author@@@1@crd@Yo ne oi yoru kip.@@@@1@5@1sg or 2sg 1dl.incl lie.'I or you lie.'@dn@january 15, 2021
+83@author@@@1@crd@Yo pe oi a kip.@@@@0@5@1sg CONJ 2sg 2sg lie.'I and you lie.'@dn@january 15, 2021
+84@author@@@1@crd@Yo pe oi i kip.@@@@0@5@1sg CONJ 3sg 2sg lie.'I and you lie.'@dn@january 15, 2021
+85@author@@@1@crd@Yo pe oi taru kip.@@@@0@5@1sg CONJ 2dl.excl 2sg lie.'I and you lie.'@dn@january 15, 2021
+86@author@@@1@det@Ita manuai kip.@@@@1@3@this eagle lieThis eagle lies.@dn@january 15, 2021
+87@author@@@1@det@Itan manuai kip.@@@@1@3@this.emph eagle lieThis eagle lies.@dn@january 15, 2021
+88@author@@@1@det@Ito manuai kip.@@@@1@3@that eagle lieThat eagle lies.@dn@january 15, 2021
+89@author@@@1@det@Latu manuai kip.@@@@1@3@that eagle lieThat eagle lies.@dn@january 15, 2021
+90@author@@@1@det@Tita kip.@@@@1@2@this lieThis lies.@dn@january 15, 2021
+91@author@@@1@det@Titan kip.@@@@1@2@this.emph lieThis lies.@dn@january 15, 2021
+92@author@@@1@det@Tito kip.@@@@1@2@that lie.That lies.@dn@january 15, 2021
+93@author@@@1@det@Ilatu kip.@@@@1@2@that lie.That lies.@dn@january 15, 2021
+94@author@@@1@det@Tita manuai kip.@@@@0@3@this eagle lieThis eagle lies.@dn@january 15, 2021
+95@author@@@1@det@Titan manuai kip.@@@@0@3@this.emph eagle lieThis eagle lies.@dn@january 15, 2021
+96@author@@@1@det@Tito manuai kip.@@@@0@3@that eagle lie.That eagle lies.@dn@january 15, 2021
+97@author@@@1@det@Ilatu manuai kip.@@@@0@3@that eagle lie.That eagle lies.@dn@january 15, 2021
+98@author@@@1@possession@yaye-yo i ani lei@@@@1@4@mother-1sg 3sg eat ginger-bulb'My mother ate a ginger bulb'@dn@january 15, 2021
+99@author@@@1@possession@yaye-oi i ani lei@@@@1@4@mother-2sg 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+100@author@@@1@possession@yaye-yotaru i ani lei@@@@1@4@mother-1dl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+101@author@@@1@possession@yaye-yoru i ani lei@@@@1@4@mother-1dl.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+102@author@@@1@possession@yaye-waru i ani lei@@@@1@4@mother-2dl 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+103@author@@@1@possession@yaye-aru i ani lei@@@@1@4@mother-3dl 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+104@author@@@1@possession@yaye-yoito i ani lei@@@@1@4@mother-1pc.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+105@author@@@1@possession@yaye-wato i ani lei@@@@1@4@mother-2pc 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+106@author@@@1@possession@yaye-ato i ani lei@@@@1@4@mother-3pc 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+107@author@@@1@possession@yaye-yota i ani lei@@@@1@4@mother-1pl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb'@dn@january 15, 2021
+108@author@@@1@possession@yaye-awa i ani lei@@@@1@4@mother-2pl 3sg eat ginger-bulb'Your mother ate a ginger bulb'@dn@january 15, 2021
+109@corpus@@@1@possession@yaye-ala i ani lei@@@@1@4@mother-3pl 3sg eat ginger-bulb'Their mother ate a ginger bulb'@dn@january 15, 2021
+110@author@@@1@possession@Manuai i kip-ala@@@@0@3@Eagle 3sg lie-3pl'Eagle lies-their'@dn@january 15, 2021
+111@author@@@1@possession@kip-ala i kip@@@@0@3@lies-3pl 3sg lie'Lies-their lie'@dn@january 15, 2021
+112@author@@@1@possession@yaye-ala-ala i ani lei@@@@0@4@mother-3pl-3pl 3sg eat ginger-bulb'Their mother ate a ginger bulb.'@dn@january 15, 2021
+113@author@@@1@possession@yaye-yo-yotaru i ani lei@@@@0@4@mother-1sg.excl.-1dl.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+114@author@@@1@possession@ala-yaye i ani lei@@@@0@4@3pl-mother 3sg eat ginger-bulb'Their mother ate a ginger bulb.'@dn@january 15, 2021
+115@autho@@@1@possession@oi-yaye i ani lei@@@@0@4@2sg-mother 3sg eat ginger-bulb'Your mother ate a ginger bulb.'@dn@january 15, 2021
+116@author@@@1@possession@yaye-i i ani lei@@@@0@4@mother-3sg 3sg eat ginger-bulb'Its mother ate a ginger bulb.'@dn@january 15, 2021
+117@author@@@1@possession@yaye-yoto i ani lei@@@@0@4@mother-1pc.incl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+118@author@@@1@possession@yaye-yoya i ani lei@@@@0@4@mother-1pl.excl 3sg eat ginger-bulb'Our mother ate a ginger bulb.'@dn@january 15, 2021
+119@author@@@1@wh@Oi a ani ca@@@@1@4@2sg 2sg eat what'What are you eating?'@dn@january 15, 2021
+120@author@@@1@wh@Ca oi a ani@@@@0@4@what 2sg 2sg eat'What are you eating?@dn@january 15, 2021
+121@author@@@1@wh@oi se@@@@1@2@2sg who'Who are you?'@dn@january 15, 2021
+122@author@@@1@wh@Se i nyamiri oi@@@@1@4@who 3sg love 2sg'Who loves you?'@dn@january 15, 2021
+123@author@@@1@wh@Oi pin ite@@@@1@3@2sg woman where'You're a woman from where?'@dn@january 15, 2021
+124@author@@@1@wh@ite oi pin@@@@0@3@where 2sg woman'You're a woman from where?'@dn@january 15, 2021
+125@author@@@1@wh@Oi pin tite@@@@1@3@2sg woman where'You're a woman from where?'@dn@january 15, 2021
+126@author@@@1@wh@Tite oi pin@@@@0@3@where 2sg woman'You're a woman from where?'@dn@january 15, 2021
+127@author@@@1@wh@Manuai rehe@@@@1@2@eagle where'Where is the eagle?'@dn@january 15, 2021
+128@author@@@1@wh@Manuai i la rehe@@@@1@4@eagle 3sg go where'Where did the eagle go?'@dn@january 15, 2021
+129@author@@@1@wh@rehe manuai i la@@@@0@4@where eagle 3sg go'Where did the eagle go?'@dn@january 15, 2021
+130@author@@@1@wh@Oi etepe@@@@1@2@2sg how.is.it'How are you?'@dn@january 15, 2021
+131@author@@@1@wh@etepe oi@@@@0@2@how.is.it 2sg'How are you?'@dn@january 15, 2021
+132@author@@@1@wh@ato la wee@@@@1@3@3pc be where'Where are they?'@dn@january 15, 2021
+133@author@@@1@wh@wee ato la@@@@0@3@where 3pc be'Where are they?'@dn@january 15, 2021
+134@author@@@1@wh@oi ani yo akeis@@@@1@4@2sg eat 1sg when'When do you eat me?'@dn@january 15, 2021
+135@author@@@1@wh@akeis oi ani yo@@@@1@4@when 2sg eat 1sg'When do you eat me?'@dn@january 15, 2021
+136@author@@@1@cl-mod@Yo ulumui das alan, das i camar@@@@1@7@1sg drink sea because sea 3sg dry.up'Because I drank the sea, the sea water has dried up.'@dn@january 15, 2021
+137@author@@@1@cl-mod@Oi ko kip alan yo ku kip@@@@1@7@2sg 2sg.irr lie if 1sg 1sg.fut lie'If you will lie, I will lie.'@dn@january 15, 2021
+138@author@@@1@cl-mod@alan oi ko kip yo ku kip@@@@0@7@if 2sg 2sg.irr lie 1sg 1sg.fut lie'If you will lie, I will lie.'@dn@january 15, 2021
+139@author@@@1@cl-mod@oi ko kip yo ku kip alan@@@@0@7@2sg 2sg.irr lie 1sg 1sg.fut lie if'You will lie if I will lie.'@dn@january 15, 2021
+140@corpus@@@1@emb-d,nominalpredicates@ato va yoito pein@@@@1@4@3pc say 1pc.excl woman-pandanus'They said, 'we're pandanus-women.''@dn@january 15, 2021
+141@author@@@1@emb-d@Manuai i va ko kip@@@@1@5@Eagle 3sg say imp lie'Eagle said, "Lie!"'@dn@january 15, 2021
+142@author@@@1@emb-d@Manuai i va  yo  ku      mat@@@@1@6@Eagle  say 1sg 1sg.irr die'Eagle said, "I will die."@dn@january 15, 2021
+143@corpus@@@1@emb-d@i va ki puti yo@@@@1@5@3sg want 3sg.irr marry 1sg'He wants to marry me'@dn@january 15, 2021
+144@author@@@1@emb-d@ato va@@@@0@2@3pc say'They said.'@dn@january 15, 2021
+145@author@@@1@emb-d@ato va yoito@@@@0@3@3pc said 1pc.excl'They said, 'we.''@dn@january 15, 2021
+146@author@@@1@emb-d@ato va pein@@@@0@3@3pc say woman-pandanus'They said, 'pandanus-women.''@dn@january 15, 2021
+147@author@@@1@emb-d@Yo u pa ku kip.@@@@1@5@1sg 1sg.real want 1.sg.irr lieI want to lie.@dn@january 15, 2021
+148@author@@@1@emb-d@Yo pa ku kip.@@@@1@4@1sg want 1.sg.irr lieI want to lie.@dn@january 15, 2021
+149@author@@@1@emb-d@Oi a poa ko kip.@@@@1@5@2sg 2sg.real want 2sg.irr lieYou want to lie.@dn@january 15, 2021
+150@author@@@1@emb-d@Oi a poa ku kip.@@@@1@5@2sg 2sg.real want 1sg.irr lieYou want me to lie.@dn@january 15, 2021
+151@author@@@1@emb-d@Oi poa ku kip.@@@@1@4@2sg want 1sg.irr lieYou want me to lie.@dn@january 15, 2021
+152@author@@@1@emb-d@Yo u poa ku kip.@@@@0@5@1sg 1sg.real want 1sg.irr lieI want to lie.@dn@january 15, 2021
+153@author@@@1@emb-d@Yo poa ku kip.@@@@0@4@1sg want 1sg.irr lieI want to lie.@dn@january 15, 2021
+154@author@@@1@emb-d@Oi a pa ku kip.@@@@0@5@2sg 2sg.real want 1sg.irr lieYou want to lie.@dn@january 15, 2021
+155@author@@@1@emb-d@Oi pa ku kip.@@@@0@4@2sg want 1sg.irr lieYou want to lie.@dn@january 15, 2021
+156@author@@@1@itv@Muiny ala matir.@@@@1@3@dog 3pl.real sleepThe dogs sleep.@dn@january 15, 2021
+157@author@@@1@tv@Muiny ala voliliti dilen.@@@@1@4@dog 3pl.real follow canoeThe dogs follow the canoes.@dn@january 15, 2021
+158@author@@@1@tv@Yo u voliliti oi.@@@@1@4@1sg 1sg.real follow 2sg.I follow you.@dn@january 15, 2021
+159@author@@@1@possession@Manuai-m i kip@@@@1@3@eagle-2sg 3sg.real lieYour eagle lies@dn@january 15, 2021
+160@author@@@1@possession@Manuai i kip-m@@@@0@3@eagle 3sg.real lie-2sgYour eagle lies@dn@january 15, 2021
+161@author@@@1@possession@Manuai-m-m i kip@@@@0@3@eagle-2sg-2sg 3sg.real lieYour eagle lies@dn@january 15, 2021
+162@author@@@1@possession@Manuai-n i kip@@@@1@3@eagle-3sg 3sg.real lieHis eagle lies@dn@january 15, 2021
+163@author@@@1@possession@Manuai i kip-n@@@@0@3@eagle 3sg.real lie-3sgHis eagle lies@dn@january 15, 2021
+164@author@@@1@possession@Manuai-n-n i kip@@@@0@3@eagle-3sg-3sg 3sg.real lieHis eagle lies@dn@january 15, 2021
+165@author@@@1@possession@Yo-n i kip@@@@0@3@1sg-3sg 3sg.real lie? lies@dn@january 15, 2021
+166@author@@@1@nominal-predicates@Manuai cinal.@@@@1@2@osprey devilThe osprey is a devil.@dn@january 15, 2021
+167@author@@@1@nominal-predicates@Oi cinal@@@@1@2@2sg devilYou are a devil.@dn@january 15, 2021
+168@author@@@1@nominal-predicates@Cinal oi.@@@@1@2@devil 2sgThe devil is you.@dn@january 15, 2021
+169@author@@@1@nominal-predicates@Yo oi.@@@@1@2@1sg 2sgI am you.@dn@january 15, 2021
+170@author@@@1@nominal-predicates@Manuai a cinal.@@@@0@3@3sg 3sg.real devilThe osprey is a devil.@dn@january 15, 2021
+171@author@@@1@nominal-predicates@Oi a cinal.@@@@0@3@2sg 2sg.real devilYou are a devil.@dn@january 15, 2021
+172@author@@@1@adjectival-predicates@Manuai muan.@@@@1@2@osprey be.badThe osprey is bad.@dn@january 15, 2021
+173@author@@@1@adjectival-predicates@Manuai i muan.@@@@1@3@osprey 3sg.real be.badThe osprey is bad.@dn@january 15, 2021
+174@author@@@1@adjectival-predicates@Oi muan.@@@@1@2@2sg be.badYou are bad.@dn@january 15, 2021
+175@author@@@1@adjectival-predicates@Oi a muan.@@@@0@3@2sg 2sg.real be.badYou are bad.@dn@january 15, 2021
+176@author@@@1@adjectival-predicates@Manuai ki muan.@@@@0@3@osprey 3sg.irr be.badThe osprey is bad.@dn@january 15, 2021
+177@author@@@1@adjectival-predicates@Manuai kine muan.@@@@0@3@3sg 3sg.perf be.badThe osprey is bad.@dn@january 15, 2021
+178@author@@@1@adjectival-predicates@Muan manuai.@@@@0@2@bad osprey.The osprey is bad.@dn@january 15, 2021
+179@author@@@1@prepositional-predicates@Manuai e lono.@@@@1@3@osprey prep forest.The osprey is in the forest.@dn@january 15, 2021
+180@author@@@1@prepositional-predicates@Oi e lono.@@@@1@3@osprey prep forest.The you are in the forest.@dn@january 15, 2021
+181@author@@@1@prepositional-predicates,wh@Se e lono.@@@@1@3@who prep forest.Who is in the forst.@dn@january 15, 2021
+182@author@@@1@prepositional-predicates@Manuai e kip@@@@0@3@Osprey prep lie.The osprey is in lie.@dn@january 15, 2021
+183@author@@@1@prepositional-predicates,nomminal-predicates@Manuai i e muiny.@@@@0@4@osprey 3sg prep dog.The osprey is on a dog.@dn@january 15, 2021
+184@author@@@1@nominal-predicates@Manuai.@@@@1@1@ospreySomeone is being an osprey.@dn@january 15, 2021
+185@author@@@1@nominal-predicates@Oi.@@@@1@1@2sgSomeone is being a you.@dn@january 15, 2021

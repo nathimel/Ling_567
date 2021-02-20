@@ -1,0 +1,27 @@
+e <> e
+x <> x
+i <> i
+h <> h
+p <> p
+u <> u
+
+TENSE : TENSE
+  * <> *
+
+ASPECT : ASPECT 
+  * <> *
+
+MOOD : MOOD
+  * <> *
+
+SF : SF
+  * <> *
+
+PER : PER
+ * <> *
+
+NUM : NUM
+  * <> *
+
+COG-ST : COG-ST
+  * <> *
