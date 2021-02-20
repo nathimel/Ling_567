@@ -331,35 +331,55 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
 ===============================================================================
 6 Grammar comparision
 6.1 Testsuite
-   6.1.1 Initial grammar (copied from lab 6)
-      56/88 positive items parsed (63.6% coverage)
-      6/77 negative items parsed (7.8 overgeneration)
+   6.1.1 Initial grammar (copied from lab 6 final)
+      57/100 positive items parsed (57% coverage)
+      6/85 negative items parsed (7.1% overgeneration)
       
       On average:
          positive items that parsed had 1.11 parses.
          negative itmes that parsed had 1.00 parses
       
-      The most ambiguous item had 3 parses:
-         Ala      kip.
-         3pl.real lie
-         They lied.
-      See lab 6 for an explination of the ambiguity.
+      ala kip
+      3pl lie
+      "They lie."
+
+      Pron/clitic ambiguity. See lab 6 for more details.
 
    6.1.2 Final grammar
-      #/# items parsed.
-      #/# positive items parsed (#% coverage)
-      #/# negative items parsed (#% overgeneration)
+      # items parsed.
+      72/100 positive items parsed (72% coverage)
+      11/85 negative items parsed (12.9% overgeneration)
       
       On average:
-         Positive items that parsed had # parses.
-         Negative items that parsed had # parses.
+         Positive items that parsed had 1.42 parses.
+         Negative items that parsed had 1.27 parses.
       
-      The most ambiguous items had # parses:
-         {IGT}
-      {explanation of the ambiguity}
+      The most ambiguous items had 4 parses:
+
+      	  *Manuai i   e    muiny
+	  osprey 3sg prep dog
+	  "The eagle is on the dog."
+
+	  In all four of these parses, "i" is being picked up
+	  as a noun. Then the np-predicate rule and the PPs are
+	  combining in various ways. We think it's possible that
+	  some of these analyses are correct, but the example
+	  was intended as a negative case.
+
+	  The first tree, for example, has an NP being built out of
+	  an NP and a PP via the SUBJ-HEAD rule. Then the head PP
+	  modifies "manuai" to produce an N by the HEAD-ADJ rule.
+	  We think this might be bogus, since it seems to have the
+	  meaning "something is being an eagle modified(?) by he(?)
+	  is on the dog."
+
+	  We're not sure how to block parses like
+	  these, since they would seem to be also licensing our
+	  earlier parse for "manuai e muiny" where "manuai" was an S.
+	  (from the end of section 3 of this writeup).
 
 6.2 Test corpus
-   6.2.1 Initial grammar (copied from lab 6)
+   6.2.1 Initial grammar (copied from lab 6 final)
       29/562 items parsed (5.2% coverage)
       
       On average, parsed items had 1.45 prases
@@ -371,10 +391,25 @@ We changed the pred value of all pronounes from _pron_n_rel to pron_rel.
       See lab 6 for an explanation of the ambiguity.
 
    6.2.2 Final grammar
-      #/# items parsed (#% coverage)
+      44/562 items parsed (7.8% coverage)
       
-      On average, parsed items had # parses.
+      On average, parsed items had 1.95 parses. (increase)
       
-      The most ambiguous item had # parses:
-         {IGT}
-      {explanation of the ambiguity}
+      The most ambiguous item had 9 parses:
+
+      	  ala nyak  e  kor  e    ala cinal
+	  3pl climb to home poss 3pl devil
+	  They climbed into the devils lair.
+	 
+      This IGT came from the corpus. We haven't handled "e" as a possessive
+      strategy yet. Regarding its ambiguity, we note that "ala" is parsed
+      as a verb in two trees. The rest of the ambiguity seems to be coming
+      from the many alternate constructions for VPs and the PPs.
+
+      We note that even simple sentences using "e" as an
+      adposition have 3 trees ("muiny e manuai"), due to ambiguity between
+      having PP as the root node and the two parses where the np-predicate
+      rule is firing.
+
+      One nice thing is that we seem to be parsing longer sentences now
+      that we've added "e" as an adposition.
