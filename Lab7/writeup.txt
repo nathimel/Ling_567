@@ -220,12 +220,10 @@ normadp1-norm-adposition-lex := norm-adposition-lex &
    
    Of the other 6 parses, some had the over-firing n-bar-predicate problem that
       we fixed in section 1.2 rule, and some parses had the HEAD-ADJ or the
-<<<<<<< HEAD
-      ADJ-HEAD rule applying. {how did we fix this?}
-=======
-      ADJ-HEAD rule applying. We added OPT - to the first item on the COMPS
+      ADJ-HEAD rule applying.
+
+      We added OPT - to the first item on the COMPS
       list of the norm-adpos-lex.
->>>>>>> 3fec641c10807a1f62ad0bcb8093e4a31a0dc3d6
 
    This reduced the number of parses of "muiny e manuai" to 3 desired parses:
    	one where [ is [the cat] [on the cat] ] (adpositional predicate)
