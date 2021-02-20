@@ -120,6 +120,60 @@ Source: author
 Vetted: f
 Judgement: g
 Phenomena: {prepositional-predicates}
-Manuai e wei.
-osprey prep that.
-The osprey is in that [thing].
+Manuai e lono.
+osprey prep forest.
+The osprey is in the forest.
+
+# : prepositional predicates w/ pron subj
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {prepositional-predicates}
+Oi e lono.
+osprey prep forest.
+The you are in the forest.
+
+# : prepositional predicates w/ wh word
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {prepositional-predicates, wh}
+Se e lono.
+who prep forest.
+Who is in the forst.
+
+# : prepositional predicates w/ verb
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {prepositional-predicates}
+Manuai e kip
+Osprey prep lie.
+The osprey is in lie.
+
+# : prepositional predicates w/ wh word
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: {prepositional-predicates, nomminal-predicates}
+Manuai i e muiny.
+osprey 3sg prep dog.
+The osprey is on a dog.
+
+# : stand alone noun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Manuai.
+osprey
+Someone is being an osprey.
+
+# : stand alone pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {nominal-predicates}
+Oi.
+2sg
+Someone is being an you.
