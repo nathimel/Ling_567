@@ -8,18 +8,252 @@ There should be four tsdb profiles in tsdb/home:
    lab_8_final_ts       - Testsuite with final grammar
 
 Table of contents:
-   1
-   ...
-   X Grammar comparision
-      Testsuite
-         Initial grammar
-         Final grammar
-      Test corpus
-         Initial grammar
-         Final grammar
+   1 Documentation of Negation
+     1.1 Overview
+     1.2 IGT
+   2 Implementation
+     2.1 Prose
+     2.2 tdl
+     2.3 IGTy
+     2.4 Questions
+   3 Further generation cleanup
+     3.1 items
+     3.2 sources
+     3.3 changes
+     3.4 before/after
+   4 MMT Status
+   5 Grammar comparision
+     5.1 Testsuite
+       5.1.1 Initial grammar
+       5.1.2 Final grammar
+     5.2 Test corpus
+       5.2.1 Initial grammar
+       5.2.2 Final grammar
+===============================================================================
+TOOD list
+
+     1. See what Emily has to say about negation
+     2. Explore MMT for generation cleanup
+     3. Fix things from last lab, perhaps adjectives? Emily's lab feedback?
 
 ===============================================================================
-...
+Questions/issues:
+
+	- A large amount of the corpus isn't simple just sentential negation,
+	but things like
+
+	    [something NOT ] = nothing
+	and negative polarity items ( "ave" = any, "mavuen" = not.yet ), and
+	constituent negation. I'm guessing that we won't be implementing these.
+
+	- It seems like modal negation would be nice to implement.
+	However, its not in the MMT sentences.
+
+===============================================================================
+The MT sentence for negation is:
+
+       "The dogs don't chase cats."
+===============================================================================
+1 Documentation of Negation
+
+  1.1 Overview
+  
+  - In the section on Negation (9.6 of Titan Grammar), Bowern says this:
+
+      "There are several different forms of negation in Titan, depending on
+      whether the clause is indicative or irrealis (that is, whether it contains
+      the modal marker k- described in Section 6.3.2 above).
+      ...
+      "Clauses in the indicative are usually negated by placing "ne" between
+      the aspect marker and the main verb and "poen" at the end of the clause.
+
+  -NB: It seems that by "aspect marker", Bowern means one of the clitics, of which
+  we've been focusing on irrealis/realis for this quarter.
+
+      (ne between marker/main verb w/ poen at end)
+
+	    i   ne    lis aru poen
+	    3sg d.neg see 3dl not
+	    "He couldn't see them."
+
+	    aru ne    atinqi ni   poen
+	    3dl d.neg strike fish not
+	    "They didn't strike fish."
+
+      Occasionally, "poen" may be used alone, either when the clause is verbless
+      or when a main verb is present."
+
+      (Poen only)
+      (w/ main verb
+
+      	 Yo  u     pasani     ala poen
+	 1sg 1sg.S know.about 3pl not
+	 "I know nothing about them."
+
+       (non-verbal predicate)
+
+         Amo    pein  poen
+	 indef  woman not
+	 "There weren't any women."
+
+
+      The conditioning factor here could be that the scope of negation is a
+      single argument rather than the entire clause.
+
+  - Actually, we found it helpful to study the beginning of the Verb Clauses
+  section, too:
+
+     "The verbal complex comprises the matrix verb root and a number of
+     clitics which give information about the tesnse, aspect, mood, and
+     subject of the clause. The basic structure of the core verb unit is:
+
+     	     (Neg) TAM-person (V_TAM) V
+
+     "The TAM marker is bound to the subject-agreement markers, and primarily
+     signals a split between realis, irrealis, and perfective. Further
+     specification of tense, aspect, or associated motion is achieved by
+     means of serial verbs."
+
+  - A large amount of negation in the corpus is in irrealis, which is marked
+  by a different item, "nabu". It generally appears first in the clause,
+  before the verb but after the subject. Negative commands also appear with
+  "nabu."
+
+    (initial in a modal clause)
+      {IGT}
+
+    (negative command)
+      {IGT}
+      
+  - Claire Bowern also discusses constituent negation, but since that isn't
+  in the MMT sentences, we decided not to implement it.
+     - Consequences of this decision (analysis) ?
+     - i.e., what will the semantics look like, if any, for constituent negation
+     since we're not explicitly working on it?
+
+===============================================================================
+2 Implementation
+
+  2.1 Prose Description of the implemented analysis
+
+  2.2 Specific tdl (pasted)
+
+      The initial grammar has the following lexical entries:
+
+       poen := neg11-aux-lex &
+	 [ STEM < "poen" >,
+	   SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+	ne := neg12-aux-lex &
+	  [ STEM < "ne" >,
+	    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+      This is currently having the effect that we parse most of the negative
+      examples, and none of the positive ones. The words are acting as we'd
+      expect an auxiliary to act. For example, we get:
+
+      	     *Manuai ne kip
+	     cat    neg lie
+
+and
+      	     *Manuai poen kip
+	     cat    neg lie
+
+	     The MRS shows: it's not the case (qeq) that some cat lies.
+	     We suppose that's a reasonable
+	     semantics, but of course this string is not grammatical in Titan
+	     because the agreement marker is missing, and the negative item
+	     "poen" is not at the end of the clause as it should be.
+
+This parsed:
+
+      	     *Manuai ne poen kip
+	     cat    neg neg  lie
+
+	     The MRS is what we'd expect given the previous two: it's not
+	     the case that it's not the case that some cat lies.
+
+Question:
+	There seems to tbe scope ambiguity here.
+	It seems like we want: Exists(x)( Cat(x) ^ ~Lie(x) )
+	But I'm worried we're getting/how to block:
+	    		       ~Exists(x)( Cat(x) ^ Lie(x) )
+
+  2.3 IGT for testing the analysis
+
+      Thinking of writing test cases like the following for sentential negation:
+
+      Manuai i   ne  kip poen
+      cat    3sg neg lie not
+      "The cat didn't lie."
+
+      Manuai i kip   poen
+      cat    3sg lie not
+      "The cat didn't lie."
+
+      *Manuai ne  i   kip poen
+       cat    neg 3sg lie not
+       "The cat didnt' lie."
+
+      *Manuai i   ne  kip
+      cat     3sg neg lie
+      "The cat didn't lie."
+
+      *Manuai i   kip ne
+       cat    3sg lie neg
+       "The cat didnt' lie."
+
+  2.4 Questions for Emily regarding the implementation
+===============================================================================
+3 Further Generation Cleanup (to get generation down to a reasonable output #)
+
+  3.1 Which MMT items were worked on
+
+  3.2 Sources of extra generation
+
+  3.3 Changes to the grammar
+
+      3.3.1 Prose description
+      3.3.2 Specific tdl
+
+  3.4 Before & After numbers on how many outputs we got
+
+===============================================================================
+4 Status of each MMT item (sje and eng)
+
+(e.g.,
+
+  n. Works! With # of outputs.
+  n. Doesn't work. MRSes are different, documenting these differences.
+)
+
+  1.
+  2.
+  3.
+  4.
+  5.
+  6.
+  7.
+  8.
+  9.
+  10.
+  11.
+  12.
+  13.
+  14.
+  15.
+  16.
+  17.
+  18.
+  19.
+  20.
+  21.
+  22.
+  23.
+  24.
+  25.
+  26.
+
 ===============================================================================
 N Grammar comparision
 N.1 Testsuite

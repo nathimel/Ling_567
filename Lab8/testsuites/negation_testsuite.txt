@@ -1,0 +1,44 @@
+# X: Indicative Sentential Negation word order
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {negation}
+Manuai i ne kip poen
+cat 3sg neg lie not
+"The cat didn't lie."
+
+# X: Indicative Sentential Negation without "ne"
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: {negation}
+Manuai i kip poen
+cat 3sg neg lie not
+"The cat didn't lie."
+
+# X: Indicative Sentential Negation word order
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {negation}
+Manuai ne i kip poen
+cat neg 3sg lie not
+"The cat didnt' lie."
+
+# X: Indicative Sentential Negation word order
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {negation}
+Manuai i ne kip
+cat 3sg neg lie
+"The cat didn't lie."
+
+# X: Indicative Sentential Negation word order
+Source: author
+Vetted: f
+Judgment: u
+Phenomena: {negation}
+Manuai i kip ne
+cat 3sg lie neg
+"The cat didnt lie."
