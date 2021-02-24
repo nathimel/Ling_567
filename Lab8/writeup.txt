@@ -34,8 +34,12 @@ TOOD list
 
      1. See what Emily has to say about negation
      2. Explore MMT for generation cleanup
+     	2.1 Focus on the 46 results we get for 16 ("manuai e lono")
+	2.2 > 16 results for 18 -- why is the clitic showing up before "dilen"?
+	2.3 Implement possession likke "eyo" -- we have 0 parses so far
+	2.4 "kone" keeps showing up, should be an easy fix
+	2.5 Why aren't we parsing 25? Check implementation of "alan"
      3. Fix things from last lab, perhaps adjectives? Emily's lab feedback?
-
 ===============================================================================
 Questions/issues:
 
