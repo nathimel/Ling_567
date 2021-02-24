@@ -1656,6 +1656,14 @@ vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
 vp1-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
   [ SYNSEM.LOCAL.COORD-STRAT "1" ].
 
+;;; Coordination Strategy 1
+
+s1-top-coord-rule := basic-s-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+s1-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
 ;;; Coordination Strategy 2
 
 np2-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
