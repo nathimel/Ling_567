@@ -300,9 +300,11 @@ verb6-verb-lex := clausal-verb-lex &
 
 ;;; Auxiliaries
 
-subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
+; lines 305-324
+
+subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
-                             COMPS < #comps >,
+                             COMPS.FIRST #comps,
                              SUBJ < #subj > ],
                    CONT.HOOK.XARG #xarg ],
     ARG-ST < #subj &
@@ -318,6 +320,8 @@ subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
                                  SPR < >,
                                  SPEC < > ],
                            HEAD verb ] ] > ].
+
+subj-raise-aux := subj-raise-aux-super.
 
 subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
 
@@ -638,8 +642,14 @@ aux43-aux-lex := subj-raise-aux-no-pred &
                                                                     NUM pl ],
                              COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
 
-neg-aux-lex := subj-raise-aux-with-pred &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ].
+; CHANGED FROM
+; neg-aux-lex := subj-raise-aux-with-pred &
+;  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ].
+; TO
+
+neg-aux-lex := subj-raise-aux-super & norm-sem-lex-item & trans-first-arg-raising-lex-item-1 &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.FORM nonfinite ],
+                         [ LOCAL.CAT.HEAD adv & [ NEGATED + ] ]  > ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Subordinators

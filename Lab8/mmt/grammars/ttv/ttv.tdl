@@ -414,9 +414,12 @@ aux17-aux-lex := subj-raise-aux-no-pred &
 ; but I don't want to rely on this.  Then again, [ AUX - ]
 ; might not be true.
 
+;;changed PER, NUM features 2.24.21
 aux18-aux-lex := subj-raise-aux-no-pred &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ],
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM sg ],
+			     COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
     INFLECTED.VERB-PC10-FLAG - ].
 
 ; To keep the semantically empty ones from spinning on
@@ -434,9 +437,12 @@ aux20-aux-lex := subj-raise-aux-no-pred &
 ; but I don't want to rely on this.  Then again, [ AUX - ]
 ; might not be true.
 
+;;changed PER, NUM features 2.24.21
 aux21-aux-lex := subj-raise-aux-no-pred & verb-pc11-rule-dtr &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ],
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM sg ],
+		  	     COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
     INFLECTED.VERB-PC11-FLAG - ].
 
 ; To keep the semantically empty ones from spinning on

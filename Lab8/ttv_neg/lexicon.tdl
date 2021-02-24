@@ -3477,11 +3477,15 @@ ka := aux42-aux-lex &
 yota_2 := aux43-aux-lex &
   [ STEM < "yota" > ].
 
-poen := neg-aux-lex & neg-comp-lex &
-  [ SYNSEM.LKEYS.KEYREL.PRED "neg_rel",
-    STEM < "poen" > ].
+ne := neg-aux-lex &
+  [ STEM < "ne" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 ;;; Adverbs
+
+poen := neg-comp-lex &
+  [ SYNSEM.LKEYS.KEYREL.PRED "neg_rel",
+    STEM < "poen" > ].
 
 pe1 := conj-lex &
   [ STEM < "pe" >,

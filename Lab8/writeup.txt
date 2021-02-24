@@ -14,7 +14,7 @@ Table of contents:
    2 Implementation
      2.1 Prose
      2.2 tdl
-     2.3 IGTy
+     2.3 IGT
      2.4 Questions
    3 Further generation cleanup
      3.1 items
@@ -32,12 +32,15 @@ Table of contents:
 ===============================================================================
 TOOD list
 
-     1. See what Emily has to say about negation
+     1. OH for negation
      2. Explore MMT for generation cleanup
      	2.1 Focus on the 46 results we get for 16 ("manuai e lono")
 	2.2 > 16 results for 18 -- why is the clitic showing up before "dilen"?
-	2.3 Implement possession likke "eyo" -- we have 0 parses so far
+	2.3 Implement possession like "eyo" -- we have 0 parses so far
 	2.4 "kone" keeps showing up, should be an easy fix
+	    - well on ./translate ttv ttv 3, we get yo kune voliliti oi =
+	      I have followed you. Not entirely wrong, but maybe we want
+	      to constrain the mood somehow to block this one?
 	2.5 Why aren't we parsing 25? Check implementation of "alan"
      3. Fix things from last lab, perhaps adjectives? Emily's lab feedback?
 ===============================================================================
@@ -235,18 +238,23 @@ Question:
   2.
   3.
   4.
-  5.
-  6.
-  7.
-  8.
-  9.
-  10.
-  11.
-  12.
-  13.
-  14.
-  15.
-  16.
+  5. negation sentence
+  6. SKIPPED
+  7. SKIPPED
+  8. Getting four strings, but grammar shows just one tree for the test sentence
+  9. Not parsing for MT or the current grammar; is this right?
+  10. Getting 14 total results :(
+      Do we know if the clitic is obligatory for all VPs taking the sole subj?
+      When parsing "ala ala" strings, both are parsed as Vs
+      and for "ala ka", both are Vs
+  11. SKIPPED
+  12. SKIPPED
+  13. SKIPPED
+  14. SKIPPED
+  15. 3 parses, reasonable, but we'll need transfer rules
+  16. Somehow getting 45 total results
+      One thing to see is that there seems to be at least one string for each
+      pronoun.
   17.
   18.
   19.
