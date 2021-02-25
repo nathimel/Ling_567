@@ -1631,17 +1631,11 @@ np1-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
 vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
   [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
 			      AUX #a ],
-		   CONT.HOOK.INDEX.PNG [ PER #p,
-					 NUM #n ],
 		   COORD-STRAT "1" ],
     LCOORD-DTR.SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
-				       AUX #a ],
-			      CONT.HOOK.INDEX.PNG [ PER #p,
-						    NUM #n ] ],
+				       AUX #a ] ],
     RCOORD-DTR.SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
-				       AUX #a ],
-			      CONT.HOOK.INDEX.PNG [ PER #p,
-						    NUM #n ] ] ].
+				       AUX #a ] ] ].
 
 vp1-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
   [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
