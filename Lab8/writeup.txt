@@ -223,6 +223,19 @@ Question:
       3.3.1 Prose description
       3.3.2 Specific tdl
 
+
+      So we need to change all the agreement clitics to nonfinite. Here's a sample.
+      We changed aux9, etc.
+
+aux9-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
+    INFLECTED.VERB-PC3-FLAG - ].
+
+
+
   3.4 Before & After numbers on how many outputs we got
 
 ===============================================================================

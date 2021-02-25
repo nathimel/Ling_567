@@ -24,6 +24,7 @@ basic-head-comp-phrase :+ [ SYNSEM [ LIGHT -,
 
 head :+ [ PRON bool,
     AUX bool,
+    NEGATED luk,
     POSSESSOR poss,
     FORM form,
     INIT bool ].
@@ -247,10 +248,9 @@ main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
                                        COMPS < > ] ],
                            CONT.HOOK.INDEX #xarg ] ] ].
 
-aux-lex := verb-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL.CAT.HEAD [ FORM finite,
-			      AUX + ],
-             L-QUE - ] ].
+aux-lex := verb-lex & basic-icons-lex-item.
+;  [ SYNSEM [ LOCAL.CAT.HEAD.AUX + ] ].
+;; Commented out so that aux's can take "ne" as a complement
 
 intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
@@ -302,7 +302,7 @@ verb6-verb-lex := clausal-verb-lex &
 
 subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
-                             COMPS < #comps >,
+                             COMPS.FIRST #comps,
                              SUBJ < #subj > ],
                    CONT.HOOK.XARG #xarg ],
     ARG-ST < #subj &
@@ -320,7 +320,8 @@ subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
                            HEAD verb ] ] > ].
 
 subj-raise-aux := subj-raise-aux-super &
-  [ SYNSEM.LOCAL [ CAT [ HEAD.AUX +,
+  [ SYNSEM.LOCAL [ CAT [ HEAD [ AUX +,
+				FORM finite],
 			 VAL [ COMPS < [] > ] ] ] ].
 
 subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
@@ -387,10 +388,6 @@ aux15-aux-lex := subj-raise-aux-no-pred &
                                                                     NUM sg ],
                              COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
     INFLECTED.VERB-PC8-FLAG - ].
-
-neg16-aux-lex := subj-raise-aux-with-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ].
 
 ; To keep the semantically empty ones from spinning on
 ; generation, require complement to be [AUX -].  The
@@ -615,7 +612,7 @@ aux40-aux-lex := subj-raise-aux-no-pred &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
                    CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
                                                                     NUM sg ],
-                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM form ] ] ].
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ] ].
 
 ; To keep the semantically empty ones from spinning on
 ; generation, require complement to be [AUX -].  The
@@ -654,8 +651,9 @@ aux43-aux-lex := subj-raise-aux-no-pred &
                              COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ] ].
 
 neg-aux-lex := subj-raise-aux-super & norm-sem-lex-item & trans-first-arg-raising-lex-item-1 &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.FORM nonfinite ],
-                         [ LOCAL.CAT.HEAD adv & [ NEGATED + ] ]  > ].
+  [ SYNSEM.LOCAL.CAT [ HEAD.FORM nonfinite,
+		       VAL.COMPS < [ LOCAL.CAT.HEAD.FORM nonfinite ],
+                         [ LOCAL.CAT.HEAD adv & [ NEGATED + ] ]  > ] ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Subordinators
@@ -787,7 +785,8 @@ neg-comp-lex := norm-zero-arg &
 ; From Lab 7
 
 np-predicate-rule := unary-phrase & nocoord &
-  [ SYNSEM [ LOCAL.CAT [ HEAD verb & [MOD < >],
+  [ SYNSEM [ LOCAL.CAT [ HEAD verb & [ MOD < >, 
+				       FORM finite ],
                    VAL [ COMPS < >,
 			 SPEC < >,
 			 SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
@@ -1492,8 +1491,7 @@ verb-pc9-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
                       VERB-PC3-FLAG #verb-pc3,
                       VERB-PC10-FLAG #verb-pc10,
                       VERB-PC12-FLAG #verb-pc12,
-                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
-                      VERB-PC5-FLAG #verb-pc5 ] ] ].
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12 ] ] ].
 
 verb-pc9_lrt1-lex-rule := verb-pc9-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
@@ -1507,7 +1505,7 @@ verb-pc10-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
                 NOUN-PC3-FLAG #noun-pc3,
                 VERB-PC3-FLAG #verb-pc3,
                 VERB-PC12-FLAG #verb-pc12,
-                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc1 ],
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12 ],
     DTR aux18-aux-lex &
         [ INFLECTED [ VERB-PC9-FLAG #verb-pc9,
                       VERB-PC11-FLAG #verb-pc11,
@@ -1515,7 +1513,7 @@ verb-pc10-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
                       NOUN-PC3-FLAG #noun-pc3,
                       VERB-PC3-FLAG #verb-pc3,
                       VERB-PC12-FLAG #verb-pc12,
-                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12] ] ].
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12 ] ] ].
 
 verb-pc10_lrt1-lex-rule := verb-pc10-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
@@ -1529,16 +1527,14 @@ verb-pc11-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
                 NOUN-PC3-FLAG #noun-pc3,
                 VERB-PC3-FLAG #verb-pc3,
                 VERB-PC10-FLAG #verb-pc10,
-                VERB-PC12-FLAG #verb-pc12,
-                VERB-PC5-FLAG #verb-pc5 ],
+                VERB-PC12-FLAG #verb-pc12],
     DTR verb-pc11-rule-dtr &
         [ INFLECTED [ VERB-PC9-FLAG #verb-pc9,
                       VERB-PC8-FLAG #verb-pc8,
                       NOUN-PC3-FLAG #noun-pc3,
                       VERB-PC3-FLAG #verb-pc3,
                       VERB-PC10-FLAG #verb-pc10,
-                      VERB-PC12-FLAG #verb-pc12,
-                      VERB-PC5-FLAG #verb-pc5 ] ] ].
+                      VERB-PC12-FLAG #verb-pc12 ] ] ].
 
 verb-pc11_lrt1-lex-rule := verb-pc11-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
@@ -1552,16 +1548,14 @@ verb-pc12-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
                 VERB-PC8-FLAG #verb-pc8,
                 NOUN-PC3-FLAG #noun-pc3,
                 VERB-PC3-FLAG #verb-pc3,
-                VERB-PC10-FLAG #verb-pc10,
-                VERB-PC5-FLAG #verb-pc5 ],
+                VERB-PC10-FLAG #verb-pc10],
     DTR verb-pc12-rule-dtr &
         [ INFLECTED [ VERB-PC9-FLAG #verb-pc9,
                       VERB-PC11-FLAG #verb-pc11,
                       VERB-PC8-FLAG #verb-pc8,
                       NOUN-PC3-FLAG #noun-pc3,
                       VERB-PC3-FLAG #verb-pc3,
-                      VERB-PC10-FLAG #verb-pc10,
-                      VERB-PC5-FLAG #verb-pc5 ] ] ].
+                      VERB-PC10-FLAG #verb-pc10 ] ] ].
 
 verb-pc12_lrt1-lex-rule := verb-pc12-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,

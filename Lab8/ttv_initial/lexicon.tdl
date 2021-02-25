@@ -3408,10 +3408,6 @@ kine := aux9-aux-lex &
 a := aux15-aux-lex &
   [ STEM < "a" > ].
 
-nabu := neg16-aux-lex &
-  [ STEM < "nabu" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
-
 i_2 := aux17-aux-lex &
   [ STEM < "i" > ].
 
