@@ -242,11 +242,27 @@ Question:
   6. SKIPPED
   7. SKIPPED
   8. Getting four strings, but grammar shows just one tree for the test sentence
-  9. Not parsing for MT or the current grammar; is this right?
+  9. Not parsing for MT or the current grammar;
+     We think this is because there's no way to coordinate Ses with our current
+     coordination strats.
+     	- Also, why do we have two strats? what's the difference?
+	added an S coordination rule to our Strat 1
+	now we get four sentences, all corresponding to the diff ways one can drop
+	the clitic(s).
+	    - Why? Shouldn't our semi.vpm be taking care of this?
+	
   10. Getting 14 total results :(
       Do we know if the clitic is obligatory for all VPs taking the sole subj?
       When parsing "ala ala" strings, both are parsed as Vs
       and for "ala ka", both are Vs
+
+      Now getting more than 20... for the actual string in ttv.txt the grammar
+      gives 4 diff trees, only 1 looks reasonable.
+
+
+      HOW CAN WE GET a sentence like "muiny ala kip" to not be translated as
+      "muiny kip".
+
   11. SKIPPED
   12. SKIPPED
   13. SKIPPED
@@ -255,16 +271,26 @@ Question:
   16. Somehow getting 45 total results
       One thing to see is that there seems to be at least one string for each
       pronoun.
-  17.
-  18.
+  17. Changed sentence to "muiny manuai", so underspec for per, num
+      Note that we're parsing the bad: "muiny ala manuai", should't have clitic.
+
+      We wonder if we can fix this by fiddling with FORM distinctions
+      But now that we've started exploring this, we notice that the FORM
+      values aren't what we'd expect on the sentence "yo u kip", and
+      also we don't know how our agr clitics are implemented as FORM finite
+      on comp features.
+
+      If the root condition specifies FORM finite, can the root node be
+      FORM form?
+
+  18. 
   19.
   20.
   21.
   22.
   23.
-  24.
-  25.
-  26.
+  24. 2 things
+  25. nothing
 
 ===============================================================================
 N Grammar comparision

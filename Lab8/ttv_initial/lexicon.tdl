@@ -3405,14 +3405,6 @@ tu_2 := aux8-aux-lex &
 kine := aux9-aux-lex &
   [ STEM < "kine" > ].
 
-poen := neg11-aux-lex &
-  [ STEM < "poen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
-
-ne := neg12-aux-lex &
-  [ STEM < "ne" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
-
 a := aux15-aux-lex &
   [ STEM < "a" > ].
 
@@ -3489,7 +3481,15 @@ ka := aux42-aux-lex &
 yota_2 := aux43-aux-lex &
   [ STEM < "yota" > ].
 
+ne := neg-aux-lex &
+  [ STEM < "ne" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
 ;;; Adverbs
+
+poen := neg-comp-lex &
+  [ SYNSEM.LKEYS.KEYREL.PRED "neg_rel",
+    STEM < "poen" > ].
 
 pe1 := conj-lex &
   [ STEM < "pe" >,

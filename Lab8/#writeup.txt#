@@ -1,0 +1,358 @@
+Lab 8
+by Nathaniel Imel and David Krug
+
+There should be four tsdb profiles in tsdb/home:
+   lab_8_initial_corpus - Test corpus with initial grammar
+   lab_8_initial_ts     - Testssuite with initial grammar
+   lab_8_final_corpus   - Test corpus with final grammar
+   lab_8_final_ts       - Testsuite with final grammar
+
+Table of contents:
+   1 Documentation of Negation
+     1.1 Overview
+     1.2 IGT
+   2 Implementation
+     2.1 Prose
+     2.2 tdl
+     2.3 IGT
+     2.4 Questions
+   3 Further generation cleanup
+     3.1 items
+     3.2 sources
+     3.3 changes
+     3.4 before/after
+   4 MMT Status
+   5 Grammar comparision
+     5.1 Testsuite
+       5.1.1 Initial grammar
+       5.1.2 Final grammar
+     5.2 Test corpus
+       5.2.1 Initial grammar
+       5.2.2 Final grammar
+===============================================================================
+TOOD list
+
+     1. OH for negation
+     2. Explore MMT for generation cleanup
+     	2.1 Focus on the 46 results we get for 16 ("manuai e lono")
+	2.2 > 16 results for 18 -- why is the clitic showing up before "dilen"?
+	2.3 Implement possession like "eyo" -- we have 0 parses so far
+	2.4 "kone" keeps showing up, should be an easy fix
+	    - well on ./translate ttv ttv 3, we get yo kune voliliti oi =
+	      I have followed you. Not entirely wrong, but maybe we want
+	      to constrain the mood somehow to block this one?
+	2.5 Why aren't we parsing 25? Check implementation of "alan"
+     3. Fix things from last lab, perhaps adjectives? Emily's lab feedback?
+===============================================================================
+Questions/issues:
+
+	- A large amount of the corpus isn't simple just sentential negation,
+	but things like
+
+	    [something NOT ] = nothing
+	and negative polarity items ( "ave" = any, "mavuen" = not.yet ), and
+	constituent negation. I'm guessing that we won't be implementing these.
+
+	- It seems like modal negation would be nice to implement.
+	However, its not in the MMT sentences.
+
+===============================================================================
+The MT sentence for negation is:
+
+       "The dogs don't chase cats."
+===============================================================================
+1 Documentation of Negation
+
+  1.1 Overview
+  
+  - In the section on Negation (9.6 of Titan Grammar), Bowern says this:
+
+      "There are several different forms of negation in Titan, depending on
+      whether the clause is indicative or irrealis (that is, whether it contains
+      the modal marker k- described in Section 6.3.2 above).
+      ...
+      "Clauses in the indicative are usually negated by placing "ne" between
+      the aspect marker and the main verb and "poen" at the end of the clause.
+
+  -NB: It seems that by "aspect marker", Bowern means one of the clitics, of which
+  we've been focusing on irrealis/realis for this quarter.
+
+      (ne between marker/main verb w/ poen at end)
+
+	    i   ne    lis aru poen
+	    3sg d.neg see 3dl not
+	    "He couldn't see them."
+
+	    aru ne    atinqi ni   poen
+	    3dl d.neg strike fish not
+	    "They didn't strike fish."
+
+      Occasionally, "poen" may be used alone, either when the clause is verbless
+      or when a main verb is present."
+
+      (Poen only)
+      (w/ main verb
+
+      	 Yo  u     pasani     ala poen
+	 1sg 1sg.S know.about 3pl not
+	 "I know nothing about them."
+
+       (non-verbal predicate)
+
+         Amo    pein  poen
+	 indef  woman not
+	 "There weren't any women."
+
+
+      The conditioning factor here could be that the scope of negation is a
+      single argument rather than the entire clause.
+
+  - Actually, we found it helpful to study the beginning of the Verb Clauses
+  section, too:
+
+     "The verbal complex comprises the matrix verb root and a number of
+     clitics which give information about the tesnse, aspect, mood, and
+     subject of the clause. The basic structure of the core verb unit is:
+
+     	     (Neg) TAM-person (V_TAM) V
+
+     "The TAM marker is bound to the subject-agreement markers, and primarily
+     signals a split between realis, irrealis, and perfective. Further
+     specification of tense, aspect, or associated motion is achieved by
+     means of serial verbs."
+
+  - A large amount of negation in the corpus is in irrealis, which is marked
+  by a different item, "nabu". It generally appears first in the clause,
+  before the verb but after the subject. Negative commands also appear with
+  "nabu."
+
+    (initial in a modal clause)
+      {IGT}
+
+    (negative command)
+      {IGT}
+      
+  - Claire Bowern also discusses constituent negation, but since that isn't
+  in the MMT sentences, we decided not to implement it.
+     - Consequences of this decision (analysis) ?
+     - i.e., what will the semantics look like, if any, for constituent negation
+     since we're not explicitly working on it?
+
+===============================================================================
+2 Implementation
+
+  2.1 Prose Description of the implemented analysis
+
+  2.2 Specific tdl (pasted)
+
+      The initial grammar has the following lexical entries:
+
+       poen := neg11-aux-lex &
+	 [ STEM < "poen" >,
+	   SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+	ne := neg12-aux-lex &
+	  [ STEM < "ne" >,
+	    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+      This is currently having the effect that we parse most of the negative
+      examples, and none of the positive ones. The words are acting as we'd
+      expect an auxiliary to act. For example, we get:
+
+      	     *Manuai ne kip
+	     cat    neg lie
+
+and
+      	     *Manuai poen kip
+	     cat    neg lie
+
+	     The MRS shows: it's not the case (qeq) that some cat lies.
+	     We suppose that's a reasonable
+	     semantics, but of course this string is not grammatical in Titan
+	     because the agreement marker is missing, and the negative item
+	     "poen" is not at the end of the clause as it should be.
+
+This parsed:
+
+      	     *Manuai ne poen kip
+	     cat    neg neg  lie
+
+	     The MRS is what we'd expect given the previous two: it's not
+	     the case that it's not the case that some cat lies.
+
+Question:
+	There seems to tbe scope ambiguity here.
+	It seems like we want: Exists(x)( Cat(x) ^ ~Lie(x) )
+	But I'm worried we're getting/how to block:
+	    		       ~Exists(x)( Cat(x) ^ Lie(x) )
+
+  2.3 IGT for testing the analysis
+
+      Thinking of writing test cases like the following for sentential negation:
+
+      Manuai i   ne  kip poen
+      cat    3sg neg lie not
+      "The cat didn't lie."
+
+      Manuai i kip   poen
+      cat    3sg lie not
+      "The cat didn't lie."
+
+      *Manuai ne  i   kip poen
+       cat    neg 3sg lie not
+       "The cat didnt' lie."
+
+      *Manuai i   ne  kip
+      cat     3sg neg lie
+      "The cat didn't lie."
+
+      *Manuai i   kip ne
+       cat    3sg lie neg
+       "The cat didnt' lie."
+
+  2.4 Questions for Emily regarding the implementation
+===============================================================================
+3 Further Generation Cleanup (to get generation down to a reasonable output #)
+
+  3.1 Which MMT items were worked on
+
+  3.2 Sources of extra generation
+
+  3.3 Changes to the grammar
+
+      3.3.1 Prose description
+      3.3.2 Specific tdl
+
+
+      So we need to change all the agreement clitics to nonfinite. Here's a sample.
+      We changed aux9, 
+
+aux9-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
+    INFLECTED.VERB-PC3-FLAG - ].
+
+
+
+  3.4 Before & After numbers on how many outputs we got
+
+===============================================================================
+4 Status of each MMT item (sje and eng)
+
+(e.g.,
+
+  n. Works! With # of outputs.
+  n. Doesn't work. MRSes are different, documenting these differences.
+)
+
+  1.
+  2.
+  3.
+  4.
+  5. negation sentence
+  6. SKIPPED
+  7. SKIPPED
+  8. Getting four strings, but grammar shows just one tree for the test sentence
+  9. Not parsing for MT or the current grammar;
+     We think this is because there's no way to coordinate Ses with our current
+     coordination strats.
+     	- Also, why do we have two strats? what's the difference?
+	added an S coordination rule to our Strat 1
+	now we get four sentences, all corresponding to the diff ways one can drop
+	the clitic(s).
+	    - Why? Shouldn't our semi.vpm be taking care of this?
+	
+  10. Getting 14 total results :(
+      Do we know if the clitic is obligatory for all VPs taking the sole subj?
+      When parsing "ala ala" strings, both are parsed as Vs
+      and for "ala ka", both are Vs
+
+      Now getting more than 20... for the actual string in ttv.txt the grammar
+      gives 4 diff trees, only 1 looks reasonable.
+
+
+      HOW CAN WE GET a sentence like "muiny ala kip" to not be translated as
+      "muiny kip".
+
+  11. SKIPPED
+  12. SKIPPED
+  13. SKIPPED
+  14. SKIPPED
+  15. 3 parses, reasonable, but we'll need transfer rules
+  16. Somehow getting 45 total results
+      One thing to see is that there seems to be at least one string for each
+      pronoun.
+  17. Changed sentence to "muiny manuai", so underspec for per, num
+      Note that we're parsing the bad: "muiny ala manuai", should't have clitic.
+
+      We wonder if we can fix this by fiddling with FORM distinctions
+      But now that we've started exploring this, we notice that the FORM
+      values aren't what we'd expect on the sentence "yo u kip", and
+      also we don't know how our agr clitics are implemented as FORM finite
+      on comp features.
+
+      If the root condition specifies FORM finite, can the root node be
+      FORM form?
+
+  18. 
+  19.
+  20.
+  21.
+  22.
+  23.
+  24. 2 things
+  25. nothing
+
+===============================================================================
+N Grammar comparision
+N.1 Testsuite
+   N.1.1 Initial grammar
+      XX/XXX positive items parsed (X% coverage)
+      X/XX negative items parsed (X% overgeneration)
+      
+      On average:
+         positive items that parsed had X parses.
+         negative itmes that parsed had X parses
+      
+	{IGT}
+
+      <explanation of ambiguity>
+
+   N.1.2 Final grammar
+      XX/XXX positive items parsed (X% coverage)
+      X/XX negative items parsed (X% overgeneration)
+      
+      On average:
+         Positive items that parsed had X parses.
+         Negative items that parsed had X parses.
+      
+      The most ambiguous items had X parses:
+
+      	 {IGT}
+
+      <explanation of ambiguity>
+
+N.2 Test corpus
+   N.2.1 Initial grammar (copied from lab N final)
+      XX/XXX items parsed (X% coverage)
+      
+      On average, parsed items had X prases
+      
+      The most ambiguous item had X parses:
+
+      	  {IGT}
+
+      <explanation of ambiguity>
+
+   N.2.2 Final grammar
+      XX/XXX items parsed (X% coverage)
+      
+      On average, parsed items had X parses.
+      
+      The most ambiguous item had X parses:
+
+      	  {IGT}
+
+      <explanation of ambiguity>

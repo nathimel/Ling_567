@@ -249,8 +249,7 @@ main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
                            CONT.HOOK.INDEX #xarg ] ] ].
 
 aux-lex := verb-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL.CAT.HEAD.AUX +,
-             L-QUE - ] ].
+  [ SYNSEM.L-QUE - ].
 
 intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
@@ -321,7 +320,9 @@ subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
                                  SPEC < > ],
                            HEAD verb ] ] > ].
 
-subj-raise-aux := subj-raise-aux-super.
+subj-raise-aux := subj-raise-aux-super &
+  [ SYNSEM.LOCAL [ CAT [ HEAD.AUX +,
+			 VAL [ COMPS < [] > ] ] ] ].
 
 subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
 
@@ -765,7 +766,8 @@ determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg &
 
 neg-comp-lex := norm-zero-arg &
   [ SYNSEM.LOCAL [ CAT [ HEAD adv &
-                              [ NEGATED + ],
+			      [ MOD < > ,
+                                NEGATED + ],
                          VAL [ SUBJ < >,
                                COMPS < > ] ],
                    CONT [ RELS.LIST < >,

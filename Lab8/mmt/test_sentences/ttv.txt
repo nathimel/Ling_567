@@ -6,7 +6,7 @@ Muiny ala ne voliliti dilen poen.
 SKIPPED
 SKIPPED
 Manuai pe muiny ala voliliti dilen.
-Muiny ala voliliti dilen manuai ala voliliti muiny.
+Muiny ala voliliti dilen pe manuai ala voliliti muiny.
 Manuai ala voliliti muiny pe ala matir.
 SKIPPED
 SKIPPED
@@ -14,7 +14,7 @@ SKIPPED
 SKIPPED
 Cong i ani muiny.
 Manuai e lono.
-Muiny ala manuai. 
+Muiny manuai. 
 Dilen e muiny i matir.
 Muiny Eyo i matir.
 Se i matir.
