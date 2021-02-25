@@ -46,15 +46,10 @@ TOOD list
 ===============================================================================
 Questions/issues:
 
-	- A large amount of the corpus isn't simple just sentential negation,
-	but things like
-
-	    [something NOT ] = nothing
-	and negative polarity items ( "ave" = any, "mavuen" = not.yet ), and
-	constituent negation. I'm guessing that we won't be implementing these.
-
-	- It seems like modal negation would be nice to implement.
-	However, its not in the MMT sentences.
+	- On our MMT sentences, we're getting a lot of the irrealis nonsingular
+	clitic, 'ka', as translations from sentences containing 'ala'. 'Ala'
+	specifies MOOD realis, and our semi.vpm says realis <> realis, so
+	we're puzzled.
 
 ===============================================================================
 The MT sentence for negation is:
@@ -252,17 +247,29 @@ aux9-aux-lex := subj-raise-aux-no-pred &
   3.
   4.
   5. negation sentence
+
+     As far as I can tell, this works well for:
+     	manuai i ne kip poen
+
+     We still need to implement a new negation strategy that says poen
+     (new lex. entry) is
+     semantically contentful, in order to get the following:
+     	manuai i kip poen
+
+  
   6. SKIPPED
   7. SKIPPED
-  8. Getting four strings, but grammar shows just one tree for the test sentence
-  9. Not parsing for MT or the current grammar;
-     We think this is because there's no way to coordinate Ses with our current
-     coordination strats.
-     	- Also, why do we have two strats? what's the difference?
-	added an S coordination rule to our Strat 1
-	now we get four sentences, all corresponding to the diff ways one can drop
-	the clitic(s).
-	    - Why? Shouldn't our semi.vpm be taking care of this?
+  8. Getting two trees for one string:
+       Manuai pe muiny ala voliliti dilen
+     One has the correct and reasonable meaning that dogs and cats chase cars
+     (VP coordination), 
+     while the other has the silly one that something is being a dog, and cats
+     chase cars (S coordination).
+     
+  9. Giving 1 string for ttv to ttv:
+     	    Muiny ala voliliti dilen pe manuai ala voliliti muiny
+     And in eng to ttv, we get 4 results, but the only one that doesn't have 'ka'
+     is the same string as the above.
 	
   10. Getting 14 total results :(
       Do we know if the clitic is obligatory for all VPs taking the sole subj?
@@ -275,6 +282,60 @@ aux9-aux-lex := subj-raise-aux-no-pred &
 
       HOW CAN WE GET a sentence like "muiny ala kip" to not be translated as
       "muiny kip".
+
+      Changing main-verb-lex to be FORM nonfinite, which is the correct analysis
+
+      Now changing the CONJ rules (top, bottom for vp1) to say the FORM value is the same on the mother
+      and daughter
+
+      Okay, that worked.
+
+      Regarding obligatory agreement clitics:
+      
+      Now we'd really like the SUBJ-HEAD rule to not apply to
+      	  "manuai voliliti muiny"
+	   cat     chase   dog
+	   "cats chase dogs."
+
+      How?
+
+      And similarly, we'd like DECL-HEAD-OPT-SUBJ to not apply to
+      	  "matir"
+	   sleep
+	   "Sleeps."
+
+      Constrained the s1-coord rules (bottom and top) to say FORM value
+      is same on mother, dtr. And now we only get 5 total results for ttv ttv,
+
+      There is mere structural and semantic ambiguity in this string:
+            Manuai ala voliliti muiny pe ala matir
+      It that accounts for 3 of the output strings.
+      	 GOOD NEWS! The VP sentence has the ARG1s of the verbs IDed with the
+	 ARG0 of cats! So we should rule out the other sentences and just
+	 keep this one. Meanwhile, the S sentence has the second 'ala' not
+	 IDed with the first and with 'cats', so we should try and block it.
+
+      We also not that the following string could be correct:
+            Manuai ala voliliti muiny pe matir
+      Because here, ala take the entire coordinate phrase as a complement.
+      I thought this might be correct, but for some reason the ARG1s of the
+      verbs aren't being identified with the ARG0 of cats.
+
+      And the following is interesting:
+      	  Ala voliliti muiny pe manuai ala matir
+      Because it has the subject optional in the first phrase and
+      the subject overt in the second coordinate. The coordination is of Ses.
+      I think its bad, because the ARG0 of cat and the ARG1 of the first 'ala'
+      are not identified. In other words, "they" != "cats".
+
+
+      eng to ttv shows 6 output sentences, half of them have 'ka' in them,
+      which we could get rid of. Of the ones that don't, we get:
+
+      	    Manuai ala voliliti muiny pe ala matir
+	    Manuai ala voliliti muiny pe matir
+
+      We want the first, not the second. So we should try and block the second.
 
   11. SKIPPED
   12. SKIPPED
@@ -296,13 +357,31 @@ aux9-aux-lex := subj-raise-aux-no-pred &
       If the root condition specifies FORM finite, can the root node be
       FORM form?
 
-  18. 
-  19.
-  20.
-  21.
-  22.
-  23.
-  24. 2 things
+  18. Getting 4 sentences. 2 are a result of underconstrained MOOD somewhere,
+      because the clitic is 'kine'. Think we might be stuck on the two remaining
+      sentences -- however, they're incorrect. Currently, 'e' does not mean
+      possession, but just loc_p_rel. So until we implement possession with 'e'
+      this will not be the translation from eng.txt. If there is one at all.
+
+      	   Yup, when ./translate eng ttv 18 we get "poss_rel" not in the sem index.
+
+  19. Not getting anything.
+
+      This is a possessive sentence, and I'm pretty sure it still needs some
+      implementation work. When/if we get around to it, we'll probably just
+      use the possessive strategy that makes "eyo" mean "of-mine". Talk to emily
+      about quick implemenation of this. This would be a good thing to implement
+      since so many groups are doing possession.
+      
+  20. 2 things; not sure 'kine' should be here
+      Can we constrain MOOD in semi.vpm?
+      	  Not actually sure what's causing this problem for this sentence, since
+	  "i" should constrain MOOD to be realis.
+	  
+  21. 1 thing and it looks good
+  22. 1 thing and it looks good
+  23. SKIPPED
+  24. SKIPPED
   25. nothing
 
 ===============================================================================

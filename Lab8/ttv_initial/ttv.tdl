@@ -238,7 +238,8 @@ verb-lex := non-mod-lex-item &
 
 main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
   [ SYNSEM [ L-QUE -,
-             LOCAL [ CAT [ HEAD.AUX -,
+             LOCAL [ CAT [ HEAD [ FORM nonfinite,
+				  AUX - ],
                            VAL [ SPEC < >,
                                  SUBJ < #subj > ] ],
                      CONT.HOOK.XARG #xarg ] ],
@@ -653,7 +654,8 @@ aux43-aux-lex := subj-raise-aux-no-pred &
 neg-aux-lex := subj-raise-aux-super & norm-sem-lex-item & trans-first-arg-raising-lex-item-1 &
   [ SYNSEM.LOCAL.CAT [ HEAD.FORM nonfinite,
 		       VAL.COMPS < [ LOCAL.CAT.HEAD.FORM nonfinite ],
-                         [ LOCAL.CAT.HEAD adv & [ NEGATED + ] ]  > ] ].
+                         [ OPT -,
+			 LOCAL.CAT.HEAD adv & [ NEGATED + ] ]  > ] ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Subordinators
@@ -1627,23 +1629,44 @@ np1-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
 ;;; Coordination Strategy 1
 
 vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAl [ CAT.HEAD.AUX #something,
-	    COORD-STRAT "1" ],
-    LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.AUX #something,
-    RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.AUX #something ].
+  [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+			      AUX #a ],
+		   CONT.HOOK.INDEX.PNG [ PER #p,
+					 NUM #n ],
+		   COORD-STRAT "1" ],
+    LCOORD-DTR.SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+				       AUX #a ],
+			      CONT.HOOK.INDEX.PNG [ PER #p,
+						    NUM #n ] ],
+    RCOORD-DTR.SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+				       AUX #a ],
+			      CONT.HOOK.INDEX.PNG [ PER #p,
+						    NUM #n ] ] ].
 
 vp1-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
-  [ SYNSEM.LOCAL [ CAT.HEAD.AUX #some,
+  [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+			      AUX #a ],
   	    COORD-STRAT "1" ],
-    NONCONJ-DTR.SYNSEM.LOCAL.CAT.HEAD.AUX #some ].
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT.HEAD [ FORM #f,
+					AUX #a ] ].
 
 ;;; Coordination Strategy 1
 
 s1-top-coord-rule := basic-s-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+  [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+			      AUX #a ],
+	    COORD-STRAT "1" ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD [ FORM #f,
+				       AUX #a ],
+    RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD [ FORM #f,
+				       AUX #a ] ].
 
 s1-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
-  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+  [ SYNSEM.LOCAL [ CAT.HEAD [ FORM #f,
+			      AUX #a ],
+  	    COORD-STRAT "1" ],
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT.HEAD [ FORM #f,
+					AUX #a ] ].
 
 ;;; Coordination Strategy 2
 

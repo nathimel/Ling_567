@@ -3494,7 +3494,7 @@ pe1 := conj-lex &
 
 ne2 := conj-lex &
   [ STEM < "ne" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_or_coord_rel",
     CFORM "2" ].
 
 alan_1 := irr-clause-final-prehead-s-attach-subord-lex-item &
