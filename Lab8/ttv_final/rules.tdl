@@ -26,7 +26,7 @@ np1-any-2nd-2nd-any-pl-pl-top-coord := np1-any-2nd-2nd-any-pl-pl-top-coord-rule.
 np1-any-2nd-2nd-any-du-du-top-coord := np1-any-2nd-2nd-any-du-du-top-coord-rule. 
 
 np1-any-2nd-2nd-any-pc-pc-top-coord := np1-any-2nd-2nd-any-pc-pc-top-coord-rule. 
-n
+
 np1-any-2nd-2nd-any-sg-sg-top-coord := np1-any-2nd-2nd-any-sg-sg-top-coord-rule. 
 
 np1-any-1st-1st-any-pl-pl-top-coord := np1-any-1st-1st-any-pl-pl-top-coord-rule.

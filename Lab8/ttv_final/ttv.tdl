@@ -774,13 +774,19 @@ determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg &
 ;                   want this type to act as a modifer.
 
 neg-comp-lex := norm-zero-arg &
-  [ SYNSEM.LOCAL [ CAT [ HEAD adv &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD adv &
 			      [ MOD < > ,
                                 NEGATED + ],
                          VAL [ SUBJ < >,
+			       SPEC < >,
+			       SPR < >,
                                COMPS < > ] ],
                    CONT [ RELS.LIST < >,
-                          HCONS.LIST < > ] ] ].
+                          HCONS.LIST < > ] ],
+	     NON-LOCAL non-local-none ] ].
+	     
+;;; Paralellel to LOCAL, called NONLOCAL, have it none. This will constraint
+;;;search space.
 
 ; Type for negative adverbs.
 ; 
@@ -793,9 +799,10 @@ neg-adv-lex := basic-scopal-adverb-lex &
                              SUBJ < >,
                              SPEC < > ],
                        POSTHEAD +,
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
-                                                VAL [ SUBJ null,
-                                                      COMPS null ] ] ] > ] ].
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD +vp &
+						     [ AUX -],
+                                                VAL [ COMPS null,
+						      SUBJ cons ] ] ] > ] ].
 
 ;;;NOTE: we can specify FORM finite instead of HEAD verb
 ;;;We block 'ne' from taking this as a comp instead of the above neg-comp-lex

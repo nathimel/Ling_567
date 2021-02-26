@@ -67,7 +67,7 @@ E.ASPECT : ASPECT
   ipfv <> imperfective
   cont <> continual
   hab <> habitual
-  pfv <> [e]
+  ipfv <> [e]
 
 E.MOOD : MOOD
   cond <> conditional
