@@ -1,0 +1,7 @@
+TODO:
+   finish lab 8
+   start lab 9
+   add the following transfer rules:
+      "Hunger eats the dogs" -> "the dogs are hungry"
+      _loc_p_rel -> _in_p_rel
+

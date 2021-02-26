@@ -8,7 +8,7 @@ way to do this is to report:
        1.3 And sje to ttv
     2. A prose description of the issues with the output for each
     3. The relevant tdl in the final Lab 8 grammar for each sentence
-    4. The final output numbers.
+    4. The final output numbers.:
 
 ================================================================================
 1
@@ -23,6 +23,43 @@ Initial output
 	1-2 sentences describing why:
 
     ENG to TTV
+	1: 1 parse, 3 results
+		Mood is unconstrained
+	2: 1 parse, 3 results
+		Mood is unconstrained
+	3: 1 parse, 8 results
+		Mood/aspect unconstrained, sg and pl prons both appear
+	4: 1 parse, 3 results
+		Mood unconstrained
+	5: 1 parse, 6 results
+		Mood unconstrained
+	6: 1 parse, 0 results
+		SKIPPED, missing word for 'think' and 'know'.
+	7: 1 parse, 0 results
+		SKIPPED
+	8: 1 parse, 12 results
+		'and' and 'or' both have '_and_coord_rel', mood/number unspecified
+	9: 1 parse, 0 results
+		There is not S coordination in the Lab7 grammar
+	10: 1 parse, 21 results,
+		Mood unspecified, finiteness unspecified/not finished
+	11: 1 parse, 3 results
+		Mood unspecified
+	12: 1 parse, 0 results
+		SKIPPED, no adjectives yet
+	13: 1 parse, 0 results
+		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
+	14: 1 parse, 0 results
+		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
+	15: 1 parse, 0 results
+		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
+	16: 1 parse, 0 results
+		"Hunger eats the dogs"/missing transfer rule
+	17: 1 parse, 3 results
+		mood unconstrained
+	18: 1 parse, 0 results
+		missing poss_rel; needs transfer rule
+	
     	# of strings:
 	1-2 sentences describing why:
 
