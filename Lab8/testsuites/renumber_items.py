@@ -9,7 +9,7 @@ import sys, copy
 if len(sys.argv) < 2:
 	print("Usage: renumber_items.py <input_file> <ouuput_file>")
 	print("   input_file  : name of the file to renumber")
-	print("   ouuput_file : name of the file to output to")
+	print("   output_file : name of the file to output to")
 	sys.exit()
 
 # the two program arguments

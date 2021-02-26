@@ -1,0 +1,1581 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Grammar of ttv
+;;; created at:
+;;;     Fri Feb 26 03:26:06 UTC 2021
+;;; based on Matrix customization system version of:
+;;;     Fri Feb  5 21:00:23 UTC 2021
+;;;
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
+
+non-mod-lex-item := lex-item &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < > ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Matrix Type Addenda
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+basic-head-comp-phrase :+ [ SYNSEM [ LIGHT -,
+             LOCAL.CAT.MC #mc ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+
+head :+ [ PRON bool,
+    AUX bool,
+    POSSESSOR poss,
+    FORM form,
+    INIT bool ].
+
+inflected :+ [ NOUN-PC3-FLAG luk,
+    VERB-PC11-OR-VERB-PC12-FLAG luk,
+    VERB-PC8-FLAG luk,
+    VERB-PC10-FLAG luk,
+    VERB-PC12-FLAG luk,
+    VERB-PC9-FLAG luk,
+    VERB-PC11-FLAG luk,
+    VERB-PC3-FLAG luk ].
+
+infl-satisfied :+ [ NOUN-PC3-FLAG na-or-+,
+    VERB-PC11-OR-VERB-PC12-FLAG na-or-+,
+    VERB-PC8-FLAG na-or-+,
+    VERB-PC10-FLAG na-or-+,
+    VERB-PC12-FLAG na-or-+,
+    VERB-PC9-FLAG na-or-+,
+    VERB-PC11-FLAG na-or-+,
+    VERB-PC3-FLAG na-or-+ ].
+
+png :+ [ PER person,
+    NUM number ].
+
+cat :+ [ POSSESSUM poss ].
+
+poss := *top* &
+  [ POSS-AGR png ].
+
+basic-bare-np-phrase :+ [ SYNSEM.LOCAL.CAT [ VAL.SPEC < >,
+                       HEAD #head,
+                       POSSESSUM #possessum ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD #head,
+                                POSSESSUM #possessum & nonpossessive ] ].
+
+basic-head-1st-comp-phrase :+ [ SYNSEM.LOCAL.CAT.POSSESSUM #poss,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.POSSESSUM #poss ].
+
+basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+top-coord-rule :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    RCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ] ].
+
+bottom-coord-phrase :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                   POSSESSUM #possessum ] ].
+
+basic-head-mod-phrase-simple :+ [ SYNSEM.LOCAL.CAT.MC #mc,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+
+;;;;;;;;;;;;;;
+;;; Features
+;;;;;;;;;;;;;;
+
+;;; Person
+
+person := *top*.
+1st := person.
+2nd := person.
+3rd := person.
+
+;;; Number
+
+number := *top*.
+sg := number.
+non-sg := number.
+du := non-sg.
+pc := non-sg.
+pl := non-sg.
+
+;;; Possession
+
+possession := *top*.
+possessive := poss.  ; supertype for possessive features
+nonpossessive := poss.  ; type for nonpossessive
+possessor := possessive.
+possessum := possessive.
+possessive-pron-1 := possessive.  ; supertype for strategy pron-1
+possessor-pron-1 := possessor & possessive-pron-1.
+possessum-pron-1 := possessum & possessive-pron-1.
+
+;;; Form
+
+form := *top*.
+nonfinite := form.
+finite := form.
+
+;;; Tense
+
+nfut := tense.
+fut := tense.
+pres := tense.
+
+;;; Aspect
+
+pot := aspect.
+incep := aspect.
+pfv := aspect.
+ipfv := aspect.
+cont := aspect.
+hab+prog := aspect.
+hab := hab+prog.
+prog := hab+prog.
+
+;;; Mood
+
+cond := mood.
+imp := mood.
+irr := mood.
+oblig := mood.
+realis := mood.
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Types
+;;;;;;;;;;;;;;;;;;;
+
+;;; Nouns
+
+wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                           VAL [ SPR < >,
+                                 SUBJ < >,
+                                 COMPS < >,
+                                 SPEC < > ] ],
+                     CONT [ RELS.LIST < [ LBL #larg,
+                                          ARG0 #arg0 & ref-ind ],
+                                        quant-relation &
+                                        [ PRED "which_q_rel",
+                                          ARG0 #arg0,
+                                          RSTR #harg ] >,
+                            HCONS.LIST < [ HARG #harg,
+                                           LARG #larg ] > ] ],
+             NON-LOCAL.QUE.LIST < #arg0 > ] ].
+
+noun-lex := basic-noun-lex & basic-non-wh-word-lex & non-local-none-lex-item & no-hcons-lex-item & non-mod-lex-item &
+  [ ARG-ST < #spr >,
+    INFLECTED.NOUN-PC3-FLAG -,
+    SYNSEM.LOCAL.CAT [ VAL [ SPR < #spr &
+                                   [ LOCAL.CAT.HEAD det ] >,
+                             COMPS < >,
+                             SUBJ < >,
+                             SPEC < > ],
+                       HEAD.POSSESSOR nonpossessive,
+                       POSSESSUM nonpossessive ] ].
+
+noun1-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun17-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun19-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun38-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+noun39-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM pl ] ] ].
+
+noun40-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                         NUM pl ] ] ].
+
+noun48-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                         NUM sg ] ] ].
+
+noun62-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                         NUM sg ] ] ].
+
+noun82-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM sg ] ] ].
+
+noun83-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG [ PER 1st,
+                                         NUM pl ] ] ].
+
+noun87-noun-lex := wh-pronoun-noun-lex.
+
+noun88-noun-lex := wh-pronoun-noun-lex.
+
+noun89-noun-lex := wh-pronoun-noun-lex.
+
+noun90-noun-lex := wh-pronoun-noun-lex.
+
+noun91-noun-lex := wh-pronoun-noun-lex.
+
+noun92-noun-lex := wh-pronoun-noun-lex.
+
+;;; Verbs
+
+verb-lex := non-mod-lex-item &
+  [ SYNSEM [ LOCAL.CAT.HEAD verb,
+             L-QUE - ] ].
+
+main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
+  [ SYNSEM [ L-QUE -,
+             LOCAL [ CAT [ HEAD.AUX -,
+                           VAL [ SPEC < >,
+                                 SUBJ < #subj > ] ],
+                     CONT.HOOK.XARG #xarg ] ],
+    ARG-ST.FIRST #subj &
+                 [ LOCAL [ CAT cat-sat &
+                               [ VAL [ SPR < >,
+                                       COMPS < > ] ],
+                           CONT.HOOK.INDEX #xarg ] ] ].
+
+aux-lex := verb-lex & basic-icons-lex-item &
+  [ SYNSEM [ LOCAL.CAT.HEAD.AUX +,
+             L-QUE - ] ].
+
+intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    ARG-ST.FIRST.LOCAL.CAT.HEAD noun ].
+
+transitive-verb-lex := main-verb-lex & transitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun ],
+             #comps &
+             [ LOCAL.CAT cat-sat &
+                         [ VAL [ SPR < >,
+                                 COMPS < > ],
+                           HEAD noun ] ] > ].
+
+clausal-verb-lex := main-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun ],
+             #comps &
+             [ LOCAL.CAT [ MC na-or--,
+                           VAL [ SPR < >,
+                                 COMPS < >,
+                                 SUBJ < > ] ] ] > ].
+
+verb1-verb-lex := transitive-verb-lex.
+
+verb2-verb-lex := transitive-verb-lex.
+
+verb3-verb-lex := intransitive-verb-lex.
+
+verb4-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb,
+                                                   WH.BOOL - ],
+                                             CONT.HOOK.INDEX.SF prop ] ] >,
+             NON-LOCAL.QUE.LIST < > ] ].
+
+verb5-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb,
+                                                   WH.BOOL - ],
+                                             CONT.HOOK.INDEX [ E.MOOD irr,
+                                                               SF prop ] ] ] >,
+             NON-LOCAL.QUE.LIST < > ] ].
+
+verb6-verb-lex := clausal-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD verb ] >,
+                           SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM sg,
+                                                                  PER 2nd ] ] ].
+
+;;; Auxiliaries
+
+subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+                             COMPS < #comps >,
+                             SUBJ < #subj > ],
+                   CONT.HOOK.XARG #xarg ],
+    ARG-ST < #subj &
+             [ LOCAL [ CAT [ HEAD noun,
+                             VAL [ SUBJ < >,
+                                   SPR < >,
+                                   SPEC < >,
+                                   COMPS < > ] ],
+                       CONT.HOOK.INDEX #xarg ] ],
+             #comps &
+             [ LOCAL.CAT [ VAL [ SUBJ < unexpressed >,
+                                 COMPS < >,
+                                 SPR < >,
+                                 SPEC < > ],
+                           HEAD verb ] ] > ].
+
+subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
+
+aux2-aux-lex := subj-raise-aux-with-pred & verb-pc11-rule-dtr & verb-pc12-rule-dtr &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E [ TENSE pres,
+                                       ASPECT ipfv ],
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ],
+    INFLECTED.VERB-PC11-OR-VERB-PC12-FLAG - ].
+
+aux3-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+aux4-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+aux5-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+aux6-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT cont,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+subj-raise-aux-no-pred := subj-raise-aux & raise-sem-lex-item &
+  [ ARG-ST < [ ],
+             [ LOCAL.CAT.HEAD.AUX - ] > ].
+
+aux7-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+aux8-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT hab+prog,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux9-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
+    INFLECTED.VERB-PC3-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux15-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
+    INFLECTED.VERB-PC8-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux17-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
+    INFLECTED.VERB-PC9-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux18-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ],
+    INFLECTED.VERB-PC10-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux20-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux21-aux-lex := subj-raise-aux-no-pred & verb-pc11-rule-dtr &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ],
+    INFLECTED.VERB-PC11-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux24-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux25-aux-lex := subj-raise-aux-no-pred & verb-pc12-rule-dtr &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ],
+    INFLECTED.VERB-PC12-FLAG - ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux26-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux29-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM du ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux30-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                    NUM du ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux31-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM du ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux32-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM pc ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux33-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM pc ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux34-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                    NUM pc ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux35-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM pc ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux36-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM pl ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux37-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                    NUM pl ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux38-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM pl ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux39-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux40-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM form ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux41-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                    NUM sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux42-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD irr,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER person,
+                                                                    NUM non-sg ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux43-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
+                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                    NUM pl ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ] ].
+
+;;;;;;;;;;;;;;;;;;;
+;;; Subordinators
+;;;;;;;;;;;;;;;;;;;
+
+adposition-subord-lex-item := single-rel-lex-item & norm-ltop-lex-item & basic-icons-lex-item &
+  [ SYNSEM.LOCAL.CAT [ MC -,
+                       HEAD adp &
+                            [ MOD < [ LOCAL scopal-mod &
+                                            [ CAT [ HEAD verb,
+                                                    VAL.COMPS < > ] ] ] > ],
+                       VAL [ SUBJ < >,
+                             SPR < >,
+                             SPEC < >,
+                             COMPS < [ OPT -,
+                                       LOCAL.CAT [ MC -,
+                                                   VAL.COMPS < > ] ] > ] ] ].
+
+subord-with-verbal-comp-lex := adposition-subord-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT.HEAD verb,
+                                                CONT.HOOK [ LTOP #mod,
+                                                            INDEX #index ] ] ] >,
+                           VAL.COMPS < [ LOCAL [ CAT.HEAD verb,
+                                                 CONT.HOOK.LTOP #comps ] ] > ],
+                     CONT [ HCONS.LIST < qeq &
+                                         [ HARG #h1,
+                                           LARG #mod ],
+                                         qeq &
+                                         [ HARG #h2,
+                                           LARG #comps ] >,
+                            HOOK.INDEX #index ] ],
+             LKEYS.KEYREL [ ARG1 #h1,
+                            ARG2 #h2 ] ] ].
+
+irr-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD #feat,
+                   CAT [ VAL.COMPS < [ LOCAL [ CAT.VAL.SUBJ < >,
+                                               CONT.HOOK.INDEX.E.MOOD #feat & irr ] ] >,
+                         POSTHEAD -,
+                         HEAD [ MOD < [ LOCAL.CAT.VAL.SUBJ < > ] >,
+                                INIT - ] ] ] ].
+
+realis-clause-init-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD #feat,
+                   CAT [ VAL.COMPS < [ LOCAL [ CAT.VAL.SUBJ < >,
+                                               CONT.HOOK.INDEX.E.MOOD #feat & realis ] ] >,
+                         POSTHEAD -,
+                         HEAD [ MOD < [ LOCAL.CAT.VAL.SUBJ < > ] >,
+                                INIT + ] ] ] ].
+
+insitu-int-cl := interrogative-clause & head-only &
+  [ C-CONT [ RELS.LIST < >,
+             HCONS.LIST < > ],
+    HEAD-DTR.SYNSEM [ LOCAL.CAT [ HEAD verb,
+                                  VAL #val &
+                                      [ SUBJ < >,
+                                        COMPS < > ] ],
+                      NON-LOCAL [ SLASH.LIST < >,
+                                  REL.LIST < >,
+                                  QUE.LIST.FIRST ref-ind ] ],
+    SYNSEM [ MODIFIED hasmod,
+             NON-LOCAL [ SLASH.LIST < >,
+                         QUE.LIST < >,
+                         REL.LIST < > ],
+             LOCAL.CAT [ VAL #val,
+                         MC bool,
+                         WH.BOOL + ] ] ].
+
+;;; Complementizers
+
+;;; Others
+
+norm-adposition-lex := norm-sem-lex-item & no-hcons-lex-item & basic-intersective-mod-lex & non-local-none-lex-item &
+  [ ARG-ST < #comp >,
+    SYNSEM [ LKEYS.KEYREL arg12-ev-relation &
+                          [ PRED #pred,
+                            ARG2 #ind ],
+             L-QUE #lque,
+             LOCAL [ CONT.RELS.LIST < [ PRED #pred,
+                                        ARG0 event,
+                                        ARG1 event-or-ref-index ] >,
+                     CAT [ WH.BOOL -,
+                           VAL [ SPR < >,
+                                 SPEC < >,
+                                 SUBJ < >,
+                                 COMPS < #comp &
+                                         [ L-QUE #lque,
+                                           LOCAL [ CAT [ HEAD noun,
+                                                         VAL.SPR < > ],
+                                                   CONT.HOOK.INDEX #ind ] ] > ],
+                           HEAD adp &
+                                [ MOD < [ LOCAL.CAT [ VAL.SPR cons,
+                                                      WH.BOOL -,
+                                                      HEAD.AUX - ] ] > ] ] ] ] ].
+
+normadp1-norm-adposition-lex := norm-adposition-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.INIT + ].
+
+;;; Determiners
+;;; SPEC is non-empty, and already specified by basic-determiner-lex.
+
+determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg & non-mod-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+                           COMPS < >,
+                           SUBJ < > ] ].
+
+;;; Adverbs
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Rules
+;;;;;;;;;;;;;;;;;;;
+
+; Adjective Incorporation
+
+adj_incorporation-lex-rule := add-only-rule &
+  [ C-CONT [ RELS.LIST < arg1-ev-relation &
+                         [ LBL #ltop,
+                           ARG1 #index ] >,
+             HOOK #hook ],
+    DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
+                       CONT.HOOK #hook &
+                                 [ LTOP #ltop,
+                                   INDEX #index ] ] ].
+
+;;; Intermediate rule types
+
+verb-pc11-rule-dtr := word-or-lexrule.
+verb-pc12-rule-dtr := word-or-lexrule.
+
+;;; Lexical rule types
+
+noun-pc3-lex-rule-super := lex-rule &
+  [ INFLECTED [ NOUN-PC3-FLAG +,
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC11-FLAG #verb-pc11,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR noun-lex &
+        [ INFLECTED [ VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC11-FLAG #verb-pc11,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+noun-pc3_lrt1-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM du,
+                                        PER 1st ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt2-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM sg,
+                                        PER 1st ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt3-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM sg,
+                                        PER 2nd ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt4-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM du,
+                                        PER 1st ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt5-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ PER 2nd,
+                                        NUM du ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt6-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ PER 3rd,
+                                        NUM du ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt7-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM pc,
+                                        PER 1st ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt8-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ PER 2nd,
+                                        NUM pc ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt9-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM pc,
+                                        PER 3rd ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt10-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ PER 1st,
+                                        NUM pl ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt11-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM pl,
+                                        PER 2nd ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt12-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ NUM pl,
+                                        PER 3rd ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+noun-pc3_lrt13-lex-rule := infl-lex-rule & noun-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG [ PER 3rd,
+                                        NUM sg ],
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+nonpossessive-lex-rule-1 := add-only-no-ccont-rule &
+  [ SYNSEM.LOCAL.CAT [ HEAD noun &
+                            [ POSSESSOR nonpossessive ],
+                       POSSESSUM nonpossessive ] ].
+
+poss-strat1-nonpossessive-lex-rule := const-lex-rule & nonpossessive-lex-rule-1 & noun-pc3-lex-rule-super.
+
+verb-pc1-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb1-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc1_lrt1-lex-rule := verb-pc1-lex-rule-super.
+
+verb-pc3-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC3-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC11-FLAG #verb-pc11 ],
+    DTR aux9-aux-lex &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC11-FLAG #verb-pc11 ] ] ].
+
+verb-pc3_lrt1-lex-rule := verb-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                NUM sg ] ].
+
+verb-pc8-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC8-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC11-FLAG #verb-pc11,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR aux15-aux-lex &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC11-FLAG #verb-pc11,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+verb-pc8_lrt1-lex-rule := verb-pc8-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                NUM sg ] ].
+
+verb-pc9-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC9-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC11-FLAG #verb-pc11,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR aux17-aux-lex &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC11-FLAG #verb-pc11,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+verb-pc9_lrt1-lex-rule := verb-pc9-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+                                                                NUM sg ] ].
+
+verb-pc10-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC10-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC11-FLAG #verb-pc11,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR aux18-aux-lex &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC11-OR-VERB-PC12-FLAG #verb-pc11-or-verb-pc12,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC11-FLAG #verb-pc11,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+verb-pc10_lrt1-lex-rule := verb-pc10-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                NUM sg ] ].
+
+verb-pc11-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC11-OR-VERB-PC12-FLAG +,
+                VERB-PC11-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC12-FLAG #verb-pc12,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR verb-pc11-rule-dtr &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC12-FLAG #verb-pc12,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+verb-pc11_lrt1-lex-rule := verb-pc11-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                NUM sg ] ].
+
+verb-pc12-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC11-OR-VERB-PC12-FLAG +,
+                VERB-PC12-FLAG +,
+                NOUN-PC3-FLAG #noun-pc3,
+                VERB-PC8-FLAG #verb-pc8,
+                VERB-PC10-FLAG #verb-pc10,
+                VERB-PC11-FLAG #verb-pc11,
+                VERB-PC9-FLAG #verb-pc9,
+                VERB-PC3-FLAG #verb-pc3 ],
+    DTR verb-pc12-rule-dtr &
+        [ INFLECTED [ NOUN-PC3-FLAG #noun-pc3,
+                      VERB-PC8-FLAG #verb-pc8,
+                      VERB-PC10-FLAG #verb-pc10,
+                      VERB-PC11-FLAG #verb-pc11,
+                      VERB-PC9-FLAG #verb-pc9,
+                      VERB-PC3-FLAG #verb-pc3 ] ] ].
+
+verb-pc12_lrt1-lex-rule := verb-pc12-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                NUM sg ] ].
+
+;;;;;;;;;;;;;;;;;;;
+;;; Phrasal Types
+;;;;;;;;;;;;;;;;;;;
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT + ].
+
+subj-head-phrase := decl-head-subj-phrase & head-final &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+; Rules for building NPs.  Note that the Matrix uses SPR for
+; the specifier of nouns and SUBJ for the subject (specifier) of verbs.
+
+head-spec-phrase := basic-head-spec-phrase & head-final.
+
+; Bare NP phrase.  Consider modifying the PRED value of the quantifier relation
+; introduced to match the semantic effect of bare NPs in your language.
+
+bare-np-phrase := basic-bare-np-phrase &
+  [ C-CONT.RELS.LIST < [ PRED "exist_q_rel" ] >,
+    SYNSEM.LIGHT - ].
+
+adp-comp-head-phrase := basic-head-1st-comp-phrase & head-final &
+  [ SYNSEM.LOCAL.CAT.MC #mc,
+    HEAD-DTR.SYNSEM.LOCAL.CAT [ MC #mc,
+                                HEAD adp &
+                                     [ INIT - ] ] ].
+
+;;; Head Adjunct rules
+
+; For intersective adjuncts with underspecified attachment locations:
+
+my-head-adj-phrase := head-adj-int-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +nvr,
+                                VAL [ SUBJ clist,
+                                      COMPS clist ] ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +jrp,
+                                    VAL.COMPS < > ] ].
+
+my-adj-head-phrase := adj-head-int-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +nvr,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +jrp,
+                                    VAL.COMPS < > ] ].
+
+;;; Wh-question-related phrasal types
+
+; In-situ interrogative clause.
+
+;;;;;;;;;;;;;;;;;;
+;;; Coordination
+;;;;;;;;;;;;;;;;;;
+
+;;; Coordination Strategy 1
+
+np1-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+np1-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+;;; Coordination Strategy 1
+
+vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+vp1-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+;;; Coordination Strategy 2
+
+np2-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+np2-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].

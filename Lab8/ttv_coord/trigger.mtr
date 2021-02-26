@@ -1,0 +1,106 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Semantically Empty Lexical Entries
+
+tarani_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "tarani_2" ].
+
+kine_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
+    FLAGS.TRIGGER "kine" ].
+
+a_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "a" ].
+
+i_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "i_2" ].
+
+kune_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
+    FLAGS.TRIGGER "kune" ].
+
+alawen_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "alawen" ].
+
+kone_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.ASPECT pfv ] >,
+    FLAGS.TRIGGER "kone" ].
+
+itiqi_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "itiqi" ].
+
+u_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "u" ].
+
+buon_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "buon" ].
+
+yoru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoru" ].
+
+woru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "woru" ].
+
+aru_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "aru" ].
+
+yoito_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoito" ].
+
+yoto_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoto" ].
+
+to_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "to" ].
+
+woto_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "woto" ].
+
+ato_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "ato" ].
+
+yoya_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yoya" ].
+
+awa_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "awa_2" ].
+
+ala_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "ala_2" ].
+
+ku_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ku" ].
+
+ko_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ko_2" ].
+
+ki_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ki" ].
+
+ka_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD irr ] >,
+    FLAGS.TRIGGER "ka" ].
+
+yota_2_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG0.E.MOOD realis ] >,
+    FLAGS.TRIGGER "yota_2" ].
