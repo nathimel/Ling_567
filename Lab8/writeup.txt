@@ -208,25 +208,37 @@ Table of contents:
 --------------------------------------------------------------------------------
   2.3 IGT for testing the analysis
 
-      Manuai i   ne  kip poen
-      cat    3sg neg lie not
-      "The cat didn't lie."
-
-      Manuai i kip   poen
-      cat    3sg lie not
-      "The cat didn't lie."
-
-      *Manuai ne  i   kip poen
-       cat    neg 3sg lie not
-       "The cat didnt' lie."
-
-      *Manuai i   ne  kip
-      cat     3sg neg lie
-      "The cat didn't lie."
-
-      *Manuai i   kip ne
-       cat    3sg lie neg
-       "The cat didnt' lie."
+	Manuai i ne kip poen
+	cat 3sg.real neg lie not
+	"The cat didn't lie."
+	
+	Manuai i kip poen
+	cat 3sg.real lie not
+	"The cat didn't lie."
+	
+	Yo u kip poen
+	1sg 1sg.real lie not
+	"I didn't lie."
+	
+	Manuai ne i kip poen
+	cat neg 3sg.real lie not
+	"The cat didnt' lie."
+	
+	Manuai i ne kip
+	cat 3sg.real neg lie
+	"The cat didn't lie."
+	
+	Manuai i kip ne
+	cat 3sg.real lie neg
+	"The cat didnt lie."
+	
+	Manuai i ne ne kip poen
+	cat 3sg.real neg neg lie not
+	"The cat didnt lie."
+	
+	Manuai i ne kip poen poen
+	cat 3sg.real neg lie not not
+	"The cat didnt lie."
 
 ===============================================================================
 3 Further Generation Cleanup (to get generation down to a reasonable output #)
@@ -384,21 +396,21 @@ Table of contents:
 
 4.1 ENG to TTV
     1: 1 result
-	    good result :thumbsup:
+	    good result
     2: 1 result
-	    good results
+	    good result
     3: 2 results
-	    you in eng is 
+	    'you' in English could be singular or plural. 
     4: 1 result
-	    good results?
+	    good results
     5: 2 results
 	    Both results are good, one has bi-partite negationa and the
 		    the other has simple negation
     6: 0 results
-	    SKIPPED, we need transfer rules from "think" and "know" to
+	    SKIPPED in ttv, we need transfer rules from "think" and "know" to
 		    "va" (think/know)
     7: 0 results
-	    SKIPPED
+	    SKIPPED in ttv
     8: 1 results
 	    Correct result.
     9: 1 results
@@ -408,17 +420,14 @@ Table of contents:
     11: 1 results
 	    Correct result.
     12: 0 results
-    13: 0 results
-	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
-    14: 0 resulst
-	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	    SKIPPED in ttv, we are missing attributive adjectives.
     15: 0 results
 	    We are missing a transfwer rule for "hunger eats the dogs".
     16: 0 results
 	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
     17: 1 result
 	    Correct results.
-    18: 0 results
+    18: 0 results (SKIPPED in ttv)
 	    The general preposition 'e' used for poesssion currently has the pred
 		    val _loc_p_rel. We'll need to add another lexical entry for
 		    'e' to handle poss_rel.
@@ -451,11 +460,11 @@ Table of contents:
 --------------------------------------------------------------------------------
 4.2 SJE to TTV
     1: 1 result
-	    ?
+	    Correct result
     2: 1 result
-	    ?
+	    Correct result
     3: 1 result
-	    good
+	    Correct result
     4: 2 results
 	    One good translation, one bad translation with semantics that
 	    means "They eat dogs":
@@ -475,12 +484,14 @@ Table of contents:
 		    coordination. We aren't sure why sje>ttv has this
 		    ambiguity and eng>ttv doesn't.
     9: 1 results
-	    Correct parse.
+	    Correct result.
     10: 4 results.
 	    Two results are correct, and in the two bad results, the subject of
 		    one of the coordinated verbs is dropped.
     11: 1 results
+	   Correct result.
     12: 0 results
+	   SKIPPED in ttv, we are missing attributive adjectives.
     13: 0 results
 	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
     14: 0 resulst
@@ -489,8 +500,10 @@ Table of contents:
 	    We are missing a transfwer rule for "hunger eats the dogs".
     16: SKIPPED in sje
     17: SKIPPED in sje
-    18: 0 results
-	    why
+    18: 0 results (SKIPPED in ttv)
+	    The general preposition 'e' used for poesssion currently has the pred
+		    val _loc_p_rel. We'll need to add another lexical entry for
+		    'e' to handle poss_rel.
     19: 1 result.
 	    Correct result, however, we expect 2 results. The pronominal
 		    possesive suffix has two alternating forms, '-yo' and
@@ -528,7 +541,7 @@ Table of contents:
 	cases.
 
    5.1.2 Final grammar
-      69/103 positive items parsed (X% coverage)
+      69/103 positive items parsed (67.0% coverage)
       6/90 negative items parsed (6.9% overgeneration)
       
       On average:
@@ -540,6 +553,8 @@ Table of contents:
 	 *Manuai i   e    muiny
 	 osprey 3sg prep dog
 	 "The eagle is on the dog."
+ 
+      See lab 7 for details.	
 
       The 3 positive sentences we lost from initial to final were:
 
@@ -593,7 +608,7 @@ Table of contents:
 	  father-3sg 3sg.real say 1sg not
 	  His father said It wasn t me.
 
-	  Of these eight sentences, there were four were 'yo' was correctly
+      Of these eight sentences, there were four were 'yo' was correctly
 	  parsed as a noun, and underwent the np-pred rule. Of those four,
 	  only two had the poen ADV attaching before the verb 'va'(to say),
 	  while the others combined with the VP "va yo", which seems incorrect.
@@ -607,7 +622,7 @@ Table of contents:
 	  C      land poss snake
 	  There was a snake in Cavomu.
 
-	  Of the 4 trees, three have kor taking the PP complement. Of those,
+      Of the 4 trees, three have kor taking the PP complement. Of those,
 	  one has kor as an N, one as an NP, and one as a VP (np-pred rule).
 	  The one where kor does not take a PP comp is where it is a VP, as
 	  a result of the np-pred rule -- and its subject is Cavomu.
@@ -620,6 +635,6 @@ Table of contents:
 	  3pl know of large_fishing_net
 	  They know how to use large fishing nets.
 
-	  These parses show pas as a noun, but it is a transitive verb. There's
+      These parses show pas as a noun, but it is a transitive verb. There's
 	  lots of ambiguity wrt where that N and the PP combine, but the trees
 	  are spurious anyway. 
