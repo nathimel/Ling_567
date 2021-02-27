@@ -459,7 +459,7 @@ aux25-aux-lex := subj-raise-aux-no-pred & verb-pc12-rule-dtr &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
                    CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
                                                                     NUM sg ],
-                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ]x ],
     INFLECTED.VERB-PC12-FLAG - ].
 
 ; To keep the semantically empty ones from spinning on
@@ -804,10 +804,6 @@ neg-adv-lex := basic-scopal-adverb-lex &
                                                 VAL [ COMPS null,
 						      SUBJ cons ] ] ] > ] ].
 
-;;;NOTE: we can specify FORM finite instead of HEAD verb
-;;;We block 'ne' from taking this as a comp instead of the above neg-comp-lex
-;;;by taking advantage of the different MOD values.
-;;; That is, we specify MOD <> on 'ne''s second member of its COMPS list.
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules

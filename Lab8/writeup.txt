@@ -17,11 +17,14 @@ Table of contents:
      2.3 IGT
      2.4 Questions
    3 Further generation cleanup
-     3.1 items
-     3.2 sources
-     3.3 changes
-     3.4 before/after
+     3.1 Sentence 1 (Dogs sleep)
+     3.2 Sentence 3 (I chase you)
+     3.3 Sentence 5 (Dogs don't chase cats)
+     3.4 Sentence 8 (Dogs and cats chase cars)
+     3.5 Sentence 10 (Cats chase dogs and sleep)
    4 MMT Status
+     4.1 ENG to TTV
+     4.2 SJE to TTV
    5 Grammar comparision
      5.1 Testsuite
        5.1.1 Initial grammar
@@ -39,9 +42,7 @@ Questions/issues:
 
 
 ===============================================================================
-The MT sentence for negation is:
 
-       "The dogs don't chase cats."
 ===============================================================================
 1 Documentation of Negation
 
@@ -103,74 +104,110 @@ The MT sentence for negation is:
      specification of tense, aspect, or associated motion is achieved by
      means of serial verbs."
 
-  - A large amount of negation in the corpus is in irrealis, which is marked
-  by a different item, "nabu". It generally appears first in the clause,
-  before the verb but after the subject. Negative commands also appear with
-  "nabu."
-
-    (initial in a modal clause)
-      {IGT}
-
-    (negative command)
-      {IGT}
-      
-  - Claire Bowern also discusses constituent negation, but since that isn't
-  in the MMT sentences, we decided not to implement it.
-     - Consequences of this decision (analysis) ?
-     - i.e., what will the semantics look like, if any, for constituent negation
-     since we're not explicitly working on it?
-
 ===============================================================================
 2 Implementation
 
+  2.0 MMT sentence:
+
+       "The dogs don't chase cats."
+       
+        Muiny ala        ne  voliliti manuai poen
+	Dog   3pl.realis neg chase    cat    neg
+
+	or
+	Muiny ala        voliliti manuai poen
+	Dog   3pl.realis chase    cat    neg
+
+
   2.1 Prose Description of the implemented analysis
+      There are two strategies; bipartite and simple. The bipartite strategy
+      corresponds to sentences like "Manuai i ne kip poen" and the simple
+      strategy corresponds to sentences like "manuai i kip poen".
 
-  2.2 Specific tdl (pasted)
+  2.2 All the tdl we used for negation in this lab.
 
-      The initial grammar has the following lexical entries:
+     subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
+       [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+				  COMPS.FIRST #comps,
+				  SUBJ < #subj > ],
+			CONT.HOOK.XARG #xarg ],
+	 ARG-ST < #subj &
+		  [ LOCAL [ CAT [ HEAD noun,
+				  VAL [ SUBJ < >,
+					SPR < >,
+					SPEC < >,
+					COMPS < > ] ],
+			    CONT.HOOK.INDEX #xarg ] ],
+		  #comps &
+		  [ LOCAL.CAT [ VAL [ SUBJ < unexpressed >,
+				      COMPS < >,
+				      SPR < >,
+				      SPEC < > ],
+				HEAD verb ] ] > ].
 
-       poen := neg11-aux-lex &
-	 [ STEM < "poen" >,
-	   SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+     subj-raise-aux := subj-raise-aux-super &
+       [ SYNSEM.LOCAL [ CAT [ HEAD [ AUX +,
+				     FORM finite],
+			      VAL [ COMPS < [] > ] ] ] ].
 
-	ne := neg12-aux-lex &
-	  [ STEM < "ne" >,
-	    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
-      This is currently having the effect that we parse most of the negative
-      examples, and none of the positive ones. The words are acting as we'd
-      expect an auxiliary to act. For example, we get:
+     neg-aux-lex := subj-raise-aux-super & norm-sem-lex-item & trans-first-arg-raising-lex-item-1 &
+       [ SYNSEM.LOCAL.CAT [ HEAD.FORM nonfinite,
+			    VAL.COMPS < [ LOCAL.CAT.HEAD.FORM nonfinite ],
+			      [ OPT -,
+			      LOCAL.CAT.HEAD adv & [ NEGATED +,
+						     MOD <> ] ]  > ] ].
 
-      	     *Manuai ne kip
-	     cat    neg lie
+     ; Type for negative selected comps.
+     ;                   This type uses the MOD list to get scopal semantics.
+     ;                   Constrain head-modifier rules to be [NEGATED -] if you don't
+     ;                   want this type to act as a modifer.
 
-and
-      	     *Manuai poen kip
-	     cat    neg lie
+     neg-comp-lex := norm-zero-arg &
+       [ SYNSEM [ LOCAL [ CAT [ HEAD adv &
+				   [ MOD < > ,
+				     NEGATED + ],
+			      VAL [ SUBJ < >,
+				    SPEC < >,
+				    SPR < >,
+				    COMPS < > ] ],
+			CONT [ RELS.LIST < >,
+			       HCONS.LIST < > ] ],
+		  NON-LOCAL non-local-none ] ].
 
-	     The MRS shows: it's not the case (qeq) that some cat lies.
-	     We suppose that's a reasonable
-	     semantics, but of course this string is not grammatical in Titan
-	     because the agreement marker is missing, and the negative item
-	     "poen" is not at the end of the clause as it should be.
+     ; Type for negative adverbs.
+     ; 
+     ; This adverb should go through a specialized phrase structure rule
+     ;                           included with this grammar.
 
-This parsed:
+     neg-adv-lex := basic-scopal-adverb-lex &
+       [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+				  COMPS < >,
+				  SUBJ < >,
+				  SPEC < > ],
+			    POSTHEAD +,
+			    HEAD.MOD < [ LOCAL.CAT [ HEAD +vp &
+							  [ AUX -],
+						     VAL [ COMPS null,
+							   SUBJ cons ] ] ] > ] ].
+							   
+     ne := neg-aux-lex &
+       [ STEM < "ne" >,
+	 SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
-      	     *Manuai ne poen kip
-	     cat    neg neg  lie
+     ;;; Adverbs
 
-	     The MRS is what we'd expect given the previous two: it's not
-	     the case that it's not the case that some cat lies.
+     poen := neg-comp-lex &
+       [ SYNSEM.LKEYS.KEYREL.PRED "neg_rel",
+	 STEM < "poen" > ].
 
-Question:
-	There seems to tbe scope ambiguity here.
-	It seems like we want: Exists(x)( Cat(x) ^ ~Lie(x) )
-	But I'm worried we're getting/how to block:
-	    		       ~Exists(x)( Cat(x) ^ Lie(x) )
+     poen_2 := neg-adv-lex &
+       [ STEM < "poen" >,
+	 SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+
 
   2.3 IGT for testing the analysis
-
-      Thinking of writing test cases like the following for sentential negation:
 
       Manuai i   ne  kip poen
       cat    3sg neg lie not
@@ -192,189 +229,291 @@ Question:
        cat    3sg lie neg
        "The cat didnt' lie."
 
-  2.4 Questions for Emily regarding the implementation
 ===============================================================================
 3 Further Generation Cleanup (to get generation down to a reasonable output #)
 
-  3.1 Which MMT items were worked on
+  3.1 For sentence 1 (dogs sleep), we initially got the following output from eng to ttv:
 
-  3.2 Sources of extra generation
+	Muiny ka matir
+	Muiny matir
+	Muiny ala matir
 
-  3.3 Changes to the grammar
+	'Ka' is an irrealis clitic, so we changed our semi.vpm file to have a default:
+	       realis <> [e]
 
-      3.3.1 Prose description
-      3.3.2 Specific tdl
-
-
-      So we need to change all the agreement clitics to nonfinite. Here's a sample.
-      We changed aux9, etc.
-
-aux9-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
-                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
-                                                                    NUM sg ],
-                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
-    INFLECTED.VERB-PC3-FLAG - ].
+	This translation shouldn't have the nominal predicate sentence "muiny matir". So
+	to make agreement clitics obligatory, we said our root condition must be FORM finite,
+	and that all the main-verb-lex's (and the neg-aux-lex) were FORM nonfinite. Note that
+	subj-raise-aux-lex, which is pasted in the above section on negation, requires FORM
+	finite.
 
 
+	main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
+	  [ SYNSEM [ L-QUE -,
+		     LOCAL [ CAT [ HEAD [ FORM nonfinite,
+					  AUX - ],
+				   VAL [ SPEC < >,
+					 SUBJ < #subj > ] ],
+			     CONT.HOOK.XARG #xarg ] ],
+	    ARG-ST.FIRST #subj &
+			 [ LOCAL [ CAT cat-sat &
+				       [ VAL [ SPR < >,
+					       COMPS < > ] ],
+				   CONT.HOOK.INDEX #xarg ] ] ].
 
-  3.4 Before & After numbers on how many outputs we got
+	root := sign &
+	  [ SYNSEM [ NON-LOCAL non-local-none,
+		     LOCAL [ COORD -,
+			     CAT [ VAL [ SUBJ < >,
+					 COMPS < > ],
+				   MC +,
+				   HEAD +vp &
+					[ FORM finite ] ] ] ] ].
+
+
+    3.2 For sentence 3 (I chase you) we got the following initial output from eng to ttv:
+
+	Yo kune voliliti oi
+	Yo ku voliliti oi
+	Yo voliliti awa
+	Yo ku voliliti awa
+	Yo u voliliti oi
+	Yo kune voliliti awa
+	Yo u voliliti awa
+	Yo voliliti oi
+
+	'Kune' is a perfective marker. So we added the default in semi.vpm:
+	  ipfv <> [e]
+
+    3.3 For sentence 5 (Dogs don't chase cats) we got the following output from eng to ttv:
+
+	Muiny poen voliliti dilen
+	Muiny poen ala voliliti dilen
+	Muiny poen ka voliliti dilen
+	Muiny nabu voliliti dilen
+	Muiny nabu ka voliliti dilen
+	Muiny nabu ala voliliti dilen
+
+	  We deleted the lexical entry for "nabu," which is the irrealis negation marker.
+
+    3.4 For sentence 8, (Dogs and cats chase cars), we got the following output from eng to ttv:
+
+	Manuai pe muiny awa voliliti dilen
+	Manuai pe muiny ala voliliti dilen
+	Manuai ne muiny yota voliliti dilen
+	Manuai pe muiny ka voliliti dilen
+	Manuai ne muiny voliliti dilen
+	Manuai pe muiny voliliti dilen
+	Manuai ne muiny awa voliliti dilen
+	Manuai ne muiny ka voliliti dilen
+	Manuai pe muiny yoya voliliti dilen
+	Manuai ne muiny ala voliliti dilen
+	Manuai ne muiny yoya voliliti dilen
+	Manuai pe muiny yota voliliti dilen
+
+	   The fact that we get every plural agreement clitic, but not just the 3rd and plural agreement
+	   clitic, had to do with the PNG features not being copied up from the daughter of the np-coord
+	   rule. We answered some questions in the Coordination section of the customization website called
+	   "feature resolution," which gave us the following tdl to port into our grammar:
+
+	  ;;; Feature Resolution Rules
+
+	  any-3rd-3rd-per-coord-rule := coord-phrase &
+	    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd,
+	      RCOORD-DTR.SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+
+	     ... more combinations, etc ...
+
+	  pass-up-png-coord-rule := bottom-coord-phrase &
+	    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG #png,
+	      NONCONJ-DTR.SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG #png ].
+
+	  ;;; Coordination Strategy 1
+
+	  np1-any-3rd-3rd-any-pl-pl-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule & any-3rd-3rd-per-coord-rule & any-pl-pl-num-coord-rule &
+	    [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+	     ... more combinations, etc ...
+
+	And we added the appropriate rules in rules.tdl.
+
+
+	3.5 For sentence 10 (Cats chase dogs and sleep), we got the following output from eng to ttv:
+
+	Manuai ka voliliti muiny pe matir
+	Manuai ka voliliti muiny pe ala matir
+	Manuai ala ka voliliti muiny pe matir
+	Manuai ka ka voliliti muiny pe matir
+	Manuai ala voliliti muiny pe ala matir
+	Manuai ka voliliti muiny pe matir
+	Manuai voliliti muiny pe ka matir
+	Manuai ka voliliti muiny pe ka matir
+	Manuai ka voliliti muiny pe ka matir
+	Manuai ala voliliti muiny pe matir
+	Manuai ala ka voliliti muiny pe ala matir
+	Manuai voliliti muiny pe matir
+	Manuai ala voliliti muiny pe matir
+	Manuai ka ala voliliti muiny pe ka matir
+	Manuai ala ala voliliti muiny pe ala matir
+	Manuai ka ka voliliti muiny pe ka matir
+	Manuai ka ala voliliti muiny pe matir
+	Manuai ala voliliti muiny pe ka matir
+	Manuai voliliti muiny pe ala matir
+	Manuai ala ala voliliti muiny pe matir
+	Manuai ala voliliti muiny pe ala matir
+
+	   Issues like "ala ala" showing up were fixed by requiring that "ala" require a FORM nonfinite
+	   complement.  
+
+          aux9-aux-lex := subj-raise-aux-no-pred &
+	      [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT pfv,
+			       CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+										NUM sg ],
+					 COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
+		INFLECTED.VERB-PC3-FLAG - ].
+
+
+  Those were all the sentences we worked on this lab. 
 
 ===============================================================================
 4 Status of each MMT item (sje and eng)
 
-(e.g.,
 
-  n. Works! With # of outputs.
-  n. Doesn't work. MRSes are different, documenting these differences.
-)
+4.1 ENG to TTV
+    1: 1 result
+	    good result :thumbsup:
+    2: 1 result
+	    good results
+    3: 2 results
+	    you in eng is 
+    4: 1 result
+	    good results?
+    5: 2 results
+	    Both results are good, one has bi-partite negationa and the
+		    the other has simple negation
+    6: 0 results
+	    SKIPPED, we need transfer rules from "think" and "know" to
+		    "va" (think/know)
+    7: 0 results
+	    SKIPPED
+    8: 1 results
+	    Correct result.
+    9: 1 results
+	    Correct results.
+    10: 2 results
+	    Both results are correct, ambiguity scope of verbal clitic.
+    11: 1 results
+	    Correct result.
+    12: 0 results
+    13: 0 results
+	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+    14: 0 resulst
+	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+    15: 0 results
+	    We are missing a transfwer rule for "hunger eats the dogs".
+    16: 0 results
+	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+    17: 1 result
+	    Correct results.
+    18: 0 results
+	    The general preposition 'e' used for poesssion currently has the pred
+		    val _loc_p_rel. We'll need to add another lexical entry for
+		    'e' to handle poss_rel.
+    19: 1 result
+	    Correct result, however, we expect 2 results. The pronominal
+		    possesive suffix has two alternating forms, '-yo' and
+		    '-eyo'. Currently only '-yo' shows up.
+    20: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    21: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    22: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    23: 0 results (error) (SKIPPED in ttv)
+	    We got an error: atomic_dg: no such type as 'past'. We suspected we
+		    could find a fix for this in semi.vpm, but Titan has no
+		    tense.
+    24: 0 results (error) (SKIPPED in ttv)
+	    We got the same error as in 23.
+    25: 4 results
+	    'Alan' (because) ought to be at the end of the sentence, but all
+		    results have it at the beginning. Additionaly, two of the
+		    reults have the subject and object swapped, and IN_SITU_QUES
+		    applies to the topmost S. 
+    26: 0 results
+	    SKIPPED in ttv, we are missing a word for "after".
 
-  1.
-  2.
-  3.
-  4.
-  5. negation sentence
-
-     As far as I can tell, this works well for:
-     	manuai i ne kip poen
-
-     We still need to implement a new negation strategy that says poen
-     (new lex. entry) is
-     semantically contentful, in order to get the following:
-     	manuai i kip poen
-
-  
-  6. SKIPPED
-  7. SKIPPED
-  8. Getting two trees for one string:
-       Manuai pe muiny ala voliliti dilen
-     One has the correct and reasonable meaning that dogs and cats chase cars
-     (VP coordination), 
-     while the other has the silly one that something is being a dog, and cats
-     chase cars (S coordination).
-     
-  9. Giving 1 string for ttv to ttv:
-     	    Muiny ala voliliti dilen pe manuai ala voliliti muiny
-     And in eng to ttv, we get 4 results, but the only one that doesn't have 'ka'
-     is the same string as the above.
+4.2 SJE to TTV
+    1: 1 result
+	    ?
+    2: 1 result
+	    ?
+    3: 1 result
+	    good
+    4: 2 results
+	    One good translation, one bad translation with semantics that
+	    means "They eat dogs":
+		    "ala ani muiny"
+    5: 2 results
+	    Both results are good, one has bi-partite negationa and the
+		    the other has simple negation
+    6: 0 results
+	    SKIPPED in ttv, we need transfer rules from "think" and "know" to
+		    "va" (think/know)
+    7: 0 results
+	    SKIPPED in ttv
+    8: 2 results (with same surface string)
+	    Because we allow nouns to be standalone sentences and because
+		    there sentences can be coordinated, there is ambiguiy
+		    about the consituant structure of the daughters of
+		    coordination. We aren't sure why sje>ttv has this
+		    ambiguity and eng>ttv doesn't.
+    9: 1 results
+	    Correct parse.
+    10: 4 results.
+	    Two results are correct, and in the two bad results, the subject of
+		    one of the coordinated verbs is dropped.
+    11: 1 results
+    12: 0 results
+    13: 0 results
+	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+    14: 0 resulst
+	    We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+    15: 0 results
+	    We are missing a transfwer rule for "hunger eats the dogs".
+    16: SKIPPED in sje
+    17: SKIPPED in sje
+    18: 0 results
+	    why
+    19: 1 result.
+	    Correct result, however, we expect 2 results. The pronominal
+		    possesive suffix has two alternating forms, '-yo' and
+		    '-eyo'. Currently only '-yo' shows up.
+    20: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    21: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    22: 0 results
+	    wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+		    this with a transfer rule.
+    23: 0 results (error) (SKIPPED in ttv)
+	    We got an error: atomic_dg: no such type as 'past'. We suspected we
+		    could find a fix for this in semi.vpm, but Titan has no
+		    tense.
+    24: 0 results 
+	    We got the same error as in 23.
+    25: SKIPPED in sje
+    26: SKIPPED in sje & ttv
 	
-  10. Getting 14 total results :(
-      Do we know if the clitic is obligatory for all VPs taking the sole subj?
-      When parsing "ala ala" strings, both are parsed as Vs
-      and for "ala ka", both are Vs
-
-      Now getting more than 20... for the actual string in ttv.txt the grammar
-      gives 4 diff trees, only 1 looks reasonable.
-
-
-      HOW CAN WE GET a sentence like "muiny ala kip" to not be translated as
-      "muiny kip".
-
-      Changing main-verb-lex to be FORM nonfinite, which is the correct analysis
-
-      Now changing the CONJ rules (top, bottom for vp1) to say the FORM value is the same on the mother
-      and daughter
-
-      Okay, that worked.
-
-      Regarding obligatory agreement clitics:
-      
-      Now we'd really like the SUBJ-HEAD rule to not apply to
-      	  "manuai voliliti muiny"
-	   cat     chase   dog
-	   "cats chase dogs."
-
-      How?
-
-      And similarly, we'd like DECL-HEAD-OPT-SUBJ to not apply to
-      	  "matir"
-	   sleep
-	   "Sleeps."
-
-      Constrained the s1-coord rules (bottom and top) to say FORM value
-      is same on mother, dtr. And now we only get 5 total results for ttv ttv,
-
-      There is mere structural and semantic ambiguity in this string:
-            Manuai ala voliliti muiny pe ala matir
-      It that accounts for 3 of the output strings.
-      	 GOOD NEWS! The VP sentence has the ARG1s of the verbs IDed with the
-	 ARG0 of cats! So we should rule out the other sentences and just
-	 keep this one. Meanwhile, the S sentence has the second 'ala' not
-	 IDed with the first and with 'cats', so we should try and block it.
-
-      We also not that the following string could be correct:
-            Manuai ala voliliti muiny pe matir
-      Because here, ala take the entire coordinate phrase as a complement.
-      I thought this might be correct, but for some reason the ARG1s of the
-      verbs aren't being identified with the ARG0 of cats.
-
-      And the following is interesting:
-      	  Ala voliliti muiny pe manuai ala matir
-      Because it has the subject optional in the first phrase and
-      the subject overt in the second coordinate. The coordination is of Ses.
-      I think its bad, because the ARG0 of cat and the ARG1 of the first 'ala'
-      are not identified. In other words, "they" != "cats".
-
-
-      eng to ttv shows 6 output sentences, half of them have 'ka' in them,
-      which we could get rid of. Of the ones that don't, we get:
-
-      	    Manuai ala voliliti muiny pe ala matir
-	    Manuai ala voliliti muiny pe matir
-
-      We want the first, not the second. So we should try and block the second.
-
-  11. SKIPPED
-  12. SKIPPED
-  13. SKIPPED
-  14. SKIPPED
-  15. 3 parses, reasonable, but we'll need transfer rules
-  16. Somehow getting 45 total results
-      One thing to see is that there seems to be at least one string for each
-      pronoun.
-  17. Changed sentence to "muiny manuai", so underspec for per, num
-      Note that we're parsing the bad: "muiny ala manuai", should't have clitic.
-
-      We wonder if we can fix this by fiddling with FORM distinctions
-      But now that we've started exploring this, we notice that the FORM
-      values aren't what we'd expect on the sentence "yo u kip", and
-      also we don't know how our agr clitics are implemented as FORM finite
-      on comp features.
-
-      If the root condition specifies FORM finite, can the root node be
-      FORM form?
-
-  18. Getting 4 sentences. 2 are a result of underconstrained MOOD somewhere,
-      because the clitic is 'kine'. Think we might be stuck on the two remaining
-      sentences -- however, they're incorrect. Currently, 'e' does not mean
-      possession, but just loc_p_rel. So until we implement possession with 'e'
-      this will not be the translation from eng.txt. If there is one at all.
-
-      	   Yup, when ./translate eng ttv 18 we get "poss_rel" not in the sem index.
-
-  19. Not getting anything.
-
-      This is a possessive sentence, and I'm pretty sure it still needs some
-      implementation work. When/if we get around to it, we'll probably just
-      use the possessive strategy that makes "eyo" mean "of-mine". Talk to emily
-      about quick implemenation of this. This would be a good thing to implement
-      since so many groups are doing possession.
-      
-  20. 2 things; not sure 'kine' should be here
-      Can we constrain MOOD in semi.vpm?
-      	  Not actually sure what's causing this problem for this sentence, since
-	  "i" should constrain MOOD to be realis.
-	  
-  21. 1 thing and it looks good
-  22. 1 thing and it looks good
-  23. SKIPPED
-  24. SKIPPED
-  25. nothing
-
 ===============================================================================
-N Grammar comparision
-N.1 Testsuite
-   N.1.1 Initial grammar
+5 Grammar comparision
+5.1 Testsuite
+   5.1.1 Initial grammar
       XX/XXX positive items parsed (X% coverage)
       X/XX negative items parsed (X% overgeneration)
       
@@ -386,7 +525,7 @@ N.1 Testsuite
 
       <explanation of ambiguity>
 
-   N.1.2 Final grammar
+   5.1.2 Final grammar
       XX/XXX positive items parsed (X% coverage)
       X/XX negative items parsed (X% overgeneration)
       
@@ -400,8 +539,8 @@ N.1 Testsuite
 
       <explanation of ambiguity>
 
-N.2 Test corpus
-   N.2.1 Initial grammar (copied from lab N final)
+5.2 Test corpus
+   5.2.1 Initial grammar (copied from lab 7 final)
       XX/XXX items parsed (X% coverage)
       
       On average, parsed items had X prases
@@ -412,7 +551,7 @@ N.2 Test corpus
 
       <explanation of ambiguity>
 
-   N.2.2 Final grammar
+   5.2.2 Final grammar
       XX/XXX items parsed (X% coverage)
       
       On average, parsed items had X parses.
