@@ -16,66 +16,134 @@ Dogs sleep
 Muiny ala matir.
 Bednaga urri
 --------------------------------------------------------------------------------
-Initial output
-
-    TTV to TTV
-    	# of strings:
-	1-2 sentences describing why:
-
-    ENG to TTV
-	1: 1 parse, 3 results
-		Mood is unconstrained
-	2: 1 parse, 3 results
-		Mood is unconstrained
-	3: 1 parse, 8 results
-		Mood/aspect unconstrained, sg and pl prons both appear
-	4: 1 parse, 3 results
-		Mood unconstrained
-	5: 1 parse, 6 results
-		Mood unconstrained
-	6: 1 parse, 0 results
-		SKIPPED, missing word for 'think' and 'know'.
-	7: 1 parse, 0 results
-		SKIPPED
-	8: 1 parse, 12 results
-		'and' and 'or' both have '_and_coord_rel', mood/number unspecified
-	9: 1 parse, 0 results
-		There is not S coordination in the Lab7 grammar
-	10: 1 parse, 21 results,
-		Mood unspecified, finiteness unspecified/not finished
-	11: 1 parse, 3 results
-		Mood unspecified
-	12: 1 parse, 0 results
-		SKIPPED, no adjectives yet
-	13: 1 parse, 0 results
-		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
-	14: 1 parse, 0 results
-		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
-	15: 1 parse, 0 results
-		eng has _in_p_rel but titan has_loc_p_re, needs a transfer rule.
-	16: 1 parse, 0 results
-		"Hunger eats the dogs"/missing transfer rule
-	17: 1 parse, 3 results
-		mood unconstrained
-	18: 1 parse, 0 results
-		missing poss_rel; needs transfer rule
-	
-    	# of strings:
-	1-2 sentences describing why:
-
-    SJE to TTV
-    	# of strings:
-	1-2 sentences describing why:
---------------------------------------------------------------------------------
 Final output
-    TTV to TTV
-    	# of strings:
-	1-2 sentences describing why:
-
     ENG to TTV
-    	# of strings:
-	1-2 sentences describing why:
-
+	1: 1 result
+		good result :thumbsup:
+	2: 1 result
+		good results
+	3: 2 results
+		you in eng is 
+	4: 1 result
+		good results?
+	5: 2 results
+		Both results are good, one has bi-partite negationa and the
+			the other has simple negation
+	6: 0 results
+		SKIPPED, we need transfer rules from "think" and "know" to
+			"va" (think/know)
+	7: 0 results
+		SKIPPED
+	8: 1 results
+		Correct result.
+	9: 1 results
+		Correct results.
+	10: 2 results
+		Both results are correct, ambiguity scope of verbal clitic.
+	11: 1 results
+		Correct result.
+	12: 0 results
+	13: 0 results
+		We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	14: 0 resulst
+		We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	15: 0 results
+		We are missing a transfwer rule for "hunger eats the dogs".
+	16: 0 results
+		We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	17: 1 result
+		Correct results.
+	18: 0 results
+		The general preposition 'e' used for poesssion currently has the pred
+			val _loc_p_rel. We'll need to add another lexical entry for
+			'e' to handle poss_rel.
+	19: 1 result
+		Correct result, however, we expect 2 results. The pronominal
+			possesive suffix has two alternating forms, '-yo' and
+			'-eyo'. Currently only '-yo' shows up.
+	20: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	21: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	22: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	23: 0 results (error) (SKIPPED in ttv)
+		We got an error: atomic_dg: no such type as 'past'. We suspected we
+			could find a fix for this in semi.vpm, but Titan has no
+			tense.
+	24: 0 results (error) (SKIPPED in ttv)
+		We got the same error as in 23.
+	25: 4 results
+		'Alan' (because) ought to be at the end of the sentence, but all
+			results have it at the beginning. Additionaly, two of the
+			reults have the subject and object swapped, and IN_SITU_QUES
+			applies to the topmost S. 
+	26: 0 results
+		SKIPPED in ttv, we are missing a word for "after".
+	
     SJE to TTV
-    	# of strings:
-	1-2 sentences describing why:
+	1: 1 result
+		?
+	2: 1 result
+		?
+	3: 1 result
+		good
+	4: 2 results
+		One good translation, one bad translation with semantics that
+		means "They eat dogs":
+			"ala ani muiny"
+	5: 2 results
+		Both results are good, one has bi-partite negationa and the
+			the other has simple negation
+	6: 0 results
+		SKIPPED in ttv, we need transfer rules from "think" and "know" to
+			"va" (think/know)
+	7: 0 results
+		SKIPPED in ttv
+	8: 2 results (with same surface string)
+		Because we allow nouns to be standalone sentences and because
+			there sentences can be coordinated, there is ambiguiy
+			about the consituant structure of the daughters of
+			coordination. We aren't sure why sje>ttv has this
+			ambiguity and eng>ttv doesn't.
+	9: 1 results
+		Correct parse.
+	10: 4 results.
+		Two results are correct, and in the two bad results, the subject of
+			one of the coordinated verbs is dropped.
+	11: 1 results
+	12: 0 results
+	13: 0 results
+		We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	14: 0 resulst
+		We are missing a transfer rule for _in_p_rel to _loc_p_rel.
+	15: 0 results
+		We are missing a transfwer rule for "hunger eats the dogs".
+	16: SKIPPED in sje
+	17: SKIPPED in sje
+	18: 0 results
+		why
+	19: 1 result.
+		Correct result, however, we expect 2 results. The pronominal
+			possesive suffix has two alternating forms, '-yo' and
+			'-eyo'. Currently only '-yo' shows up.
+	20: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	21: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	22: 0 results
+		wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
+			this with a transfer rule.
+	23: 0 results (error) (SKIPPED in ttv)
+		We got an error: atomic_dg: no such type as 'past'. We suspected we
+			could find a fix for this in semi.vpm, but Titan has no
+			tense.
+	24: 0 results 
+		We got the same error as in 23.
+	25: SKIPPED in sje
+	26: SKIPPED in sje & ttv
