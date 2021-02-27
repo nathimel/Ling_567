@@ -32,16 +32,6 @@ Table of contents:
      5.2 Test corpus
        5.2.1 Initial grammar
        5.2.2 Final grammar
-===============================================================================
-TOOD list
-
-
- Emily's lab feedback?
-===============================================================================
-Questions/issues:
-
-
-===============================================================================
 
 ===============================================================================
 1 Documentation of Negation
@@ -120,11 +110,18 @@ Questions/issues:
 
 
   2.1 Prose Description of the implemented analysis
+  
       There are two strategies; bipartite and simple. The bipartite strategy
-      corresponds to sentences like "Manuai i ne kip poen" and the simple
-      strategy corresponds to sentences like "manuai i kip poen".
+      corresponds to sentences like "Manuai i ne kip poen", with "ne" as a
+      negative auxiliary that's semantically contentful, and "poen" as a
+      semantically empty required complement of "ne".
+
+      The simple strategy corresponds to sentences like "manuai i kip poen",
+      where "poen" is the semantically contentful negation marker.
 
   2.2 All the tdl we used for negation in this lab.
+--------------------------------------------------------------------------------
+  TTV.TDL
 
      subj-raise-aux-super := aux-lex & trans-first-arg-raising-lex-item &
        [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
@@ -190,7 +187,9 @@ Questions/issues:
 							  [ AUX -],
 						     VAL [ COMPS null,
 							   SUBJ cons ] ] ] > ] ].
-							   
+--------------------------------------------------------------------------------
+  LEXICON.TDL
+
      ne := neg-aux-lex &
        [ STEM < "ne" >,
 	 SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
@@ -206,7 +205,7 @@ Questions/issues:
 	 SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 
-
+--------------------------------------------------------------------------------
   2.3 IGT for testing the analysis
 
       Manuai i   ne  kip poen
@@ -231,7 +230,7 @@ Questions/issues:
 
 ===============================================================================
 3 Further Generation Cleanup (to get generation down to a reasonable output #)
-
+--------------------------------------------------------------------------------
   3.1 For sentence 1 (dogs sleep), we initially got the following output from eng to ttv:
 
 	Muiny ka matir
@@ -270,7 +269,7 @@ Questions/issues:
 				   HEAD +vp &
 					[ FORM finite ] ] ] ] ].
 
-
+--------------------------------------------------------------------------------
     3.2 For sentence 3 (I chase you) we got the following initial output from eng to ttv:
 
 	Yo kune voliliti oi
@@ -284,7 +283,7 @@ Questions/issues:
 
 	'Kune' is a perfective marker. So we added the default in semi.vpm:
 	  ipfv <> [e]
-
+--------------------------------------------------------------------------------
     3.3 For sentence 5 (Dogs don't chase cats) we got the following output from eng to ttv:
 
 	Muiny poen voliliti dilen
@@ -295,7 +294,7 @@ Questions/issues:
 	Muiny nabu ala voliliti dilen
 
 	  We deleted the lexical entry for "nabu," which is the irrealis negation marker.
-
+--------------------------------------------------------------------------------
     3.4 For sentence 8, (Dogs and cats chase cars), we got the following output from eng to ttv:
 
 	Manuai pe muiny awa voliliti dilen
@@ -311,10 +310,12 @@ Questions/issues:
 	Manuai ne muiny yoya voliliti dilen
 	Manuai pe muiny yota voliliti dilen
 
-	   The fact that we get every plural agreement clitic, but not just the 3rd and plural agreement
-	   clitic, had to do with the PNG features not being copied up from the daughter of the np-coord
-	   rule. We answered some questions in the Coordination section of the customization website called
-	   "feature resolution," which gave us the following tdl to port into our grammar:
+	   The fact that we get every plural agreement clitic, but not just
+	   the 3rd and plural agreement clitic, had to do with the PNG features
+	   not being copied up from the daughter of the np-coord rule. We answered
+	   some questions in the Coordination section of the customization website
+	   called "feature resolution," which gave us the following tdl to port into
+	   our grammar:
 
 	  ;;; Feature Resolution Rules
 
@@ -337,8 +338,9 @@ Questions/issues:
 
 	And we added the appropriate rules in rules.tdl.
 
-
-	3.5 For sentence 10 (Cats chase dogs and sleep), we got the following output from eng to ttv:
+--------------------------------------------------------------------------------
+	3.5 For sentence 10 (Cats chase dogs and sleep), we got the following
+	output from eng to ttv:
 
 	Manuai ka voliliti muiny pe matir
 	Manuai ka voliliti muiny pe ala matir
@@ -362,7 +364,8 @@ Questions/issues:
 	Manuai ala ala voliliti muiny pe matir
 	Manuai ala voliliti muiny pe ala matir
 
-	   Issues like "ala ala" showing up were fixed by requiring that "ala" require a FORM nonfinite
+	   Issues like "ala ala" showing up were fixed by requiring that "ala"
+	   require a FORM nonfinite
 	   complement.  
 
           aux9-aux-lex := subj-raise-aux-no-pred &
@@ -445,7 +448,7 @@ Questions/issues:
 		    applies to the topmost S. 
     26: 0 results
 	    SKIPPED in ttv, we are missing a word for "after".
-
+--------------------------------------------------------------------------------
 4.2 SJE to TTV
     1: 1 result
 	    ?
@@ -514,50 +517,109 @@ Questions/issues:
 5 Grammar comparision
 5.1 Testsuite
    5.1.1 Initial grammar
-      XX/XXX positive items parsed (X% coverage)
-      X/XX negative items parsed (X% overgeneration)
+      72/103 positive items parsed (69.9% coverage)
+      11/90 negative items parsed (12.2% overgeneration)
       
       On average:
-         positive items that parsed had X parses.
-         negative itmes that parsed had X parses
+         positive items that parsed had 1.42 parses.
+         negative itmes that parsed had 1.27 parses
       
-	{IGT}
-
-      <explanation of ambiguity>
+	The results are not different from Lab 7, and we parsed no negation
+	cases.
 
    5.1.2 Final grammar
-      XX/XXX positive items parsed (X% coverage)
-      X/XX negative items parsed (X% overgeneration)
+      69/103 positive items parsed (X% coverage)
+      6/90 negative items parsed (6.9% overgeneration)
       
       On average:
-         Positive items that parsed had X parses.
-         Negative items that parsed had X parses.
+         Positive items that parsed had 1.30 parses.
+         Negative items that parsed had 1.83 parses.
       
-      The most ambiguous items had X parses:
+      The most ambiguous item is the same as last lab's (4 parses):
+      
+	 *Manuai i   e    muiny
+	 osprey 3sg prep dog
+	 "The eagle is on the dog."
 
-      	 {IGT}
+      The 3 positive sentences we lost from initial to final were:
 
-      <explanation of ambiguity>
+	 51: Ta kip
+	 91: Titan kip
+	 151: Oi poa ku kip
 
+      Ta and Titan were nominal, and we shouldn't get NP VP without an
+      agreement clitic. Notice 151 is missing an agreement clitic after oi.
+
+      The 5 negative sentences we lost were:
+
+	 84: Yo pe oi i kip
+	 155: Oi pa ku kip
+	 171: Oi a cinal
+	 173: Manuai i muan
+
+      We lost 84 because of the work we did with coordinating NPs on this lab;
+      I said that any and X agreement on the daughters results in X on the mother.
+      
+      We lost 155 because we specified that 'pa' must take a realis complement.
+      We lost 171,123 because we said non-verbal predicates shouldn't have
+      clitics (although muan should be a stative verb 'be_bad_v_rel' rather than
+      the spurious auto-inferred noun that it is currently.
+--------------------------------------------------------------------------------
 5.2 Test corpus
    5.2.1 Initial grammar (copied from lab 7 final)
-      XX/XXX items parsed (X% coverage)
-      
-      On average, parsed items had X prases
-      
-      The most ambiguous item had X parses:
 
-      	  {IGT}
+      44/562 items parsed (7.8% coverage)
+      
+      On average, parsed items had 1.95 parses. (increase)
+      
+      The most ambiguous item had 9 parses: (same as Lab 7)
 
-      <explanation of ambiguity>
+     ala nyak  e  kor  e    ala cinal
+     3pl climb to home poss 3pl devil
+     They climbed into the devils lair.
+    
+    See Lab 7 for more discussion about how we haven't handled "e" as a possessive
+      strategy yet.
 
    5.2.2 Final grammar
-      XX/XXX items parsed (X% coverage)
+      38/562 items parsed (6.8% coverage)
       
-      On average, parsed items had X parses.
+      On average, parsed items had 1.61 parses.
       
-      The most ambiguous item had X parses:
+      The most ambiguous items had 8 and 4 parses:
 
-      	  {IGT}
 
-      <explanation of ambiguity>
+      	  papu-n     i        va  yo poen
+	  father-3sg 3sg.real say 1sg not
+	  His father said It wasn t me.
+
+	  Of these eight sentences, there were four were 'yo' was correctly
+	  parsed as a noun, and underwent the np-pred rule. Of those four,
+	  only two had the poen ADV attaching before the verb 'va'(to say),
+	  while the others combined with the VP "va yo", which seems incorrect.
+	  The two that attached in the right place had great semantics: the
+	  ARG2 of say_v_rel is qeq IDed with the neg_rel, which has its ARG1
+	  qeq ID'ed with the LBL of the be_v_id rel, which itself has the
+	  pronoun's ARG0 as its ARG2. Also, we seem to be getting two copies
+	  of each tree and we don't know why. 
+
+      	  Cavomu kor  e    moat
+	  C      land poss snake
+	  There was a snake in Cavomu.
+
+	  Of the 4 trees, three have kor taking the PP complement. Of those,
+	  one has kor as an N, one as an NP, and one as a VP (np-pred rule).
+	  The one where kor does not take a PP comp is where it is a VP, as
+	  a result of the np-pred rule -- and its subject is Cavomu.
+	  We think none of these trees are correct, becuase kor is a noun
+	  that just means land, so we think it should be perhaps modifying
+	  Cavomu.
+	  
+
+	  ala pas  e  kapet
+	  3pl know of large_fishing_net
+	  They know how to use large fishing nets.
+
+	  These parses show pas as a noun, but it is a transitive verb. There's
+	  lots of ambiguity wrt where that N and the PP combine, but the trees
+	  are spurious anyway. 

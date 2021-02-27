@@ -459,7 +459,7 @@ aux25-aux-lex := subj-raise-aux-no-pred & verb-pc12-rule-dtr &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
                    CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
                                                                     NUM sg ],
-                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ]x ],
+                             COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
     INFLECTED.VERB-PC12-FLAG - ].
 
 ; To keep the semantically empty ones from spinning on
