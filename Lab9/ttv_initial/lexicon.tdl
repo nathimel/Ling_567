@@ -3363,7 +3363,7 @@ dili := verb3-verb-lex &
 
 va := verb4-verb-lex &
   [ STEM < "va" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_say_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_think-or-know_v_rel" ].
 
 pa_2 := verb5-verb-lex &
   [ STEM < "pa" >,
@@ -3505,7 +3505,7 @@ alan_1 := irr-clause-final-prehead-s-attach-subord-lex-item &
   [ STEM < "alan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_if_subord_rel" ].
 
-alan_2 := realis-clause-init-prehead-s-attach-subord-lex-item &
+alan_2 := realis-clause-final-prehead-s-attach-subord-lex-item &
   [ STEM < "alan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_because_subord_rel" ].
 

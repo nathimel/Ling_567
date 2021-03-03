@@ -67,7 +67,7 @@ E.ASPECT : ASPECT
   ipfv <> imperfective
   cont <> continual
   hab <> habitual
-  ipfv <> [e]
+  ipfv << [e]
 
 E.MOOD : MOOD
   cond <> conditional
@@ -75,4 +75,4 @@ E.MOOD : MOOD
   irr <> irrealis
   oblig <> obligatory
   realis <> realis
-  realis <> [e]
+  realis << [e]

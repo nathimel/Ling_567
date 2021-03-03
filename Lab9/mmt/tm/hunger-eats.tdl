@@ -1,0 +1,19 @@
+hunger-eats-mtr := monotonic_mtr &
+[ INPUT.RELS < [ PRED "_hungry_a,
+                  ARG0 #event,
+                  ARG1 #agent ] >,
+  CONTEXT.RELS < [ PRED "~_n_",
+                    ARG0 #agent] >,
+  OUTPUT [ RELS < [ PRED "_hunger_n_rel,
+                     ARG0 #hunger],
+                  [ PRED "_eat_v_rel,
+                     LBL #larg,
+                     ARG0 #event
+                     ARG1 #hunger,
+                     ARG2 #agent ],
+                  [ PRED "exist_q_rel",
+                     RSTR #harg,
+                     ARG0 #hunger ] >,
+           HCONS < [HARG #harg,
+                     LARG #larg] > ],
+  FLAGS.EQUAL < #x > ].

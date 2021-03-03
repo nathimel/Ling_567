@@ -3,7 +3,7 @@ Muiny ala voliliti dilen.
 Yo u voliliti oi.
 Muiny ala ani.
 Muiny ala voliliti dilen poen.
-SKIPPED
+Yo u va oi a va muiny ala voliliti dilen.
 SKIPPED
 Manuai pe muiny ala voliliti dilen.
 Muiny ala voliliti dilen pe manuai ala voliliti muiny.
@@ -22,5 +22,5 @@ Muiny ala voliliti ca.
 Oi a va muiny ala voliliti ca.
 SKIPPED
 SKIPPED
-Muiny i matir alan manuai i matir.
+Manuai i matir alan muiny i matir.
 SKIPPED

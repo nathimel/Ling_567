@@ -158,7 +158,7 @@ wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-
                      CONT [ RELS.LIST < [ LBL #larg,
                                           ARG0 #arg0 & ref-ind ],
                                         quant-relation &
-                                        [ PRED "which_q_rel",
+                                        [ PRED "wh_q_rel",
                                           ARG0 #arg0,
                                           RSTR #harg ] >,
                             HCONS.LIST < [ HARG #harg,
@@ -282,7 +282,7 @@ verb2-verb-lex := transitive-verb-lex.
 verb3-verb-lex := intransitive-verb-lex.
 
 verb4-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
-  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb,
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb & [FORM finite],
                                                    WH.BOOL - ],
                                              CONT.HOOK.INDEX.SF prop ] ] >,
              NON-LOCAL.QUE.LIST < > ] ].
@@ -699,13 +699,15 @@ irr-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex
                          HEAD [ MOD < [ LOCAL.CAT.VAL.SUBJ < > ] >,
                                 INIT - ] ] ] ].
 
-realis-clause-init-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
+realis-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex & non-local-none-lex-item &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD #feat,
-                   CAT [ VAL.COMPS < [ LOCAL [ CAT.VAL.SUBJ < >,
+                   CAT [ VAL.COMPS < [ LOCAL [ CAT [ VAL.SUBJ < >,
+                                                     HEAD.FORM finite],
                                                CONT.HOOK.INDEX.E.MOOD #feat & realis ] ] >,
                          POSTHEAD -,
-                         HEAD [ MOD < [ LOCAL.CAT.VAL.SUBJ < > ] >,
-                                INIT + ] ] ] ].
+                         HEAD [ MOD < [ LOCAL.CAT [ VAL.SUBJ < > ,
+                                                    HEAD.FORM finite ] ] >,
+                                INIT - ] ] ] ].
 
 insitu-int-cl := interrogative-clause & head-only &
   [ C-CONT [ RELS.LIST < >,

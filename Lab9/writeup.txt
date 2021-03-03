@@ -30,6 +30,24 @@ Table of Contents
 ===============================================================================
 1 Improving MT Coverage
 
+25: Manuai i matir alan muiny i matir.
+   Previously, sentence 25 generated four results, each with 'alan' at the beginning of the sentence:
+      *Alan   manuai i        matir muiny i        matir.
+      Because cat    3sg.real sleep dog   3sg.real sleep
+      Because the cat sleeps, the dog sleeps.
+   
+   To fix this, we changed from this rule:
+      realis-clause-init-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
+         ...
+         INIT +
+   
+   to:
+      realis-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
+         ...
+         INIT -
+   
+   We removed 2 of the ambiguous sentences by specifying that the MOD value
+      must be FORM finite.
 ===============================================================================
 2 Reducing MT Overgeneration
 

@@ -4,6 +4,41 @@
 ; in the mmt grammars.  For maintainability, define them here, and
 ; have particular grammars simply instantiate them.
 
+; Team Titan: think > think+know
+think-titan-mtr := monotonic_mtr &
+[ INPUT.RELS < [ PRED "_think_v_rel",
+                  ARG0 #event,
+                  ARG1 #subj ] >,
+  OUTPUT.RELS < [ PRED "_think-or-know_v_rel",
+                    ARG0 #event,
+                    ARG1 #subj ] > ].
+
+; Team Titan: know > think+know
+know-mtr := monotonic_mtr &
+[ INPUT.RELS < [ PRED "_know_v_rel",
+                  ARG0 #event,
+                  ARG1 #subj ] >,
+  OUTPUT.RELS < [ PRED "_think-or-know_v_rel",
+                    ARG0 #event,
+                    ARG1 #subj] > ].
+
+; Team Titan added this for "hunger eats the dogs":
+hunger-eats-mtr := monotonic_mtr &
+[ INPUT.RELS < [ PRED "_hungry_a_rel",
+                  ARG0 #event,
+                  ARG1 #agent ] >,
+  OUTPUT [ RELS < [ PRED "_hunger_n_rel",
+                     LBL #larg,
+                     ARG0 #hunger],
+                  [ PRED "_eat_v_rel",
+                     ARG0 #event,
+                     ARG1 #hunger,
+                     ARG2 #agent ],
+                  [ PRED "exist_q_rel",
+                     RSTR #harg,
+                     ARG0 #hunger ] >,
+           HCONS < [HARG #harg,
+                     LARG #larg] > ] ].
 
 ; Pro-drop -> overt pronouns
 
