@@ -1,6 +1,7 @@
 ;;; Hey, emacs(1), this is -*- Mode: TDL; Coding: utf-8; -*- got it?
 
 hunger-eats := hunger-eats-mtr.
-think-titan-eats := think-titan-mtr.
-know-eats := know-titan-mtr.
+think-titan := think-titan-mtr.
+know-titan := know-titan-mtr.
 in-loc := in-loc-mtr.
+titan-pro-drop := titan-pro-drop-mtr.

@@ -1,0 +1,16 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+poss-strat1-nonpossessive-lex := poss-strat1-nonpossessive-lex-rule.
+
+verb-pc3_lrt1-lex := verb-pc3_lrt1-lex-rule.
+
+verb-pc5_lrt1-lex := verb-pc5_lrt1-lex-rule.
+
+verb-pc8_lrt1-lex := verb-pc8_lrt1-lex-rule.
+
+verb-pc9_lrt1-lex := verb-pc9_lrt1-lex-rule.
+
+verb-pc10_lrt1-lex := verb-pc10_lrt1-lex-rule.
+
+verb-pc11_lrt1-lex := verb-pc11_lrt1-lex-rule.
+
+verb-pc12_lrt1-lex := verb-pc12_lrt1-lex-rule.

@@ -2,6 +2,7 @@ Lab 9
 By David Krug and Nathaniel Imel
 
 Todo:
+   fix 6, 18,19,23,24
    re-check the status of each MT item from eng and sje to ttv
    initial/final grammar comparision
 
@@ -22,6 +23,8 @@ Table of Contents
 
 ===============================================================================
 1 Improving Coverage and Reducing Overgeneration
+
+13: we removed p from the head of the non-head dtr of the adj-head rule.
 
 25: Manuai i matir alan muiny i matir.
    Previously, sentence 25 generated four results, each with "alan" at the
@@ -115,139 +118,132 @@ Table of Contents
 ===============================================================================
 4 Current MT Coverage
 4.1 eng to ttv
-    1: 1 result
-       good result
-    2: 1 result
-       good result
-    3: 2 results
-       'you' in English could be singular or plural. 
-    4: 1 result
-       good results
-    5: 2 results
-       Both results are good, one has bi-partite negationa and the
-       the other has simple negation
-    6: 0 results
-       SKIPPED in ttv, we need transfer rules from "think" and "know" to
-       "va" (think/know)
-    7: 0 results
-       SKIPPED in ttv
-    8: 1 results
-       Correct result.
-    9: 1 results
-       Correct results.
-    10: 2 results
-       Both results are correct, ambiguity scope of verbal clitic.
-    11: 1 results
-       Correct result.
-    12: 0 results
-       SKIPPED in ttv, we are missing attributive adjectives.
-    15: 0 results
-       We are missing a transfwer rule for "hunger eats the dogs".
-    16: 0 results
-       We are missing a transfer rule for _in_p_rel to _loc_p_rel.
-    17: 1 result
-       Correct results.
-    18: 0 results (SKIPPED in ttv)
-       The general preposition 'e' used for poesssion currently has the pred
-       val _loc_p_rel. We'll need to add another lexical entry for
-       'e' to handle poss_rel.
-    19: 1 result
-       Correct result, however, we expect 2 results. The pronominal
-       possesive suffix has two alternating forms, '-yo' and
-       '-eyo'. Currently only '-yo' shows up.
-    20: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-       this with a transfer rule.
-    21: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-       this with a transfer rule.
-    22: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-          this with a transfer rule.
-   22: 0 results
-      wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-      this with a transfer rule.
+   1: 1 result
+      Correct result.
+   2: 1 result
+      Correct results.
+   3: 2 results
+      'you' in English is ambiguous between singular and plural. 
+   4: 1 result
+      Good results
+   5: 2 results
+      Both results are good, one has bi-partite negationa and the
+      the other has simple negation
+   6: 4 results
+      After adding transfer rules from "think" and "know" to "va"
+         (think-or-know), there are still two source of amiguity. First,
+         the order of constituents switches around, but we do not know how to
+         fix that. Second, 'you' could be singular or plural in English.
+   7: 0 results
+      SKIPPED in ttv because "ask" is a complex structure.
+   8: 1 results
+      Correct result.
+   9: 1 results
+      Correct results.
+   10: 2 results
+      Both results are correct, ambiguity scope of verbal clitic.
+   11: 1 results
+      Correct result.
+   12: 0 results
+      SKIPPED in ttv, we are missing attributive adjectives.
+   13: 1 reults
+      Correct result.
+   14: SKIPPED in ttv, PPs do not currently modify verbs, only nouns.
+   15: 1 results
+      Correct result.
+   16: 1 results
+      Correct result.
+   17: 1 result
+      Correct result.
+   18: 0 results (SKIPPED in ttv)
+      The general preposition 'e' used for poesssion currently has the pred
+      val _loc_p_rel. We'll need to add another lexical entry for
+      'e' to handle poss_rel.
+   19: 1 result
+      Correct result, however, we expect 2 results. The pronominal
+      possesive suffix has two alternating forms, '-yo' and
+      '-eyo'. Currently only '-yo' shows up.
+   20: 1 results
+      Correct result.
+   21: 1 results
+      Correct result.
+   22: 1 results
+      Correct result.
+   22: 1 results
+      Correct result.
    23: 0 results (error) (SKIPPED in ttv)
       We got an error: atomic_dg: no such type as 'past'. We suspected we
          could find a fix for this in semi.vpm, but Titan has no
          tense.
    24: 0 results (error) (SKIPPED in ttv)
       We got the same error as in 23.
-   25: 4 results
-      'Alan' (because) ought to be at the end of the sentence, but all
-         results have it at the beginning. Additionaly, two of the
-         reults have the subject and object swapped, and IN_SITU_QUES
-         applies to the topmost S. 
+   25: 2 results
+      One of the results is correct, the other has
+         the subject and object swapped. 
    26: 0 results
       SKIPPED in ttv, we are missing a word for "after".
 
 4.2 sje to eng 
-    1: 1 result
-       Correct result
-    2: 1 result
-       Correct result
-    3: 1 result
-       Correct result
-    4: 2 results
-       One good translation, one bad translation with semantics that
-       means "They eat dogs":
-          "ala ani muiny"
-    5: 2 results
-       Both results are good, one has bi-partite negationa and the
-          the other has simple negation
-    6: 0 results
-       SKIPPED in ttv, we need transfer rules from "think" and "know" to
-          "va" (think/know)
-    7: 0 results
-       SKIPPED in ttv
-    8: 2 results (with same surface string)
-       Because we allow nouns to be standalone sentences and because
-          there sentences can be coordinated, there is ambiguiy
-          about the consituant structure of the daughters of
-          coordination. We aren't sure why sje>ttv has this
-          ambiguity and eng>ttv doesn't.
-    9: 1 results
-       Correct result.
-    10: 4 results.
-       Two results are correct, and in the two bad results, the subject of
-          one of the coordinated verbs is dropped.
-    11: 1 results
+   1: 1 result
+      Correct result
+   2: 1 result
+      Correct result
+   3: 1 result
+      Correct result
+   4: 2 results
+      One good translation, one bad translation with semantics that
+         means "They eat dogs": "Ala ani muiny". This is possible
+         becuase the sentence is ambiguous in sje.
+   5: 2 results
+      Both results are good, one has bi-partite negationa and the
+         the other has simple negation
+   6: 4 results
+      After adding transfer rules from "think" and "know" to "va"
+         (think-or-know), there are still two source of amiguity. First,
+         the order of constituents switches around, but we do not know how to
+         fix that. Second, 'you' could be singular or plural in English.
+   7: 0 results
+      SKIPPED in sje and ttv
+   8: 2 results (with same surface string)
+      There is ambiguiy about the consituant structure of the daughters of
+         coordination. Sje probably also has this ambiguity.
+   9: 1 results
       Correct result.
-    12: 0 results
-      SKIPPED in ttv, we are missing attributive adjectives.
-    13: 0 results
-       We are missing a transfer rule for _in_p_rel to _loc_p_rel.
-    14: 0 resulst
-       We are missing a transfer rule for _in_p_rel to _loc_p_rel.
-    15: 0 results
-       We are missing a transfwer rule for "hunger eats the dogs".
-    16: SKIPPED in sje
-    17: SKIPPED in sje
-    18: 0 results (SKIPPED in ttv)
-       The general preposition 'e' used for poesssion currently has the pred
-          val _loc_p_rel. We'll need to add another lexical entry for
-          'e' to handle poss_rel.
-    19: 1 result.
-       Correct result, however, we expect 2 results. The pronominal
-          possesive suffix has two alternating forms, '-yo' and
-          '-eyo'. Currently only '-yo' shows up.
-    20: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-          this with a transfer rule.
-    21: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-          this with a transfer rule.
-    22: 0 results
-       wh_q_rel is not covered. Instead, we have which_q_rel. We can fix
-          this with a transfer rule.
-    23: 0 results (error) (SKIPPED in ttv)
-       We got an error: atomic_dg: no such type as 'past'. We suspected we
-          could find a fix for this in semi.vpm, but Titan has no
-          tense.
-    24: 0 results 
-       We got the same error as in 23.
-    25: SKIPPED in sje
-    26: SKIPPED in sje & ttv
+   10: 4 results.
+      One result is correct. In two of the bad results, the subject of one of
+         the coordinated verbs is dropped. In the third bad result, two
+         sentence are being coordinated rather than two VPs.
+   11: 1 results
+     Correct result.
+   12: 0 results
+     SKIPPED in ttv, we are missing attributive adjectives.
+   13: SKIPPED in sje
+   14: SKIPPED in sje
+   15: SKIPEED in sje
+   16: SKIPPED in sje
+   17: SKIPPED in sje
+   18: 0 results (SKIPPED in ttv)
+      The general preposition 'e' used for poesssion currently has the pred
+         val _loc_p_rel. We'll need to add another lexical entry for
+         'e' to handle poss_rel.
+   19: 1 result.
+      Correct result, however, we expect 2 results. The pronominal
+         possesive suffix has two alternating forms, '-yo' and
+         '-eyo'. Currently only '-yo' shows up.
+   20: 1 results
+      Correct result.
+   21: 1 results
+      Correct result.
+   22: 1 results
+      Correct result.
+   23: 0 results (error) (SKIPPED in ttv)
+      We got an error: atomic_dg: no such type as 'past'. We suspected we
+         could find a fix for this in semi.vpm, but Titan has no
+         tense.
+   24: 0 results 
+      We got the same error as in 23.
+   25: SKIPPED in sje
+   26: SKIPPED in sje & ttv
 
 ===============================================================================
 5 Before & After Grammar Comparision

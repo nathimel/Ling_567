@@ -4,6 +4,15 @@
 ; in the mmt grammars.  For maintainability, define them here, and
 ; have particular grammars simply instantiate them.
 
+; Team Titan: pro-drop
+titan-pro-drop-mtr := monotonic_mtr &
+[ INPUT.RELS < [PRED "pron_rel",
+                 ARG0 #pron & [ PER second,
+                                NUM pl ] ] > ,
+  CONTEXT.RELS < [PRED "~_v_rel",
+                  ARG0 #pron] >,
+  OUTPUT.RELS < [ ] > ].
+
 ; Team Titan: think > think+know
 think-titan-mtr := monotonic_mtr &
 [ INPUT.RELS < [ PRED "_think_v_rel",
@@ -14,7 +23,7 @@ think-titan-mtr := monotonic_mtr &
                     ARG1 #subj ] > ].
 
 ; Team Titan: know > think+know
-know-think-mtr := monotonic_mtr &
+know-titan-mtr := monotonic_mtr &
 [ INPUT.RELS < [ PRED "_know_v_rel",
                   ARG0 #event,
                   ARG1 #subj ] >,
