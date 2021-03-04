@@ -2,5 +2,5 @@
 
 hunger-eats := hunger-eats-mtr.
 think-titan-eats := think-titan-mtr.
-know-eats := know-mtr.
+know-eats := know-titan-mtr.
 in-loc := in-loc-mtr.

@@ -14,7 +14,7 @@ think-titan-mtr := monotonic_mtr &
                     ARG1 #subj ] > ].
 
 ; Team Titan: know > think+know
-know-mtr := monotonic_mtr &
+know-think-mtr := monotonic_mtr &
 [ INPUT.RELS < [ PRED "_know_v_rel",
                   ARG0 #event,
                   ARG1 #subj ] >,
@@ -29,7 +29,7 @@ hunger-eats-mtr := monotonic_mtr &
                   ARG1 #agent ] >,
   OUTPUT [ RELS < [ PRED "_hunger_n_rel",
                      LBL #larg,
-                     ARG0 #hunger],
+                     ARG0 #hunger & [NUM sg]],
                   [ PRED "_eat_v_rel",
                      ARG0 #event,
                      ARG1 #hunger,

@@ -2,72 +2,119 @@ Lab 9
 By David Krug and Nathaniel Imel
 
 Todo:
-   finish lab 8
-   start lab 9
-   add the following transfier rules:
-      "Hunger eats the dogs" -> "the dogs are hungry"
-      _loc_p_rel -> _in_p_rel
-
-Questions for Emily:
-   none yet
+   re-check the status of each MT item from eng and sje to ttv
+   initial/final grammar comparision
 
 Table of Contents
-1 Improving MT Coverage
-2 Reducing MT Overgeneration
-3 Residual Ambiguity
-4 Transfer Rules
-5 Current MT Coverage
-   5.1 eng to ttv
-   5.2 sje to ttv
-6 Before & After Grammar Comparison
-   6.1 Testsuite
-      6.1 Initial Grammar
-      6.2 Final Grammar
-   6.2 Corpus
-      6.1 Initial Grammar
-      6.2 Final Grammar
+1 Improving Coverage and Reducing Overgeneration
+2 Residual Ambiguity
+3 Transfer Rules
+4 Current MT Coverage
+   4.1 eng to ttv
+   4.2 sje to ttv
+5 Before & After Grammar Comparison
+   5.1 Testsuite
+      5.1 Initial Grammar
+      5.2 Final Grammar
+   5.2 Corpus
+      5.1 Initial Grammar
+      5.2 Final Grammar
 
 ===============================================================================
-1 Improving MT Coverage
+1 Improving Coverage and Reducing Overgeneration
 
 25: Manuai i matir alan muiny i matir.
-   Previously, sentence 25 generated four results, each with 'alan' at the beginning of the sentence:
+   Previously, sentence 25 generated four results, each with "alan" at the
+      beginning of the sentence:
+      
       *Alan   manuai i        matir muiny i        matir.
       Because cat    3sg.real sleep dog   3sg.real sleep
       Because the cat sleeps, the dog sleeps.
    
-   To fix this, we changed from this rule:
+   To get alan to appear after the subordinate clause, we changed this rule:
       realis-clause-init-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
          ...
          INIT +
    
-   to:
+   to this:
       realis-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex &
          ...
          INIT -
    
-   We removed 2 of the ambiguous sentences by specifying that the MOD value
-      must be FORM finite.
-===============================================================================
-2 Reducing MT Overgeneration
+   After this, two of the incorrect results had the VP "manuai matir alan", in
+      which the <complement> of "alan" is a non-finite VP. To fix this, we
+      specifyied that the MOD value of "alan" must be FORM finite.
+
+   The final tdl for "alan" is:
+   
+   realis-clause-final-prehead-s-attach-subord-lex-item := subord-with-verbal-comp-lex & non-local-none-lex-item &
+     [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD #feat,
+                      CAT [ VAL.COMPS < [ LOCAL [ CAT [ VAL.SUBJ < >,
+                                                        HEAD.FORM finite],
+                                                  CONT.HOOK.INDEX.E.MOOD #feat & realis ] ] >,
+                            POSTHEAD -,
+                            HEAD [ MOD < [ LOCAL.CAT [ VAL.SUBJ < > ,
+                                                       HEAD.FORM finite ] ] >,
+                                   INIT - ] ] ] ].
+
+   20, 21, 22: which_q_rel > wh_q_rel
+      To fix these sentences, we simply changed the spelling of the PRED value
+         of wh words form which_q_rel to wh_q_rel.
 
 ===============================================================================
-3 Residual Ambiguity
+2 Residual Ambiguity
 
 ===============================================================================
-4 Transfer Rules
-    6:
-       "think" and "know" > "va" (think/know)
-    15:
-       "hunger eats the dogs" > "the dogs are hungry"
-    16:
-       _in_p_rel > _loc_p_rel
-    20, 21, 22:
-       wh_q_rel > which_q_rel
+3 Transfer Rules
+   6: "think" and "know" > "va" (think/know)
+      In Titan, "va" means both think and say. "Know" does not show up in our
+         corpus, so to translate sentence 6, we are saying that know means
+         think and know. The PRED value for "va" is _think-or-know_v_rel. We
+         made and instantiated the following transfer rules:
+
+      think-titan-mtr := monotonic_mtr &
+      [ INPUT.RELS < [ PRED "_think_v_rel",
+                        ARG0 #event,
+                        ARG1 #subj ] >,
+        OUTPUT.RELS < [ PRED "_think-or-know_v_rel",
+                          ARG0 #event,
+                          ARG1 #subj ] > ].
+      
+      know-titan-mtr := monotonic_mtr &
+      [ INPUT.RELS < [ PRED "_know_v_rel",
+                        ARG0 #event,
+                        ARG1 #subj ] >,
+        OUTPUT.RELS < [ PRED "_think-or-know_v_rel",
+                          ARG0 #event,
+                          ARG1 #subj] > ].
+
+   15: "hunger eats the dogs" > "the dogs are hungry"
+      To translate "The dogs are hungry" we made and instatiated the following
+         transfwer rule:
+
+      hunger-eats-mtr := monotonic_mtr &
+      [ INPUT.RELS < [ PRED "_hungry_a_rel",
+                        ARG0 #event,
+                        ARG1 #agent ] >,
+        OUTPUT [ RELS < [ PRED "_hunger_n_rel",
+                           LBL #larg,
+                           ARG0 #hunger & [NUM sg]],
+                        [ PRED "_eat_v_rel",
+                           ARG0 #event,
+                           ARG1 #hunger,
+                           ARG2 #agent ],
+                        [ PRED "exist_q_rel",
+                           RSTR #harg,
+                           ARG0 #hunger ] >,
+                 HCONS < [HARG #harg,
+                           LARG #larg] > ] ].
+
+   16: _in_p_rel > _loc_p_rel
+      Titan has a generic purpose preposition, so we intantiated in-loc-mtr.
 
 ===============================================================================
-5 Current MT Coverage
-5.1 eng to ttv
+4 Current MT Coverage
+4.1 eng to ttv
     1: 1 result
        good result
     2: 1 result
@@ -134,7 +181,7 @@ Table of Contents
    26: 0 results
       SKIPPED in ttv, we are missing a word for "after".
 
-5.2 sje to eng 
+4.2 sje to eng 
     1: 1 result
        Correct result
     2: 1 result
@@ -203,10 +250,10 @@ Table of Contents
     26: SKIPPED in sje & ttv
 
 ===============================================================================
-6 Before & After Grammar Comparision
-   6.1 Testsuite
+5 Before & After Grammar Comparision
+   5.1 Testsuite
    
-      6.1.2 Initial grammar
+      5.1.2 Initial grammar
          69/103 positive items parsed (67.0% coverage)
          6/90 negative items parsed (6.9% overgeneration)
          
@@ -222,7 +269,7 @@ Table of Contents
       
          See lab 8 for details.   
       
-      6.1.2 Final grammar
+      5.1.2 Final grammar
          #/# positive items parsed (#% coverage)
          #/# negative items parsed (#% overgeneration)
          
@@ -232,9 +279,9 @@ Table of Contents
          
          The most ambigous item had # parses:
          
-   6.2 Test corpus
+   5.2 Test corpus
        
-      6.2.1 Initial grammar
+      5.2.1 Initial grammar
          38/562 items parsed (6.8% coverage)
          
          On average, parsed items had 1.61 parses.
@@ -244,7 +291,7 @@ Table of Contents
         father-3sg 3sg.real say 1sg not
         His father said It wasn t me.
    
-      6.2.2 Final grammar
+      5.2.2 Final grammar
          #/# items parsed (#% coverage)
          
          On average, parsed items had # parses.
