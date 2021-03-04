@@ -1,6 +1,8 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Semantically Empty Lexical Entries
 
+;;e_2_gr?
+
 poen_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "neg_rel" ] >,
     FLAGS.TRIGGER "poen" ].

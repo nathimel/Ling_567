@@ -108,6 +108,9 @@ possessive := poss.  ; supertype for possessive features
 nonpossessive := poss.  ; type for nonpossessive
 possessor := possessive.
 possessum := possessive.
+possessive-1 := possessive.  ; supertype for strategy 1
+possessor-1 := possessor & possessive-1.
+possessum-1 := possessum & possessive-1.
 possessive-pron-1 := possessive.  ; supertype for strategy pron-1
 possessor-pron-1 := possessor & possessive-pron-1.
 possessum-pron-1 := possessum & possessive-pron-1.
@@ -771,6 +774,44 @@ determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg &
 
 ;;; Adverbs
 
+two-rel-adposition-lex := basic-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD adp,
+                           VAL.COMPS < [ LOCAL [ CAT cat-sat,
+                                                 CONT.HOOK #hook &
+                                                           [ INDEX #ind,
+                                                             ICONS-KEY.IARG1 #clause ] ] ] > ],
+                     CONT.HOOK #hook &
+                               [ CLAUSE-KEY #clause ] ],
+             LKEYS.KEYREL arg12-ev-relation &
+                          [ ARG2 #ind ] ] ].
+
+possessor-adp-lex-1 := two-rel-adposition-lex & non-local-none-lex-item &
+  [ SYNSEM.LOCAL [ CAT [ POSTHEAD +,
+                         VAL [ SPEC < >,
+                               SUBJ < >,
+                               SPR < >,
+                               COMPS.FIRST [ OPT -,
+                                             LOCAL [ CAT [ VAL.SPR < >,
+                                                           HEAD noun &
+                                                                [ PRON - ] ],
+                                                     CONT.HOOK.INDEX #possessor ] ] ],
+                         HEAD [ INIT +,
+                                POSSESSOR possessor-1,
+                                MOD.FIRST.LOCAL [ CAT [ VAL.SPR < [ ] >,
+                                                        HEAD noun &
+                                                             [ PRON - ] ],
+                                                  CONT.HOOK [ INDEX #possessum,
+                                                              LTOP #lbl ] ] ] ],
+                   CONT [ ICONS.LIST < >,
+                          HCONS.LIST < >,
+                          RELS.LIST < arg12-ev-relation &
+                                      [ PRED "poss_rel",
+                                        LBL #lbl,
+                                        ARG1 #possessum,
+                                        ARG2 #possessor ] > ] ] ].
+
+basic-adposition-lex :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR nonpossessive,
+                       POSSESSUM nonpossessive ] ].
 ; Type for negative selected comps.
 ;                   This type uses the MOD list to get scopal semantics.
 ;                   Constrain head-modifier rules to be [NEGATED -] if you don't
@@ -1638,6 +1679,9 @@ my-adj-head-phrase := adj-head-int-phrase &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +jr,
                                     VAL.COMPS < > ] ].
 
+
+my-head-adj-scop-phrase := head-adj-scop-phrase & [
+    SYNSEM.LOCAL.CAT.HEAD.POSSESSOR nonpossessive ].
 ;;; Wh-question-related phrasal types
 
 ; In-situ interrogative clause.

@@ -63,4 +63,4 @@ adj-head := my-adj-head-phrase.
 
 np-pred := np-predicate-rule.
 
-head-adj-scop := head-adj-scop-phrase.
+head-adj-scop := my-head-adj-scop-phrase.

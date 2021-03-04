@@ -1707,6 +1707,9 @@ e := normadp1-norm-adposition-lex &
   [ STEM < "e" >,
     SYNSEM.LKEYS.KEYREL.PRED "_loc_p_rel" ].
 
+e_2 := possessor-adp-lex-1 & 
+  [ STEM < "e" > ].
+
 ;;; Verbs
 
 abur_7E := verb1-verb-lex &

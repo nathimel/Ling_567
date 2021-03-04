@@ -1703,7 +1703,7 @@ keis := noun92-noun-lex &
 
 ;;; Adjectives
 
-e := normadp1-norm-adposition-lex &
+e := possessor-adp-lex-1 &
   [ STEM < "e" >,
     SYNSEM.LKEYS.KEYREL.PRED "_e_p_1_rel" ].
 

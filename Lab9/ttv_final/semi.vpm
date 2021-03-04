@@ -54,7 +54,7 @@ PNG.GEND : GEND
   * <> *
 
 E.TENSE : TENSE
-  * <> *
+  tense << [e]
 
 E.ASPECT : ASPECT
   pot <> potential
