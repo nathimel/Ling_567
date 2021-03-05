@@ -388,8 +388,9 @@ aux9-aux-lex := subj-raise-aux-no-pred &
 
 aux15-aux-lex := subj-raise-aux-no-pred &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
-                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
-                                                                    NUM sg ],
+                   CAT.VAL [ SUBJ.FIRST [ OPT -,
+                                          LOCAL.CONT.HOOK.INDEX.PNG [ PER 2nd,
+                                                                      NUM sg ] ],
                              COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
     INFLECTED.VERB-PC8-FLAG - ].
 
@@ -460,8 +461,9 @@ aux24-aux-lex := subj-raise-aux-no-pred &
 
 aux25-aux-lex := subj-raise-aux-no-pred & verb-pc12-rule-dtr &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.MOOD realis,
-                   CAT.VAL [ SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
-                                                                    NUM sg ],
+                   CAT.VAL [ SUBJ.FIRST [ OPT -,
+                                          LOCAL.CONT.HOOK.INDEX.PNG [ PER 1st,
+                                                                      NUM sg ] ],
                              COMPS.FIRST.LOCAL.CAT.HEAD.FORM nonfinite ] ],
     INFLECTED.VERB-PC12-FLAG - ].
 
@@ -792,8 +794,7 @@ possessor-adp-lex-1 := two-rel-adposition-lex & non-local-none-lex-item &
                                SPR < >,
                                COMPS.FIRST [ OPT -,
                                              LOCAL [ CAT [ VAL.SPR < >,
-                                                           HEAD noun &
-                                                                [ PRON - ] ],
+                                                           HEAD noun ],
                                                      CONT.HOOK.INDEX #possessor ] ] ],
                          HEAD [ INIT +,
                                 POSSESSOR possessor-1,
