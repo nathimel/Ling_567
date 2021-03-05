@@ -798,11 +798,12 @@ possessor-adp-lex-1 := two-rel-adposition-lex & non-local-none-lex-item &
                                                      CONT.HOOK.INDEX #possessor ] ] ],
                          HEAD [ INIT +,
                                 POSSESSOR possessor-1,
-                                MOD.FIRST.LOCAL [ CAT [ VAL.SPR < [ ] >,
+                                MOD.FIRST.LOCAL  intersective-mod &
+				          [ CAT [ VAL.SPR < [ ] >,
                                                         HEAD noun &
                                                              [ PRON - ] ],
-                                                  CONT.HOOK [ INDEX #possessum,
-                                                              LTOP #lbl ] ] ] ],
+                                            CONT.HOOK [ INDEX #possessum,
+                                                        LTOP #lbl ] ] ] ],
                    CONT [ ICONS.LIST < >,
                           HCONS.LIST < >,
                           RELS.LIST < arg12-ev-relation &

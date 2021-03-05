@@ -348,13 +348,20 @@ Table of Contents
       
       4.1.2 Final grammar
          69/103 positive items parsed (67.0% coverage)
-         #/# negative items parsed (#% overgeneration)
+         6/90 negative items parsed (6.9% overgeneration)
          
          On average:
-            positive items that parsed had 1.33 parses.
-            negative itmes that parsed had # parses.
+            positive items that parsed had 1.32 parses.
+            negative itmes that parsed had 1.83 parses.
          
-         The most ambigous item had # parses:
+         The most ambigous item had 4 parses -- and this was the positive item
+	 that accounts for the slight increase in ambiguity:
+
+	      "manuai e lono"
+
+	      The two new parses use the new lexical entry/possessive strategy
+	      we developed for "e". The MRSes say 'something is being a cat of
+	      the park.'
          
    4.2 Test corpus
        
@@ -369,8 +376,48 @@ Table of Contents
         His father said It wasn t me.
    
       4.2.2 Final grammar
-         #/# items parsed (#% coverage)
+         36/562 items parsed (6.4% coverage)
          
-         On average, parsed items had # parses.
+         On average, parsed items had 1.56 parses.
          
-         The most ambiguous item had # parses:
+         The most ambiguous items had 5 parses:
+
+	     Cavomu kor  e    moat
+	     C      land poss snake
+	     There was a snake in Cavomu.
+
+	     ala pas  e  kapet
+	     3pl know of large_fishing_net
+	     They know how to use large fishing nets.
+
+	 These sentences had only 4 trees in the initial test corpus
+	 run, before we implemented "e" as a possessive strategy. This
+	 new "e" item (e_2) accounts for the new tree.
+
+	 We also note that the most ambiguous item from the initial test
+	 corpus run dropped from 8 to 4 trees on th efinal test corpus run.
+
+
+	 The strings we lost were:
+
+	     matamorai i   va  a   tu
+	     sun       3sg say imp stay
+	     Sun said stay.
+
+	 We find this a bit surprising, since it contradicts Claire's
+	 analysis both that you can have the 2sg agreement clitic
+	 without the full independent pronoun, and that 'a' can be
+	 used for imperative mood marking, rather than 'ko' (the
+	 generally irrealis 2sg mood marker). But it's in the corpus!
+
+	     ala nyak  e  kor  e    ala cinal
+	     3pl climb to home poss 3pl devil
+	     They climbed into the devils lair.
+
+	 We are surprised that we don't parse this sentence. We are
+	 also surprised at the position of the second 'ala' in this
+	 sentence. It is a subject agreement marker, so its not clear
+	 why it would be necessary where it is.
+	 We also note that parsing the string without that second 'ala'
+	 does not give any results. 
+	 
