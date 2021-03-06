@@ -169,6 +169,10 @@ c := noun1-noun-lex &
   [ STEM < "c" >,
     SYNSEM.LKEYS.KEYREL.PRED "_c_n_rel" ].
 
+ca_1 := noun1-noun-lex &
+  [ STEM < "ca" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+
 caca := noun1-noun-lex &
   [ STEM < "caca" >,
     SYNSEM.LKEYS.KEYREL.PRED "_strand_n_rel" ].
@@ -339,7 +343,7 @@ dilaki := noun1-noun-lex &
 
 dilen := noun1-noun-lex &
   [ STEM < "dilen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_car_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_canoe_n_rel" ].
 
 dilis := noun1-noun-lex &
   [ STEM < "dilis" >,
@@ -421,9 +425,9 @@ ewaru := noun1-noun-lex &
   [ STEM < "ewaru" >,
     SYNSEM.LKEYS.KEYREL.PRED "_2dl.ps_n_rel" ].
 
-;eyo := noun1-noun-lex &
-;  [ STEM < "eyo" >,
-;    SYNSEM.LKEYS.KEYREL.PRED "_1sg.ps-or-mine-or-pred-1sg_n_rel" ].
+eyo := noun1-noun-lex &
+  [ STEM < "eyo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_1sg.ps-or-mine-or-pred-1sg_n_rel" ].
 
 eyoru := noun1-noun-lex &
   [ STEM < "eyoru" >,
@@ -839,7 +843,7 @@ loniu := noun1-noun-lex &
 
 lono := noun1-noun-lex &
   [ STEM < "lono" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_park_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_forest_n_rel" ].
 
 losou := noun1-noun-lex &
   [ STEM < "losou" >,
@@ -895,7 +899,7 @@ manayan := noun1-noun-lex &
 
 manuai := noun1-noun-lex &
   [ STEM < "manuai" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_cat_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_osprey-or-osprey-feather_n_rel" ].
 
 masaren := noun1-noun-lex &
   [ STEM < "masaren" >,
@@ -1639,31 +1643,31 @@ sau_2 := noun38-noun-lex &
 
 ala_1 := noun39-noun-lex &
   [ STEM < "ala" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 awa_1 := noun40-noun-lex &
   [ STEM < "awa" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 i_1 := noun48-noun-lex &
   [ STEM < "i" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 oi := noun62-noun-lex &
   [ STEM < "oi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 yo_1 := noun82-noun-lex &
   [ STEM < "yo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 yota_1 := noun83-noun-lex &
   [ STEM < "yota" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 ta_1 := noun83-noun-lex &
   [ STEM < "ta" >,
-    SYNSEM.LKEYS.KEYREL.PRED "pron_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_pron_n_rel" ].
 
 ca_2 := noun87-noun-lex &
   [ STEM < "ca" >,
@@ -1697,18 +1701,11 @@ keis := noun92-noun-lex &
   [ STEM < "keis" >,
     SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
-cong := noun1-noun-lex &
-  [ STEM < "cong" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
-
-;;; Adpositions
+;;; Adjectives
 
 e := normadp1-norm-adposition-lex &
   [ STEM < "e" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_loc_p_rel" ].
-
-e_2 := possessor-adp-lex-1 & 
-  [ STEM < "e" > ].
+    SYNSEM.LKEYS.KEYREL.PRED "_e_p_rel" ].
 
 ;;; Verbs
 
@@ -1887,6 +1884,10 @@ demayani_7E := verb1-verb-lex &
 diayou_7E := verb1-verb-lex &
   [ STEM < "diayou~" >,
     SYNSEM.LKEYS.KEYREL.PRED "_be_pregnant_v_rel" ].
+
+dili_7E := verb1-verb-lex &
+  [ STEM < "dili~" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
 
 dul_7E := verb1-verb-lex &
   [ STEM < "dul~" >,
@@ -3258,7 +3259,7 @@ vo := verb2-verb-lex &
 
 voliliti := verb2-verb-lex &
   [ STEM < "voliliti" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_chase_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_follow_v_rel" ].
 
 vomuani := verb2-verb-lex &
   [ STEM < "vomuani" >,
@@ -3360,13 +3361,9 @@ ko_1 := verb3-verb-lex &
   [ STEM < "ko" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fall_v_rel" ].
 
-dili := verb3-verb-lex &
-  [ STEM < "dili" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_be_sad_v_rel" ].
-
 va := verb4-verb-lex &
   [ STEM < "va" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_think-or-know_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_say_v_rel" ].
 
 pa_2 := verb5-verb-lex &
   [ STEM < "pa" >,
@@ -3408,8 +3405,20 @@ tu_2 := aux8-aux-lex &
 kine := aux9-aux-lex &
   [ STEM < "kine" > ].
 
+poen := neg11-aux-lex &
+  [ STEM < "poen" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+ne := neg12-aux-lex &
+  [ STEM < "ne" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
 a := aux15-aux-lex &
   [ STEM < "a" > ].
+
+nabu := neg16-aux-lex &
+  [ STEM < "nabu" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 i_2 := aux17-aux-lex &
   [ STEM < "i" > ].
@@ -3480,25 +3489,10 @@ ka := aux42-aux-lex &
 yota_2 := aux43-aux-lex &
   [ STEM < "yota" > ].
 
-ne := neg-aux-lex &
-  [ STEM < "ne" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
-
-nabu := neg-aux-irr-lex &
-  [ STEM < "nabu" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 ;;; Adverbs
 
 eyo-noun := eyo-noun-lex &
   [ STEM < "eyo" > ].
-
-poen := neg-comp-lex &
-  [ SYNSEM.LKEYS.KEYREL.PRED "neg_rel",
-    STEM < "poen" > ].
-
-poen_2 := neg-adv-lex &
-  [ STEM < "poen" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 pe1 := conj-lex &
   [ STEM < "pe" >,
@@ -3507,14 +3501,14 @@ pe1 := conj-lex &
 
 ne2 := conj-lex &
   [ STEM < "ne" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_or_coord_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "2" ].
 
 alan_1 := irr-clause-final-prehead-s-attach-subord-lex-item &
   [ STEM < "alan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_if_subord_rel" ].
 
-alan_2 := realis-clause-final-prehead-s-attach-subord-lex-item &
+alan_2 := realis-clause-init-prehead-s-attach-subord-lex-item &
   [ STEM < "alan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_because_subord_rel" ].
 

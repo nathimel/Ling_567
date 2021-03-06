@@ -1,3 +1,4 @@
+
 ;;; -*- Mode: TDL; Package: LKB -*-
 ;;;
 ;;; HPSG Grammar Matrix
@@ -2053,7 +2054,7 @@ basic-head-spec-phrase-super := binary-nonloc-phrase & phrasal &
                SYNSEM [ LOCAL [ CAT [ WH #or1,
                                       HEAD #head,
                                       VAL [ SUBJ #subj,
-                                            COMPS #comps, ;;olist & #comps
+                                            COMPS olist & #comps,
                                             SPR < #synsem &
                                                   canonical-synsem . #spr >,
                                             SPEC #spec ],

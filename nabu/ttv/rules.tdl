@@ -9,6 +9,8 @@ subj-head := subj-head-phrase.
 
 head-spec := head-spec-phrase.
 
+head-spec-2 := head-spec-phrase-2.
+
 bare-np := bare-np-phrase.
 
 ;np1-top-coord := np1-top-coord-rule.
